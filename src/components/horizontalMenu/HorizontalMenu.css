@@ -1,0 +1,149 @@
+.top-menu {
+    /* position: fixed; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #18181a;
+    height: 78px;
+    /* width: 100%; */
+    width: calc(100% - var(--size));
+    padding: 0px;
+    padding: 0px 2%;
+    z-index: 5;
+    margin: 0px auto !important;
+    position: fixed;
+    /* width: calc(100%) !important; */
+}
+
+
+.top-menu form {
+    background-color: #18181a;
+}
+
+.dropdown {
+    display: block;
+    /* margin-left: 10px; */
+    border: none !important;
+}
+
+.dropdown-toggle {
+    border: none !important;
+    color: #8f9197 !important;
+    /* margin-top: 0px; */
+}
+
+.dropdown-menu {
+    color: #8f9197 !important;
+    background-color: #18181a !important;
+    margin-top: 10px !important;
+}
+
+
+.dropdown-menu li a {
+    text-align: end;
+    color: #8f9197 !important;
+    background-color: #18181a !important;
+
+}
+
+.dropdown-menu li a:hover {
+    background-color: #8f919723 !important;
+}
+
+.top-menu {
+    padding-top: var(--topPaddingMenu);
+}
+
+.top-menu .external-form {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    /* margin: 0px 50px 0px 0px;     */
+}
+
+.top-menu .logo {
+    display: none;
+    
+}
+
+.top-menu .external-form label {
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    max-width: 400px;
+    width: 100%;
+    height: 45px;
+    background-color: #26272b;
+    border: none;
+    border-radius: 15px;
+    /* margin-left: 10px; */
+    padding-left: 10px;
+    caret-color: white;
+}
+
+.top-menu .external-form label span {
+    color: #8f9197;
+}
+
+.top-menu .external-form input {
+    outline: none;
+    height: 38px;
+    background-color: #26272b;
+    border: none;
+    border-radius: 10px;
+    padding-left: 10px;
+    caret-color: rgba(255, 255, 255, 0.466);
+}
+
+.top-menu-user {
+    display: flex;
+    color: #8f9197;
+    height: 58px;
+    /* width: 170px; */
+    /* background-color: aqua; */
+    align-items: center;
+    margin-right: -2px;
+}
+
+.top-menu-user figure {
+    height: 48px;
+    width: 48px;
+    margin: 0px;
+
+}
+
+.top-menu-user figure img {
+    border-radius: 50%;
+    width: 100%;
+
+}
+
+.top-menu-user p {
+    display: flex;
+    align-items: center;
+    margin-left: 15px !important;
+
+}
+
+.internal-form {
+    display: none;
+    margin: 5px;
+}
+.internal-form label {
+    padding: 5px;
+    display: flex;
+    border-radius: 10px;
+    background-color: #26272b;
+}
+
+.internal-form label input {
+    background-color: #26272b;
+    display: flex;
+    border: 10px;
+    outline: none;
+    caret-color: #8f9197;
+}
+
+.internal-form label input::placeholder {
+   padding-left: 5px;
+}

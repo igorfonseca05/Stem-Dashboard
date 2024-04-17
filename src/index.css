@@ -1,0 +1,450 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+
+  --size: 260px;
+  --topPaddingMenu: 10px;
+  --border-radius: 40px
+}
+
+html,
+body {
+  background-color: #18181a !important;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  /* background-color: aqua; */
+}
+
+li a {
+  color: black;
+  text-decoration: none;
+}
+
+.logo {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  padding: 0px;
+}
+
+.logo h2 {
+  padding: 0px !important;
+  margin: 0px !important;
+  color: #e6e6e6;
+  font-size: 24px;
+}
+
+.logo img {
+  width: 30%;
+  height: 30%;
+  margin-right: 5px;
+}
+
+.blue-button {
+  width: 100%;
+  height: 48px;
+  border-radius: 15px;
+  border: none;
+  background-color: #165ef0;
+  color: white;
+}
+
+.blue-button:hover {
+  box-shadow: 0px 0px 20px 5px #007bff60;
+  transform: scale(1.01);
+
+}
+
+.internal-blue-bottom {
+  bottom: 10px;
+  right: 10px;
+  width: 40%;
+}
+
+.standard-setting {
+  width: 100% !important;
+  margin-top: 40px;
+
+}
+.adjust-size {
+  width: 94% !important;
+  margin: 78px auto 0px auto;
+  min-height: 100vh !important;
+
+}
+
+.menuButton {
+  color: white;
+  position: absolute;
+  /* background-color: #8f9197; */
+  padding: 5px;
+  border-radius: 50%;
+  /* transform: rotateZ(-90deg); */
+  user-select: none;
+  display: none;
+  cursor: pointer;
+  left: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .top-menu {
+    width: 100%;
+    /* background-color: #FFA500; */
+    z-index: 4;
+    
+  }
+
+
+  .content {
+    /* background-color: #2d2d74; */
+    /* padding-left: 230px; */
+    width: 100vw;
+    padding: 0px;
+    margin: 0 auto;
+    /* background-color: #165ef0; */
+  }
+
+  .games-container {
+    width: 100%;
+    /* overflow: hidden; */
+    /* padding-left: 230px; */
+    /* background-color: rgba(90, 155, 106, 0); */
+  }
+
+  .top-menu .logo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+    /* width: 310px; */
+    /* background-color: #165ef0; */
+    opacity: 0;
+  }
+
+  .top-menu .logo .span-icon-2 {
+    position: absolute;
+    /* left: 0; */
+    top: 6px;
+    /* bottom: 0px; */
+    right: 157px;
+    transform: rotateZ(-90deg);
+  }
+
+
+  .menuButton {
+    display: block;
+  }
+
+  .span-icon {
+    display: block;
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  .top-menu .external-form label {
+    opacity: 0;
+    display: none;
+  }
+
+  .games-infos {
+    border-radius: 0px 0px 40px 40px;
+    margin-left: 0px;
+  }
+
+  .logo>div {
+    justify-content: center;
+
+  }
+
+  
+  .games-infos {
+    display: none;
+  }
+
+  .main-card-game {
+    display: grid;
+    grid-template-columns: 100%;
+    /* height: 400% ; */
+    overflow: hidden;
+
+}
+  .main-card-game figure img {
+    height: 400px ;
+    width: 600px;
+    transform: translateX(-100px);
+
+}
+
+  .games-info-mobile {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    position: absolute;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    justify-content: space-around;
+    align-items: center;
+    bottom: 0px;
+    border-radius: 0px 0px 40px 40px;
+    height: 50%;
+    padding: 10px 10px ;
+  }
+
+  .cards-container {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    height: 169px;
+    width: 100%;
+    /* background-color: rgb(163, 105, 29); */
+}
+
+}
+
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .top-menu {
+    width: 100%;
+    /* background-color: #FFA500; */
+    justify-content: space-between;
+  }
+
+
+  .external-form {
+    display: none;
+  }
+
+  .internal-form {
+    display: block;
+  }
+
+  .content {
+    /* background-color: #2d2d74; */
+    /* padding-left: 230px; */
+    width: 100vw;
+    padding: 0px;
+    margin: 0 auto;
+    /* background-color: #165ef0; */
+  }
+
+  .games-infos {
+    display: none;
+  }
+
+  .games-info-mobile {
+    width: 100%;
+    display: flex;
+    color: white;
+    position: absolute;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 10px;
+    bottom: 0px;
+    border-radius: 0px 0px 40px 40px;
+    height: 30%;
+  }
+
+  .games-container {
+    background-color: #165ff000;
+
+  }
+
+  .top-menu .logo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding-left: 20px;
+    /* width: 310px; */
+    /* background-color: #165ff02c; */
+    opacity: 0;
+  }
+
+  .top-menu .logo .span-icon-2 {
+    position: absolute;
+    /* left: 0; */
+    top: 6px;
+    /* bottom: 0px; */
+    right: 157px;
+  }
+
+  .main-card-game {
+    display: grid;
+    grid-template-columns: 100%;
+    /* overflow: hidden; */
+    background-color: #165ef0;
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  .span-icon {
+    display: block;
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  .top-menu .external-form {
+    display: none;
+  }
+
+  .logo>div {
+    justify-content: center;
+
+  }
+
+  .cards-container {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    height: 169px;
+    width: 100%;
+    /* background-color: rgb(163, 105, 29); */
+}
+
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .content {
+    /* background-color: #2d2d74; */
+    /* padding-left: 230px; */
+    width: 100vw;
+    padding: 0px;
+    margin: 0 auto;
+    /* background-color: #165ef0; */
+  }
+
+  .main-card-game {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    overflow: hidden;
+    /* background-color: #165ef0; */
+  }
+
+  .games-container {
+    width: 100%;
+    /* padding-left: 230px; */
+    background-color: rgba(17, 184, 184, 0);
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  .span-icon {
+    display: block;
+    cursor: pointer;
+    opacity: 1;
+  }
+
+
+  .top-menu .external-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+
+  .logo>div {
+    justify-content: center;
+
+  }
+
+  .top-menu {
+    width: 100%;
+  }
+
+  .cards-container {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    height: 169px;
+    width: 100%;
+    /* background-color: rgb(163, 105, 29); */
+}
+
+}
+
+
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .nav-container {
+    /* transform: translateX(85%); */
+    animation: closeMenu 0.4s ease-in-out forwards;
+    animation-play-state: running;
+  }
+
+  .open {
+    /* transform: translateX(85%); */
+    animation: openMenu 0.4s ease-in-out forwards;
+    animation-play-state: running;
+  }
+
+  .span-icon {
+    display: block;
+    cursor: pointer;
+    opacity: 1;
+  }
+
+  .main-card-game {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    overflow: hidden;
+    /* background-color: #165ef0; */
+  }
+
+  .content {
+    width: 100vw;
+    padding: 0px;
+    margin: 0 auto;
+  }
+
+  .games-container {
+    width: 100%;
+    /* padding-left: 230px; */
+    background-color: rgba(31, 228, 228, 0);
+  }
+
+  .top-menu {
+    position: relative;
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  .top-menu .external-form {
+    justify-content: center;
+  }
+
+  .logo>div {
+    justify-content: center;
+
+  }
+
+  .top-menu {
+    width: 100%;
+  }
+
+  .adjust-size {
+    width: 94% !important;
+    margin: 0px auto;
+
+  }
+
+
+}

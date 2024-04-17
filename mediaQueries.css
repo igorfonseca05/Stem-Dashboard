@@ -1,0 +1,210 @@
+@media screen and (max-width: 480px) {
+    .main-card-game figure img {
+      border-radius: 40px 40px 0px 0px !important;
+      /* width: 100%; */
+    }
+    .content {
+      /* background-color: #2d2d74; */
+      /* padding-left: 230px; */
+      width: 100vw;
+      padding: 0px;
+      margin: 0 auto;
+      /* background-color: #165ef0; */
+    }
+  
+    .games-container {
+      width: 100%;
+      /* padding-left: 230px; */
+      background-color: rgb(90, 155, 155);
+    }
+  
+    .top-menu .logo {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding-left: 20px;
+      /* width: 310px; */
+      /* background-color: #165ef0; */
+      opacity: 0;
+    }
+  
+    .top-menu .logo .span-icon-2 {
+      position: absolute;
+      /* left: 0; */
+      top: 6px;
+      /* bottom: 0px; */
+      right: 157px;
+      transform: rotateZ(-90deg);
+    }
+  
+    
+    .menuButton{
+      display: block;
+    }
+  
+    .span-icon {
+      display: block;
+      cursor: pointer;
+      opacity: 1;
+    }
+  
+    
+    .top-menu .external-form {
+      display: none;  
+  }
+  }
+  
+  
+  @media screen  and (min-width: 481px) and (max-width: 768px) {
+    .top-menu {
+      /* background-color: #FFA500; */
+      justify-content: space-between;
+    }
+  
+    .external-form {
+      display: none;
+    }
+  
+    .internal-form {
+      display: block;
+    }
+  
+  
+  
+    .content {
+      /* background-color: #2d2d74; */
+      /* padding-left: 230px; */
+      width: 100vw;
+      padding: 0px;
+      margin: 0 auto;
+      /* background-color: #165ef0; */
+    }
+  
+    .games-container {
+      width: 100%;
+      /* padding-left: 230px; */
+      background-color: rgb(90, 155, 155);
+    }
+  
+    .top-menu .logo {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      padding-left: 20px;
+      /* width: 310px; */
+      /* background-color: #165ef0; */
+      opacity: 0;
+    }
+  
+    .top-menu .logo .span-icon-2 {
+      position: absolute;
+      /* left: 0; */
+      top: 6px;
+      /* bottom: 0px; */
+      right: 157px;
+      transform: rotateZ(-90deg);
+    }
+  
+    
+    .menuButton{
+      display: block;
+    }
+  
+    .span-icon {
+      display: block;
+      cursor: pointer;
+      opacity: 1;
+    }
+  
+    
+    .top-menu .external-form {
+      display: none;  
+  }
+  
+  }
+  
+  
+  
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+    .content {
+      /* background-color: #2d2d74; */
+      /* padding-left: 230px; */
+      width: 100vw;
+      padding: 0px;
+      margin: 0 auto;
+      /* background-color: #165ef0; */
+    }
+  
+    .games-container {
+      width: 100%;
+      /* padding-left: 230px; */
+      background-color: rgb(90, 155, 155);
+    }
+    
+    .menuButton{
+      display: block;
+    }
+  
+    .span-icon {
+      display: block;
+      cursor: pointer;
+      opacity: 1;
+    }
+  
+    
+    .top-menu .external-form {
+      justify-content: center;   
+  }
+  
+  }
+  
+  
+  
+  @media screen and (min-width: 992px) and (max-width: 1199px) {
+    .nav-container {
+      /* transform: translateX(85%); */
+      animation: closeMenu 0.4s ease-in-out forwards;
+      animation-play-state: running;
+    }
+  
+    .open {
+      /* transform: translateX(85%); */
+      animation: openMenu 0.4s ease-in-out forwards;
+      animation-play-state: running;
+    }
+  
+    .span-icon {
+      display: block;
+      cursor: pointer;
+      opacity: 1;
+    }
+  
+    .content {
+      /* background-color: #2d2d74; */
+      /* padding-left: 230px; */
+      width: 100vw;
+      padding: 0px;
+      margin: 0 auto;
+      /* background-color: #165ef0; */
+    }
+  
+    .games-container {
+      width: 100%;
+      /* padding-left: 230px; */
+      background-color: rgb(90, 155, 155);
+    }
+  
+    .top-menu {
+      position: relative;
+    }
+  
+    .menuButton{
+      display: block;
+    }
+  
+    .top-menu .external-form {
+      justify-content: center;   
+  }
+  
+  
+  }

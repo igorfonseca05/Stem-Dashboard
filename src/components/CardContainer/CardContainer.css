@@ -1,0 +1,30 @@
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.title h4 {
+    color: #ffffff;
+    font-size: 20px;
+}
+.title a {
+    display: flex;
+    align-items: center;
+    color: #165ef0;
+    text-decoration: none;
+}
+.title a span {
+    margin-left: 10px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    /* flex-wrap: wrap; */
+    height: 169px;
+    width: 100%;
+    /* background-color: antiquewhite; */
+}

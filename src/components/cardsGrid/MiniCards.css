@@ -1,0 +1,52 @@
+
+
+.miniCards {
+    width: 323px;
+    min-width: 200px;
+    margin: 0 auto;
+    /* background-color: #165ef0; */
+    /* height: 170px; */
+    /* overflow: hidden; */
+}
+
+.miniCards figure {
+    /* background-color: aliceblue; */
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+.miniCards figure:hover {
+    transform: scale(1.1);
+    transition:  0.5s ease-in-out;
+}
+
+.miniCards figure img{
+    height: 169px;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.image-footer{
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    /* font-weight: 500; */
+    padding-top: 5px;
+}
+.image-footer p{
+    margin: 0px;
+}
+
+.tag{
+    display: flex;
+    align-items: center;
+    background-color: #26272a;
+    font-size: 14px;
+    padding: 3px 10px;
+    border-radius: 7px;
+}
+.tag span{
+    /* background-color: #26272a; */
+    font-size: 14px;
+    margin-right: 8px;
+}

@@ -1,0 +1,137 @@
+.nav-container {
+    background-color: #18181a;
+    min-height: 100vh;
+    width: var(--size) !important;
+    position: fixed;
+    border-right: 1px solid #8f919738 !important;
+    min-height: 100%;
+    transform: translateX(-110%);
+    animation-play-state: paused;
+    z-index: 10;
+}
+
+.span-icon {
+    color: white;
+    /* position: absolute; */
+    /* top: 20px; */
+    /* left: 20px; */
+    /* width: 60px; */
+    /* right: -15px; */
+    /* background-color: #8f9197; */
+    padding: 5px;
+    border-radius: 50%;
+    /* transition: transform 0.4s ease-in-out; */
+    /* transform: rotateZ(90deg); */
+    user-select: none;
+    display: none;
+    opacity: 0;
+
+}
+
+.nav-container .logo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 0px 0px 25px;
+}
+
+.logo > div {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding-right: 20px;
+    /* background-color: #165ef0; */
+    /* width: 250px; */
+}
+
+.logo img {
+    width: 30%;
+    height: 30%;
+    margin-right: 5px;
+}
+
+.nav-container .sideBar-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-top: 32px;
+    padding: 0px;
+    height: 520px !important;
+    background-color: #18181a !important;
+}
+
+.nav-container .sideBar-ul li {
+    width: 100%;
+}
+
+.nav-container .sideBar-ul .drop:last-child {
+    margin-top: 130px;
+}
+
+.nav-container .sideBar-ul li .main-link-menu {
+    display: flex;
+    align-items: center;
+    text-align: start !important;
+    /* background-color: blueviolet; */
+    width: 77%;
+    color: #8f9197;
+    font-weight: 600;
+}
+
+.nav-container ul li .main-link-menu:hover {
+    color: #165ef0;
+
+}
+
+.nav-container ul li .main-link-menu span {
+    margin-right: 10px;
+    
+}
+
+.open {
+    animation: openMenu 0.4s ease-in-out forwards;
+    /* animation-play-state: paused; */
+}
+
+.close {
+    animation: closeMenu 0.4s ease-in-out forwards;
+    /* animation-play-state: paused; */
+}
+
+.icon_spin {
+    /* animation: spinIcon 0.4s ease-in-out forwards; */
+    transition: transform 0.4s ease-in-out;
+    /* animation-play-state: paused; */
+}
+
+
+@keyframes openMenu {
+    from {
+        transform: translateX(-110%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes closeMenu {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-110%);
+    }
+}
+
+@keyframes spinIcon {
+    from {
+        transform: rotateZ(-90deg);
+    }
+
+    to {
+        transform: rotateZ(90deg);
+    }
+}

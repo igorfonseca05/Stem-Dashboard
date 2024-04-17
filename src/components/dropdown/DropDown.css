@@ -1,0 +1,113 @@
+.arrow-top {
+    margin-left: 80px;
+}
+
+.drop {
+    display: flex;
+    flex-direction: column;
+    /* background-color: aquamarine; */
+}
+
+.drop{
+    position: relative;
+    /* background-color: antiquewhite !important; */
+    color: #8f9197 !important;
+}
+
+.drop a{
+    z-index: 1 !important;
+    /* background-color: rgb(230, 156, 60) !important; */
+}
+
+.dropDown-ul {
+    /* position: absolute; */
+    height: 0px;
+    display: none;
+    background-color: #26272b;
+    /* height: 0px; */
+    animation: close 0.2s ease-in-out ;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 10px;
+}
+
+.active {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    animation: openDrop 0.2s ease-in-out forwards;
+    padding: 0px;
+}
+
+
+.dropDown-ul li {
+    /* display: none; */
+    padding: 10px;
+    /* color: azure; */
+    animation: showLi 1s ease-in-out forwards;
+    /* animation: hideLi 0.2s ease-in-out; */
+}
+.dropDown-ul li:hover {
+    background-color: rgba(240, 248, 255, 0.027);
+}
+
+.dropDown-ul li a {
+    color: #8f9197;
+}
+
+
+.hideLi {
+    padding: 10px;
+    margin: 0px;
+    /* opacity: 0; */
+    /* background-color: bisque; */
+    /* transition: opacity 0.4s ease-in-out; */
+}
+
+
+@keyframes showLi {
+    0% {
+        opacity: 0;
+    } 
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes hideLi {
+    0% {
+        opacity: 1;
+    } 
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes openDrop {
+    from {
+        height: 0px;   
+    }
+    to {
+        /* display: block; */
+        /* height: auto; */
+    }
+
+}
+
+@keyframes close {
+    from {
+        /* display: block; */
+        opacity: 1;
+
+    } to {
+        height: 0px;
+        /* display: none; */
+        opacity: 0;
+        /* visibility: 0; */
+    }
+
+}
