@@ -7,7 +7,7 @@ function Main_card() {
     return (
         <div className='main-card-game'>
             <figure>
-                <img src="game12.png" alt="Sua imagem aqui" />
+                <img src="game12.png" alt="Sua imagem aqui" />    
                 <div className='games-info-mobile'>
                 <div>
                     <h2>Ghost of Tsushima</h2>
