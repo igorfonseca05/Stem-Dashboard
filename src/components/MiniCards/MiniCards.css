@@ -1,12 +1,13 @@
 
 
 .miniCards {
-    width: 323px;
+    width: 100%;
     min-width: 200px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     /* background-color: #165ef0; */
-    /* height: 170px; */
     /* overflow: hidden; */
+    /* height: 250px !important; */
+    /* position: relative; */
 }
 
 .miniCards figure {
@@ -29,12 +30,16 @@
 .image-footer{
     display: flex;
     justify-content: space-between;
+    align-items: start;
     color: #fff;
     /* font-weight: 500; */
     padding-top: 5px;
+    
 }
 .image-footer p{
     margin: 0px;
+    text-overflow: ellipsis;
+    /* white-space: nowrap; */
 }
 
 .tag{

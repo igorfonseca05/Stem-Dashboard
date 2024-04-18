@@ -7,7 +7,7 @@ function DropDown({title, link1, link2, link3, icon}) {
 
     function handleDropDown (e) {
 
-            console.log(e.target)
+            // console.log(e.target)
             const ul = document.querySelector('.dropDown-ul')
 
             // console.log(ul.children[0].clientHeight)
@@ -16,7 +16,7 @@ function DropDown({title, link1, link2, link3, icon}) {
             ul.style.height = `${ul.children.length * ul.children[0].clientHeight + 25}px`
 
            ul.addEventListener('transitionend', (e) => {
-            console.log('oi')
+            // console.log('oi')
            })
           
             const lis = [...ul.children]

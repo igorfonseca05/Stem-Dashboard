@@ -1,10 +1,11 @@
 import React from 'react'
 
 import "./CardContainer.css"
-import MiniCards from '../cardsGrid/MiniCards'
+import MiniCards from '../MiniCards/MiniCards'
 
 
-function CardContainer({title, game1, tag1}) {
+function CardContainer({title, dados}) {
+
   return (
     <div className='standard-setting'>
       <div className='title'>
@@ -12,10 +13,10 @@ function CardContainer({title, game1, tag1}) {
        <a href="#">See all <span className='material-symbols-outlined'>chevron_right</span></a>
       </div>
         <div className="cards-container">
-          <MiniCards game='F11 22' tag='Racing' url='f1.jpg'/>
-          <MiniCards game='Call of Duty: Modern Warfare' tag='Action' url='call.jpg'/>
-          <MiniCards game='Fifa 22' tag='Sports' url='fifa-22.webp'/>
-              
+          {dados?.map(({game, tag, url}, i) => (
+            <MiniCards key={i} game={`${game}`} tag={`${tag}`} url={`${url}`}/>
+     
+          ))}
         </div>
     </div>
   )

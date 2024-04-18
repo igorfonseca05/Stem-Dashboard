@@ -77,6 +77,7 @@ li a {
   margin-top: 40px;
 
 }
+
 .adjust-size {
   width: 94% !important;
   margin: 78px auto 0px auto;
@@ -102,7 +103,7 @@ li a {
     width: 100%;
     /* background-color: #FFA500; */
     z-index: 4;
-    
+
   }
 
 
@@ -119,7 +120,7 @@ li a {
     width: 100%;
     /* overflow: hidden; */
     /* padding-left: 230px; */
-    /* background-color: rgba(90, 155, 106, 0); */
+    background-color: rgba(90, 155, 106, 0);
   }
 
   .top-menu .logo {
@@ -167,7 +168,7 @@ li a {
 
   }
 
-  
+
   .games-infos {
     display: none;
   }
@@ -178,13 +179,14 @@ li a {
     /* height: 400% ; */
     overflow: hidden;
 
-}
-  .main-card-game figure img {
-    height: 400px ;
-    width: 600px;
-    transform: translateX(-100px);
+  }
 
-}
+  .main-card-game figure img {
+    height: 400px;
+    width: 600px;
+    transform: translateX(-150px);
+
+  }
 
   .games-info-mobile {
     width: 100%;
@@ -198,17 +200,13 @@ li a {
     bottom: 0px;
     border-radius: 0px 0px 40px 40px;
     height: 50%;
-    padding: 10px 10px ;
+    padding: 10px 10px;
   }
 
-  .cards-container {
-    display: flex;
-    justify-content: start;
-    flex-wrap: wrap;
-    height: 169px;
+  .miniCards {
     width: 100%;
-    /* background-color: rgb(163, 105, 29); */
-}
+    margin: 0 auto;
+  }
 
 }
 
@@ -305,14 +303,8 @@ li a {
 
   }
 
-  .cards-container {
-    display: flex;
-    justify-content: start;
-    flex-wrap: wrap;
-    height: 169px;
-    width: 100%;
-    /* background-color: rgb(163, 105, 29); */
-}
+
+
 
 }
 
@@ -337,8 +329,9 @@ li a {
 
   .games-container {
     width: 100%;
+    background-color: rgba(0, 255, 255, 0);
     /* padding-left: 230px; */
-    background-color: rgba(17, 184, 184, 0);
+    /* background-color: rgba(17, 184, 184, 0); */
   }
 
   .menuButton {
@@ -368,17 +361,7 @@ li a {
     width: 100%;
   }
 
-  .cards-container {
-    display: flex;
-    justify-content: start;
-    flex-wrap: wrap;
-    height: 169px;
-    width: 100%;
-    /* background-color: rgb(163, 105, 29); */
 }
-
-}
-
 
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
@@ -445,6 +428,5 @@ li a {
     margin: 0px auto;
 
   }
-
 
 }

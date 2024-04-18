@@ -20,11 +20,14 @@
 }
 
 .cards-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 24px;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+    /* justify-content: space-between; */
+    gap: 20px;
+    /* margin-top: 20px; */
     /* flex-wrap: wrap; */
-    height: 169px;
+    /* height: 169px; */
     width: 100%;
-    /* background-color: antiquewhite; */
+    /* background-color: rgb(126, 79, 18); */
 }
