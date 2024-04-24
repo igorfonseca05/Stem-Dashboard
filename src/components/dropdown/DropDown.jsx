@@ -31,10 +31,12 @@ function DropDown({title, link1, link2, link3, icon}) {
     return (
         <div className='drop'>
             <li>
-                <a className='main-link-menu' href="#" onClick={(e) => {handleDropDown(e)}}>
-                    <span className="material-symbols-outlined">
-                        {icon}
-                    </span>{title}
+                <a className='main-link-menu' id='drop-link' href="#" onClick={(e) => {handleDropDown(e)}}>
+                    <div className='icon-title-container'>
+                        <span className="material-symbols-outlined">
+                            {icon}
+                        </span>{title}
+                    </div>
                     <span className="material-symbols-outlined arrow-top">
                         expand_less
                     </span>

@@ -4,7 +4,10 @@
 
   --size: 260px;
   --topPaddingMenu: 10px;
-  --border-radius: 40px
+  --border-radius: 40px;
+
+  --transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  --cubic: cubic-bezier(0.68, -0.55, 0.27, 1.55)
 }
 
 html,
@@ -118,8 +121,7 @@ li a {
 
   .games-container {
     width: 100%;
-    /* overflow: hidden; */
-    /* padding-left: 230px; */
+    padding-left: 0px;
     background-color: rgba(90, 155, 106, 0);
   }
 
@@ -256,6 +258,7 @@ li a {
 
   .games-container {
     background-color: #165ff000;
+    padding-left: 0px;
 
   }
 
@@ -281,7 +284,7 @@ li a {
     display: grid;
     grid-template-columns: 100%;
     /* overflow: hidden; */
-    background-color: #165ef0;
+    background-color: #165ff000;
   }
 
   .menuButton {
@@ -330,8 +333,7 @@ li a {
   .games-container {
     width: 100%;
     background-color: rgba(0, 255, 255, 0);
-    /* padding-left: 230px; */
-    /* background-color: rgba(17, 184, 184, 0); */
+    padding-left: 0px;
   }
 
   .menuButton {
@@ -398,7 +400,7 @@ li a {
 
   .games-container {
     width: 100%;
-    /* padding-left: 230px; */
+    padding-left: 0px;
     background-color: rgba(31, 228, 228, 0);
   }
 

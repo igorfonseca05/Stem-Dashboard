@@ -8,6 +8,8 @@
     transform: translateX(-110%);
     animation-play-state: paused;
     z-index: 10;
+    top: 0;
+    left: 0;
 }
 
 .span-icon {
@@ -63,6 +65,13 @@
 
 .nav-container .sideBar-ul li {
     width: 100%;
+    /* background-color: aquamarine; */
+    height: 28px;
+}
+
+.icon-title-container{
+    display: flex;
+    align-items: center;
 }
 
 .nav-container .sideBar-ul .drop:last-child {
@@ -78,9 +87,12 @@
     color: #8f9197;
     font-weight: 600;
 }
+.nav-container .sideBar-ul li #drop-link {
+    justify-content: space-between;
+}
 
 .nav-container ul li .main-link-menu:hover {
-    color: #165ef0;
+    color: #2970fd;
 
 }
 

@@ -5,10 +5,7 @@ section {
     /* background-color: bisque; */
 }
 
-.main-page {
-    display: flex;
-    /* background-color: rgb(255, 12, 12); */
-}
+
 
 
 .side-bar {
@@ -19,15 +16,3 @@ section {
     background-color: aqua;
     overflow: hidden;
 } */
-
-.content {
-    /* background-color: #2d2d74; */
-    /* padding-left: 230px; */
-    width: 100vw;
-    padding-left: var(--size);
-    margin: 0 auto;
-    min-height: fit-content;
-    /* overflow: hidden; */
-    /* display: none; */
-    max-width: 1400px;
-}
