@@ -26,12 +26,14 @@
     height: 100%;
     /* display: none; */
     width: 100%;
+    display: none;
     z-index: 2;
     /* opacity: 0; */
     /* transition: opacity 0.3s var(--cubic); */
 }
 
 .text-ghost{
+    display: none;
     padding: 20px;
     position: absolute;
     color: white;

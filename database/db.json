@@ -1,0 +1,1153 @@
+[
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa10a"
+        },
+        "name": "Grand Theft Auto V",
+        "description": "Um jogo de ação e aventura jogado em uma perspectiva de terceira pessoa ou primeira pessoa.",
+        "tags": [
+            "Ação",
+            "Mundo Aberto",
+            "Crime"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/",
+        "price": "R$ 29.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa10b"
+        },
+        "name": "Rust",
+        "description": "Um jogo de sobrevivência apenas multiplayer.",
+        "tags": [
+            "Sobrevivência",
+            "Mundo Aberto",
+            "Multiplayer"
+        ],
+        "platform": [
+            "PC"
+        ],
+        "steam_link": "https://store.steampowered.com/app/252490/Rust/",
+        "price": "R$ 19.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa10c"
+        },
+        "name": "PlayerUnknown's Battlegrounds",
+        "description": "Um jogo de batalha real online multiplayer.",
+        "tags": [
+            "Batalha Real",
+            "Multiplayer",
+            "Tiro"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "https://store.steampowered.com/app/578080/PLAYERUNKNOWNS_BATTLEGROUNDS/",
+        "price": "R$ 29.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa10d"
+        },
+        "name": "Destiny 2",
+        "description": "Um jogo de tiro em primeira pessoa multiplayer online.",
+        "tags": [
+            "Tiro",
+            "Multiplayer",
+            "Ficção Científica"
+        ],
+        "platform": [
+            "PC"
+        ],
+        "steam_link": "https://store.steampowered.com/app/1085660/Destiny_2/",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa10e"
+        },
+        "name": "FIFA 22",
+        "description": "Um jogo de simulação de futebol.",
+        "tags": [
+            "Esporte",
+            "Simulação",
+            "Futebol"
+        ],
+        "platform": [
+            "PC"
+        ],
+        "steam_link": "",
+        "price": "R$ 59.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa10f"
+        },
+        "name": "F1 2022",
+        "description": "O jogo oficial do Campeonato Mundial de Fórmula 1 da FIA 2022.",
+        "tags": [
+            "Corrida",
+            "Simulação",
+            "Esportes"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 199.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa110"
+        },
+        "name": "Call of Duty: Modern Warfare",
+        "description": "Um jogo de tiro em primeira pessoa que retrata conflitos modernos.",
+        "tags": [
+            "Tiro",
+            "Multiplayer",
+            "Guerra"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 249.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa111"
+        },
+        "name": "Death Stranding",
+        "description": "Um jogo de ação e aventura em um mundo pós-apocalíptico.",
+        "tags": [
+            "Ação",
+            "Aventura",
+            "Ficção Científica"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation"
+        ],
+        "steam_link": "",
+        "price": "R$ 79.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa112"
+        },
+        "name": "Red Dead Redemption 2",
+        "description": "Um épico conto de vida no coração impiedoso da América.",
+        "tags": [
+            "Ação",
+            "Aventura",
+            "Mundo Aberto"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 119.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa113"
+        },
+        "name": "Assassin's Creed Valhalla",
+        "description": "Viva a saga de Eivor, um lendário guerreiro viking em busca de glória.",
+        "tags": [
+            "Ação",
+            "Aventura",
+            "Histórico"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 179.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa114"
+        },
+        "name": "Cyberpunk 2077",
+        "description": "Entre no mundo de Cyberpunk 2077 - um RPG de mundo aberto de aventura em uma metrópole obcecada pelo poder, glamour e a modificação do corpo.",
+        "tags": [
+            "RPG",
+            "Ação",
+            "Mundo Aberto"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 199.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa115"
+        },
+        "name": "The Elder Scrolls V: Skyrim Special Edition",
+        "description": "Ganhe o jogo premiado e os três conteúdos adicionais oficiais: Dawnguard, Hearthfire e Dragonborn.",
+        "tags": [
+            "RPG",
+            "Aventura",
+            "Fantasia"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 99.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa116"
+        },
+        "name": "The Witcher 3: Wild Hunt",
+        "description": "Um RPG de mundo aberto cheio de escolhas impactantes e consequências significativas.",
+        "tags": [
+            "RPG",
+            "Ação",
+            "Fantasia"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 79.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa117"
+        },
+        "name": "Among Us",
+        "description": "Um jogo online de festa e traição para 4-10 jogadores!",
+        "tags": [
+            "Multiplayer",
+            "Festa",
+            "Social Deduction"
+        ],
+        "platform": [
+            "PC",
+            "Android",
+            "iOS"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa118"
+        },
+        "name": "Valorant",
+        "description": "Um jogo tático de tiro em primeira pessoa 5v5 onde a precisão é letal.",
+        "tags": [
+            "Tiro",
+            "Multiplayer",
+            "Competitivo"
+        ],
+        "platform": [
+            "PC"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa119"
+        },
+        "name": "Minecraft",
+        "description": "Crie, explore e sobreviva em seu próprio mundo Minecraft.",
+        "tags": [
+            "Sandbox",
+            "Construção",
+            "Aventura"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox",
+            "Nintendo Switch"
+        ],
+        "steam_link": "",
+        "price": "R$ 99.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa11a"
+        },
+        "name": "Fortnite",
+        "description": "Um jogo de batalha real onde você pode construir, lutar e competir para ser o último sobrevivente.",
+        "tags": [
+            "Batalha Real",
+            "Construção",
+            "Multiplayer"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox",
+            "Nintendo Switch"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa11b"
+        },
+        "name": "Apex Legends",
+        "description": "Um jogo de batalha real onde lendas lutam pela glória e a riqueza em uma fronteira caótica.",
+        "tags": [
+            "Batalha Real",
+            "Tiro",
+            "Multiplayer"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa11c"
+        },
+        "name": "Counter-Strike: Global Offensive",
+        "description": "Um jogo de tiro em primeira pessoa multijogador.",
+        "tags": [
+            "Tiro",
+            "Competitivo",
+            "Estratégia"
+        ],
+        "platform": [
+            "PC"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa11d"
+        },
+        "name": "Genshin Impact",
+        "description": "Um RPG de ação de mundo aberto com gráficos estilo anime.",
+        "tags": [
+            "RPG",
+            "Ação",
+            "Aventura"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Android",
+            "iOS"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa11e"
+        },
+        "name": "Rainbow Six Siege",
+        "description": "Um jogo de tiro tático em primeira pessoa 5v5.",
+        "tags": [
+            "Tiro",
+            "Multiplayer",
+            "Estratégia"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 59.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa11f"
+        },
+        "name": "Overwatch",
+        "description": "Um jogo de tiro em equipe altamente estilizado.",
+        "tags": [
+            "Tiro",
+            "Multiplayer",
+            "Hero Shooter"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 99.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa120"
+        },
+        "name": "The Sims 4",
+        "description": "Controle a mente, o corpo e o coração dos seus Sims e brinque com a vida no The Sims 4.",
+        "tags": [
+            "Simulação",
+            "Construção",
+            "Vida Virtual"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 99.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa121"
+        },
+        "name": "Among Us",
+        "description": "Um jogo online de festa e traição para 4-10 jogadores!",
+        "tags": [
+            "Multiplayer",
+            "Festa",
+            "Social Deduction"
+        ],
+        "platform": [
+            "PC",
+            "Android",
+            "iOS"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa122"
+        },
+        "name": "Valorant",
+        "description": "Um jogo tático de tiro em primeira pessoa 5v5 onde a precisão é letal.",
+        "tags": [
+            "Tiro",
+            "Multiplayer",
+            "Competitivo"
+        ],
+        "platform": [
+            "PC"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa123"
+        },
+        "name": "Minecraft",
+        "description": "Crie, explore e sobreviva em seu próprio mundo Minecraft.",
+        "tags": [
+            "Sandbox",
+            "Construção",
+            "Aventura"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox",
+            "Nintendo Switch"
+        ],
+        "steam_link": "",
+        "price": "R$ 99.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa124"
+        },
+        "name": "Fortnite",
+        "description": "Um jogo de batalha real onde você pode construir, lutar e competir para ser o último sobrevivente.",
+        "tags": [
+            "Batalha Real",
+            "Construção",
+            "Multiplayer"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox",
+            "Nintendo Switch"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa125"
+        },
+        "name": "Apex Legends",
+        "description": "Um jogo de batalha real onde lendas lutam pela glória e a riqueza em uma fronteira caótica.",
+        "tags": [
+            "Batalha Real",
+            "Tiro",
+            "Multiplayer"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa126"
+        },
+        "name": "Counter-Strike: Global Offensive",
+        "description": "Um jogo de tiro em primeira pessoa multijogador.",
+        "tags": [
+            "Tiro",
+            "Competitivo",
+            "Estratégia"
+        ],
+        "platform": [
+            "PC"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa127"
+        },
+        "name": "Genshin Impact",
+        "description": "Um RPG de ação de mundo aberto com gráficos estilo anime.",
+        "tags": [
+            "RPG",
+            "Ação",
+            "Aventura"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Android",
+            "iOS"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa128"
+        },
+        "name": "Rainbow Six Siege",
+        "description": "Um jogo de tiro tático em primeira pessoa 5v5.",
+        "tags": [
+            "Tiro",
+            "Multiplayer",
+            "Estratégia"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 59.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa129"
+        },
+        "name": "Overwatch",
+        "description": "Um jogo de tiro em equipe altamente estilizado.",
+        "tags": [
+            "Tiro",
+            "Multiplayer",
+            "Hero Shooter"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 99.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa12a"
+        },
+        "name": "The Sims 4",
+        "description": "Controle a mente, o corpo e o coração dos seus Sims e brinque com a vida no The Sims 4.",
+        "tags": [
+            "Simulação",
+            "Construção",
+            "Vida Virtual"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 99.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa12b"
+        },
+        "name": "Among Us",
+        "description": "Um jogo online de festa e traição para 4-10 jogadores!",
+        "tags": [
+            "Multiplayer",
+            "Festa",
+            "Social Deduction"
+        ],
+        "platform": [
+            "PC",
+            "Android",
+            "iOS"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa12c"
+        },
+        "name": "Valorant",
+        "description": "Um jogo tático de tiro em primeira pessoa 5v5 onde a precisão é letal.",
+        "tags": [
+            "Tiro",
+            "Multiplayer",
+            "Competitivo"
+        ],
+        "platform": [
+            "PC"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa12d"
+        },
+        "name": "Minecraft",
+        "description": "Crie, explore e sobreviva em seu próprio mundo Minecraft.",
+        "tags": [
+            "Sandbox",
+            "Construção",
+            "Aventura"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox",
+            "Nintendo Switch"
+        ],
+        "steam_link": "",
+        "price": "R$ 99.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa12e"
+        },
+        "name": "Fortnite",
+        "description": "Um jogo de batalha real onde você pode construir, lutar e competir para ser o último sobrevivente.",
+        "tags": [
+            "Batalha Real",
+            "Construção",
+            "Multiplayer"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox",
+            "Nintendo Switch"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa12f"
+        },
+        "name": "Apex Legends",
+        "description": "Um jogo de batalha real onde lendas lutam pela glória e a riqueza em uma fronteira caótica.",
+        "tags": [
+            "Batalha Real",
+            "Tiro",
+            "Multiplayer"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa130"
+        },
+        "name": "Counter-Strike: Global Offensive",
+        "description": "Um jogo de tiro em primeira pessoa multijogador.",
+        "tags": [
+            "Tiro",
+            "Competitivo",
+            "Estratégia"
+        ],
+        "platform": [
+            "PC"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa131"
+        },
+        "name": "Genshin Impact",
+        "description": "Um RPG de ação de mundo aberto com gráficos estilo anime.",
+        "tags": [
+            "RPG",
+            "Ação",
+            "Aventura"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Android",
+            "iOS"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa132"
+        },
+        "name": "Rainbow Six Siege",
+        "description": "Um jogo de tiro tático em primeira pessoa 5v5.",
+        "tags": [
+            "Tiro",
+            "Multiplayer",
+            "Estratégia"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 59.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa133"
+        },
+        "name": "Overwatch",
+        "description": "Um jogo de tiro em equipe altamente estilizado.",
+        "tags": [
+            "Tiro",
+            "Multiplayer",
+            "Hero Shooter"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 99.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa134"
+        },
+        "name": "The Sims 4",
+        "description": "Controle a mente, o corpo e o coração dos seus Sims e brinque com a vida no The Sims 4.",
+        "tags": [
+            "Simulação",
+            "Construção",
+            "Vida Virtual"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 99.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa135"
+        },
+        "name": "Among Us",
+        "description": "Um jogo online de festa e traição para 4-10 jogadores!",
+        "tags": [
+            "Multiplayer",
+            "Festa",
+            "Social Deduction"
+        ],
+        "platform": [
+            "PC",
+            "Android",
+            "iOS"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa136"
+        },
+        "name": "Valorant",
+        "description": "Um jogo tático de tiro em primeira pessoa 5v5 onde a precisão é letal.",
+        "tags": [
+            "Tiro",
+            "Multiplayer",
+            "Competitivo"
+        ],
+        "platform": [
+            "PC"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa137"
+        },
+        "name": "Minecraft",
+        "description": "Crie, explore e sobreviva em seu próprio mundo Minecraft.",
+        "tags": [
+            "Sandbox",
+            "Construção",
+            "Aventura"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox",
+            "Nintendo Switch"
+        ],
+        "steam_link": "",
+        "price": "R$ 99.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa138"
+        },
+        "name": "Fortnite",
+        "description": "Um jogo de batalha real onde você pode construir, lutar e competir para ser o último sobrevivente.",
+        "tags": [
+            "Batalha Real",
+            "Construção",
+            "Multiplayer"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox",
+            "Nintendo Switch"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa139"
+        },
+        "name": "Apex Legends",
+        "description": "Um jogo de batalha real onde lendas lutam pela glória e a riqueza em uma fronteira caótica.",
+        "tags": [
+            "Batalha Real",
+            "Tiro",
+            "Multiplayer"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa13a"
+        },
+        "name": "Counter-Strike: Global Offensive",
+        "description": "Um jogo de tiro em primeira pessoa multijogador.",
+        "tags": [
+            "Tiro",
+            "Competitivo",
+            "Estratégia"
+        ],
+        "platform": [
+            "PC"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa13b"
+        },
+        "name": "Genshin Impact",
+        "description": "Um RPG de ação de mundo aberto com gráficos estilo anime.",
+        "tags": [
+            "RPG",
+            "Ação",
+            "Aventura"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Android",
+            "iOS"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa13c"
+        },
+        "name": "Rainbow Six Siege",
+        "description": "Um jogo de tiro tático em primeira pessoa 5v5.",
+        "tags": [
+            "Tiro",
+            "Multiplayer",
+            "Estratégia"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 59.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa13d"
+        },
+        "name": "Overwatch",
+        "description": "Um jogo de tiro em equipe altamente estilizado.",
+        "tags": [
+            "Tiro",
+            "Multiplayer",
+            "Hero Shooter"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 99.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa13e"
+        },
+        "name": "The Sims 4",
+        "description": "Controle a mente, o corpo e o coração dos seus Sims e brinque com a vida no The Sims 4.",
+        "tags": [
+            "Simulação",
+            "Construção",
+            "Vida Virtual"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "R$ 99.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa13f"
+        },
+        "name": "Among Us",
+        "description": "Um jogo online de festa e traição para 4-10 jogadores!",
+        "tags": [
+            "Multiplayer",
+            "Festa",
+            "Social Deduction"
+        ],
+        "platform": [
+            "PC",
+            "Android",
+            "iOS"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa140"
+        },
+        "name": "Valorant",
+        "description": "Um jogo tático de tiro em primeira pessoa 5v5 onde a precisão é letal.",
+        "tags": [
+            "Tiro",
+            "Multiplayer",
+            "Competitivo"
+        ],
+        "platform": [
+            "PC"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa141"
+        },
+        "name": "Minecraft",
+        "description": "Crie, explore e sobreviva em seu próprio mundo Minecraft.",
+        "tags": [
+            "Sandbox",
+            "Construção",
+            "Aventura"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox",
+            "Nintendo Switch"
+        ],
+        "steam_link": "",
+        "price": "R$ 99.99"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa142"
+        },
+        "name": "Fortnite",
+        "description": "Um jogo de batalha real onde você pode construir, lutar e competir para ser o último sobrevivente.",
+        "tags": [
+            "Batalha Real",
+            "Construção",
+            "Multiplayer"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox",
+            "Nintendo Switch"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa143"
+        },
+        "name": "Apex Legends",
+        "description": "Um jogo de batalha real onde lendas lutam pela glória e a riqueza em uma fronteira caótica.",
+        "tags": [
+            "Batalha Real",
+            "Tiro",
+            "Multiplayer"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa144"
+        },
+        "name": "Counter-Strike: Global Offensive",
+        "description": "Um jogo de tiro em primeira pessoa multijogador.",
+        "tags": [
+            "Tiro",
+            "Competitivo",
+            "Estratégia"
+        ],
+        "platform": [
+            "PC"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "6628fe7f64f1256698dfa145"
+        },
+        "name": "Genshin Impact",
+        "description": "Um RPG de ação de mundo aberto com gráficos estilo anime.",
+        "tags": [
+            "RPG",
+            "Ação",
+            "Aventura"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Android",
+            "iOS"
+        ],
+        "steam_link": "",
+        "price": "Grátis"
+    },
+    {
+        "_id": {
+            "$oid": "66293f5b64e70f742b9acd42"
+        },
+        "name": "Marvel DC",
+        "description": "This is a new game added to the collection.",
+        "tags": [
+            "New",
+            "Exciting",
+            "Adventure"
+        ],
+        "platform": [
+            "PC",
+            "PlayStation",
+            "Xbox"
+        ],
+        "steam_link": "https://store.steampowered.com/app/NEW_GAME/",
+        "price": "R$ 250.00",
+        "createdAt": {
+            "$date": "2024-04-24T17:20:19.463Z"
+        },
+        "__v": 0
+    }
+]

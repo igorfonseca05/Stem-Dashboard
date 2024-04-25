@@ -8,7 +8,14 @@ import video from "../../assets/videos/Ghost of Tsushima Director's Cut - Announ
 
 import YouTubePlayer from '../youtubePlayer/Youtube'
 
+import { useFetch } from '../../hooks/useFetch'
+
 function Main_card() {
+
+    const {data} = useFetch('https://game-api-nwhu-ofoop6t1h-igorfonseca05s-projects.vercel.app/')
+
+    console.log(data)
+
     let animateButton
 
     const [showVideo, setShowVideo] = useState(false)
