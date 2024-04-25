@@ -6,9 +6,11 @@ import MiniCards from '../MiniCards/MiniCards'
 
 function CardContainer({title, dados}) {
 
+  // console.log(dados)
+
   return (
     <div className='standard-setting'>
-      <div className='title'>
+      {/* <div className='title'>
       <h4>{title}</h4>
        <a href="#">See all <span className='material-symbols-outlined'>chevron_right</span></a>
       </div>
@@ -17,7 +19,7 @@ function CardContainer({title, dados}) {
             <MiniCards key={i} game={`${game}`} tag={`${tag}`} url={`${url}`}/>
      
           ))}
-        </div>
+        </div> */}
     </div>
   )
 }

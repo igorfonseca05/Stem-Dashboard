@@ -1,16 +1,43 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 
 import CardContainer from '../../components/CardContainer/CardContainer'
 import Main_card from '../../components/main-card/Main_card'
 
 import HorizontalMenu from '../../components/horizontalMenu/HorizontalMenu'
 
-
+import { useFetch } from '../../hooks/useFetch'
 
 import "./Home.css"
 
 function Home() {
+
+    const { data } = useFetch("http://localhost:3000/games")
+
+    // console.log(data)
+
+    let categories;
+
+    // Nessa função estou obtendo valores distintos de categorias
+    function getCategories() {
+        categories = new Set()
+
+        data?.map(({ category }) => {
+            categories.add(category)
+        })
+    }
+    getCategories()
+
+    // console.log([...categories])
+
+
+    function createObj () {
+        return data?.filter((item, index) => item.category === [...categories][index] )
+    }
+
+    const arr = createObj()
+
+    // console.log(arr)
 
     const games_list_one = [
         { game: "F11 22", tag: 'Racing', url: 'f1.jpg' },
@@ -31,14 +58,15 @@ function Home() {
     ]
 
     return (
-            <section className='games-container adjust-size' style={{ paddingTop: "15px" }} >
-                <Main_card />
-                {/* <h4 className='adjust-size' style={{ color: "#fff" }}>Most Popular</h4> */}
-                <CardContainer title='Most Popular' dados={games_list_one} />
-                <CardContainer title='Wishlist' dados={games_list_two} />
-                <CardContainer title='Featured' dados={games_list_three} />
+        <section className='games-container adjust-size' style={{ paddingTop: "15px" }} >
+            <Main_card />
+            {
+                [...categories].map((category, index) => (
+                    <CardContainer title={category} dados={games_list_one} key={index} />
+                ))
+            }
 
-            </section>
+        </section>
         // <section className='content'>
         //     {/* <HorizontalMenu /> */}
 

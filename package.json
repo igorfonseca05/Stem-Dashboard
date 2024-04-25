@@ -11,10 +11,11 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "server": "json-server --watch data/db.json"
+    "server": "json-server --watch data/ingles.json"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
+    "json-server": "^1.0.0-alpha.23",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3"
@@ -28,7 +29,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
     "gh-pages": "^6.1.1",
-    "json-server": "^0.17.0",
     "vite": "^5.2.0"
   }
 }

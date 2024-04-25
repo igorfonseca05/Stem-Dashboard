@@ -1,0 +1,336 @@
+{ "games": [
+    {
+      "id": "1",
+      "name": "Ghost of Tsushima",
+      "description": "Um jogo eletrônico de ação e aventura desenvolvido pela Sucker Punch Productions.",
+      "tags": ["Ação", "Aventura", "Mundo Aberto"],
+      "platform": ["PlayStation"],
+      "steam_link": "R$ 99.99",
+      "price": "",
+      "image_path": "game12.png",
+      "category": "Multiplayer"
+    },
+    {
+      "id": "2",
+      "name": "F1 22",
+      "description": "Um jogo de corrida emocionante com os carros e pilotos oficiais da temporada.",
+      "tags": ["Corrida", "Esporte", "Simulação"],
+      "platform": ["PC", "PlayStation", "Xbox"],
+      "steam_link": "https://store.steampowered.com/app/abcdef/F1_22/",
+      "price": "R$ 199.99",
+      "image_path": "f1.jpg",
+      "category": "Best Rated"
+
+    },
+    {
+      "id": "3",
+      "name": "Call of Duty: Modern Warfare",
+      "description": "Um jogo de tiro em primeira pessoa que serve como a décima sexta edição da série Call of Duty.",
+      "tags": ["Tiro", "Multijogador", "Guerra"],
+      "platform": ["PC", "PlayStation", "Xbox"],
+      "steam_link": "https://store.steampowered.com/app/12345/Call_of_Duty_Modern_Warfare/",
+      "price": "R$ 199.99",
+      "image_path": "call.jpg",
+      "category": "Popular"
+    },
+    {
+      "id": "4",
+      "name": "Fifa 22",
+      "description": "Um jogo de simulação de futebol desenvolvido e publicado pela Electronic Arts.",
+      "tags": ["Esporte", "Futebol", "Multijogador"],
+      "platform": ["PC", "PlayStation", "Xbox"],
+      "steam_link": "https://store.steampowered.com/app/54321/Fifa_22/",
+      "price": "R$ 249.99",
+      "image_path": "fifa-22.webp",
+      "category": "New Releases"
+    },
+    {
+      "id": "5",
+      "name": "Grand Theft Auto V",
+      "description": "Um jogo de ação e aventura jogado em uma perspectiva de terceira pessoa ou primeira pessoa.",
+      "tags": ["Ação", "Mundo Aberto", "Crime"],
+      "platform": ["PC", "PlayStation", "Xbox"],
+      "steam_link": "https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/",
+      "price": "R$ 29.99",
+      "image_path": "gta.webp",
+      "category": "Classics"
+    },
+    {
+      "id": "6",
+      "name": "Death Stranding",
+      "description": "Um jogo eletrônico de ação em mundo aberto desenvolvido pela Kojima Productions.",
+      "tags": ["Aventura", "Mundo Aberto", "Ficção Científica"],
+      "platform": ["PC", "PlayStation"],
+      "steam_link": "https://store.steampowered.com/app/98765/Death_Stranding/",
+      "price": "R$ 119.99",
+      "image_path": "dead.jpg",
+      "category": "Wishlist"
+    },
+    {
+      "id": "7",
+      "name": "Red Dead Redemption 2",
+      "description": "Um jogo eletrônico de ação-aventura desenvolvido e publicado pela Rockstar Games.",
+      "tags": ["Ação", "Mundo Aberto", "Velho Oeste"],
+      "platform": ["PC", "PlayStation", "Xbox"],
+      "steam_link": "https://store.steampowered.com/app/123456/Red_Dead_Redemption_2/",
+      "price": "R$ 199.99",
+      "image_path": "red.jfif",
+      "category": "Popular"
+    },
+    {
+      "id": "8",
+      "name": "Rust",
+      "description": "Um jogo eletrônico de sobrevivência desenvolvido e publicado pela Facepunch Studios.",
+      "tags": ["Sobrevivência", "Multijogador", "Construção"],
+      "platform": ["PC"],
+      "steam_link": "https://store.steampowered.com/app/252490/Rust/",
+      "price": "R$ 59.99",
+      "image_path": "rust.jpg",
+      "category": "Multiplayer"
+    },
+    {
+      "id": "9",
+      "name": "PUBG: BATTLEGROUNDS",
+      "description": "Um jogo eletrônico de battle royale desenvolvido e publicado pela PUBG Corporation.",
+      "tags": ["Battle Royale", "Multijogador", "Sobrevivência"],
+      "platform": ["PC", "PlayStation", "Xbox"],
+      "steam_link": "https://store.steampowered.com/app/1234567/PUBG_BATTLEGROUNDS/",
+      "price": "R$ 55.99",
+      "image_path": "battle.jpg",
+      "category": "New Releases"
+    },
+    {
+      "id": "10",
+      "name": "Destiny 2",
+      "description": "Um jogo eletrônico multijogador de tiro em primeira pessoa desenvolvido pela Bungie.",
+      "tags": ["Tiro", "Ação", "Ficção Científica"],
+      "platform": ["PC", "PlayStation", "Xbox"],
+      "steam_link": "https://store.steampowered.com/app/12345678/Destiny_2/",
+      "price": "R$ 39.99",
+      "image_path": "destiny.jpg",
+      "category": "Best Rated"
+    }, 
+    {
+      "id": "11",
+      "name": "The Witcher 3: Wild Hunt",
+      "description": "Um RPG de ação de mundo aberto baseado na série de livros de fantasia do escritor polonês Andrzej Sapkowski.",
+      "tags": ["RPG", "Aventura", "Mundo Aberto"],
+      "platform": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
+      "steam_link": "https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/",
+      "price": "R$ 99.99",
+      "image_path": "photo-id-11.jpg",
+      "category": "Wishlist"
+    },
+    {
+      "id": "12",
+      "name": "Cyberpunk 2077",
+      "description": "Um jogo de RPG de ação de mundo aberto ambientado em Night City, uma megalópole obcecada por poder, glamour e modificação corporal.",
+      "tags": ["RPG", "Ação", "Mundo Aberto"],
+      "platform": ["PC", "PlayStation", "Xbox", "Google Stadia"],
+      "steam_link": "https://store.steampowered.com/app/1091500/Cyberpunk_2077/",
+      "price": "R$ 199.99",
+      "image_path": "photo-id-12.jpg",
+      "category": "Classics"
+    },
+    {
+      "id": "13",
+      "name": "DOOM Eternal",
+      "description": "Um jogo de tiro em primeira pessoa onde os jogadores assumem o papel do Doom Slayer para combater as forças do inferno.",
+      "tags": ["Tiro", "Ação", "FPS"],
+      "platform": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
+      "steam_link": "https://store.steampowered.com/app/782330/DOOM_Eternal/",
+      "price": "R$ 149.99",
+      "image_path": "photo-id-13.jpg",
+      "category": "Multiplayer"
+    },
+    {
+      "id": "14",
+      "name": "Half-Life: Alyx",
+      "description": "Um jogo de realidade virtual em primeira pessoa que se passa entre os eventos de Half-Life e Half-Life 2.",
+      "tags": ["VR", "Ação", "Aventura"],
+      "platform": ["PC"],
+      "steam_link": "https://store.steampowered.com/app/546560/HalfLife_Alyx/",
+      "price": "R$ 199.99",
+      "image_path": "photo-id-14.jpg",
+      "category": "New Releases"
+    },
+    {
+      "id": "15",
+      "name": "Portal 2",
+      "description": "Um jogo de quebra-cabeça em primeira pessoa que desafia o jogador a resolver puzzles utilizando o 'Aperture Science Handheld Portal Device'.",
+      "tags": ["Puzzle", "Ação", "Co-op"],
+      "platform": ["PC", "PlayStation", "Xbox"],
+      "steam_link": "https://store.steampowered.com/app/620/Portal_2/",
+      "price": "R$ 29.99",
+      "image_path": "photo-id-15.jpg",
+      "category": "Best Rated"
+    },
+    {
+      "id": "16",
+      "name": "Counter-Strike: Global Offensive",
+      "description": "Um jogo de tiro em primeira pessoa multiplayer online onde equipes de terroristas e contraterroristas combatem para alcançar objetivos.",
+      "tags": ["Tiro", "Ação", "Multijogador"],
+      "platform": ["PC", "PlayStation", "Xbox"],
+      "steam_link": "https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/",
+      "price": "Gratuito",
+      "image_path": "photo-id-16.jpg",
+      "category": "Wishlist"
+    },
+    {
+      "id": "17",
+      "name": "The Elder Scrolls V: Skyrim",
+      "description": "Um RPG de ação de mundo aberto que se passa na província fictícia de Skyrim, onde o jogador pode explorar livremente o mundo e interagir com sua história não linear.",
+      "tags": ["RPG", "Aventura", "Mundo Aberto"],
+      "platform": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
+      "steam_link": "https://store.steampowered.com/app/72850/The_Elder_Scrolls_V_Skyrim/",
+      "price": "R$ 59.99",
+      "image_path": "photo-id-17.jpg",
+      "category": "Popular"
+    },
+    {
+      "id": "18",
+      "name": "Among Us",
+      "description": "Um jogo online de dedução social e traição onde a tripulação de uma nave espacial deve descobrir os impostores entre eles.",
+      "tags": ["Multijogador", "Social", "Dedução"],
+      "platform": ["PC", "Android", "iOS"],
+      "steam_link": "https://store.steampowered.com/app/945360/Among_Us/",
+      "price": "R$ 10.89",
+      "image_path": "photo-id-18.jpg",
+      "category": "Classics"
+    },
+    {
+      "id": "19",
+      "name": "Fall Guys: Ultimate Knockout",
+      "description": "Um jogo de party battle royale onde os jogadores competem em uma série de desafios até restar apenas um vencedor.",
+      "tags": ["Party", "Multijogador", "Battle Royale"],
+      "platform": ["PC", "PlayStation"],
+      "steam_link": "https://store.steampowered.com/app/1097150/Fall_Guys_Ultimate_Knockout/",
+      "price": "R$ 37.99",
+      "image_path": "photo-id-19.jpg",
+      "category": "New Releases"
+    },
+    {
+      "id": "20",
+      "name": "Stardew Valley",
+      "description": "Um jogo de simulação onde os jogadores assumem o papel de um personagem que herdou uma fazenda e deve transformá-la em uma próspera propriedade agrícola.",
+      "tags": ["Simulação", "Agricultura", "RPG"],
+      "platform": ["PC", "PlayStation", "Xbox", "Nintendo Switch", "Android", "iOS"],
+      "steam_link": "https://store.steampowered.com/app/413150/Stardew_Valley/",
+      "price": "R$ 36.99",
+      "image_path": "photo-id-20.jpg",
+      "category": "Multiplayer"
+    },
+    {
+      "id": "21",
+      "name": "Hades",
+      "description": "Um roguelike dungeon crawler onde os jogadores assumem o papel de Zagreus, o filho do deus grego do submundo, em sua tentativa de escapar do Tártaro.",
+      "tags": ["Roguelike", "Ação", "Indie"],
+      "platform": ["PC", "Nintendo Switch"],
+      "steam_link": "https://store.steampowered.com/app/1145360/Hades/",
+      "price": "R$ 37.99",
+      "image_path": "photo-id-21.jpg",
+      "category": "Best Rated"
+    },
+    {
+      "id": "22",
+      "name": "Terraria",
+      "description": "Um jogo de aventura sandbox onde os jogadores exploram, constroem e lutam em mundos gerados aleatoriamente.",
+      "tags": ["Aventura", "Sandbox", "Exploração"],
+      "platform": ["PC", "PlayStation", "Xbox", "Nintendo Switch", "Android", "iOS"],
+      "steam_link": "https://store.steampowered.com/app/105600/Terraria/",
+      "price": "R$ 36.99",
+      "image_path": "photo-id-22.jpg",
+      "category": "Wishlist"
+    },
+    {
+      "id": "23",
+      "name": "Sid Meier's Civilization VI",
+      "description": "Um jogo de estratégia por turnos onde os jogadores constroem um império desde a Idade da Pedra até a era espacial.",
+      "tags": ["Estratégia", "Turn-Based", "Histórico"],
+      "platform": ["PC", "PlayStation", "Xbox", "Nintendo Switch", "iOS"],
+      "steam_link": "https://store.steampowered.com/app/289070/Sid_Meiers_Civilization_VI/",
+      "price": "R$ 149.99",
+      "image_path": "photo-id-23.jpg",
+      "category": "Classics"
+    },
+    {
+      "id": "24",
+      "name": "",
+      "description": "Um jogo de sobrevivência de terror onde os jogadores devem sobreviver em uma ilha habitada por mutantes canibais.",
+      "tags": ["Sobrevivência", "Terror", "Mundo Aberto"],
+      "platform": ["PC", "PlayStation"],
+      "steam_link": "https://store.steampowered.com/app/242760/The_Forest/",
+      "price": "R$ 59.99",
+      "image_path": "photo-id-24.jpg",
+      "category": "Popular"
+    },
+    {
+      "id": "25",
+      "name": "Sekiro: Shadows Die Twice",
+      "description": "Um jogo de ação e aventura onde os jogadores assumem o papel de um guerreiro japonês com uma lâmina mortal prostética.",
+      "tags": ["Ação", "Aventura", "Difícil"],
+      "platform": ["PC", "PlayStation", "Xbox"],
+      "steam_link": "https://store.steampowered.com/app/814380/Sekiro_Shadows_Die_Twice/",
+      "price": "R$ 199.99",
+      "image_path": "photo-id-25.jpg",
+      "category": "Multiplayer"
+    },
+    {
+      "id": "26",
+      "name": "Dead by Daylight",
+      "description": "Um jogo de horror multiplayer assimétrico onde um jogador controla um assassino e os outros jogadores assumem o papel de sobreviventes tentando escapar.",
+      "tags": ["Horror", "Multijogador", "Assimétrico"],
+      "platform": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
+      "steam_link": "https://store.steampowered.com/app/381210/Dead_by_Daylight/",
+      "price": "R$ 37.99",
+      "image_path": "photo-id-26.jpg",
+      "category": "New Releases"
+    },
+    {
+      "id": "27",
+      "name": "Garry's Mod",
+      "description": "Um jogo sandbox onde os jogadores podem criar e manipular objetos para construir seus próprios mundos e experiências.",
+      "tags": ["Sandbox", "Criatividade", "Multijogador"],
+      "platform": ["PC"],
+      "steam_link": "https://store.steampowered.com/app/4000/Garrys_Mod/",
+      "price": "R$ 19.99",
+      "image_path": "photo-id-27.jpg",
+      "category": "Best Rated"
+    },
+    {
+      "id": "28",
+      "name": "Subnautica",
+      "description": "Um jogo de aventura submarina onde os jogadores exploram um mundo oceânico alienígena cheio de vida e mistérios.",
+      "tags": ["Aventura", "Sobrevivência", "Exploração"],
+      "platform": ["PC", "PlayStation", "Xbox"],
+      "steam_link": "https://store.steampowered.com/app/264710/Subnautica/",
+      "price": "R$ 56.99",
+      "image_path": "photo-id-28.jpg",
+      "category": "Wishlist"
+    },
+    {
+      "id": "29",
+      "name": "The Binding of Isaac: Rebirth",
+      "description": "Um jogo roguelike de ação onde os jogadores controlam Isaac enquanto ele tenta escapar de sua mãe insana em um porão.",
+      "tags": ["Roguelike", "Ação", "Indie"],
+      "platform": ["PC", "PlayStation", "Xbox", "Nintendo Switch"],
+      "steam_link": "https://store.steampowered.com/app/250900/The_Binding_of_Isaac_Rebirth/",
+      "price": "R$ 37.99",
+      "image_path": "photo-id-29.jpg",
+      "category": "Classics"
+    },
+    {
+      "id": "30",
+      "name": "No Man's Sky",
+      "description": "Um jogo de exploração e sobrevivência espacial onde os jogadores exploram um universo gerado proceduralmente.",
+      "tags": ["Exploração", "Sobrevivência", "Mundo Aberto"],
+      "platform": ["PC", "PlayStation", "Xbox"],
+      "steam_link": "https://store.steampowered.com/app/275850/No_Mans_Sky/",
+      "price": "R$ 124.99",
+      "image_path": "photo-id-30.jpg",
+      "category": "Popular"
+    }
+
+]}
+  
+  

@@ -7,12 +7,17 @@
   --border-radius: 40px;
 
   --transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-  --cubic: cubic-bezier(0.68, -0.55, 0.27, 1.55)
+  --cubic: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+
+  --Oficial-body-color: #18181a;
+  --Side-menu: #18181a;
+  --body-test: #161d25;
+
 }
 
 html,
 body {
-  background-color: #18181a !important;
+  background-color: var(--Oficial-body-color);
 }
 
 * {

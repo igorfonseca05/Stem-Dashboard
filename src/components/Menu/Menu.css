@@ -1,15 +1,16 @@
+
 .nav-container {
-    background-color: #18181a;
-    min-height: 100vh;
+    background-color: var(--Side-menu);
     width: var(--size) !important;
     position: fixed;
     border-right: 1px solid #8f919738 !important;
-    min-height: 100%;
+    height: 100vh;
     transform: translateX(-110%);
     animation-play-state: paused;
     z-index: 10;
     top: 0;
     left: 0;
+    /* box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3); */
 }
 
 .span-icon {
@@ -60,7 +61,7 @@
     margin-top: 32px;
     padding: 0px;
     height: 520px !important;
-    background-color: #18181a !important;
+    background-color: #18181a00 !important;
 }
 
 .nav-container .sideBar-ul li {

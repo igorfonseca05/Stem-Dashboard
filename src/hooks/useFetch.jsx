@@ -11,7 +11,13 @@ export function useFetch(url) {
             try {
                 const res = await fetch(url)
 
-                setData(res)
+                if(!res.ok) {
+                    throw new Error('Erro ao obter jogos')
+                }
+
+                const data = await res.json()
+
+                setData(data)
 
             } catch (error) {
                 console.log(error.message)

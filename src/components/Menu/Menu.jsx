@@ -43,7 +43,7 @@ function Menu() {
   const handleCloseMenu = useHandleMenu()
 
   return (
-    <header>
+    <header className='header-menu'>
       <nav className='nav-container open'>
         <div className='logo'>
           <span className="material-symbols-outlined span-icon" onClick={(e) => { handleCloseMenu()}}>
@@ -69,7 +69,6 @@ function Menu() {
             link2={'Categories'}
             link3={'Discovery'}
             icon={"shopping_cart"} />
-
           <li>
             <a className='main-link-menu' href="#"><span className="material-symbols-outlined">
               auto_awesome_mosaic
