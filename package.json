@@ -11,8 +11,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "server": "json-server --watch database/db.json"
-
+    "server": "json-server --watch data/db.json"
   },
   "dependencies": {
     "bootstrap": "^5.3.3",
