@@ -50,7 +50,7 @@ function Menu() {
             menu
           </span>
           <div>
-            <img src="pngegg (4).png" alt="" />
+            <img src="img/pngegg (4).png" alt="" />
             <h2>STEAM</h2>
           </div>
         </div>

@@ -14,6 +14,7 @@ import HorizontalMenu from './components/horizontalMenu/HorizontalMenu'
 //pages
 
 import Home from './pages/Home/Home'
+import LoginPage from './pages/login/LoginPage'
 
 function App() {
 
@@ -23,7 +24,8 @@ function App() {
           <Menu />
           <HorizontalMenu />
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<LoginPage/>}/>
+            <Route path='/home' element={<Home />} />
 
           </Routes>
       </BrowserRouter>

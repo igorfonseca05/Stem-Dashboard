@@ -30,14 +30,19 @@ function Home() {
 
     // console.log([...categories])
 
+    let res = []
 
     function createObj () {
-        return data?.filter((item, index) => item.category === [...categories][index] )
+       [...categories].forEach(name => {
+        let newArray = data?.filter((item) => item.category === name)
+        res.push(newArray)
+       })
+
     }
 
-    const arr = createObj()
+    createObj()
 
-    // console.log(arr)
+    // console.log(res)
 
     const games_list_one = [
         { game: "F11 22", tag: 'Racing', url: 'f1.jpg' },
@@ -62,7 +67,7 @@ function Home() {
             <Main_card />
             {
                 [...categories].map((category, index) => (
-                    <CardContainer title={category} dados={games_list_one} key={index} />
+                    <CardContainer title={category} dados={res[index]} key={index} />
                 ))
             }
 

@@ -14,35 +14,43 @@ function Main_card() {
 
     const url = 'http://localhost:3000/games'
 
-    const {data} = useFetch(url)
+    const { data } = useFetch(url)
 
-    // console.log(data?.[0].image_path)
+    console.log(data)
+
+    const newGame = data?.[data?.length - 1]
+    if (!newGame) return
+
+    const { id, name, developer, tags, image_path, price } = newGame
+    // console.log(id,name, developer, tags)
 
     return (
         <div className='main-card-game'>
             <figure>
-                 <img src={data?.[0].image_path} alt="Sua imagem aqui" />
+                <div className='platform-infos'>
+                    <span><img src="public\icons\PC.svg" alt="" /></span>
+                </div>
+                <img src={image_path} alt="Sua imagem aqui"/>
                 <div className='games-info-mobile'>
                     <div>
-                        <h2>Ghost of Tsushima</h2>
-                        <p>Sucker Punch Productions</p>
+                        <h2>{name}</h2>
+                        <p>{developer}</p>
                     </div>
                     <button className='blue-button internal-blue-bottom'>Comprar</button>
                 </div>
             </figure>
             <div className='games-infos'>
                 <div className='div-infos-container'>
-                    <h2>Ghost of Tsushima</h2>
-                    <p>Sucker Punch Productions</p>
+                    <h2>{name}</h2>
+                    <p>{developer}</p>
                     <div className='tags'>
                         <ul className='tags-container'>
-                            <li><span className="material-symbols-outlined">sell</span>Luta</li>
-                            <li><span className="material-symbols-outlined">sell</span>Estratégia</li>
-                            <li><span className="material-symbols-outlined">sell</span>Oriente</li>
-                            <li><span className="material-symbols-outlined">sell</span>Ação</li>
+                            {tags.map((tag, index) => (
+                                <li key={index}><span className="material-symbols-outlined tagIcon">sell</span>{tag}</li>
+                            ))}
                         </ul>
                     </div>
-                    <button className='blue-button'>Comprar</button>
+                    <button className='blue-button'><span className='showPrice'>{price}</span>Comprar</button>
                 </div>
             </div>
         </div>
