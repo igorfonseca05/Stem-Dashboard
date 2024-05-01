@@ -1,0 +1,262 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #181818;
+    color: #e6e6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.SignIn-Section {
+    position: relative;
+    /* background-color: #85a2d8; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-top: 78px;
+    /* background-image: url('/img/login.jfif'); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); */
+    /* background-image: linear-gradient(180deg, #18181a 0%, #26272b 69%); */
+}
+
+
+
+.infos-SignUp,
+.signUp-form-container {
+    /* width: 400px; */
+    max-width: 500px;
+    /* height: 500px; */
+
+}
+
+.adjust-content,
+.infos-SignUp p,
+.infos-SignUp figure {
+    width: 95%;
+    margin: 15px auto;
+
+}
+
+.adjust-content {
+    border-radius: 15px;
+    /* background-color: #3f4045; */
+    /* padding: 30px; */
+    margin: 0px !important;
+    /* height: 100%; */
+}
+
+.infos-SignUp {
+    /* height: 100%; */
+    width: 90%;
+    /* width: 500px; */
+    margin: 0 auto;
+    /* background-color: #1f63e0; */
+
+}
+
+.infos-SignUp figure {
+    width: 90%;
+    margin: 20px auto 60px auto;
+    /* background-color: #1f63e0; */
+}
+
+.infos-SignUp p {
+    /* text-align: justify; */
+    font-size: 28px;
+    /* width: 100%; */
+}
+
+.signUp-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3f4045;
+    padding: 20px;
+    border-radius: 8px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    width: 90%;
+    /* height: 1; */
+    transition: translate 0.5s ease-in-out;
+    /* height: 75%; */
+    margin: 0 auto !important;
+    overflow: hidden;
+    /* opacity: 1; */
+    transform: translateX(120%);
+    display: none;
+    transition: transform 0.4s ease-in-out;
+    animation: container-opacity 0.4s ease-in-out 1 forwards;
+}
+
+@keyframes container-opacity {
+    from {
+        transform: translateX(120%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+
+}
+
+
+.animation-block {
+    position: absolute;
+    display: flex;
+    font-family: 'MotivaSans', sans-serif;
+    /* background-color: #2970fd; */
+    height: 200px;
+    /* width: 00px; */
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.animation-block img {
+    width: 100%;
+    height: 100%;
+    background-color: #18181a;
+    padding: 20px;
+    overflow: hidden;
+    z-index: 3;
+}
+
+.animation-block h1 {
+    /* overflow-x: hidden; */
+    padding: 20px;
+    background-color: transparent;
+    font-size: 100px;
+    margin: 0px;
+    transform: translateX(-100%);
+    /* transition: transform 0.7s ease-in-out; */
+    animation: movSteam 0.7s ease-in-out forwards;
+}
+
+
+@keyframes movSteam {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+h2+a {
+    display: flex;
+    text-decoration: none;
+}
+
+.question {
+    color: white;
+}
+
+/* label, input, .align-button, p{
+    width: 90%;
+    margin: 0 auto;
+    text-align: justify;
+} */
+
+label {
+    margin-bottom: 10px;
+    color: var(--light-gray);
+}
+
+input {
+    /* padding: 10px; */
+    margin: 20px 0px;
+    border: 1px solid var(--thirdColor);
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #8f9197;
+    /* padding: 24px 0px; */
+}
+
+input:focus {
+    outline: none;
+    /* border-color: white; */
+    border-bottom: 1px solid white;
+    /* box-shadow: 0 0 4px rgba(41, 112, 253, 0.6); */
+}
+
+.align-button {
+
+    padding: 20px 0px;
+}
+
+button {
+    padding: 12px;
+    background-color: var(--thirdColor);
+    color: #e6e6e6;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 30% !important;
+    min-width: 150px;
+}
+
+button:hover {
+    background-color: #1f63e0;
+}
+
+form p a {
+    text-decoration: none;
+    color: var(--thirdColor);
+}
+
+.efect {
+    margin-left: 10px;
+    animation: pisca 2s linear infinite alternate-reverse;
+    filter: drop-shadow(0px 0px 3px #2970fd)
+}
+
+@keyframes pisca {
+    0% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 0.2;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    40% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.7;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}

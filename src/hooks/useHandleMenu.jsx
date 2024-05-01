@@ -5,7 +5,8 @@ const useHandleMenu = () => {
     function handleCloseMenu() {
         const menu = document.querySelector('.nav-container')
         const icon = document.querySelector('.span-icon')
-    
+
+  
         if (menu.classList.contains('open')) {
           menu.classList.remove('open')
           menu.classList.add('close')
@@ -17,7 +18,8 @@ const useHandleMenu = () => {
         icon.classList.toggle('icon_spin')
       }
 
-      return handleCloseMenu
+      return {handleCloseMenu}
+
 }
 
   export default useHandleMenu 

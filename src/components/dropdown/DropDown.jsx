@@ -1,52 +1,89 @@
 
-import React from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
-import './DropDown.css'
+// import './DropDown.css'
+import "./StyleDropDown.css"
+import { Link } from 'react-router-dom'
 
-function DropDown({title, link1, link2, link3, icon}) {
+function DropDown({ title, links, icon }) {
 
-    function handleDropDown (e) {
+    const [isOpen, setOPen] = useState(false)
+    const dropItemContainerRef = useRef(null)
 
-            // console.log(e.target)
-            const ul = document.querySelector('.dropDown-ul')
+    function toggleDropDown() {
+        setOPen(!isOpen)
+    }
 
-            // console.log(ul.children[0].clientHeight)
+    function get_Ul_Internal_Size() {
+        if (dropItemContainerRef.current) {
+            if (dropItemContainerRef.current) {
+                const ulComponentInternalSize = dropItemContainerRef.current.scrollHeight;
+                return ulComponentInternalSize;
+            }
+            return 0;
+        }
+    }
 
-            ul.classList.toggle('active')
-            ul.style.height = `${ul.children.length * ul.children[0].clientHeight + 25}px`
-
-           ul.addEventListener('transitionend', (e) => {
-            // console.log('oi')
-           })
-          
-            const lis = [...ul.children]
-
-            lis.forEach(li => {
-                li.classList.toggle('hideLi')
-            })
-      
+    function createDropDownAnimation(inicialSize, finalSize) {
+        if(dropItemContainerRef) {
+            const container = dropItemContainerRef.current
+            const keyFrame = [
+                { height: `${inicialSize}px` },
+                { height: `${finalSize}px` },
+            ]
+    
+            const animationConfig = { duration: 300, fill: 'forwards' }
+    
+            container.animate(keyFrame, animationConfig)
+        
+        }
     }
 
 
+    function toggleDropDown() {
+        setOPen(!isOpen)
+    }
+
+    function handleDropDown(e) {
+        e.preventDefault()
+        toggleDropDown()
+
+        const tagLink = e.currentTarget
+        const dropDownArrow = tagLink.querySelector('.drop-arrow')
+
+        if (isOpen) {
+            dropDownArrow.classList.remove('rotateArrow');
+            createDropDownAnimation(get_Ul_Internal_Size(), 0)
+
+        } else {
+            dropDownArrow.classList.add('rotateArrow');
+            createDropDownAnimation(0, get_Ul_Internal_Size())
+        }
+
+    }
+
     return (
         <div className='drop'>
-            <li>
-                <a className='main-link-menu' id='drop-link' href="#" onClick={(e) => {handleDropDown(e)}}>
-                    <div className='icon-title-container'>
+            <li className='front'>
+                <a data-js='link' className={`main-link-menu link ${isOpen ? 'link' : ''}`}
+                    href="#" onClick={handleDropDown}>
+                    <div className='icon-title-container link'>
                         <span className="material-symbols-outlined">
                             {icon}
                         </span>{title}
                     </div>
-                    <span className="material-symbols-outlined arrow-top">
+                    <span className={`material-symbols-outlined drop-arrow ${isOpen ? 'rotateArrow' : ''}`}>
                         expand_less
                     </span>
                 </a>
             </li>
+            <div className='drop-item-container' ref={dropItemContainerRef}>
                 <ul className='dropDown-ul'>
-                    <li className='hideLi'><a href="#">{link1}</a></li>
-                    <li className='hideLi'><a href="#">{link2}</a></li>
-                    <li className='hideLi'><a href="#">{link3}</a></li>
+                    {links?.map((link, i) => (
+                        <li key={i}><Link to={`/store/${link}`}>{link}</Link></li>
+                    ))}
                 </ul>
+            </div>
         </div>
     )
 }

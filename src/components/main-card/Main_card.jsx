@@ -2,12 +2,6 @@
 import { useState } from 'react'
 
 import "./Main_card.css"
-import Video from '../videoComponente/Video'
-
-import video from "../../assets/videos/Ghost of Tsushima Director's Cut - Announcement Trailer _ PS5, PS4 (1).mp4"
-
-import YouTubePlayer from '../youtubePlayer/Youtube'
-
 import { useFetch } from '../../hooks/useFetch'
 
 function Main_card() {

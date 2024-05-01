@@ -45,7 +45,7 @@
 
 .dropDown-ul li {
     /* display: none; */
-    padding: 10px;
+    padding: 24px;
     /* color: azure; */
     animation: showLi 1s ease-in-out forwards;
     /* animation: hideLi 0.2s ease-in-out; */

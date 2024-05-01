@@ -1,0 +1,70 @@
+
+.drop{
+    padding: 0px;
+    margin: 0px;
+    /* background-color: yellow; */
+    
+}
+
+.drop .main-link-menu{
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center !important; */
+    width: 100%;
+    
+}
+
+.drop-item-container{
+    /* display: none; */
+    /* background-color: rgb(130, 238, 144); */
+    height: 0px;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;  
+    /* padding-top: 10px;  */
+}
+
+.dropDown-ul{
+    padding: 0px;
+    /* height: 150px; */
+}
+
+.sideBar-ul li:hover .main-link-menu,
+.sideBar-ul-bottom div li > .main-link-menu:hover  {
+    color: #2971fc !important;
+}
+
+.drop-item-container li{
+    display: flex;
+    justify-content: start;
+    padding: 20px;
+}
+.drop-item-container li:hover{
+    background-color: rgba(236, 236, 236, 0.034);
+    color: white;
+}
+
+
+.drop-item-container li a{
+    color: #8f9197;
+    font-weight: 600;
+    padding-left: 41px;
+}
+
+.drop-item-container li:hover > a{
+    color: white;
+}
+
+.main-link-menu .drop-arrow{
+    transition: transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transform: rotateZ(180deg);
+
+}
+
+.rotateArrow {
+    transform: rotateZ(0deg) !important;
+    transition: transform 0.3s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+.drop-arrow {
+    margin-right: 24px !important;
+}

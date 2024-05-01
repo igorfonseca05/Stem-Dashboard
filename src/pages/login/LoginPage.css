@@ -1,0 +1,13 @@
+
+.login-section {
+    padding-top: 78px;
+    width: calc(100vw - 259px);
+    margin-left: 259px;
+    background-color: #7a3a3a;
+}
+
+h1{
+    width: 100%;
+    background-color: rgb(160, 160, 135);
+    color: white;
+}

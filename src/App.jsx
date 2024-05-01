@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation} from 'react-router-dom'
 
 import './App.css'
 import Menu from './components/Menu/Menu'
@@ -15,19 +15,28 @@ import HorizontalMenu from './components/horizontalMenu/HorizontalMenu'
 
 import Home from './pages/Home/Home'
 import LoginPage from './pages/login/LoginPage'
+import SignUp from './pages/SignUp/SignUp'
+import AboutUs from './pages/AboutUs/AboutUs'
 
 function App() {
+
+  const [isHideMenu, setIsHideMenu] = useState(true)
+
+  const hideMenu = {
+    setIsHideMenu
+  }
 
   return (
     <>
       <BrowserRouter>
-          <Menu />
-          <HorizontalMenu />
-          <Routes>
-            <Route path='/' element={<LoginPage/>}/>
-            <Route path='/home' element={<Home />} />
-
-          </Routes>
+        {isHideMenu && <Menu {...hideMenu}/>}
+        {isHideMenu && <HorizontalMenu />}
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<LoginPage/>} />
+          <Route path='/signUp' element={<SignUp {...hideMenu}/>} />
+          <Route path='/aboutUs' element={<AboutUs />} />
+        </Routes>
       </BrowserRouter>
 
     </>

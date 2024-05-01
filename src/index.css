@@ -1,3 +1,10 @@
+
+@font-face {
+  font-family: "MotivaSans";
+  src: url('src/font/MotivaSansTest-Black.otf');
+}
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   overflow-x: hidden;
@@ -13,11 +20,17 @@
   --Side-menu: #18181a;
   --body-test: #161d25;
 
+  --thirdColor: #165ef0;
+  --gray: #e6e6e6;
+  --light-gray: #8f9197;
 }
 
 html,
 body {
+  width: 100vw !important;
+  height: 100vh !important;
   background-color: var(--Oficial-body-color);
+  overflow: hidden;
 }
 
 * {
@@ -60,11 +73,14 @@ li a {
 }
 
 .blue-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   height: 38px;
   border-radius: 10px;
   border: none;
-  background-color: #165ef0;
+  background-color: var(--thirdColor);
   color: white;
   font-weight: 600;
 }
@@ -87,6 +103,11 @@ li a {
 
 }
 
+.sizePage {
+  width: calc(100vw - 259px);
+  margin-left: 259px;
+}
+
 .adjust-size {
   width: 96% !important;
   margin: 78px auto 0px auto;
@@ -107,6 +128,7 @@ li a {
   left: 20px;
 }
 
+
 @media screen and (max-width: 480px) {
   .top-menu {
     width: 100%;
@@ -115,15 +137,14 @@ li a {
 
   }
 
-
-  .content {
-    /* background-color: #2d2d74; */
-    /* padding-left: 230px; */
+ .content,
+  .login-section,
+  .SignIn-Section {
     width: 100vw;
-    padding: 0px;
+    padding: 78px 0px;
     margin: 0 auto;
-    /* background-color: #165ef0; */
   }
+
 
   .games-container {
     width: 100%;
@@ -216,6 +237,14 @@ li a {
     margin: 0 auto;
   }
 
+  .SignIn-Section {
+   margin-top: 24%;
+}
+
+  .infos-SignUp {
+   display: none;
+}
+
 }
 
 
@@ -235,14 +264,14 @@ li a {
     display: block;
   }
 
-  .content {
-    /* background-color: #2d2d74; */
-    /* padding-left: 230px; */
+ .content,
+  .login-section,
+  .SignIn-Section {
     width: 100vw;
-    padding: 0px;
+    padding: 78px 0px;
     margin: 0 auto;
-    /* background-color: #165ef0; */
   }
+
 
   .games-infos {
     display: none;
@@ -320,14 +349,14 @@ li a {
 
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
-  .content {
-    /* background-color: #2d2d74; */
-    /* padding-left: 230px; */
+ .content,
+  .login-section,
+  .SignIn-Section {
     width: 100vw;
-    padding: 0px;
+    padding: 78px 0px;
     margin: 0 auto;
-    /* background-color: #165ef0; */
   }
+
 
   .main-card-game {
     display: grid;
@@ -398,9 +427,11 @@ li a {
     /* background-color: #165ef0; */
   }
 
-  .content {
+  .content,
+  .login-section,
+  .SignIn-Section {
     width: 100vw;
-    padding: 0px;
+    padding: 78px 0px;
     margin: 0 auto;
   }
 
@@ -408,10 +439,6 @@ li a {
     width: 100%;
     padding-left: 0px;
     background-color: rgba(31, 228, 228, 0);
-  }
-
-  .top-menu {
-    position: relative;
   }
 
   .menuButton {
