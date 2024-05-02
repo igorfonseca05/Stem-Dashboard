@@ -1,6 +1,4 @@
 
-
-
 const useHandleMenu = () => {
     function handleCloseMenu() {
         const menu = document.querySelector('.nav-container')

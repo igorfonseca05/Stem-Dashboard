@@ -128,14 +128,65 @@ li a {
 }
 
 
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background-color: #3f4045; */
+  padding: 10px;
+  border-radius: var(--border-radius);
+  width: 90%;
+  transition: translate 0.5s var(--cubic);
+  /* margin-right: 34px; */
+  /* margin: 0 auto !important; */
+  overflow: hidden;
+  max-width: 500px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.form-container h2+a {
+  display: flex;
+  text-decoration: none;
+}
+
+
+input {
+  /* padding: 10px; */
+  margin: 15px 0px;
+  border: 1px solid var(--thirdColor);
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #8f9197;
+  color: white;
+}
+
+input:focus {
+  outline: none;
+  /* border-color: white; */
+  border-bottom: 1px solid white;
+  /* box-shadow: 0 0 4px rgba(41, 112, 253, 0.6); */
+}
+
+.align-button {
+  padding: 20px 0px;
+}
+
+form p a {
+  text-decoration: none;
+  color: var(--thirdColor);
+}
+
+
+
+
+
 @media screen and (max-width: 480px) {
-  .top-menu {
-    width: 100%;
-    /* background-color: #FFA500; */
-    z-index: 4;
-
-  }
-
   .content,
   .login-section,
   .SignIn-Section {
@@ -144,12 +195,23 @@ li a {
     margin: 0 auto;
   }
 
-
-  .games-container {
+  .top-menu {
     width: 100%;
-    padding-left: 0px;
-    background-color: rgba(90, 155, 106, 0);
+    /* background-color: #FFA500; */
+    z-index: 4;
+
   }
+
+  .top-menu .external-form {
+    visibility: hidden;
+    width: 20%;
+  }
+
+  .logo > div {
+    justify-content: center;
+
+  }
+
 
   .top-menu .logo {
     position: relative;
@@ -183,7 +245,8 @@ li a {
 
   .top-menu .external-form label {
     opacity: 0;
-    display: none;
+    visibility: hidden;
+    /* display: none; */
   }
 
   .games-infos {
@@ -191,11 +254,12 @@ li a {
     margin-left: 0px;
   }
 
-  .logo>div {
-    justify-content: center;
-
+  
+  .games-container {
+    width: 100%;
+    padding-left: 0px;
+    background-color: rgba(90, 155, 106, 0);
   }
-
 
   .games-infos {
     display: none;
@@ -257,13 +321,22 @@ li a {
   .animation-block h1 {
     font-size: 3em;
   }
-  
+
   .SignIn-Section {
     justify-content: center; 
+    /* margin-right: 0px; */
+  }
+  
+  .signUp-form-container {
+    margin-right: 0px;
   }
 
+  .login-section {
+    justify-content: center;
 }
 
+
+}
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .top-menu {
@@ -272,9 +345,10 @@ li a {
     justify-content: space-between;
   }
 
+  .top-menu .external-form {
+    visibility: hidden;
+    width: 70%;
 
-  .external-form {
-    display: none;
   }
 
   .internal-form {
@@ -349,9 +423,6 @@ li a {
     opacity: 1;
   }
 
-  .top-menu .external-form {
-    display: none;
-  }
 
   .logo>div {
     justify-content: center;
@@ -374,11 +445,14 @@ li a {
 
   .SignIn-Section {
     justify-content: center; 
+
+  }
+
+  .signUp-form-container {
+    margin-right: 0px;
   }
 
 }
-
-
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
 
@@ -416,9 +490,7 @@ li a {
 
 
   .top-menu .external-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    visibility: hidden;
 
   }
 
@@ -439,25 +511,30 @@ li a {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
   .SignIn-Section {
     justify-content: center; 
+  }
+
+  .signUp-form-container {
+    margin-right: 0px;
   }
 
 
 }
 
-
 @media screen and (min-width: 992px) and (max-width: 1199px) {
   .nav-container {
     /* transform: translateX(85%); */
     animation: closeMenu 0.4s ease-in-out forwards;
-    animation-play-state: running;
+    /* animation-play-state: paused; */
+    /* display: none; */
   }
 
   .open {
     /* transform: translateX(85%); */
     animation: openMenu 0.4s ease-in-out forwards;
-    animation-play-state: running;
+    /* animation-play-state: running; */
   }
 
   .span-icon {
@@ -492,7 +569,7 @@ li a {
   }
 
   .top-menu .external-form {
-    justify-content: center;
+    align-items: center;
   }
 
   .logo>div {

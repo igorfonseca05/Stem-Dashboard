@@ -34,7 +34,7 @@ function SignUp() {
             <section className='SignIn-Section sizePage'>
                 <div className="signUp-form-container">
                     <div className='adjust-content'>
-                        <h2>Join our community</h2>
+                        <h2>Join our Steam community</h2>
                         <Link to={'/login'}><span className='question'>Existing user? </span><p className='efect'>Sign In</p></Link>
                         <form>
                             {/* <label htmlFor="username">User Name</label> */}

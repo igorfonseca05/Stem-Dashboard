@@ -1,13 +1,131 @@
-
 .login-section {
+    display: flex;
+    justify-content: start;
+    align-items: center;
     padding-top: 78px;
-    width: calc(100vw - 259px);
-    margin-left: 259px;
-    background-color: #7a3a3a;
+    width: 100vw;
+    /* margin-left: 259px; */
+    /* background-color: var(--Oficial-body-color) */
+    background-image: url('img/login-bg.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    position: relative;
 }
 
-h1{
+.gradient {
     width: 100%;
-    background-color: rgb(160, 160, 135);
-    color: white;
+    background: radial-gradient(circle at left,
+            #18181a 30%,
+            rgba(24, 24, 26, 0.6) 60%,
+            rgba(24, 24, 26, 0.3) 80%,
+            rgba(24, 24, 26, 0));
+    /* height: 500px; */
+    z-index: 0;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+}
+
+.form-container {
+    z-index: 2;
+    margin-left: 20px;
+}
+
+.header-login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-login img {
+    padding-bottom: 18px;
+    width: 50%;
+}
+
+.header-login p {
+    text-align: center;
+    color: var(--light-gray);
+}
+
+.forget-password {
+    text-align: end;
+    margin: 0px;
+}
+
+.line-container {
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.line {
+    /* background-color: aqua; */
+    width: 10%;
+    text-align: center;
+    position: relative;
+    font-weight: 600;
+    color: var(--light-gray);
+    z-index: 0;
+}
+
+.line::after,
+.line::before {
+    width: 450%;
+    content: '';
+    position: absolute;
+    height: 1px;
+    top: 50%;
+}
+
+.line::before {
+    right: 100%;
+    background: linear-gradient(to left, var(--light-gray), rgba(0, 0, 0, 0))
+}
+
+.line::after {
+    left: 110%;
+    background: linear-gradient(to right, var(--light-gray), rgba(0, 0, 0, 0))
+}
+
+.buttons-login-container {
+    width: 100%;
+    /* background-color: antiquewhite; */
+}
+
+.google-button {
+    display: flex;
+    width: 100%;
+    height: 38px;
+    padding: 5px;
+    border: none;
+    border-radius: 8px;
+    /* flex-grow: ; */
+    justify-content: center;
+    align-items: center;
+}
+
+.google-button:hover {
+    transform: scale(1.01);
+}
+
+.google-button figure {
+    display: flex;
+    width: 100%;
+    /* background-color: aqua; */
+    justify-content: end;
+}
+
+.google-button img {
+    /* flex-grow: 1; */
+    width: 10%;
+    height: 100%;
+}
+
+.google-button p {
+    width: 38%;
+    height: 100%;
+    margin-bottom: 0px;
 }
