@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: "MotivaSans";
   src: url('src/font/MotivaSansTest-Black.otf');
@@ -137,7 +136,7 @@ li a {
 
   }
 
- .content,
+  .content,
   .login-section,
   .SignIn-Section {
     width: 100vw;
@@ -238,12 +237,30 @@ li a {
   }
 
   .SignIn-Section {
-   margin-top: 24%;
-}
+    margin-top: 24%;
+  }
 
   .infos-SignUp {
-   display: none;
-}
+    display: none;
+  }
+
+  .animation-block {
+    flex-direction: column;
+    height: 330px;
+    width: 230px;
+  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .animation-block h1 {
+    font-size: 3em;
+  }
+  
+  .SignIn-Section {
+    justify-content: center; 
+  }
 
 }
 
@@ -264,7 +281,7 @@ li a {
     display: block;
   }
 
- .content,
+  .content,
   .login-section,
   .SignIn-Section {
     width: 100vw;
@@ -341,15 +358,31 @@ li a {
 
   }
 
+  .animation-block {
+    flex-direction: column;
+    height: 330px;
+    width: 230px;
+  
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
+  .animation-block h1 {
+    font-size: 3em;
+  }
 
+  .SignIn-Section {
+    justify-content: center; 
+  }
 
 }
 
 
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
- .content,
+
+  .content,
   .login-section,
   .SignIn-Section {
     width: 100vw;
@@ -397,6 +430,19 @@ li a {
   .top-menu {
     width: 100%;
   }
+
+  .animation-block {
+    /* flex-direction: column; */
+    /* height: 3px; */
+    width: 65%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .SignIn-Section {
+    justify-content: center; 
+  }
+
 
 }
 
@@ -462,6 +508,10 @@ li a {
     width: 94% !important;
     margin: 0px auto;
 
+  }
+
+  .SignIn-Section {
+    justify-content: center; 
   }
 
 }
