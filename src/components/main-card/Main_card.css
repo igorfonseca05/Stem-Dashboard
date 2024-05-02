@@ -11,7 +11,7 @@
 
 .platform-infos{
     position: absolute;
-    z-index: 2;
+    z-index: 1;
     color: wheat;
     left: 25px;
     top: 5px;
@@ -46,7 +46,7 @@
     padding: 20px;
     position: absolute;
     color: white;
-    z-index: 2;
+    z-index: 1;
     bottom: 0;
     margin: 0px;
     transform: translateY(100%);

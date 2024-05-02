@@ -4,7 +4,7 @@ const useHandleMenu = () => {
         const menu = document.querySelector('.nav-container')
         const icon = document.querySelector('.span-icon')
 
-  
+
         if (menu.classList.contains('open')) {
           menu.classList.remove('open')
           menu.classList.add('close')

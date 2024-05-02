@@ -1,12 +1,18 @@
 
  .games-container  {
-    /* background-color: #2d2d74; */
-    /* padding-left: 230px; */
-    width: 100vw;
+    /* background-color: #2d742d; */
+    /* width: 100vw; */
     padding-left: var(--size);
+    padding-left: 250px;
     margin: 0 auto;
     min-height: fit-content;
     /* overflow: hidden; */
     /* display: none; */
     max-width: 1400px;
+}
+
+.games-content{
+    width: 97%;
+    /* background-color: aqua; */
+    margin: 0 auto;
 }

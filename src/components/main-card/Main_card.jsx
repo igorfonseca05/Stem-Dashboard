@@ -10,8 +10,7 @@ function Main_card() {
 
     const { data } = useFetch(url)
 
-    console.log(data)
-
+    // console.log(data)
     const newGame = data?.[data?.length - 1]
     if (!newGame) return
 

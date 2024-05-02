@@ -63,13 +63,15 @@ function Home() {
     ]
 
     return (
-        <section className='games-container adjust-size' style={{ paddingTop: "15px" }} >
+        <section className='games-container adjust-size ' style={{ paddingTop: "15px" }} >
+            <div className='games-content'>
             <Main_card />
             {
                 [...categories].map((category, index) => (
                     <CardContainer title={category} dados={res[index]} key={index} />
                 ))
             }
+            </div>
 
         </section>
         // <section className='content'>
