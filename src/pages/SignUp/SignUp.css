@@ -122,7 +122,7 @@ body {
     justify-content: center;
     background-color: #3f4045;
     padding: 10px;
-    border-radius: 8px;
+    border-radius: var(--border-radius);
     width: 90%;
     transition: translate 0.5s var(--cubic);
     margin-right: 34px;
@@ -130,9 +130,10 @@ body {
     overflow: hidden;
     max-width: 500px;
     transform: translateX(120%);
-    transition: transform 0.4s var(--cubic);
+    transition: all 0.4s var(--cubic);
     animation: container-opacity 0.4s 2s var(--cubic) 1 forwards;
 }
+
 
 @keyframes container-opacity {
     from {
@@ -148,6 +149,7 @@ body {
 form {
     display: flex;
     flex-direction: column;
+
 }
 
 h2+a {
@@ -172,7 +174,7 @@ label {
 
 input {
     /* padding: 10px; */
-    margin: 20px 0px;
+    margin: 15px 0px;
     border: 1px solid var(--thirdColor);
     background-color: transparent;
     border: none;
@@ -200,7 +202,7 @@ button {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 30% !important;
+    /* width: 30% !important; */
     min-width: 150px;
 }
 
@@ -219,8 +221,51 @@ form p a {
     filter: drop-shadow(0px 0px 3px #2970fd)
 }
 
+.info-policy {
+    font-size: 14px;
+    /* font-weight: ; */
+    /* margin: 16px !important; */
+}
+
 .infos-container{
-    background-color: #2970fd;
+    /* background-color: #2970fd; */
+    /* padding: 10px; */
+    border-radius: 10px;
+    margin: 0px;
+    transition: all 0.3s ease-in-out ;
+    height: 0px;
+    overflow: hidden;
+    /* animation-play-state: paused; */
+    font-size: 14px;
+    /* font-weight: 500; */
+}
+
+.infos-container p{
+    padding: 10px;
+}
+
+.error {
+    background-color: #e74c3c;
+    animation: error 0.7s ease-in-out forwards;
+    /* height: 48px; */
+    /* padding: 8px; */
+}
+
+.success {
+    animation: error 0.7s ease-in-out forwards;
+    background-color: #229753;
+    /* padding: 10px; */
+    /* height: 48px; */
+}
+
+@keyframes error {
+    from {
+        /* padding: 8px; */
+        height: 0px;
+    } to {
+        /* padding: 8px; */
+        height: 60px;
+    }    
 }
 
 @keyframes pisca {
