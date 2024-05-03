@@ -11,12 +11,16 @@
 
 }
 
+.nav-container {
+    transition: transform 0.4s ease-in-out;
+}
+
 .nav-container .logo {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    padding: 16px 0px 0px 25px;
+    padding: 11px 0px 0px 23px;
 }
 
 .logo > div {
@@ -128,19 +132,6 @@
     text-decoration: none;
     transition: transform 0.2s ease-in-out;
 }
-
-
-@keyframes move {
-    from {
-        stroke-opacity: 1;
-        stroke-dashoffset: 700; 
-    }
-    to {
-        stroke-opacity: 0;
-        stroke-dashoffset: 0;
-    }
-}
-
 
 @keyframes openMenu {
     from {

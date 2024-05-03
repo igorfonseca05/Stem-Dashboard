@@ -45,6 +45,7 @@ function LoginPage() {
                   <img src="google.svg" alt="" />
                   <p>Sign in with Google</p>
                 </button>
+                <p>Don't you have any account? <span style={{fontWeight: 600}}> Sign Up</span></p>
               </div>
             {error && <div className='infos-container error'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>}
             {success && <div className='infos-container success'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>}

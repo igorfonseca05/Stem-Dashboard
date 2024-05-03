@@ -8,6 +8,7 @@
     /* overflow: hidden; */
     /* height: 250px !important; */
     /* position: relative; */
+    transition: all 0.3s ease-in-out;
 }
 
 .miniCards figure {

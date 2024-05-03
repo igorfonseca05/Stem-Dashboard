@@ -28,7 +28,7 @@ body {
   width: 100vw !important;
   height: 100vh !important;
   background-color: var(--Oficial-body-color);
-  overflow-x: hidden;
+  /* overflow: hidden; */
   align-items: start;
 }
 
@@ -109,15 +109,17 @@ li a {
 
 .adjust-size {
   /* background-color: #165ef0; */
-  width: 96vw !important;
-  margin: 78px 0px 0px 0px;
+  width: 100vw !important;
+  padding-top: 78px !important;
+  /* padding: 0px; */
+  /* margin: 0 auto; */
   min-height: 100vh !important;
 
 }
 
 .menuButton {
   color: white;
-  position: absolute;
+  /* position: absolute; */
   /* background-color: #8f9197; */
   padding: 5px;
   border-radius: 50%;
@@ -182,9 +184,6 @@ form p a {
   text-decoration: none;
   color: var(--thirdColor);
 }
-
-
-
 
 
 @media screen and (max-width: 480px) {
@@ -346,8 +345,8 @@ form p a {
     justify-content: space-between;
   }
 
-  .top-menu .external-form {
-    visibility: hidden;
+  .top-menu .external-form label{
+    margin-left: 4%;
     width: 70%;
 
   }
@@ -468,7 +467,7 @@ form p a {
 
   .main-card-game {
     display: grid;
-    grid-template-columns: 60% 40%;
+    grid-template-columns: 70% 30%;
     overflow: hidden;
     /* background-color: #165ef0; */
   }
@@ -489,9 +488,8 @@ form p a {
     opacity: 1;
   }
 
-
-  .top-menu .external-form {
-    visibility: hidden;
+  .top-menu .external-form label{
+    margin-left: 4%;
 
   }
 
@@ -525,18 +523,18 @@ form p a {
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  .nav-container {
-    /* transform: translateX(85%); */
+  /* .nav-container {
+    transform: translateX(85%);
     animation: closeMenu 0.4s ease-in-out forwards;
-    /* animation-play-state: paused; */
-    /* display: none; */
-  }
+    animation-play-state: paused;
+    display: none;
+  } */
 
-  .open {
-    /* transform: translateX(85%); */
+  /* .open {
+    transform: translateX(85%);
     animation: openMenu 0.4s ease-in-out forwards;
-    /* animation-play-state: running; */
-  }
+    animation-play-state: running;
+  } */
 
   .span-icon {
     display: block;
@@ -570,7 +568,10 @@ form p a {
   }
 
   .top-menu .external-form {
-    align-items: center;
+    align-items: start;
+  }
+  .top-menu .external-form label {
+    margin-left: 50px;
   }
 
   .logo>div {
@@ -591,5 +592,10 @@ form p a {
   .SignIn-Section {
     justify-content: center; 
   }
+
+  /* .games-content{
+    padding: 78px auto;
+
+} */
 
 }

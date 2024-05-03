@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    /* background-color: #18181a; */
+    background-color: #18181a;
     height: 78px;
     width: calc(100% - var(--size));
     max-width: 1400px !important;
@@ -21,9 +21,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 96%;
+    width: 95%;
     margin: 0 auto;
-    background-color: #181818;
+    /* background-color: #d81111; */
     z-index: 3;
     height: 78px;
 }
@@ -89,8 +89,8 @@
     display: flex;
     align-items: center;
     /* justify-content: center; */
-    max-width: 400px;
-    width: 100%;
+    /* max-width: 450px; */
+    width: 50%;
     min-width: 150px;
     height: 45px;
     background-color: #26272b;

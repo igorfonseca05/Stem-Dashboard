@@ -21,7 +21,7 @@ function Main_card() {
         <div className='main-card-game'>
             <figure>
                 <div className='platform-infos'>
-                    <span><img src="public\icons\PC.svg" alt="" /></span>
+                    {/* <span><img src="public\icons\PC.svg" alt="" /></span> */}
                 </div>
                 <img src={image_path} alt="Sua imagem aqui"/>
                 <div className='games-info-mobile'>
