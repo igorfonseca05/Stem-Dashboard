@@ -3,7 +3,7 @@
     color: white;
     padding: 5px;
     border-radius: 50%;
-    /* transition: transform 0.4s ease-in-out; */
+    /* transition: transform 0.3s linear; */
     /* transform: rotateZ(90deg); */
     user-select: none;
     display: none;
@@ -12,7 +12,7 @@
 }
 
 .nav-container {
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.3s linear;
 }
 
 .nav-container .logo {
@@ -92,18 +92,26 @@
 }
 
 .open {
-    animation: openMenu 0.4s ease-in-out forwards;
+    /* transform: translajkop´--/]
+    teX(0%); */
+    animation: openMenu 0.2s linear forwards;
     /* animation-play-state: paused; */
 }
 
 .close {
-    animation: closeMenu 0.4s ease-in-out forwards;
+    animation: closeMenu 0.2s linear forwards;
+    /* display: none; */
     /* animation-play-state: paused; */
 }
 
+.fechado {
+    display: none;
+}
+
+
 .icon_spin {
-    /* animation: spinIcon 0.4s ease-in-out forwards; */
-    transition: transform 0.4s ease-in-out;
+    /* animation: spinIcon 0.1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; */
+    transition: transform 0.3s linear;
     /* animation-play-state: paused; */
 }
 

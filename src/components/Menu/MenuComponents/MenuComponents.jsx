@@ -10,12 +10,14 @@ import DropDown from '../../../components/dropdown/DropDown';
 
 // Hooks
 import useHandleMenu from '../../../hooks/useHandleMenu'
+import useIconMenuClose from '../../../hooks/useIconMenuClose';
 
 function MenuComponents() {
 
     const [user, setUser] = useState(false)
 
-    const { handleCloseMenu } = useHandleMenu()
+    const { handleCloseMenu } = useIconMenuClose()
+    
     return (
         <>
             <div className='logo'>
@@ -32,7 +34,7 @@ function MenuComponents() {
                     {!user &&
                         <>
                             <li>
-                                <Link className='main-link-menu' href="#">
+                                <Link to={'/'} className='main-link-menu' href="#">
                                     <span className="material-symbols-outlined">
                                         home
                                     </span>
@@ -53,7 +55,7 @@ function MenuComponents() {
                                 </Link>
                             </li>
                             <li>
-                                <Link className='main-link-menu' href="#">
+                                <Link to={'/updates'} className='main-link-menu' href="#">
                                     <span className="material-symbols-outlined">
                                         news
                                     </span>

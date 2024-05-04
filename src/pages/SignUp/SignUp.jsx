@@ -10,12 +10,14 @@ import useMenu from '../../hooks/UseCloseMenu'
 
 function SignUp() {
 
+    const location = useLocation()
+
     const [error, setError] = useState(false)
     const [success, setSuccess] = useState(false)
     const [loading, setLoading] = useState(false)
 
-    // const {handleMenu} =  useMenu('remove')
-    // handleMenu()
+    const {handleMenu} =  useMenu('remove', location.pathname)
+    handleMenu()
 
     function handleAnimation() {
         setTimeout(() => {
@@ -31,7 +33,8 @@ function SignUp() {
                 <h1>STEAM</h1>
             </div>
 
-            <section className='SignIn-Section sizePage'>
+            <section className='SignIn-Section'>
+                <div className='gradient-right'></div>
                 <div className="signUp-form-container">
                     <div className='adjust-content'>
                         <h2>Join our Steam community</h2>

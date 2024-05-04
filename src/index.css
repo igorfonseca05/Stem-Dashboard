@@ -30,6 +30,7 @@ body {
   background-color: var(--Oficial-body-color);
   /* overflow: hidden; */
   align-items: start;
+  /* transition: all 0.3s ease-in; */
 }
 
 * {
@@ -109,12 +110,11 @@ li a {
 
 .adjust-size {
   /* background-color: #165ef0; */
-  width: 100vw !important;
-  padding-top: 78px !important;
-  /* padding: 0px; */
-  /* margin: 0 auto; */
+  width: calc(100vw - 259px);
+  padding-top: 88px !important;
+  margin-left: 259px;
   min-height: 100vh !important;
-
+  transition: all 0.1s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
 .menuButton {
@@ -185,14 +185,52 @@ form p a {
   color: var(--thirdColor);
 }
 
+.gradient-right {
+  width: 100%;
+  background: radial-gradient(circle at right,
+          #18181a 30%,
+          rgba(24, 24, 26, 0.6) 50%,
+          rgba(24, 24, 26, 0.3) 85%
+          );
+  /* height: 500px; */
+  z-index: 0;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.gradient-left {
+  width: 100%;
+  background: radial-gradient(circle at left,
+          #18181a 30%,
+          rgba(24, 24, 26, 0.6) 50%,
+          rgba(24, 24, 26, 0.3) 85%
+          );
+  /* height: 500px; */
+  z-index: 0;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
 
 @media screen and (max-width: 480px) {
+
   .content,
   .login-section,
   .SignIn-Section {
     width: 100vw;
     padding: 78px 0px;
     margin: 0 auto;
+  }
+
+
+  .adjust-size {
+    width: 98vw;
+    margin-left: 0px;
+    transition: all 0.1s cubic-bezier(0.65, 0.05, 0.36, 1);
   }
 
   .top-menu {
@@ -207,7 +245,7 @@ form p a {
     width: 20%;
   }
 
-  .logo > div {
+  .logo>div {
     justify-content: center;
 
   }
@@ -254,7 +292,7 @@ form p a {
     margin-left: 0px;
   }
 
-  
+
   .games-container {
     width: 100%;
     padding-left: 0px;
@@ -312,7 +350,7 @@ form p a {
     flex-direction: column;
     height: 330px;
     width: 230px;
-  
+
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -323,17 +361,17 @@ form p a {
   }
 
   .SignIn-Section {
-    justify-content: center; 
+    justify-content: center;
     /* margin-right: 0px; */
   }
-  
+
   .signUp-form-container {
     margin-right: 0px;
   }
 
   .login-section {
     justify-content: center;
-}
+  }
 
 
 }
@@ -345,7 +383,7 @@ form p a {
     justify-content: space-between;
   }
 
-  .top-menu .external-form label{
+  .top-menu .external-form label {
     margin-left: 4%;
     width: 70%;
 
@@ -363,6 +401,11 @@ form p a {
     margin: 0 auto;
   }
 
+  .adjust-size {
+    width: 98vw;
+    margin-left: 0px;
+    transition: all 0.1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
 
   .games-infos {
     display: none;
@@ -433,7 +476,7 @@ form p a {
     flex-direction: column;
     height: 330px;
     width: 230px;
-  
+
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -444,7 +487,7 @@ form p a {
   }
 
   .SignIn-Section {
-    justify-content: center; 
+    justify-content: center;
 
   }
 
@@ -464,6 +507,11 @@ form p a {
     margin: 0 auto;
   }
 
+  .adjust-size {
+    width: 98vw;
+    margin-left: 0px;
+    transition: all 0.1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
 
   .main-card-game {
     display: grid;
@@ -488,7 +536,7 @@ form p a {
     opacity: 1;
   }
 
-  .top-menu .external-form label{
+  .top-menu .external-form label {
     margin-left: 4%;
 
   }
@@ -512,7 +560,7 @@ form p a {
   }
 
   .SignIn-Section {
-    justify-content: center; 
+    justify-content: center;
   }
 
   .signUp-form-container {
@@ -525,14 +573,14 @@ form p a {
 @media screen and (min-width: 992px) and (max-width: 1199px) {
   /* .nav-container {
     transform: translateX(85%);
-    animation: closeMenu 0.4s ease-in-out forwards;
+    animation: closeMenu 0.1s ease-in-out forwards;
     animation-play-state: paused;
     display: none;
   } */
 
   /* .open {
     transform: translateX(85%);
-    animation: openMenu 0.4s ease-in-out forwards;
+    animation: openMenu 0.1s ease-in-out forwards;
     animation-play-state: running;
   } */
 
@@ -557,6 +605,12 @@ form p a {
     margin: 0 auto;
   }
 
+  .adjust-size {
+    width: 98vw;
+    margin-left: 0px;
+    transition: all 0.1s cubic-bezier(0.65, 0.05, 0.36, 1);
+  }
+
   .games-container {
     width: 100%;
     padding-left: 0px;
@@ -570,6 +624,7 @@ form p a {
   .top-menu .external-form {
     align-items: start;
   }
+
   .top-menu .external-form label {
     margin-left: 50px;
   }
@@ -584,13 +639,14 @@ form p a {
   }
 
   .adjust-size {
-    /* width: 94 !important; */
-    margin: 0px auto;
+    width: 98.6vw;
+    /* margin: 0px auto; */
+    transition: all 0.3s linear;
 
   }
 
   .SignIn-Section {
-    justify-content: center; 
+    justify-content: center;
   }
 
   /* .games-content{

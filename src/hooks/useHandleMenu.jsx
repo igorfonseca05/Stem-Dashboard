@@ -1,23 +1,40 @@
 
-const useHandleMenu = () => {
-    function handleCloseMenu() {
-        const menu = document.querySelector('.nav-container')
-        const icon = document.querySelector('.span-icon')
+import { useEffect, useState } from "react"
 
+import useDebounce from '../hooks/useDebounce'
 
-        if (menu.classList.contains('open')) {
-          menu.classList.remove('open')
-          menu.classList.add('close')
-        } else {
-          menu.classList.remove('close')
-          menu.classList.add('open')
-        }
-    
-        icon.classList.toggle('icon_spin')
+function useHandleMenu() {
+  const [ifToCloseOnClick, setIfToCloseOnClick] = useState(false)
+  const [isOpen, setIsOpen] = useState(true)
+
+  function handleMenu() {
+
+    const {Mydebounce} = useDebounce()
+
+  
+    function resize() {
+
+      if (window.innerWidth >= 1200) {
+        setIfToCloseOnClick(false)
+        setIsOpen(true)
+      } else {
+        setIsOpen(false)
       }
+    }
+    
+    window.addEventListener('resize', Mydebounce(resize, 200))
 
-      return {handleCloseMenu}
+    useEffect(() => {   
+
+      resize()
+
+    }, [])
+
+    
+  }
+  
+  return { handleMenu, ifToCloseOnClick, isOpen }
 
 }
 
-  export default useHandleMenu 
+export default useHandleMenu

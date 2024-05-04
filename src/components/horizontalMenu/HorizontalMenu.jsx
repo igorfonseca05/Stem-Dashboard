@@ -4,12 +4,12 @@ import { Link, useLocation } from 'react-router-dom'
 
 
 import "./HorizontalMenu.css"
-import useHandleMenu from '../../hooks/useHandleMenu'
+import useIconMenuClose from '../../hooks/useIconMenuClose'
 
 function HorizontalMenu() {
 
 
-    const { handleCloseMenu } = useHandleMenu()
+    const { handleCloseMenu } = useIconMenuClose()
 
     const [user, setUser] = useState(false)
     const [isFocused, setIsFocused] = useState(false)
@@ -30,7 +30,7 @@ function HorizontalMenu() {
     return (
         <div className='top-menu'>
             <div>
-                <span className="material-symbols-outlined menuButton span-icon-2" onClick={(e) => { handleCloseMenu() }}>
+                <span className="material-symbols-outlined menuButton span-icon-2" onClick={(e) => { handleCloseMenu()}}>
                     menu
                 </span>
                         <form className='external-form'>

@@ -17,25 +17,20 @@ import Home from './pages/Home/Home'
 import LoginPage from './pages/login/LoginPage'
 import SignUp from './pages/SignUp/SignUp'
 import AboutUs from './pages/AboutUs/AboutUs'
+import Updates from './pages/updates/Updates'
 
 function App() {
-
-  const [isHideMenu, setIsHideMenu] = useState(true)
-
-  const hideMenu = {
-    setIsHideMenu
-  }
-
   return (
     <>
       <BrowserRouter>
-        {isHideMenu && <Menu {...hideMenu}/>}
-        {isHideMenu && <HorizontalMenu />}
+        <Menu/>
+        <HorizontalMenu />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<LoginPage/>} />
-          <Route path='/signUp' element={<SignUp {...hideMenu}/>} />
+          <Route path='/signUp' element={<SignUp/>} />
           <Route path='/aboutUs' element={<AboutUs />} />
+          <Route path='/updates' element={<Updates />} />
         </Routes>
       </BrowserRouter>
 

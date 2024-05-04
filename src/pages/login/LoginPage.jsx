@@ -3,6 +3,8 @@ import "./LoginPage.css"
 
 import {useState}from 'react'
 
+import { useLocation } from "react-router-dom"
+
 import useMenu from "../../hooks/UseCloseMenu"
 
 import { Link } from "react-router-dom"
@@ -10,11 +12,13 @@ import { Link } from "react-router-dom"
 
 function LoginPage() {
 
+  const location = useLocation()
+
   const [error, setError] = useState(false)
   const [success, setSuccess] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  const {handleMenu} = useMenu('remove')
+  const {handleMenu} = useMenu(location.pathname)
 
   handleMenu()
 
@@ -35,7 +39,7 @@ function LoginPage() {
             <p className="forget-password"><a href="#">Forget your password?</a></p>
             <div className='align-button'>
               {loading && <button type="submit" className='blue-button' style={{ opacity: '0.5', cursor: 'not-allowed' }} disabled='true'>SIGN UP</button>}
-              {!loading && <button type="submit" className='blue-button'>SIGN UP</button>}
+              {!loading && <button type="submit" className='blue-button'>SIGN IN</button>}
             </div>
             <div className="line-container">
              <p className="line">Or</p>
@@ -45,7 +49,7 @@ function LoginPage() {
                   <img src="google.svg" alt="" />
                   <p>Sign in with Google</p>
                 </button>
-                <p>Don't you have any account? <span style={{fontWeight: 600}}> Sign Up</span></p>
+                <p>Don't you have any account? <Link to={'/SignUp'} href="" style={{fontWeight: 600}}>Sign Up</Link></p>
               </div>
             {error && <div className='infos-container error'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>}
             {success && <div className='infos-container success'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>}
