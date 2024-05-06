@@ -22,7 +22,7 @@ body {
     overflow: hidden;
     top: 50%;
     left: 50%;
-    transform: translate(-35%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 .animation-block img {
@@ -42,7 +42,7 @@ body {
     margin: 0px;
     transform: translateX(-100%);
     /* transition: transform 0.7s var(--cubic); */
-    animation: movSteam 1s var(--cubic) forwards;
+    animation: movSteam 0.5s var(--cubic) forwards;
 }
 
 
@@ -66,7 +66,7 @@ body {
     justify-content: end;
     align-items: center;
     padding-top: 78px;
-    background-image: url('/img/login.jfif');
+    background-image: url('https://cdn.akamai.steamstatic.com/store/home/store_home_share.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     width: 100vw !important;
@@ -87,7 +87,7 @@ body {
 }
 
 .adjust-content {
-    width: 95%;
+    width: 75%;
     margin: 15px auto;
     border-radius: 15px;
     /* background-color: #3f4045; */
@@ -129,10 +129,10 @@ body {
     margin-right: 34px;
     /* margin: 0 auto !important; */
     overflow: hidden;
-    max-width: 500px;
+    max-width: 550px;
     transform: translateX(120%);
     transition: all 0.4s var(--cubic);
-    animation: container-opacity 0.4s 2s var(--cubic) 1 forwards;
+    animation: container-opacity 0.4s 1.2s var(--cubic) 1 forwards;
 }
 
 
@@ -216,20 +216,6 @@ form p a {
 
 .infos-container p{
     padding: 10px;
-}
-
-.error {
-    background-color: #e74c3c;
-    animation: error 0.7s ease-in-out forwards;
-    /* height: 48px; */
-    /* padding: 8px; */
-}
-
-.success {
-    animation: error 0.7s ease-in-out forwards;
-    background-color: #229753;
-    /* padding: 10px; */
-    /* height: 48px; */
 }
 
 @keyframes error {

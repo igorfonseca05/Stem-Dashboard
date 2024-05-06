@@ -1,25 +1,52 @@
-.login-section {
+/* .login-section {
     display: flex;
     justify-content: start;
     align-items: center;
-    padding-top: 78px;
+
     width: 100vw;
-    /* margin-left: 259px; */
-    /* background-color: var(--Oficial-body-color) */
-    background-image: url('/img/Dishonored_game-poster.webp');
+ 
+    background-image: url('https://steamuserimages-a.akamaihd.net/ugc/269463939060928011/5628296F1574886C1334499DF4A05F159A0AA71F/');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    position: relative;
+} */
+
+.login-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-auto-rows: 100vh;
+    /* justify-content: center;
+    align-items: center; */
+    width: 100vw;
+    position: relative;
+    background-color: var(--Oficial-body-color) !important; 
+}
+
+.login-section h1 {
+    font-size: 45px;
+    background-color: transparent;
+    font-family: 'motivaSans-Bold', 'sans-serif';
+}
+
+.bg {
+    position: relative;
+    order: 2;
+    width: 100%;
+    height: 100%;
+    /* border-radius: 15px; */
+    content: "";
+    /* background-color: aqua !important; */
+    background-image: url('https://image-cdn.essentiallysports.com/wp-content/uploads/steam-store.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    position: relative;
+    align-self: center;
 }
 
 .gradient {
     width: 100%;
-    background: radial-gradient(circle at left,
-            #18181a 30%,
-            rgba(24, 24, 26, 0.6) 50%,
-            rgba(24, 24, 26, 0.3) 85%
-            );
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
     /* height: 500px; */
     z-index: 0;
     position: absolute;
@@ -29,15 +56,18 @@
 }
 
 .form-container {
+    display: flex;
     z-index: 2;
-    margin-left: 20px;
+    /* margin-left: 20px; */
+    justify-content: center;
+    
 }
 
 .header-login {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items:start;
 }
 
 .header-login img {
@@ -47,12 +77,25 @@
 
 .header-login p {
     text-align: center;
+    font-family: 'motivaSans-medium', 'sans-serif';;
     color: var(--light-gray);
 }
 
 .forget-password {
     text-align: end;
     margin: 0px;
+    
+}
+
+.forget-password a {
+    text-align: end;
+    margin: 0px;
+    color: var(--light-gray);
+    
+}
+.forget-password a:hover {
+    color: var(--thirdColor);
+    
 }
 
 .line-container {
@@ -100,11 +143,13 @@
     width: 100%;
     height: 38px;
     padding: 5px;
-    border: none;
+    background-color: transparent;
+    border: 1px solid var(--thirdColor);
     border-radius: 8px;
     /* flex-grow: ; */
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 .google-button:hover {
@@ -125,7 +170,15 @@
 }
 
 .google-button p {
-    width: 38%;
+    display: flex;
+    align-items: end;
+    /* justify-self: end; */
+    /* width: 38%; */
     height: 100%;
     margin-bottom: 0px;
+}
+
+.create-account-link{
+    padding-top: 20px;
+    text-align: center;
 }

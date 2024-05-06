@@ -7,17 +7,23 @@ function useMenu(location) {
   const [SizeScreen, setSizeScreen] = useState()
   
   function handleMenu() {
-
+    
     useEffect(() => {
-      if(location === '/login' || location === '/SignUp' ) {
+      if(location === '/login' || location === '/SignUp') {
         const menu = document.querySelector('.nav-container')
+        const top_menu = document.querySelector('.top-menu')
+        // setIsOpen(false)
         menu.style.display = 'none' 
-        console.log('to aqio')
+        // menu.style.visibility = 'hidden' 
+        // top_menu.style.visibility = 'hidden' 
+        top_menu.style.display = 'none' 
+        // menu.classList.remove()
+        // menu.setAttribute('class', 'nav-container fechado')
+
       return
     }
 
     }, [])
-
 
     // useEffect(() => {
     //   const horizontalMenu = document.querySelector('.top-menu')

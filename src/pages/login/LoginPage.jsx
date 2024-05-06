@@ -24,11 +24,14 @@ function LoginPage() {
 
   return (
     <section className="login-section">
+      <div className="bg">
       <div className="gradient"></div>
+      </div>
       <div className="form-container">
         <div className='adjust-content'>
           <div className="header-login">
-           <img src="steam.svg" alt="" />
+           {/* <img src="steam.svg" alt="" /> */}
+           <h1>SIGN IN</h1>
            <p>Please, enter your email and password</p>
           </div>
           <form>
@@ -45,11 +48,11 @@ function LoginPage() {
              <p className="line">Or</p>
              </div>
               <div className="buttons-login-container">
-                <button type="submit" className="google-button">
+                <div type="submit" className="google-button">
                   <img src="google.svg" alt="" />
                   <p>Sign in with Google</p>
-                </button>
-                <p>Don't you have any account? <Link to={'/SignUp'} href="" style={{fontWeight: 600}}>Sign Up</Link></p>
+                </div>
+                <p className="create-account-link">Don't you have any account? <Link to={'/SignUp'} href="" style={{fontWeight: 600}}>Sign Up</Link></p>
               </div>
             {error && <div className='infos-container error'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>}
             {success && <div className='infos-container success'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>}

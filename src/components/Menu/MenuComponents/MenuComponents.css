@@ -94,12 +94,12 @@
 .open {
     /* transform: translajkop´--/]
     teX(0%); */
-    animation: openMenu 0.2s linear forwards;
+    animation: openMenu 0.2s ease-in-out forwards;
     /* animation-play-state: paused; */
 }
 
 .close {
-    animation: closeMenu 0.2s linear forwards;
+    animation: closeMenu 0.2s ease-in-out forwards;
     /* display: none; */
     /* animation-play-state: paused; */
 }

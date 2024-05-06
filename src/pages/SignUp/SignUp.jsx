@@ -16,14 +16,14 @@ function SignUp() {
     const [success, setSuccess] = useState(false)
     const [loading, setLoading] = useState(false)
 
-    const {handleMenu} =  useMenu('remove', location.pathname)
+    const {handleMenu} =  useMenu(location.pathname)
     handleMenu()
 
     function handleAnimation() {
         setTimeout(() => {
             document.querySelector('.animation-block').style.display = 'none'
             document.querySelector('.SignIn-Section').style.animationPlayState = 'running'
-        }, 1000)
+        }, 500)
     }
 
     return (

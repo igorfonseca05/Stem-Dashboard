@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 
 import useDebounce from '../hooks/useDebounce'
 
-function useHandleMenu() {
+function useHandleMenu(isToBeOpened) {
   const [ifToCloseOnClick, setIfToCloseOnClick] = useState(false)
   const [isOpen, setIsOpen] = useState(true)
 
@@ -11,7 +11,6 @@ function useHandleMenu() {
 
     const {Mydebounce} = useDebounce()
 
-  
     function resize() {
 
       if (window.innerWidth >= 1200) {
@@ -22,7 +21,14 @@ function useHandleMenu() {
       }
     }
     
-    window.addEventListener('resize', Mydebounce(resize, 200))
+
+    // Controlando execução da função
+
+    if(isToBeOpened) {
+      window.addEventListener('resize', Mydebounce(resize, 200))
+    } else {
+      
+    }
 
     useEffect(() => {   
 
@@ -30,7 +36,6 @@ function useHandleMenu() {
 
     }, [])
 
-    
   }
   
   return { handleMenu, ifToCloseOnClick, isOpen }
