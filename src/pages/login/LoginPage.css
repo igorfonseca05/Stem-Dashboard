@@ -141,7 +141,7 @@
 .google-button {
     display: flex;
     width: 100%;
-    height: 38px;
+    height: 48px;
     padding: 5px;
     background-color: transparent;
     border: 1px solid var(--thirdColor);
@@ -171,7 +171,7 @@
 
 .google-button p {
     display: flex;
-    align-items: end;
+    align-items: center;
     /* justify-self: end; */
     /* width: 38%; */
     height: 100%;
