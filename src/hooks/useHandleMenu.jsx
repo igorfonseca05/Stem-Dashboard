@@ -11,30 +11,29 @@ function useHandleMenu(isToBeOpened) {
 
     const {Mydebounce} = useDebounce()
 
-    function resize() {
+    function resize() {  
+      
+      const menu = document.querySelector('.nav-container')
+      const topMenu = document.querySelector('.top-menu')
+      menu.style.display = 'block' 
+      topMenu.style.display = 'block' 
 
       if (window.innerWidth >= 1200) {
         setIfToCloseOnClick(false)
         setIsOpen(true)
-      } else {
+      } 
+      else {
         setIsOpen(false)
+        setIfToCloseOnClick(true)
       }
     }
     
-
-    // Controlando execução da função
-
-    if(isToBeOpened) {
+    // Controlando execução da função    
       window.addEventListener('resize', Mydebounce(resize, 200))
-    } else {
-      
-    }
-
-    useEffect(() => {   
-
+  
+    useEffect(() => {  
       resize()
-
-    }, [])
+    }, [isToBeOpened])
 
   }
   

@@ -99,6 +99,8 @@ li a {
   background-color: var(--thirdColor);
   color: white;
   font-weight: 600;
+  margin: 5px 0px;
+  padding: 0px !important;
 }
 
 .blue-button:hover {
@@ -179,59 +181,51 @@ li a {
 
 
 input {
-  padding: 10px 0px;
+  padding: 10px;
   margin: 10px 0px;
-  border: 1px solid var(--thirdColor);
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #8f9197;
+  /* border: 1px solid var(--thirdColor); */
+  background-color: rgba(128, 128, 128, 0.178);
+  /* border: none; */
+  border-bottom: none;
   color: white;
+  border-radius: 8px;
+  font-size: 18px;
 }
 
 input:focus {
+  border-bottom: none;
   outline: none;
-  /* border-color: white; */
-  border-bottom: 1px solid white;
-  /* box-shadow: 0 0 4px rgba(41, 112, 253, 0.6); */
+  border: 2px solid var(--thirdColor);
+  /* padding: 8.5px 0px; */
+  height: 47px;
 }
 
 .align-button {
-  padding: 20px 0px;
+  padding: 0px;
+  margin: 5px 0px;
 }
 
 form p a {
   text-decoration: none;
   color: var(--thirdColor);
+  margin: 5px 0px;
 }
 
-.gradient-right {
-  width: 100%;
-  background: radial-gradient(circle at right,
-          #18181a 50%,
-          rgba(24, 24, 26, 0.6) 70%,
-          rgba(24, 24, 26, 0.3) 85%
-          );
-  /* height: 500px; */
-  z-index: 0;
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
+.infos-container{
+  /* background-color: #2970fd; */
+  /* padding: 10px; */
+  border-radius: 10px;
+  margin: 10px 0px;
+  transition: all 0.3s ease-in-out ;
+  height: 0px;
+  overflow: hidden;
+  /* animation-play-state: paused; */
+  font-size: 14px;
+  /* font-weight: 500; */
 }
 
-.gradient-left {
-  width: 100%;
-  background: radial-gradient(circle at left,
-          #18181a 30%,
-          rgba(24, 24, 26, 0.6) 50%,
-          rgba(24, 24, 26, 0.3) 85%
-          );
-  /* height: 500px; */
-  z-index: 0;
-  position: absolute;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
+.infos-container p{
+  padding: 10px;
 }
 
 .error {
@@ -248,6 +242,19 @@ form p a {
   /* height: 48px; */
 }
 
+@keyframes error {
+  from {
+      /* padding: 8px; */
+      height: 0px;
+  } to {
+      /* padding: 8px; */
+      height: 60px;
+  }    
+}
+
+
+
+
 
 @media screen and (max-width: 480px) {
 
@@ -260,16 +267,18 @@ form p a {
   }
 
   .form-container {
-    width: 80%;
+    width: 100%;
   }
   
-  .login-section .bg{
+    
+  .login-section .bg, .bg-signUp{
     display: none;
   }
   
   .adjust-content {
     width: 95%;
     grid-template-columns: 100%;
+    padding: 0px;
 }
 
   .adjust-size {
@@ -384,7 +393,7 @@ form p a {
   }
 
   .SignIn-Section {
-    margin-top: 24%;
+    margin-top: 0%;
   }
 
   .infos-SignUp {
@@ -445,7 +454,15 @@ form p a {
     /* padding: 78px 0px; */
     margin: 0 auto;
   }
-
+  
+  .login-section .bg, .bg-signUp{
+    display: none;
+  }
+  
+  .form-container {
+    width: 100%;
+  }
+ 
   .adjust-size {
     width: 98vw;
     margin-left: 0px;
@@ -539,7 +556,7 @@ form p a {
   .signUp-form-container {
     margin-right: 0px;
   }
-
+  
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -694,9 +711,8 @@ form p a {
     justify-content: center;
   }
 
-  /* .games-content{
-    padding: 78px auto;
-
-} */
+  .adjust-content {
+    width: 80%;
+}
 
 }

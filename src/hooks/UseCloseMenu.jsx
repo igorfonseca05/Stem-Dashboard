@@ -9,18 +9,19 @@ function useMenu(location) {
   function handleMenu() {
     
     useEffect(() => {
-      if(location === '/login' || location === '/SignUp') {
-        const menu = document.querySelector('.nav-container')
-        const top_menu = document.querySelector('.top-menu')
-        // setIsOpen(false)
-        menu.style.display = 'none' 
-        // menu.style.visibility = 'hidden' 
-        // top_menu.style.visibility = 'hidden' 
-        top_menu.style.display = 'none' 
-        // menu.classList.remove()
-        // menu.setAttribute('class', 'nav-container fechado')
 
-      return
+      const menu = document.querySelector('.nav-container')
+      const top_menu = document.querySelector('.top-menu')
+
+      if(location === '/login' || location === '/SignUp') {
+        menu.style.display = 'none' 
+        top_menu.style.display = 'none' 
+
+      } else {
+        console.log('to aqui')
+      // menu.style.display = 'block' 
+      // top_menu.style.display = 'block' 
+
     }
 
     }, [])

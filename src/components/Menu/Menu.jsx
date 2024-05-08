@@ -7,14 +7,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Menu.css"
 
 import useHandleMenu from '../../hooks/useHandleMenu';
+import useMenu from '../../hooks/UseCloseMenu';
 
 import MenuComponents from './MenuComponents/MenuComponents';
 
-function Menu() {
+function Menu({show}) {
+
+  // const location = useLocation()
+
+  // const {handleMenu: showMenu} = useMenu(location.pathname)
+
+  // showMenu()
 
   const [changeClass, setChangeClass] = useState(null)
 
-  const {handleMenu, ifToCloseOnClick, isOpen} = useHandleMenu('open')
+  const {handleMenu, ifToCloseOnClick, isOpen} = useHandleMenu(show)
   
   handleMenu()
 
@@ -31,22 +38,25 @@ function Menu() {
       setTimeout(() => {
         //This class unmount the Menu from DOM
         setChangeClass('fechado')
-      }, 500)
+      }, 600)
     }
   }, [isOpen])
 
+  // console.log('oi')
   
-  function handleCloseOnClick(e) {
+  function closeOnClick(e) {
     if(e.target.tagName === 'A') {
       const menu = document.querySelector('.nav-container')
       menu.classList.remove('open')
       menu.classList.add('close')
+ 
+      setTimeout(() => {menu.classList.remove('close')}, 200)
     }
   }
 
   return (
     <header className='header-menu'>
-     {ifToCloseOnClick && <nav className={`nav-container ${changeClass}`} onClick={(e) => {handleCloseOnClick(e)}}>
+     {ifToCloseOnClick && <nav className={`nav-container ${changeClass}`} onClick={(e) => {closeOnClick(e)}}>
         <MenuComponents/>
       </nav>}
      {!ifToCloseOnClick && <nav className={`nav-container ${changeClass}`}>

@@ -74,11 +74,6 @@ function Home() {
             </div>
 
         </section>
-        // <section className='content'>
-        //     {/* <HorizontalMenu /> */}
-
-        // </section>
-
     )
 }
 

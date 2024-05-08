@@ -7,8 +7,9 @@ import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 
 
 import useMenu from '../../hooks/UseCloseMenu'
+import Login_SignUp_Menu from '../../components/Menu-Login-SignUp/Login_SignUp_Menu'
 
-function SignUp() {
+function SignUp({handleShowMenu}) {
 
     const location = useLocation()
 
@@ -32,9 +33,10 @@ function SignUp() {
                 <img className='animate-logo' src="steam-logo.png" alt="" />
                 <h1>STEAM</h1>
             </div>
-
             <section className='SignIn-Section'>
-                <div className='gradient-right'></div>
+                <Login_SignUp_Menu handleShowMenu={handleShowMenu}/>
+                {/* <div className='gradient-right'></div> */}
+                <div className='bg-signUp'></div>
                 <div className="signUp-form-container">
                     <div className='adjust-content'>
                         <h2>Join our Steam community</h2>
@@ -60,7 +62,6 @@ function SignUp() {
                              {error && <div className='infos-container error'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>}
 
                              {success && <div className='infos-container success'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>}
-
                         </form>
                     </div>
                 </div>

@@ -20,15 +20,27 @@ import AboutUs from './pages/AboutUs/AboutUs'
 import Updates from './pages/updates/Updates'
 
 function App() {
+
+  const [show, setShow] = useState(false)
+
+  function handleShowMenu () {
+    setShow(!show)
+  }
+
+  const handleMenu = {
+    handleShowMenu,
+    show
+  }
+
   return (
     <>
       <BrowserRouter>
-        <Menu/>
+        <Menu show={show}/>
         <HorizontalMenu />
         <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/login' element={<LoginPage/>} />
-          <Route path='/signUp' element={<SignUp/>} />
+          <Route path='/' element={<Home/>} />
+          <Route path='/login' element={<LoginPage {...handleMenu}/>} />
+          <Route path='/signUp' element={<SignUp  {...handleMenu}/>} />
           <Route path='/aboutUs' element={<AboutUs />} />
           <Route path='/updates' element={<Updates />} />
         </Routes>

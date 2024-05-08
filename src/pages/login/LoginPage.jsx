@@ -8,9 +8,12 @@ import { useLocation } from "react-router-dom"
 import useMenu from "../../hooks/UseCloseMenu"
 
 import { Link } from "react-router-dom"
+import Login_SignUp_Menu from "../../components/Menu-Login-SignUp/Login_SignUp_Menu"
 
 
-function LoginPage() {
+function LoginPage({handleShowMenu}) {
+
+  // console.log(handleShowMenu)
 
   const location = useLocation()
 
@@ -24,8 +27,8 @@ function LoginPage() {
 
   return (
     <section className="login-section">
+      <Login_SignUp_Menu handleShowMenu ={handleShowMenu}/>
       <div className="bg">
-      <div className="gradient"></div>
       </div>
       <div className="form-container">
         <div className='adjust-content'>

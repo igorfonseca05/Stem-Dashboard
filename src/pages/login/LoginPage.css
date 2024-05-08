@@ -14,13 +14,26 @@
 
 .login-section {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns:  repeat(auto-fit, minmax(300px, 1fr));
     grid-auto-rows: 100vh;
     /* justify-content: center;
     align-items: center; */
     width: 100vw;
     position: relative;
     background-color: var(--Oficial-body-color) !important; 
+}
+
+.adjust-content{
+    animation: moveForm 0.4s var(--cubic) forwards;
+}
+
+@keyframes moveForm {
+    from {
+        transform: translateX(-115%);
+    } to {
+        transform: translateX(0%);
+    }
+    
 }
 
 .login-section h1 {
@@ -34,25 +47,15 @@
     order: 2;
     width: 100%;
     height: 100%;
-    /* border-radius: 15px; */
+    /* border-radius: 40px; */
     content: "";
     /* background-color: aqua !important; */
-    background-image: url('https://image-cdn.essentiallysports.com/wp-content/uploads/steam-store.jpg');
+    background-image: url('img/loginbg.webp');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     align-self: center;
-}
-
-.gradient {
-    width: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    /* height: 500px; */
-    z-index: 0;
-    position: absolute;
-    top: 0px;
-    bottom: 0px;
-    left: 0px;
+    /* justify-self: center; */
 }
 
 .form-container {
@@ -79,10 +82,11 @@
     text-align: center;
     font-family: 'motivaSans-medium', 'sans-serif';;
     color: var(--light-gray);
+    margin: 5px 0px;
 }
 
 .forget-password {
-    text-align: end;
+    /* text-align: end; */
     margin: 0px;
     
 }
@@ -99,9 +103,10 @@
 }
 
 .line-container {
-    padding: 10px 0px;
+    padding: 0px 0px;
     display: flex;
     justify-content: center;
+    /* margin: 5px 0px; */
 }
 
 .line {
@@ -112,6 +117,7 @@
     font-weight: 600;
     color: var(--light-gray);
     z-index: 0;
+    margin: 0px;
 }
 
 .line::after,
@@ -150,10 +156,12 @@
     justify-content: center;
     align-items: center;
     color: white;
+    margin: 5px 0px;
 }
 
 .google-button:hover {
-    transform: scale(1.01);
+    box-shadow: 0px 0px 20px 5px #007bff60;
+  transform: scale(1.01);
 }
 
 .google-button figure {
@@ -167,6 +175,7 @@
     /* flex-grow: 1; */
     width: 10%;
     height: 100%;
+    padding: 5px;
 }
 
 .google-button p {
@@ -179,6 +188,12 @@
 }
 
 .create-account-link{
-    padding-top: 20px;
-    text-align: center;
+    padding-top: 0px;
+    /* text-align: end; */
+    color: var(--light-gray);
+    margin: 10px 0px 0px 0px; 
+}
+
+.create-account-link a{
+    color: white;
 }
