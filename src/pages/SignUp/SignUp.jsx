@@ -11,11 +11,11 @@ import Login_SignUp_Menu from '../../components/Menu-Login-SignUp/Login_SignUp_M
 
 function SignUp({handleShowMenu}) {
 
-    const location = useLocation()
-
     const [error, setError] = useState(false)
     const [success, setSuccess] = useState(false)
     const [loading, setLoading] = useState(false)
+    
+    const location = useLocation()
 
     const {handleMenu} =  useMenu(location.pathname)
     handleMenu()
@@ -25,6 +25,16 @@ function SignUp({handleShowMenu}) {
             document.querySelector('.animation-block').style.display = 'none'
             document.querySelector('.SignIn-Section').style.animationPlayState = 'running'
         }, 500)
+    }
+
+    function getFormData (e) {
+        e.preventDefault()
+        const user = {
+            userName: e.target.username.value,
+            email: e.target.email.value,
+            password: e.target.password.value,
+        }
+        console.log(user)
     }
 
     return (
@@ -41,7 +51,7 @@ function SignUp({handleShowMenu}) {
                     <div className='adjust-content'>
                         <h2>Join our Steam community</h2>
                         <Link to={'/login'}><span className='question'>Existing user? </span><p className='efect'>Sign In</p></Link>
-                        <form>
+                        <form onSubmit={(e) => getFormData(e)}>
                             {/* <label htmlFor="username">User Name</label> */}
                             <input type="text" id="username" name="username" placeholder='User Name' required />
 
