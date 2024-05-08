@@ -5,22 +5,15 @@ import React, { useEffect, useState } from 'react'
 import './SignUp.css'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 
-
 import useMenu from '../../hooks/UseCloseMenu'
 import Login_SignUp_Menu from '../../components/Menu-Login-SignUp/Login_SignUp_Menu'
 
+// Authentication Hook
+import { useAuthentication } from '../../hooks/useAuthentication'
+
 function SignUp({ handleShowMenu }) {
 
-    const [username, setUserName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [confirmPassword, setConfirm] = useState('')
-
-    // Temporary variables
-    const [error, setError] = useState(false)
-    const [success, setSuccess] = useState(false)
-    const [loading, setLoading] = useState(false)
-
+    // Dealing with Menu animation first
     const location = useLocation()
 
     const { handleMenu } = useMenu(location.pathname)
@@ -33,8 +26,24 @@ function SignUp({ handleShowMenu }) {
         }, 500)
     }
 
-    function getFormData(e) {
+    // Signing Up a user to my application
+    const [username, setUserName] = useState('')
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [confirmPassword, setConfirm] = useState('')
+
+    // Temporary variables
+    const [error, setError] = useState(false)
+    const [success, setSuccess] = useState(false)
+    const [loading, setLoading] = useState(false)
+
+    // Importing the function that is responsable for create user
+    const {createUser} = useAuthentication()
+
+    async function handleGetFormData(e) {
         e.preventDefault()
+
+        setError('')
 
         const user = {
             username,
@@ -42,12 +51,15 @@ function SignUp({ handleShowMenu }) {
             password,
         }
 
+        // Verifying if passwords are the same
         if(password !== confirmPassword) {
             setError('As senhas precisam ser iguais!')
             return
         }
 
-        console.log(user)
+        const createdUser = await createUser(user)
+
+        console.log(createdUser)
     }
 
     return (
@@ -64,7 +76,7 @@ function SignUp({ handleShowMenu }) {
                     <div className='adjust-content'>
                         <h2>Join our Steam community</h2>
                         <Link to={'/login'}><span className='question'>Existing user? </span><p className='efect'>Sign In</p></Link>
-                        <form onSubmit={(e) => getFormData(e)}>
+                        <form onSubmit={(e) => handleGetFormData(e)}>
                             {/* <label htmlFor="username">User Name</label> */}
                             <input
                                 type="text"

@@ -1,5 +1,5 @@
 
-import {db} from '../../firebase/config'
+import {db} from '../../firebase/config.js'
 
 import {
     getAuth,
@@ -25,8 +25,9 @@ export function useAuthentication() {
         if(cancelled) return
     }
 
-    // creating the function that create users
+    const auth = getAuth()
 
+    // creating the function that create users
     async function createUser({username, email, password}) {
         checkIfCancelled()
 
@@ -48,11 +49,11 @@ export function useAuthentication() {
 
         setLoading(false)
 
-        return {auth, createUser, loading, success, error}
     }
-
+    
     useEffect(() => {
         return () => setCancelled(true);
     }, [])
-
+    
+    return {auth, createUser, loading, success, error}
 }
