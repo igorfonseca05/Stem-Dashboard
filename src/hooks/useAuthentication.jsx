@@ -1,4 +1,6 @@
 
+import {db} from '../../firebase/config'
+
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -11,25 +13,46 @@ import {
 import {useState, useEffect} from 'react'
 
 export function useAuthentication() {
+    //adding variables which we will work with
     const [error, setError] = useState(null)
-    const [loading, setLoading] = useState(null)
+    const [loading, setLoading] = useState(true)
     const [success, setSuccess] = useState(null)
 
-    // cleanUp
-    /** deal with memory leak */
+    //Avoid memory leak
     const [cancelled, setCancelled] =  useState(false)
 
-    const auth = getAuth()
-
-    function checkIfIsCancelled () {
+    function checkIfCancelled () {
         if(cancelled) return
     }
 
-    async function createUser (userData) {
-        useEffect(() => {
+    // creating the function that create users
 
-        }, [])
+    async function createUser({username, email, password}) {
+        checkIfCancelled()
+
+        setLoading(true)
+
+        try {
+
+            const {user} = await createUserWithEmailAndPassword(auth, email, password)
+
+            updateProfile(user, {displayName: username})
+
+            return user
+
+        } catch (error) {
+            console.log(error.message)
+            console.log(typeof error.message)
+            
+        }
+
+        setLoading(false)
+
+        return {auth, createUser, loading, success, error}
     }
 
+    useEffect(() => {
+        return () => setCancelled(true);
+    }, [])
 
 }
