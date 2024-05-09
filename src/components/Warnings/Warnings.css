@@ -1,0 +1,64 @@
+
+
+.infos-container{
+    /* background-color: #2970fd; */
+    /* padding: 10px; */
+    border-radius: 10px;
+    margin: 10px 0px;
+    transition: all 0.3s ease-in-out ;
+    height: 0px;
+    overflow: hidden;
+    /* animation-play-state: paused; */
+    /* font-size: 14px; */
+    /* font-weight: 500; */
+  }
+  
+  .infos-container p{
+    padding: 5px;
+    margin: 0px;
+  }
+
+  .error, .success {
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .error {
+    background-color: #e74c3c;
+    animation: error 0.4s ease-in-out forwards;
+    /* height: 48px; */
+  }
+
+  .removeWarning {
+     animation: close 0.4s ease-in-out forwards;
+  }
+  
+  .success {
+    animation: error 0.4s ease-in-out forwards;
+    background-color: #229753;
+    /* padding: 10px; */
+    /* height: 48px; */
+
+  }
+
+  
+  @keyframes close {
+    from {
+        /* padding: 8px; */
+        height: 50px;
+      } to {
+        /* padding: 8px; */
+        height: 0px;
+        /* display: none; */
+    }    
+  }
+
+  @keyframes error {
+    from {
+        /* padding: 8px; */
+        height: 0px;
+    } to {
+        /* padding: 8px; */
+        height: 50px;
+    }    
+  }

@@ -1,6 +1,8 @@
 
 import React, { useEffect, useState } from 'react'
 
+// Important resource do deal with XSS attacks
+import DOMPurify from 'dompurify'
 
 import './SignUp.css'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
@@ -10,6 +12,7 @@ import Login_SignUp_Menu from '../../components/Menu-Login-SignUp/Login_SignUp_M
 
 // Authentication Hook
 import { useAuthentication } from '../../hooks/useAuthentication'
+import Warnings from '../../components/Warnings/Warnings'
 
 function SignUp({ handleShowMenu }) {
 
@@ -32,13 +35,15 @@ function SignUp({ handleShowMenu }) {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirm] = useState('')
 
+    const [elementClass, setClass] = useState('')
+
     // Temporary variables
     const [error, setError] = useState(false)
-    const [success, setSuccess] = useState(false)
-    const [loading, setLoading] = useState(false)
+    // const [success, setSuccess] = useState(false)
+    // const [loading, setLoading] = useState(false)
 
     // Importing the function that is responsable for create user
-    const {createUser} = useAuthentication()
+    const { createUser, error: erro, loading, success } = useAuthentication()
 
     async function handleGetFormData(e) {
         e.preventDefault()
@@ -52,15 +57,23 @@ function SignUp({ handleShowMenu }) {
         }
 
         // Verifying if passwords are the same
-        if(password !== confirmPassword) {
+        if (password !== confirmPassword) {
             setError('As senhas precisam ser iguais!')
             return
         }
 
         const createdUser = await createUser(user)
 
-        console.log(createdUser)
+        // console.log(createdUser)
+
+        if (createdUser) {
+            e.target.value = ''
+        }
     }
+
+    useEffect(() => {
+        setError(erro)
+    }, [erro])
 
     return (
         <>
@@ -71,7 +84,10 @@ function SignUp({ handleShowMenu }) {
             <section className='SignIn-Section'>
                 <Login_SignUp_Menu handleShowMenu={handleShowMenu} />
                 {/* <div className='gradient-right'></div> */}
-                <div className='bg-signUp'></div>
+                <div className='bg-signUp'>
+                    <div className='brush'></div>
+                    <img src="fulSteamLogo.png" alt="" />
+                </div>
                 <div className="signUp-form-container">
                     <div className='adjust-content'>
                         <h2>Join our Steam community</h2>
@@ -82,46 +98,47 @@ function SignUp({ handleShowMenu }) {
                                 type="text"
                                 id="username"
                                 name="username"
+                                value={username}
                                 placeholder='User Name'
                                 required
-                                onInput={(e) => setUserName(e.target.value)} />
+                                onInput={(e) => setUserName(DOMPurify.sanitize(e.target.value))} />
 
                             {/* <label htmlFor="email">E-mail Adress</label> */}
                             <input
                                 type="email"
                                 id="email"
                                 name="email"
+                                value={email}
                                 placeholder='E-mail Adress'
                                 required
-                                onInput={(e) => setEmail(e.target.value)} />
+                                onInput={(e) => setEmail(DOMPurify.sanitize(e.target.value))} />
 
                             {/* <label htmlFor="password">Password</label> */}
                             <input
                                 type="password"
                                 id="password"
                                 name="password"
+                                value={password}
                                 placeholder='Password'
                                 required
-                                onInput={(e) => setPassword(e.target.value)} />
+                                onInput={(e) => setPassword(DOMPurify.sanitize(e.target.value))} />
                             <input
                                 type="password"
                                 id="confirm-password"
                                 name="confirm-password"
+                                value={confirmPassword}
                                 placeholder='Confirm password'
                                 required
-                                onInput={(e) => setConfirm(e.target.value)} />
+                                onInput={(e) => setConfirm(DOMPurify.sanitize(e.target.value))} />
 
                             <div className='align-button'>
-                                {loading && <button type="submit" className='blue-button' style={{ opacity: '0.5', cursor: 'not-allowed' }} disabled='true'>SIGN UP</button>}
-
-                                {!loading && <button type="submit" className='blue-button'>SIGN UP</button>}
+                                {!loading && <button type="submit" className='blue-button' style={{ opacity: '0.5', cursor: 'not-allowed' }} disabled={loading}>SIGN UP</button>}
+                                {loading && <button type="submit" className='blue-button'>SIGN UP</button>}
                             </div>
 
                             <p className='info-policy'>By clicking Sign Up, I confirm that i am 13 years of age or older and agree to the terms of the <a href='#'>Steam Subscriber Agreement</a> and the <a href='#'>Valve Privacy Policy</a></p>
-
-                            {error && <div className='infos-container error'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>}
-
-                            {success && <div className='infos-container success'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>}
+                                {error && <Warnings Warning='error' mensage={error} />}
+                                {success && <Warnings Warning='success' mensage={success} />}
                         </form>
                     </div>
                 </div>

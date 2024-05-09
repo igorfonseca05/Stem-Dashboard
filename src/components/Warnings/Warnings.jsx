@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-function Warnings() {
+import './Warnings.css'
+
+function Warnings({Warning, mensage}) {
+
+
   return (
-    <div>Warnings</div>
+    <div className={`infos-container ${Warning}`}><p>{mensage}</p></div>
   )
 }
 

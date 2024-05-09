@@ -31,7 +31,8 @@ export function useAuthentication() {
     async function createUser({username, email, password}) {
         checkIfCancelled()
 
-        setLoading(true)
+        setLoading(!loading)
+        setError(null)
 
         try {
 
@@ -39,16 +40,29 @@ export function useAuthentication() {
 
             updateProfile(user, {displayName: username})
 
+            setSuccess('Usuário criado com sucesso')
+            setLoading(loading)
             return user
 
         } catch (error) {
-            console.log(error.message)
-            console.log(typeof error.message)
+            // console.log(error.message)
+            // console.log(typeof error.message)
             
+            let errorSystem
+
+            if(error.message.includes('auth/weak-password')){
+                errorSystem = 'Senha precisa ter pelo menos 6 caracteres'
+            } else if(error.message.includes('auth/invalid-email')) {
+                errorSystem = 'Por favor, insira um endereço de e-mail válido'
+            } else if(error.message.includes('auth/email-already-in-use')) {
+                errorSystem =  'Este e-mail já está em uso. Por favor, use outro.'
+            }
+
+            setError(errorSystem)
+            setLoading(loading)
+        } finally {
+            setLoading(loading)
         }
-
-        setLoading(false)
-
     }
     
     useEffect(() => {
