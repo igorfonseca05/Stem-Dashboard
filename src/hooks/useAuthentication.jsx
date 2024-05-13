@@ -40,6 +40,7 @@ export function useAuthentication() {
 
             updateProfile(user, {displayName: username})
 
+            setError(null)
             setSuccess('Usuário criado com sucesso')
             setLoading(loading)
             return user
@@ -56,8 +57,11 @@ export function useAuthentication() {
                 errorSystem = 'Por favor, insira um endereço de e-mail válido'
             } else if(error.message.includes('auth/email-already-in-use')) {
                 errorSystem =  'Este e-mail já está em uso. Por favor, use outro.'
+            } else {
+                console.log(error)
             }
 
+            setSuccess(null)
             setError(errorSystem)
             setLoading(loading)
         } finally {

@@ -67,7 +67,7 @@ function SignUp({ handleShowMenu }) {
         // console.log(createdUser)
 
         if (createdUser) {
-            e.target.value = ''
+            console.log(e.target)
         }
     }
 
@@ -132,18 +132,13 @@ function SignUp({ handleShowMenu }) {
                                 onInput={(e) => setConfirm(DOMPurify.sanitize(e.target.value))} />
 
                             <div className='align-button'>
-                                {!loading && <button type="submit" className='blue-button' style={{ opacity: '0.5', cursor: 'not-allowed' }} disabled={loading}>SIGN UP</button>}
+                                {!loading && <button type="submit" className='blue-button' style={{ opacity: '0.5', cursor: 'not-allowed' }} disabled={loading}>Wait...</button>}
                                 {loading && <button type="submit" className='blue-button'>SIGN UP</button>}
                             </div>
 
                             <p className='info-policy'>By clicking Sign Up, I confirm that i am 13 years of age or older and agree to the terms of the <a href='#'>Steam Subscriber Agreement</a> and the <a href='#'>Valve Privacy Policy</a></p>
-
-                                {}
-                               
-                               
-                               
-                                {/* {error && <Warnings Warning='error' mensage={error} />}
-                                {success && <Warnings Warning='success' mensage={success} />} */}
+                                {error && <Warnings warning='error' message={error} />}
+                                {success && <Warnings warning='success' message={success} />}                            
                         </form>
                     </div>
                 </div>

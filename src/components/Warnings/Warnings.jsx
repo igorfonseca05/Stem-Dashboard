@@ -2,11 +2,10 @@ import React, { useEffect, useState } from 'react'
 
 import './Warnings.css'
 
-function Warnings({Warning, mensage}) {
-
+function Warnings({warning, message}) {
 
   return (
-    <div className={`infos-container ${Warning}`}><p>{mensage}</p></div>
+    <div data-js='warning' className={`infos-container ${warning}`}><p>{message}</p></div>
   )
 }
 
