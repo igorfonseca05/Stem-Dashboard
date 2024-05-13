@@ -137,8 +137,13 @@ function SignUp({ handleShowMenu }) {
                             </div>
 
                             <p className='info-policy'>By clicking Sign Up, I confirm that i am 13 years of age or older and agree to the terms of the <a href='#'>Steam Subscriber Agreement</a> and the <a href='#'>Valve Privacy Policy</a></p>
-                                {error && <Warnings Warning='error' mensage={error} />}
-                                {success && <Warnings Warning='success' mensage={success} />}
+
+                                {}
+                               
+                               
+                               
+                                {/* {error && <Warnings Warning='error' mensage={error} />}
+                                {success && <Warnings Warning='success' mensage={success} />} */}
                         </form>
                     </div>
                 </div>
