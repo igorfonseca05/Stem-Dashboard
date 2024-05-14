@@ -67,7 +67,7 @@ function SignUp({ handleShowMenu }) {
         // console.log(createdUser)
 
         if (createdUser) {
-            console.log(e.target)
+            e.target.res
         }
     }
 
