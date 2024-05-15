@@ -4,27 +4,26 @@ import { useEffect, useState } from "react"
 import useDebounce from '../hooks/useDebounce'
 
 function useHandleMenu(isToBeOpened) {
-  const [ifToCloseOnClick, setIfToCloseOnClick] = useState(false)
+  const [closeMenuWithClickOnItem, setcloseMenuWithClickOnItem] = useState(false)
   const [isOpen, setIsOpen] = useState(true)
 
   function handleMenu() {
 
     const {Mydebounce} = useDebounce()
 
-    function resize() {  
-      
+    function resize() {    
       const menu = document.querySelector('.nav-container')
       const topMenu = document.querySelector('.top-menu')
       menu.style.display = 'block' 
       topMenu.style.display = 'block' 
 
       if (window.innerWidth >= 1200) {
-        setIfToCloseOnClick(false)
+        setcloseMenuWithClickOnItem(false)
         setIsOpen(true)
       } 
       else {
         setIsOpen(false)
-        setIfToCloseOnClick(true)
+        setcloseMenuWithClickOnItem(!closeMenuWithClickOnItem)
       }
     }
     
@@ -37,7 +36,7 @@ function useHandleMenu(isToBeOpened) {
 
   }
   
-  return { handleMenu, ifToCloseOnClick, isOpen }
+  return { handleMenu, closeMenuWithClickOnItem, isOpen }
 
 }
 

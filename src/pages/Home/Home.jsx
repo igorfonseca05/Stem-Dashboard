@@ -8,11 +8,19 @@ import HorizontalMenu from '../../components/horizontalMenu/HorizontalMenu'
 
 import { useFetch } from '../../hooks/useFetch'
 
+import useMenu from '../../hooks/UseCloseMenu'
+
 import "./Home.css"
+import { useLocation } from 'react-router-dom'
 
 function Home() {
 
     const { data } = useFetch("http://localhost:3000/games")
+
+    const location = useLocation()
+
+    const { handleMenu } = useMenu(location.pathname)
+    handleMenu()
 
     // console.log(data)
 

@@ -1,29 +1,54 @@
 
 import "./LoginPage.css"
 
-import {useState}from 'react'
+import {useEffect, useState}from 'react'
 
-import { useLocation } from "react-router-dom"
+import { useLocation, useNavigate } from "react-router-dom"
 
 import useMenu from "../../hooks/UseCloseMenu"
 
 import { Link } from "react-router-dom"
 import Login_SignUp_Menu from "../../components/Menu-Login-SignUp/Login_SignUp_Menu"
 
+import { useAuthentication } from "../../hooks/useAuthentication"
+
 
 function LoginPage({handleShowMenu}) {
+
+  const {SignInUser, error: erro, loading, success} = useAuthentication()
 
   // console.log(handleShowMenu)
 
   const location = useLocation()
+  const navigator = useNavigate()
 
   const [error, setError] = useState(false)
-  const [success, setSuccess] = useState(false)
-  const [loading, setLoading] = useState(false)
+  // const [success, setSuccess] = useState(false)
+  // const [loading, setLoading] = useState(false)
 
   const {handleMenu} = useMenu(location.pathname)
 
   handleMenu()
+
+  function handleFormLogin (e) {
+    e.preventDefault()
+
+    const user = {
+      email: e.target.email.value,
+      password: e.target.password.value
+    }
+
+    const res = SignInUser(user)
+
+    if(res) {
+      navigator('/')
+    }
+
+  }
+
+  useEffect(() => {
+    setError(erro)
+  }, [erro])
 
   return (
     <section className="login-section">
@@ -37,15 +62,15 @@ function LoginPage({handleShowMenu}) {
            <h1>SIGN IN</h1>
            <p>Please, enter your email and password</p>
           </div>
-          <form>
+          <form onSubmit={handleFormLogin}>
             {/* <label htmlFor="email">E-mail Adress</label> */}
             <input type="email" id="email" name="email" placeholder='E-mail Adress' required />
             {/* <label htmlFor="password">Password</label> */}
             <input type="password" id="password" name="password" placeholder='Password' required />
             <p className="forget-password"><a href="#">Forget your password?</a></p>
             <div className='align-button'>
-              {loading && <button type="submit" className='blue-button' style={{ opacity: '0.5', cursor: 'not-allowed' }} disabled='true'>SIGN UP</button>}
-              {!loading && <button type="submit" className='blue-button'>SIGN IN</button>}
+              {!loading && <button type="submit" className='blue-button' style={{ opacity: '0.5', cursor: 'not-allowed' }} disabled={loading}>SIGN UP</button>}
+              {loading && <button type="submit" className='blue-button'>SIGN IN</button>}
             </div>
             <div className="line-container">
              <p className="line">Or</p>

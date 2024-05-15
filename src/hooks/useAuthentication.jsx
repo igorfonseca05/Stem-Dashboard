@@ -1,5 +1,5 @@
 
-import {db} from '../../firebase/config.js'
+import {app} from '../../firebase/config.js'
 
 import {
     getAuth,
@@ -9,6 +9,7 @@ import {
      updateProfile,
     signOut,
 } from 'firebase/auth'
+import { refFromURL } from 'firebase/database'
 
 import {useState, useEffect} from 'react'
 
@@ -68,10 +69,37 @@ export function useAuthentication() {
             setLoading(loading)
         }
     }
+
+
+    async function SignInUser ({email, password}) {
+        checkIfCancelled()
+
+        setLoading(!loading)
+
+        try {
+            
+            const res = await signInWithEmailAndPassword(auth,
+                email,
+                password
+            )
+
+            setLoading(loading)
+            return res
+
+        } catch (error) {
+            console.log(error.message)
+            setLoading(loading)
+        }finally {
+            setLoading(loading)
+        }
+
+    }
     
     useEffect(() => {
         return () => setCancelled(true);
     }, [])
+
+
     
-    return {auth, createUser, loading, success, error, signOut}
+    return {auth, createUser, loading, success, error, signOut, SignInUser}
 }

@@ -21,7 +21,7 @@ function Menu({show}) {
 
   const [changeClass, setChangeClass] = useState(null)
 
-  const {handleMenu, ifToCloseOnClick, isOpen} = useHandleMenu(show)
+  const {handleMenu, closeMenuWithClickOnItem, isOpen} = useHandleMenu(show)
   
   handleMenu()
 
@@ -56,10 +56,10 @@ function Menu({show}) {
 
   return (
     <header className='header-menu'>
-     {ifToCloseOnClick && <nav className={`nav-container ${changeClass}`} onClick={(e) => {closeOnClick(e)}}>
+     {closeMenuWithClickOnItem && <nav className={`nav-container ${changeClass}`} onClick={(e) => {closeOnClick(e)}}>
         <MenuComponents/>
       </nav>}
-     {!ifToCloseOnClick && <nav className={`nav-container ${changeClass}`}>
+     {!closeMenuWithClickOnItem && <nav className={`nav-container ${changeClass}`}>
         <MenuComponents/>
       </nav>}
     </header>

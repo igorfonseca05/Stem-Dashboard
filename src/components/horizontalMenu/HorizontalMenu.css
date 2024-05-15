@@ -136,13 +136,34 @@
     height: 48px;
     width: 48px;
     margin: 0px;
-
+    border-radius: 50%;
+    overflow: hidden;
+    
 }
 
 .top-menu-user figure img {
     border-radius: 50%;
     width: 100%;
 
+}
+
+.profile-image-letter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: rgb(145, 145, 145); */
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    position: relative;
+    user-select: none;
+}
+
+.profile-image-letter h2{
+   margin: 0px;
+   font-size: 30px;
+   color: white;
+   z-index: 2;
 }
 
 .top-menu-user p {

@@ -1,4 +1,6 @@
 
+// import { app, ref, set } from '../../../firebase/config'
+
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
@@ -10,18 +12,23 @@ import useIconMenuClose from '../../hooks/useIconMenuClose'
 
 import { useAuthProvider } from '../../context/AuthContext'
 
+import { useRealTimeDataBase } from '../../hooks/useRealTimeDataBase'
+
 function HorizontalMenu() {
 
     const {signOut, auth} = useAuthentication()
     const user = useAuthProvider()
     const { handleCloseMenu } = useIconMenuClose()
+    const {setData, getData} = useRealTimeDataBase()
 
-    console.log(user)
+    // console.log(user)
     
     const [isFocused, setIsFocused] = useState(false)
 
+    const [color, setColor] = useState(null)
+
     
-    function handleBorder() {
+    function creatingBorderOnClick() {
         const label = document.querySelector('[data-js="border-label"]')
 
         if (isFocused) {
@@ -35,8 +42,28 @@ function HorizontalMenu() {
     function handleSignOut() {
         signOut(auth)
     }
+    
+    let counter = 0
+    function handleChangeColor(e) {
+        // Custom hook de acesso a base de dados
+        const colors = ['#00A7C3', '#00BC5D', '#F38500', '#FF453A', '#808080']
+        
+        counter === (colors.length - 1) ? counter = 0 : counter++
+        e.currentTarget.style.backgroundColor = colors[counter]
 
-    handleBorder()
+        //Salvando preferência do usuário na base de dados
+        setData(colors[counter], user?.uid)
+    }
+
+    creatingBorderOnClick()
+   
+    useEffect(() => {
+        const colorBgProfileName = getData(user?.uid)
+        setColor(colorBgProfileName)
+    },[])
+
+    // console.log(color)
+
 
     return (
         <div className='top-menu'>
@@ -59,11 +86,17 @@ function HorizontalMenu() {
                 {user &&
                         <div className='top-menu-user'>
                             <figure>
-                                <img src="https://s3.amazonaws.com/blog.dentrodahistoria.com.br/wp-content/uploads/2023/02/14175424/woody-1.jpg" alt="" />
+                                {user.photoURL? (<>
+                                    <img src={user.PhotoURL} alt="user personal image" />
+                                </>) : (<>
+                                    <div style={{backgroundColor: {color}}} className='profile-image-letter' onClick={handleChangeColor}>
+                                        <h2>{user.displayName.slice(0,1)}</h2>
+                                    </div>
+                                </>)}
                             </figure>
                             <div className="dropdown">
                                 <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Igor Fonseca
+                                    {user.displayName}
                                 </button>
                                 <ul className="dropdown-menu">
                                     <li><a className="dropdown-item" href="#">Perfil</a></li>

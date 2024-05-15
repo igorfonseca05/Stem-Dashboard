@@ -41,8 +41,7 @@ function SignUp({ handleShowMenu }) {
 
     // Temporary variables
     const [error, setError] = useState(false)
-    // const [success, setSuccess] = useState(false)
-    // const [loading, setLoading] = useState(false)
+  
 
     // Importing the function that is responsable for create user
     const { createUser, error: erro, loading, success } = useAuthentication()
