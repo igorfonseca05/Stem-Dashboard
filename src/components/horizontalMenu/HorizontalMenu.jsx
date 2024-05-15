@@ -52,7 +52,7 @@ function HorizontalMenu() {
         e.currentTarget.style.backgroundColor = colors[counter]
 
         console.log(colors[counter])
-        setColor(colors[counter])
+        // setColor(colors[counter])
         //Salvando preferência do usuário na base de dados
         setTimeout(() => {
             setData(colors[counter], user?.uid)
