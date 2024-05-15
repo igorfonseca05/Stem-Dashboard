@@ -56,14 +56,16 @@ function HorizontalMenu() {
     }
 
     creatingBorderOnClick()
-   
-    useEffect(() => {
-        const colorBgProfileName = getData(user?.uid)
-        setColor(colorBgProfileName)
-    },[])
+    
+    
+   useEffect(() => {
+    function getColor(colorData) {
+        setColor(colorData?.color)
+    }
 
-    // console.log(color)
-
+    getData(getColor, user?.uid)
+   }, [])
+    
 
     return (
         <div className='top-menu'>
@@ -89,7 +91,7 @@ function HorizontalMenu() {
                                 {user.photoURL? (<>
                                     <img src={user.PhotoURL} alt="user personal image" />
                                 </>) : (<>
-                                    <div style={{backgroundColor: {color}}} className='profile-image-letter' onClick={handleChangeColor}>
+                                    <div style={{backgroundColor: `${color}`}} className='profile-image-letter' onClick={handleChangeColor}>
                                         <h2>{user.displayName.slice(0,1)}</h2>
                                     </div>
                                 </>)}

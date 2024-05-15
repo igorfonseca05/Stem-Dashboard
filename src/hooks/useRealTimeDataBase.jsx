@@ -11,15 +11,16 @@ export function useRealTimeDataBase() {
 
     function setData(data, userId) {
         set(ref(dataBase, `Color/` + userId), {
-            colorTwo: data
+            color: data
         })
     }
 
-    function getData (userId) {
+    function getData (getColor, userId) {
         onValue(ref(dataBase, `Color/` + userId), (snapshot) => {
             const data = snapshot.val()
             // console.log(data?.colorTwo)
-            return data?.colorTwo
+            
+            getColor(data)
             
         })
     }

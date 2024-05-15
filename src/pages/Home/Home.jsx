@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import CardContainer from '../../components/CardContainer/CardContainer'
 import Main_card from '../../components/main-card/Main_card'
@@ -19,8 +19,13 @@ function Home() {
 
     const location = useLocation()
 
-    const { handleMenu } = useMenu(location.pathname)
-    handleMenu()
+    const { handleMenu, isOpen } = useMenu(location.pathname)
+     handleMenu()
+
+     useEffect(() => {
+        document.querySelector('.nav-container').style.display = 'block'
+        document.querySelector('.top-menu').style.display = 'block'
+     }, [location.pathname])
 
     // console.log(data)
 
@@ -49,26 +54,6 @@ function Home() {
     }
 
     createObj()
-
-    // console.log(res)
-
-    const games_list_one = [
-        { game: "F11 22", tag: 'Racing', url: 'f1.jpg' },
-        { game: "Call of Duty: Modern Warfare", tag: 'Action', url: 'call.jpg' },
-        { game: "Fifa 22", tag: 'Sports', url: 'fifa-22.webp' },
-    ]
-
-    const games_list_two = [
-        { game: "Grand Theft Auto V", tag: 'Crime', url: 'gta.webp' },
-        { game: "Death Stranding", tag: 'Action', url: 'dead.jpg' },
-        { game: "Red Dead Redemption 2", tag: 'Open World', url: 'red.jfif' },
-    ]
-
-    const games_list_three = [
-        { game: "Rust", tag: 'Survival', url: 'rust.jpg' },
-        { game: "PUBG: BATTLEGROUNDS", tag: 'Multiplayer', url: 'battle.jpg' },
-        { game: "Destiny 2", tag: 'Sci-Fi', url: 'destiny.jpg' },
-    ]
 
     return (
         <section className='adjust-size ' style={{ paddingTop: "15px" }} >

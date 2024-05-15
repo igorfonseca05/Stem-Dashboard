@@ -96,7 +96,7 @@ function SignUp({ handleShowMenu }) {
                 <div className="signUp-form-container">
                     <div className='adjust-content'>
                         <h2>Join our Steam community</h2>
-                        <Link to={'/login'}><span className='question'>Existing user? </span><p className='efect'>Sign In</p></Link>
+                        <Link to={'/login'}><span className='question'>Existing user? </span><p className='fadeInEffect'>Sign In</p></Link>
                         <form onSubmit={(e) => handleGetFormData(e)}>
                             {/* <label htmlFor="username">User Name</label> */}
                             <input

@@ -46,6 +46,7 @@
 }
 
 .dropdown-toggle {
+    font-size: 18px;
     border: none !important;
     color: #8f9197 !important;
     /* margin-top: 0px; */
@@ -133,8 +134,8 @@
 }
 
 .top-menu-user figure {
-    height: 48px;
-    width: 48px;
+    height: 38px;
+    width: 38px;
     margin: 0px;
     border-radius: 50%;
     overflow: hidden;

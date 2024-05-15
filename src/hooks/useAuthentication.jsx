@@ -77,17 +77,23 @@ export function useAuthentication() {
         setLoading(!loading)
 
         try {
-            
-            const res = await signInWithEmailAndPassword(auth,
-                email,
-                password
-            )
+            const res = await signInWithEmailAndPassword(auth, email, password)
 
             setLoading(loading)
+            // setSuccess('')
             return res
 
         } catch (error) {
             console.log(error.message)
+
+            let errorSystem;
+
+            if(error.message.includes('auth/invalid-credential')) {
+                errorSystem = 'Usuário não cadastrado, crie uma conta para continuar.'
+            }
+
+            setError(errorSystem)
+
             setLoading(loading)
         }finally {
             setLoading(loading)

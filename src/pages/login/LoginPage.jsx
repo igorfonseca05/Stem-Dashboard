@@ -30,7 +30,7 @@ function LoginPage({handleShowMenu}) {
 
   handleMenu()
 
-  function handleFormLogin (e) {
+ async function handleFormLogin (e) {
     e.preventDefault()
 
     const user = {
@@ -38,9 +38,10 @@ function LoginPage({handleShowMenu}) {
       password: e.target.password.value
     }
 
-    const res = SignInUser(user)
+    const res = await SignInUser(user)
 
     if(res) {
+      console.log(res)
       navigator('/')
     }
 
@@ -80,9 +81,14 @@ function LoginPage({handleShowMenu}) {
                   <img src="google.svg" alt="" />
                   <p>Sign in with Google</p>
                 </div>
-                <p className="create-account-link">Don't you have any account? <Link to={'/SignUp'} href="" style={{fontWeight: 600}}>Sign Up</Link></p>
+                <p className="create-account-link">Don't you have any account? 
+                <Link 
+                  to={'/SignUp'} 
+                  className= {`${error? 'fadeInEffect' : 'signUp-link'}`}
+                  >Sign Up</Link>
+                </p>
               </div>
-            {error && <div className='infos-container error'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>}
+            {error && <div className='infos-container error'><p>{error}</p></div>}
             {success && <div className='infos-container success'><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.</p></div>}
           </form>
         </div>

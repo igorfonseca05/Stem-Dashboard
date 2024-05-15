@@ -189,11 +189,14 @@
 
 .create-account-link{
     padding-top: 0px;
+    /* margin-right: 10px; */
     /* text-align: end; */
     color: var(--light-gray);
     margin: 10px 0px 0px 0px; 
 }
 
-.create-account-link a{
+.signUp-link{
+    font-weight: 600;
     color: white;
+    margin-left: 6px;
 }
