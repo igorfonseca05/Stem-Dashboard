@@ -2,16 +2,22 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
+import { useAuthentication } from '../../hooks/useAuthentication'
+
 
 import "./HorizontalMenu.css"
 import useIconMenuClose from '../../hooks/useIconMenuClose'
 
+import { useAuthProvider } from '../../context/AuthContext'
+
 function HorizontalMenu() {
 
-
+    const {signOut, auth} = useAuthentication()
+    const user = useAuthProvider()
     const { handleCloseMenu } = useIconMenuClose()
 
-    const [user, setUser] = useState(false)
+    console.log(user)
+    
     const [isFocused, setIsFocused] = useState(false)
 
     
@@ -22,7 +28,12 @@ function HorizontalMenu() {
             label.style.border = '2px solid #e6e6e6'
             return
         }
-        label ? label.style.border = 'none' : ''
+
+            label ? label.style.border = 'none' : ''
+     }
+
+    function handleSignOut() {
+        signOut(auth)
     }
 
     handleBorder()
@@ -58,6 +69,7 @@ function HorizontalMenu() {
                                     <li><a className="dropdown-item" href="#">Perfil</a></li>
                                     <li><a className="dropdown-item" href="#">Lançamentos</a></li>
                                     <li><a className="dropdown-item" href="#">Configurações</a></li>
+                                    <li><a className="dropdown-item" href="#" onClick={() => handleSignOut()}>Sair</a></li>
                                     <li className='li-form-container'>
                                         <form className='internal-form'>
                                             <label>

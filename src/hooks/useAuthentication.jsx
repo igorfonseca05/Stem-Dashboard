@@ -73,5 +73,5 @@ export function useAuthentication() {
         return () => setCancelled(true);
     }, [])
     
-    return {auth, createUser, loading, success, error}
+    return {auth, createUser, loading, success, error, signOut}
 }

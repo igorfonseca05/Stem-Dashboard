@@ -12,9 +12,11 @@ import Menu from './components/Menu/Menu'
 import { AuthProvider } from './context/AuthContext'
 // Funções Firebase
 import { onAuthStateChanged } from 'firebase/auth'
-// Obtendo Auth do hook UseAuthentication
-import {auth, useAuthentication} from '../src/hooks/useAuthentication'
 
+// Obtendo Auth do hook UseAuthentication
+import { useAuthentication } from './hooks/useAuthentication'
+
+// console.log(dados)
 // Componente Menu
 import HorizontalMenu from './components/horizontalMenu/HorizontalMenu'
 
@@ -30,7 +32,12 @@ import Updates from './pages/updates/Updates'
 
 function App() {
 
-  const [user, setUser] = userState(undefined)
+  const [show, setShow] = useState(false)
+  
+  // ======================================
+  // Verificando estado de autenticação do usuário
+
+  const [user, setUser] = useState(undefined)
   const {auth} = useAuthentication()
 
   const loadingUser = user === undefined
@@ -44,9 +51,8 @@ function App() {
   if(loadingUser) {
     return <p>Carregando...</p>
   }
+// ======================================
 
-
-  const [show, setShow] = useState(false)
 
   function handleShowMenu () {
     setShow(!show)
@@ -59,7 +65,7 @@ function App() {
 
   return (
     <>
-      <AuthProvider>
+      <AuthProvider value={user}>
       <BrowserRouter>
           <Menu show={show}/>
           <HorizontalMenu />

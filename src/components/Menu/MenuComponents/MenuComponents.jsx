@@ -12,9 +12,12 @@ import DropDown from '../../../components/dropdown/DropDown';
 import useHandleMenu from '../../../hooks/useHandleMenu'
 import useIconMenuClose from '../../../hooks/useIconMenuClose';
 
+// Verificando estado de autenticação para alterar links
+import { useAuthProvider } from '../../../context/AuthContext';
+
 function MenuComponents() {
 
-    const [user, setUser] = useState(false)
+    const user = useAuthProvider()
 
     const { handleCloseMenu } = useIconMenuClose()
     

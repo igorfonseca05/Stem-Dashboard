@@ -16,6 +16,8 @@ import Warnings from '../../components/Warnings/Warnings'
 
 function SignUp({ handleShowMenu }) {
 
+    const navigate = useNavigate()
+
     // Dealing with Menu animation first
     const location = useLocation()
 
@@ -67,7 +69,11 @@ function SignUp({ handleShowMenu }) {
         // console.log(createdUser)
 
         if (createdUser) {
-            e.target.res
+            e.target.reset()
+
+            setTimeout(() => {
+                navigate('/')
+            }, 1000)
         }
     }
 
