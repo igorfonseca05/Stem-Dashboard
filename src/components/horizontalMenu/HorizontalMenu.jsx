@@ -25,7 +25,7 @@ function HorizontalMenu() {
     
     const [isFocused, setIsFocused] = useState(false)
 
-    const [color, setColor] = useState(null)
+    const [color, setColor] = useState("#808080")
 
     
     function creatingBorderOnClick() {
@@ -46,13 +46,17 @@ function HorizontalMenu() {
     let counter = 0
     function handleChangeColor(e) {
         // Custom hook de acesso a base de dados
-        const colors = ['#00A7C3', '#00BC5D', '#F38500', '#FF453A', '#808080']
+        const colors = ['#00A7C3', '#00BC5D', '#F38500', '#FF453A']
         
         counter === (colors.length - 1) ? counter = 0 : counter++
         e.currentTarget.style.backgroundColor = colors[counter]
 
+        console.log(colors[counter])
+        // setColor(colors[counter])
         //Salvando preferência do usuário na base de dados
-        setData(colors[counter], user?.uid)
+        setTimeout(() => {
+            setData(colors[counter], user?.uid)
+        }, 3000)
     }
 
     creatingBorderOnClick()
@@ -64,7 +68,7 @@ function HorizontalMenu() {
     }
 
     getData(getColor, user?.uid)
-   }, [])
+}, [])
     
 
     return (
@@ -92,7 +96,7 @@ function HorizontalMenu() {
                                     <img src={user.PhotoURL} alt="user personal image" />
                                 </>) : (<>
                                     <div style={{backgroundColor: `${color}`}} className='profile-image-letter' onClick={handleChangeColor}>
-                                        <h2>{user.displayName.slice(0,1)}</h2>
+                                        <h2>{user.displayName?.slice(0,1)}</h2>
                                     </div>
                                 </>)}
                             </figure>

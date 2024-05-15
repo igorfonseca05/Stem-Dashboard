@@ -89,7 +89,7 @@ export function useAuthentication() {
             let errorSystem;
 
             if(error.message.includes('auth/invalid-credential')) {
-                errorSystem = 'Usuário não cadastrado, crie uma conta para continuar.'
+                errorSystem = 'O email ou senha inseridos estão incorretos.'
             }
 
             setError(errorSystem)

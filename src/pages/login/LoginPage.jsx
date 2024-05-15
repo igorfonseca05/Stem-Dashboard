@@ -41,7 +41,7 @@ function LoginPage({handleShowMenu}) {
     const res = await SignInUser(user)
 
     if(res) {
-      console.log(res)
+      // console.log(res)
       navigator('/')
     }
 
@@ -70,7 +70,7 @@ function LoginPage({handleShowMenu}) {
             <input type="password" id="password" name="password" placeholder='Password' required />
             <p className="forget-password"><a href="#">Forget your password?</a></p>
             <div className='align-button'>
-              {!loading && <button type="submit" className='blue-button' style={{ opacity: '0.5', cursor: 'not-allowed' }} disabled={loading}>SIGN UP</button>}
+              {!loading && <button type="submit" className='blue-button' style={{ opacity: '0.5', cursor: 'not-allowed' }} disabled={loading}>Wait...</button>}
               {loading && <button type="submit" className='blue-button'>SIGN IN</button>}
             </div>
             <div className="line-container">
