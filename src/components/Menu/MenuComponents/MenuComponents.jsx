@@ -71,7 +71,7 @@ function MenuComponents() {
                     {user &&
                         <>
                             <li>
-                                <Link className='main-link-menu' href="#">
+                                <Link to={'/'} className='main-link-menu' href="#">
                                     <span className="material-symbols-outlined">
                                         home
                                     </span>

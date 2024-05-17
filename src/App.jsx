@@ -26,6 +26,7 @@ import LoginPage from './pages/login/LoginPage'
 import SignUp from './pages/SignUp/SignUp'
 import AboutUs from './pages/AboutUs/AboutUs'
 import Updates from './pages/updates/Updates'
+import Profile from './pages/ProfilePage/Profile'
 
 
 
@@ -75,6 +76,7 @@ function App() {
             <Route path='/signUp' element={<SignUp  {...handleMenu}/>} />
             <Route path='/aboutUs' element={<AboutUs />} />
             <Route path='/updates' element={<Updates />} />
+            <Route path='/profile' element={<Profile />} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>

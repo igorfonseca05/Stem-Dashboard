@@ -105,10 +105,10 @@ function HorizontalMenu() {
                                     {user.displayName}
                                 </button>
                                 <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="#">Perfil</a></li>
-                                    <li><a className="dropdown-item" href="#">Lançamentos</a></li>
-                                    <li><a className="dropdown-item" href="#">Configurações</a></li>
-                                    <li><a className="dropdown-item" href="#" onClick={() => handleSignOut()}>Sair</a></li>
+                                    <li><Link to={'/profile'} className="dropdown-item" href="#">Perfil</Link></li>
+                                    <li><Link to={''} className="dropdown-item" href="#">Lançamentos</Link></li>
+                                    <li><Link to={''} className="dropdown-item" href="#">Configurações</Link></li>
+                                    <li><Link to={''} className="dropdown-item" href="#" onClick={() => handleSignOut()}>Sair</Link></li>
                                     <li className='li-form-container'>
                                         <form className='internal-form'>
                                             <label>

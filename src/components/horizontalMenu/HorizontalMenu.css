@@ -52,6 +52,14 @@
     /* margin-top: 0px; */
 }
 
+.dropdown-toggle:hover {
+   color: white !important;
+}
+
+.dropdown-toggle::after {
+    margin-left: 10px;
+}
+
 .dropdown-menu {
     color: #8f9197 !important;
     background-color: #18181a !important;
