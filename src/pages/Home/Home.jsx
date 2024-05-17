@@ -57,7 +57,7 @@ function Home() {
     createObj()
 
     return (
-        <section className='adjust-size ' style={{ paddingTop: "15px" }} >
+        <section className='adjust-size ' style={{ paddingTop: "15px"}} >
          <div className='games-content'>
             <Main_card />
             {

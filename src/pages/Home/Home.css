@@ -16,4 +16,17 @@
     /* background-color: aqua; */
     margin: 0 auto;
     /* padding: 0px 40px; */
+    /* transition: opacity 0.7s ease-in-out; */
+    opacity: 0;
+    animation: fadeIn 0.4s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
+        
+    }
 }
