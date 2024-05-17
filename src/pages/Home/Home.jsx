@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react'
+import { BrowserRouter } from 'react-router-dom'
 
 import CardContainer from '../../components/CardContainer/CardContainer'
 import Main_card from '../../components/main-card/Main_card'
@@ -57,7 +58,7 @@ function Home() {
 
     return (
         <section className='adjust-size ' style={{ paddingTop: "15px" }} >
-            <div className='games-content'>
+         <div className='games-content'>
             <Main_card />
             {
                 [...categories].map((category, index) => (
@@ -65,7 +66,6 @@ function Home() {
                 ))
             }
             </div>
-
         </section>
     )
 }
