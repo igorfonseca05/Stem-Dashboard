@@ -12,9 +12,10 @@
 }
 
 .games-content{
-    width: 94%;
+    width: 95%;
+    margin: 0 calc(100% - 98%);
     /* background-color: aqua; */
-    margin: 0 auto;
+    /* margin: 0 auto; */
     /* padding: 0px 40px; */
     /* transition: opacity 0.7s ease-in-out; */
     opacity: 0;

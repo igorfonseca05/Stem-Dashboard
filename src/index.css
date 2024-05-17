@@ -136,6 +136,11 @@ li a {
   transition: all 0.1s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
+.internal-content-section {
+  width: 95%;
+  margin: 0 calc(100% - 98%);
+}
+
 .menuButton {
   color: white;
   /* position: absolute; */
