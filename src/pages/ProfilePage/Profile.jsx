@@ -13,7 +13,7 @@ function Profile() {
             <div className='container-profile'>
                 <div className='infos-profile'>
                     <figure className='bg-profile'>
-                        <img src="img/destiny.jpg" alt="" />
+                        <img src="img/rust.jpg" alt="" />
                     </figure>
                     <div className='infos-profile-form'>
                         <div className='photo-profile'>
@@ -25,7 +25,9 @@ function Profile() {
                                 </div>
                             </>)}
                         </div>
-                        <h2>{user.displayName}</h2>
+                       <h2>{user.displayName}</h2>
+                       <div className='infos-user'>
+                       </div>
                     </div>
                 </div>
             </div>
