@@ -10,7 +10,6 @@ section {
     /* background-color: #c09393; */
     position: relative;
     border-radius: 40px;
-    /* overflow: hidden; */
 }
 
 .infos-profile{
@@ -53,13 +52,15 @@ section {
     bottom: 0px;
     height: 60%;
     /* display: flex; */
-    background-color: #b62b2bd8;
+    background-color: #b63f3fd8;
     /* text-align: center; */
     /* backdrop-filter: blur(2px); */
     width: 100%;
+    /* overflow: hidden; */
 }
 
 .infos-profile-form > h2{
+    width: 80%;
     /* display: inline; */
     color: white;
     /* margin-left: 20px; */
