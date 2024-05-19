@@ -3,9 +3,9 @@ section {
 }
 
 .container-profile {
-    width: 96.5%;
+    width: 95%;
     min-height: calc(100vh - 78px);
-    margin: 0 calc(100% - 99%);
+    margin: 0 calc(100% - 98%);
     height: 320px;
     background-color: #c09393;
     position: relative;

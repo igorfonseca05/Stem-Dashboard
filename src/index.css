@@ -22,7 +22,7 @@
   font-family: "MotivaSans" , sans-serif;
   overflow-x: hidden;
 
-  --size: 260px;
+  --size: 225px;
   --topPaddingMenu: 10px;
   --border-radius: 40px;
 
@@ -129,9 +129,9 @@ li a {
 
 .adjust-size {
   /* background-color: #165ef0; */
-  width: calc(100vw - 259px);
+  width: calc(100vw - var(--size));
   padding-top: 88px !important;
-  margin-left: 259px;
+  margin-left: var(--size);
   min-height: 100vh !important;
   transition: all 0.1s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
