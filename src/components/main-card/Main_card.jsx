@@ -10,15 +10,18 @@ function Main_card() {
 
     const { data } = useFetch(url)
 
-    const date = new Date()
+    function updateMainCardWitHour () {
+        const date = new Date()
+    }
 
-    console.log(date.getHours())
 
-    const random = Math.round(Math.random() * 31)
     // console.log(random)
+    const random = Math.round(Math.random() * 31)
+
+    console.log(random)
 
     // console.log(data)
-    const newGame = data?.[random]
+    const newGame = random === 0? data?.[random + 1] :  data?.[random]
     if (!newGame) return
 
     const { id, name, developer, tags, image_path, price } = newGame

@@ -8,6 +8,8 @@ import {
     onAuthStateChanged,
      updateProfile,
     signOut,
+    GoogleAuthProvider,
+    signInWithPopup
 } from 'firebase/auth'
 import { refFromURL } from 'firebase/database'
 
@@ -27,6 +29,7 @@ export function useAuthentication() {
     }
 
     const auth = getAuth()
+    auth.useDeviceLanguage();
 
     // creating the function that create users
     async function createUser({username, email, password}) {
@@ -100,6 +103,25 @@ export function useAuthentication() {
         }
 
     }
+
+
+    async function loginWithGoogle() {
+        const provider = new GoogleAuthProvider();
+    
+        try {
+            const res = await signInWithPopup(auth, provider)
+
+            if(!res.ok) {
+                throw new Error('Não foi possível acessar usando o google')
+            }
+
+            console.log(res)
+        } catch (error) {
+            console.log(error)
+            setError(error.message)
+        }
+
+      }
     
     useEffect(() => {
         return () => setCancelled(true);
@@ -107,5 +129,14 @@ export function useAuthentication() {
 
 
     
-    return {auth, createUser, loading, success, error, signOut, SignInUser}
+    return {
+        auth, 
+        createUser, 
+        loading, 
+        success,
+         error, 
+         signOut, 
+         SignInUser,
+         loginWithGoogle
+    }
 }
