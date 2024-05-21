@@ -101,6 +101,19 @@
 .div-infos-container h2 {
     font-size: 28px;
     margin: 0px;
+    text-overflow: ellipsis;
+    /* width: 293px; */
+    white-space: nowrap;
+    overflow: hidden;
+    /* padding-bottom: 40px; */
+
+}
+.div-infos-container p{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    /* width: 200px; */
+
 }
 
 
@@ -123,9 +136,7 @@
     border-radius: 10px;
     width: auto;
     font-size: 12px;
-
 }
-
 
 .games-info-mobile {
     display: none;

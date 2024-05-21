@@ -117,7 +117,7 @@ export function useAuthentication() {
 
             console.log(res)
         } catch (error) {
-            console.log(error)
+            // console.log(error)
             setError(error.message)
         }
 
@@ -128,7 +128,6 @@ export function useAuthentication() {
     }, [])
 
 
-    
     return {
         auth, 
         createUser, 

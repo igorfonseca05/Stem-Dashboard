@@ -7,6 +7,11 @@ import { useAuthProvider } from '../../context/AuthContext'
 function Profile() {
 
     const user = useAuthProvider()
+    // console.log(user.reloadUserInfo.createdAt)
+
+    const date = new Date()
+
+    console.log(date)
 
     return (
         <section className='adjust-size'>
@@ -26,6 +31,7 @@ function Profile() {
                             </>)}
                         </div>
                        <h2>{user.displayName}</h2>
+                       <p>{user.email}</p>
                        <div className='infos-user'>
                        </div>
                     </div>
