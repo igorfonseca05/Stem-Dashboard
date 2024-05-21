@@ -16,9 +16,13 @@
   font-family: "motivaSans-medium";
   src: url('src/font/MotivaSansTest-Medium.otf');
 }
+@font-face {
+  font-family: "motivaSans-thin";
+  src: url('src/font/MotivaSansTest-Thin.otf');
+}
 
 :root {
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
   font-family: "MotivaSans" , sans-serif;
   overflow-x: hidden;
 
