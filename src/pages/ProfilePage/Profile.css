@@ -6,7 +6,7 @@ section {
     width: 95%;
     min-height: calc(100vh - 78px);
     margin: 0 calc(100% - 98%);
-    height: 320px;
+    /* height:  10px; */
     /* background-color: #c09393; */
     position: relative;
     /* border-radius: 40px; */
@@ -18,22 +18,23 @@ section {
     display: grid;
     /* gap: 2px; */
     grid-template-columns: 30% 70%;
-    height: 300px;
+    height: 280px;
     /* background-color: tomato; */
     position: relative;
+    /* border-radius: 40px !important; */
 
 }
 
 .container-profile figure {
     order: 2;
-    /* width: 100%; */
+    width: 100%;
     height: 100%;
     /* border-radius: 40px; */
     /* background-color: azure; */
     /* background-image: url('img/destiny.jpg'); */
     /* background-position: center; */
     /* background-size: cover; */
-    /* background-repeat: no-repeat; */ 
+    /* background-repeat: no-repeat; */
     overflow: hidden;
     /* border-radius: 40px 40px 0px 0px; */
 }
@@ -42,6 +43,7 @@ section {
     box-shadow: 0px 0px 20px 5px #0000001c;
     width: 100%;
     height: 100%;
+    /* transform: translateY(-50%);  */
     /* transform: translateY(-10%); */
     /* background-color: azure; */
 }
@@ -56,56 +58,79 @@ section {
     /* border-radius: 40px; */
     /* font-family: 'motivaSans-regular'; */
     /* display: flex; */
-    background-color: #b63f3fd8;
+    background-color:#26272b ;
     /* text-align: center; */
     /* backdrop-filter: blur(2px); */
     /* width: 100%; */
     /* overflow: hidden; */
 }
 
-.infos-user h2{
-    width: 100%;
-    /* text-align: center; */
-    /* display: inline; */
-    /* color: rgb(211, 42, 42); */
-    font-family: "motivaSans-bold";
-    /* margin-left: 20px; */
-    /* padding: 20px 0px; */
-    margin: 5px 0px;
-    /* font-size: 60px; */
-    background-color: blue;
-    /* font-family: "MotivaSans" , sans-serif; */
-    /* font-variant: small-caps; */
-}
-
 .photo-profile {
     /* position: absolute; */
     z-index: 1;
-    width: 100px;
+    width: 100%;
+    height: 150px;
     /* padding: 10px 0px; */
-    height: 100px;
-    border-radius: 50%;
-    background-color: rgb(43, 185, 62) !important;
+    /* height: 50%; */
+    /* background-color: rgb(43, 185, 62) !important; */
     /* margin: 0 auto; */
     overflow: hidden;
     /* margin: 0 auto; */
     /* top: 50%; */
     /* left: 4%; */
     /* transform: translate(0%, -125%); */
+    position: relative;
+    margin-bottom: 5px;
 }
 
 .photo-profile img{
-    width: 100%;
-}
-
-.infos-user{
+    border: 2px solid greenyellow;
+    border-radius: 50%;
+    /* width: 40%; */
     height: 100%;
 }
 
-.infos-user:not(h2) {
-    font-family: 'motivaSans-thin';
+.online-marker{
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: greenyellow;
+    bottom: 10px;
+    left: 77px;
+    border-radius: 50%;
+}
+
+
+.infos-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    overflow: hidden;
     /* background-color: rgb(156, 29, 156); */
 }
+
+.bios{
+    text-overflow: ellipsis;
+    /* white-space: nowrap ; */
+    overflow: hidden;
+    /* background-color: rebeccapurple; */
+    height: 100%;
+    font-family: 'motivaSans-thin';
+    /* width: 280px; */
+}
+
+.infos-user h2{
+    width: 100%;
+    font-family: "motivaSans-bold";
+    margin-bottom: 0px;
+}
+
 .infos-user {
     font-size: 14px;
+}
+.infos-user .createdAt {
+    font-size: 10px;
+    margin-bottom: 0px;
+
 }

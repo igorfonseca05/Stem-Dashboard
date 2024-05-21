@@ -19,7 +19,7 @@ function Profile() {
             <div className='container-profile'>
                 <div className='infos-profile'>
                     <figure className='bg-profile'>
-                        <img src="img/rust.jpg" alt="" />
+                        <img src="img/call.jpg" alt="" />
                     </figure>
                     <div className='infos-profile-form'>
                         {/* <div className='photo-profile'>
@@ -33,12 +33,13 @@ function Profile() {
                         </div> */}
                         <div className='photo-profile'>
                                 <img src='https://play-lh.googleusercontent.com/xXqGEr9xcJj6E5_Q_IKCp9N7fhBPlq6XAzU8WvKa_UT1psSWgXQXOJyZbn-mOsKcJcYQ' alt="user personal image" />
+                                <div className='online-marker'></div>
                         </div>
                        <div className='infos-user'>
                        <h2>{user.displayName}</h2>
                        <p className='email'>{user.email}</p>
-                       <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit amet</p>
-                       <p>{`Conta criada em: ${date.toLocaleDateString()}`}</p>
+                       <p className='bios'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. r adipisicing elitr lor lsdfgsd</p>
+                       <p className='createdAt'>{`Conta criada em: ${date.toLocaleDateString()}`}</p>
                        </div>
                     </div>
                 </div>
