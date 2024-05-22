@@ -49,7 +49,9 @@ function Profile() {
         <div className='grid adjust-size'>
             <div className='children'>
                 <div className='profile'>A</div>
-                <div className='ima'>B</div>
+                <figure className='bg-profile'>
+                    <img src="img/call.jpg" alt="" />
+                </figure>
             </div>
             <div className='children'>
                 <div className='content'>A</div>
