@@ -136,7 +136,8 @@
 .grid {
     display: grid;
     /* overflow: hidden; */
-    width: 95%;
+    /* width: 80%; */
+    padding: 0px 20px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2 , 250px);
     gap: 2px;
