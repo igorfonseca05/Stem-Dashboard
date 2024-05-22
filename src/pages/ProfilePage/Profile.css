@@ -1,6 +1,4 @@
-section {
-    /* background-color: rgb(61, 61, 61); */
-}
+
 
 .container-profile {
     width: 95%;
@@ -133,4 +131,53 @@ section {
     font-size: 10px;
     margin-bottom: 0px;
 
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2 , 250px);
+    gap: 2px;
+}
+.grid > div {
+    background-color: thistle;
+}
+
+.grid > div:nth-child(1) {
+    background-color: rgb(149, 230, 212);
+    grid-column: 1/ -1;
+}
+
+.grid .children:nth-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(41, 163, 212);
+    grid-column: 1/-1;
+    gap: 10px;
+}
+
+@media screen and (max-width: 750) {
+    .grid .children:nth-child(2) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.grid .children .content:nth-child(1) {
+    /* gap: 5px; */
+    flex-grow: 1;
+    background-color: rgb(218, 134, 197);
+    /* grid-column: 1/-1; */
+}
+.grid .children .content:nth-child(2) {
+    flex-grow: 1;
+    /* gap: 5px; */
+    background-color: rgb(40, 177, 86);
+    /* grid-column: 1/-1; */
+}
+.grid .children .content:nth-child(3) {
+    flex-grow: 2;
+    /* gap: 5px; */
+    background-color: rgb(216, 111, 70);
+    /* grid-column: 1/-1; */
 }
