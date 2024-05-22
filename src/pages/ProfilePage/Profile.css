@@ -168,8 +168,6 @@
 
 .grid .children:nth-child(2) {
     display: flex;
-    /* flex-wrap: wrap; */
-    /* background-color: rgb(41, 163, 212); */
     grid-column: 1/-1;
     gap: 5px;
 }
@@ -186,10 +184,8 @@
 }
 
 .grid .children .content:nth-child(1) {
-    /* gap: 5px; */
     flex-grow: 1;
-    /* background-color: rgb(218, 134, 197); */
-    /* grid-column: 1/-1; */
+  
 }
 .grid .children .content:nth-child(2) {
     flex-grow: 1;
