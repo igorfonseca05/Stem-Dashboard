@@ -193,13 +193,9 @@
 }
 .grid .children .content:nth-child(2) {
     flex-grow: 1;
-    /* gap: 5px; */
-    /* background-color: rgb(40, 177, 86); */
-    /* grid-column: 1/-1; */
+   
 }
 .grid .children .content:nth-child(3) {
     flex-grow: 2;
-    /* gap: 5px; */
-    /* background-color: rgb(216, 111, 70); */
-    /* grid-column: 1/-1; */
+
 }
