@@ -144,19 +144,25 @@
 }
 
 .grid > div:nth-child(1) {
+    display: flex;
+    background-color: rgb(149, 230, 212);
+    grid-column: 1/ -1;
+}
+
+.grid > div:nth-child(1) .profile {
     background-color: rgb(149, 230, 212);
     grid-column: 1/ -1;
 }
 
 .grid .children:nth-child(2) {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     background-color: rgb(41, 163, 212);
     grid-column: 1/-1;
     gap: 10px;
 }
 
-@media screen and (max-width: 750) {
+@media screen and (max-width: 850px) {
     .grid .children:nth-child(2) {
         display: flex;
         flex-wrap: wrap;

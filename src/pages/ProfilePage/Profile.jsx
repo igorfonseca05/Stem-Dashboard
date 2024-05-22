@@ -47,7 +47,10 @@ function Profile() {
         // </section>
 
         <div className='grid adjust-size'>
-            <div className='children'>1</div>
+            <div className='children'>
+                <div className='profile'>A</div>
+                <div className='ima'>B</div>
+            </div>
             <div className='children'>
                 <div className='content'>A</div>
                 <div className='content'>B</div>
