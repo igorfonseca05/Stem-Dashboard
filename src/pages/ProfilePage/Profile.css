@@ -135,12 +135,14 @@
 
 .grid {
     display: grid;
+    /* overflow: hidden; */
+    width: 95%;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2 , 250px);
     gap: 2px;
 }
 .grid > div {
-    background-color: thistle;
+    /* background-color: thistle; */
 }
 
 .grid > div:nth-child(1) {
@@ -150,14 +152,21 @@
 }
 
 .grid > div:nth-child(1) .profile {
+    flex-grow: 1;
     background-color: rgb(149, 230, 212);
+    grid-column: 1/ -1;
+}
+
+.grid > div:nth-child(1) .ima {
+    flex-grow: 2.5;
+    background-color: rgb(183, 194, 38);
     grid-column: 1/ -1;
 }
 
 .grid .children:nth-child(2) {
     display: flex;
     /* flex-wrap: wrap; */
-    background-color: rgb(41, 163, 212);
+    /* background-color: rgb(41, 163, 212); */
     grid-column: 1/-1;
     gap: 10px;
 }
