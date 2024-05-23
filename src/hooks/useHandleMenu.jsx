@@ -28,7 +28,7 @@ function useHandleMenu() {
     }
     
     // Controlando execução da função    
-      window.addEventListener('resize', Mydebounce(resize, 200))
+      window.addEventListener('resize', Mydebounce(resize, 500))
   
     useEffect(() => {  
       resize()
