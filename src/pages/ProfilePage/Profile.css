@@ -1,14 +1,14 @@
 
 
 .profile-container{
-    background-color: aqua;
+    background-color: rgb(243, 252, 122);
     width: 100vw;
     /* height: 100vh; */
 }
 
 .content-profile {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(auto, 1fr));
     grid-template-rows: repeat(2, 300px);
     background-color: blueviolet;
     margin: 0 auto;
@@ -17,15 +17,15 @@
 }
 
 .user-info{
-    background-color: aquamarine;
+    /* background-color: aquamarine; */
 }
 
 .bg-profile{
-    grid-column: 2 / -1;
-    background-color: rgb(228, 127, 60);
+    grid-column: 2 / 5;
+    /* background-color: rgb(228, 127, 60); */
 }
 
 .content{
     grid-column: 1/ -1;
-    background-color: rgb(56, 175, 45);
+    /* background-color: rgb(56, 175, 45); */
 }
