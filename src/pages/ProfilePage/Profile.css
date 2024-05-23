@@ -1,31 +1,33 @@
 
 
 .profile-container{
-    background-color: rgb(243, 252, 122);
+    /* background-color: rgb(243, 252, 122); */
     width: 100vw;
     /* height: 100vh; */
+    
 }
 
 .content-profile {
     display: grid;
-    grid-template-columns: repeat(4, minmax(auto, 1fr));
+    grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(2, 300px);
-    background-color: blueviolet;
+    background-color: rgb(55, 68, 110);
     margin: 0 auto;
-    width: 95%;   
+    max-width: 95%;   
     /* overflow: hidden; */
 }
 
 .user-info{
-    /* background-color: aquamarine; */
+    background-color: aquamarine;
 }
 
 .bg-profile{
     grid-column: 2 / 5;
-    /* background-color: rgb(228, 127, 60); */
+    width: 100%;
+    background-color: rgb(228, 127, 60);
 }
 
 .content{
     grid-column: 1/ -1;
-    /* background-color: rgb(56, 175, 45); */
+    background-color: rgb(56, 175, 45);
 }
