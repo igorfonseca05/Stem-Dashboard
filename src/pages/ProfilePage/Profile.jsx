@@ -27,6 +27,10 @@ function Profile() {
                         <img src="img/call.jpg" alt="" />
                     </figure>
                 </div>
+                <div>
+                    <div>2</div>
+                    <div>1</div>
+                </div>
             </div>
         </section>
 

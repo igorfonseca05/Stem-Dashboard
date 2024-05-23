@@ -3,6 +3,7 @@
 .profile-container{
     background-color: aqua;
     width: 100vw;
+    /* height: 100vh; */
 }
 
 .content-profile {
@@ -33,7 +34,7 @@
 .personal-bg-info .user-info {
     flex-grow: 1;
     height: 100%;
-    /* width: 40%; */
+    min-width: 250px;
     background-color: rgb(158, 113, 28);
 }
 
