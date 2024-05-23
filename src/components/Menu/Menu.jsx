@@ -58,9 +58,11 @@ function Menu({show}) {
     <header className='header-menu'>
      {closeMenuWithClickOnItem && <nav className={`nav-container ${changeClass}`} onClick={(e) => {closeOnClick(e)}}>
         <MenuComponents/>
+        {/* {console.log('oi')} */}
       </nav>}
      {!closeMenuWithClickOnItem && <nav className={`nav-container ${changeClass}`}>
         <MenuComponents/>
+        {/* {console.log('oi')} */}
       </nav>}
     </header>
   )

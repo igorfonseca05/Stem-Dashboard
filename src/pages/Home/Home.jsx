@@ -23,10 +23,10 @@ function Home() {
     const { handleMenu, isOpen } = useMenu(location.pathname)
      handleMenu()
 
-     useEffect(() => {
-        document.querySelector('.nav-container').style.display = 'block'
-        document.querySelector('.top-menu').style.display = 'block'
-     }, [location.pathname])
+    //  useEffect(() => {
+    //     document.querySelector('.nav-container').style.display = 'block'
+    //     document.querySelector('.top-menu').style.display = 'block'
+    //  }, [location.pathname])
 
     // console.log(data)
 

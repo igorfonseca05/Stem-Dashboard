@@ -14,8 +14,8 @@ function useHandleMenu(isToBeOpened) {
     function resize() {    
       const menu = document.querySelector('.nav-container')
       const topMenu = document.querySelector('.top-menu')
-      menu.style.display = 'block' 
-      topMenu.style.display = 'block' 
+      // menu.style.display = 'block' 
+      // topMenu.style.display = 'block' 
 
       if (window.innerWidth >= 1200) {
         setcloseMenuWithClickOnItem(false)

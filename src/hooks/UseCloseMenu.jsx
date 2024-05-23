@@ -6,24 +6,28 @@ export function useMenu(location) {
   // const [isOpen, setIsOpen] = useState(true)
   // const [SizeScreen, setSizeScreen] = useState()
   const [isOpen, setIsOpen] = useState(false)
-  
+
   function handleMenu() {
-    
+
     useEffect(() => {
 
       const menu = document.querySelector('.nav-container')
       const top_menu = document.querySelector('.top-menu')
 
-      if(location === '/login' || location === '/SignUp') {
-        menu.style.display = 'none' 
-        top_menu.style.display = 'none' 
-    }
+      if (location === '/login' || location === '/SignUp') {
+        menu.style.display = 'none'
+        top_menu.style.display = 'none'
+        
+      } else {
+        menu.style.display = 'block'
+        top_menu.style.display = 'block'
+      }
 
-    }, [])
+    }, [location])
 
   }
 
-  return { handleMenu, isOpen}
+  return { handleMenu, isOpen }
 }
 
 export default useMenu
