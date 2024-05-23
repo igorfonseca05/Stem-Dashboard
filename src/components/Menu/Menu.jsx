@@ -19,7 +19,7 @@ function Menu({show}) {
 
   // showMenu()
 
-  const [changeClass, setChangeClass] = useState(null)
+  const [changeClass, setChangeClass] = useState('')
 
   const {handleMenu, closeMenuWithClickOnItem, isOpen} = useHandleMenu()
   
@@ -38,7 +38,7 @@ function Menu({show}) {
       setTimeout(() => {
         //This class unmount the Menu from DOM
         setChangeClass('fechado')
-      }, 200)
+      }, 1000)
     }
   }, [isOpen])
 

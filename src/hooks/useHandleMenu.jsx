@@ -20,18 +20,17 @@ function useHandleMenu() {
       if (window.innerWidth >= 1200) {
         setcloseMenuWithClickOnItem(false)
         setIsOpen(true)
-      } 
-      else {
+      } else {
         setIsOpen(false)
         setcloseMenuWithClickOnItem(!closeMenuWithClickOnItem)
       }
     }
     
     // Controlando execução da função    
-      window.addEventListener('resize', Mydebounce(resize, 500))
-  
+    
     useEffect(() => {  
-      resize()
+      window.addEventListener('resize', Mydebounce(resize, 100))
+  
     }, [])
 
   }
