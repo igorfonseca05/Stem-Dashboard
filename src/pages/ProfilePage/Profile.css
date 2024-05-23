@@ -9,22 +9,25 @@
 
 .content-profile {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(4, minmax(200px, auto));
     grid-template-rows: repeat(2, 300px);
     background-color: rgb(55, 68, 110);
     margin: 0 auto;
-    max-width: 95%;   
+    max-width: 95%;
+    gap: 10px;   
     /* overflow: hidden; */
 }
 
 .user-info{
     background-color: aquamarine;
+    border-radius: 40px;
 }
 
 .bg-profile{
     grid-column: 2 / 5;
     width: 100%;
     background-color: rgb(228, 127, 60);
+    border-radius: 40px;
 }
 
 .content{

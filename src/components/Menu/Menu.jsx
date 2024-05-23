@@ -21,26 +21,26 @@ function Menu({show}) {
 
   const [changeClass, setChangeClass] = useState(null)
 
-  const {handleMenu, closeMenuWithClickOnItem, isOpen} = useHandleMenu(show)
+  const {handleMenu, closeMenuWithClickOnItem, isOpen} = useHandleMenu()
   
   handleMenu()
 
-  useEffect(() => {
-    if(isOpen) {
-      // This class add da open Meny transition
-      setChangeClass('open')
-    } else {
-      // This class add the transition moviment
-      setChangeClass('close')
+  // useEffect(() => {
+  //   if(isOpen) {
+  //     // This class add da open Meny transition
+  //     setChangeClass('open')
+  //   } else {
+  //     // This class add the transition moviment
+  //     setChangeClass('close')
   
-      // This setTimeout is used to change the state's 
-      // variable after the transition close to be finished
-      setTimeout(() => {
-        //This class unmount the Menu from DOM
-        setChangeClass('fechado')
-      }, 600)
-    }
-  }, [isOpen])
+  //     // This setTimeout is used to change the state's 
+  //     // variable after the transition close to be finished
+  //     setTimeout(() => {
+  //       //This class unmount the Menu from DOM
+  //       // setChangeClass('fechado')
+  //     }, 600)
+  //   }
+  // }, [isOpen])
 
   // console.log('oi')
   

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 
 import useDebounce from '../hooks/useDebounce'
 
-function useHandleMenu(isToBeOpened) {
+function useHandleMenu() {
   const [closeMenuWithClickOnItem, setcloseMenuWithClickOnItem] = useState(false)
   const [isOpen, setIsOpen] = useState(true)
 
@@ -32,7 +32,7 @@ function useHandleMenu(isToBeOpened) {
   
     useEffect(() => {  
       resize()
-    }, [isToBeOpened])
+    }, [])
 
   }
   
