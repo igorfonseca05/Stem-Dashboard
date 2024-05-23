@@ -9,43 +9,23 @@
 .content-profile {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(1, 300px);
+    grid-template-rows: repeat(2, 300px);
     background-color: blueviolet;
     margin: 0 auto;
     width: 95%;   
     /* overflow: hidden; */
 }
 
-@media screen and (max-width: 750px) {
-    .content-profile {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-    }
+.user-info{
+    background-color: aquamarine;
 }
 
-.personal-bg-info {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: rgba(245, 192, 179, 0.966);
-    grid-column: 1 / -1;
-
+.bg-profile{
+    grid-column: 2 / -1;
+    background-color: rgb(228, 127, 60);
 }
 
-.personal-bg-info .user-info {
-    flex-grow: 1;
-    height: 100%;
-    min-width: 250px;
-    background-color: rgb(158, 113, 28);
-}
-
-.personal-bg-info .bg-profile {
-    flex-grow: 1;
-    height: 100%;
-    /* width: 100%; */
-    /* background-color: deeppink; */
-}
-
-.personal-bg-info .bg-profile img {
-    height: 100%;
-    width: 100%;
+.content{
+    grid-column: 1/ -1;
+    background-color: rgb(56, 175, 45);
 }

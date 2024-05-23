@@ -19,18 +19,9 @@ function Profile() {
     return (
         <section className='adjust-size profile-container'>
             <div className='content-profile'>
-                <div className='personal-bg-info'>
-                    <div className='user-info'>
-                        <h2>{user.displayName}</h2>
-                    </div>
-                    <figure className='bg-profile'>
-                        <img src="img/call.jpg" alt="" />
-                    </figure>
-                </div>
-                <div>
-                    <div>2</div>
-                    <div>1</div>
-                </div>
+                <div className='user-info'>1</div>
+                <div className='bg-profile'>2</div>
+                <div className='content'>5</div>
             </div>
         </section>
 
