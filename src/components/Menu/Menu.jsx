@@ -37,7 +37,7 @@ function Menu({show}) {
       // variable after the transition close to be finished
       setTimeout(() => {
         //This class unmount the Menu from DOM
-        setChangeClass('fechado')
+        // setChangeClass('fechado')
       }, 600)
     }
   }, [isOpen])
