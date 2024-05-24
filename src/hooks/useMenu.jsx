@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 
+import useDebounce from "./useDebounce";
+
 export function useMenu(location) {
 
-    // console.log(location)
+    const { Mydebounce } = useDebounce()
+    const [pageResize, setPageResize] = useState(null)
 
     const [isOpen, setIsOpen] = useState(false)
     const [menuClass, setMenuClass] = useState('fechado')
 
     const [hideMenu, setHideMenu] = useState(true)
-
-    const menu = document.querySelector('.nav-container')
 
     useEffect(() => {
         const isLoginOrSignUpPage = location === '/login' || location === '/SignUp'
@@ -23,24 +24,33 @@ export function useMenu(location) {
 
     }, [location])
 
-// :    console.log(hideMenu)
-
-    // Verificando estado da variavel isOpen e 
-    // Selecionando a respectiva classe
-    
     useEffect(() => {
         if (isOpen) {
-            // This class add da open Meny transition
             setMenuClass('open')
-        } else if(hideMenu) {
+        } else if (hideMenu) {
             setMenuClass('fechado')
         } else {
             setMenuClass('close')
-
         }
-    }, [isOpen, hideMenu])
+    }, [isOpen])
 
 
-    return { menuClass }
+    function handleStateResize() {
+        setPageResize(true)
 
+        setTimeout(() => {
+            setPageResize(false)
+        }, 100)
+    }
+
+    useEffect(() => {
+        if (window.innerWidth >= 1200) {
+            console.log('oi')
+        }
+    }, [pageResize])
+
+    window.addEventListener('resize', Mydebounce(handleStateResize, 500))
+
+
+    return {menuClass}
 }
