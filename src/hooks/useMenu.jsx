@@ -16,7 +16,7 @@ export function useMenu(location) {
 
         if (isLoginOrSignUpPage) {
             setIsOpen(false)
-            setHideMenu('fechado')
+            // setHideMenu('fechado')
                 
         } else {
             setIsOpen(true)
@@ -27,11 +27,8 @@ export function useMenu(location) {
     // Verificando estado da variavel isOpen e 
     // Selecionando a respectiva classe
     
-    // if(hideMenu) return
-
     useEffect(() => {
         if (isOpen) {
-            // console.log(isOpen)
             // This class add da open Meny transition
             setMenuClass('open')
     
