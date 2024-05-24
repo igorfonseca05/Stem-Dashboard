@@ -21,13 +21,14 @@ function Home() {
     const { data } = useFetch("http://localhost:3000/games")
 
     const location = useLocation()
+    const { menuClass } = menuhook(location.pathname)
 
-    const {menuClass,isOpen: abertp} = menuhook(location.pathname)
-
-    console.log(menuClass, abertp)
+    useEffect(() => {
+        console.log(menuClass)
+    }, [])
 
     const { handleMenu, isOpen } = useMenu(location.pathname)
-     handleMenu()
+    handleMenu()
 
     //  useEffect(() => {
     //     document.querySelector('.nav-container').style.display = 'block'
@@ -52,25 +53,25 @@ function Home() {
 
     let res = []
 
-    function createObj () {
-       [...categories].forEach(name => {
-        let newArray = data?.filter((item) => item.category === name)
-        res.push(newArray)
-       })
+    function createObj() {
+        [...categories].forEach(name => {
+            let newArray = data?.filter((item) => item.category === name)
+            res.push(newArray)
+        })
 
     }
 
     createObj()
 
     return (
-        <section className='adjust-size ' style={{ paddingTop: "15px"}} >
-         <div className='games-content'>
-            <Main_card />
-            {
-                [...categories].map((category, index) => (
-                    <CardContainer title={category} dados={res[index]} key={index} />
-                ))
-            }
+        <section className='adjust-size ' style={{ paddingTop: "15px" }} >
+            <div className='games-content'>
+                <Main_card />
+                {
+                    [...categories].map((category, index) => (
+                        <CardContainer title={category} dados={res[index]} key={index} />
+                    ))
+                }
             </div>
         </section>
     )

@@ -24,24 +24,20 @@ export function useMenu(location) {
     // Verificando estado da variavel isOpen e 
     // Selecionando a respectiva classe
 
-    // useEffect(() => {
-    //     if (isOpen) {
-    //         // This class add da open Meny transition
-    //         setMenuClass('open')
-    //     } else {
-    //         // This class add the transition moviment
-    //         setMenuClass('close')
+    useEffect(() => {
+        if (isOpen) {
+            // This class add da open Meny transition
+            setMenuClass('open')
+        } else {
+            // This class add the transition moviment
+            setMenuClass('close')
 
-    //         // This setTimeout is used to change the state's 
-    //         // variable after the transition close to be finished
-    //         setTimeout(() => {
-    //             //This class unmount the Menu from DOM
-    //             setMenuClass('fechado')
-    //         }, 1000)
-    //     }
-    // }, [isOpen])
+            // This setTimeout is used to change the state's 
+            // variable after the transition close to be finished
+        }
+    }, [isOpen])
 
 
-    return { isOpen }
+    return { menuClass }
 
 }
