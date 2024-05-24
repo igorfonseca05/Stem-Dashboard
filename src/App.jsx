@@ -29,12 +29,12 @@ import Updates from './pages/updates/Updates'
 import Profile from './pages/ProfilePage/Profile'
 
 
-
+import { useMenu } from './hooks/useMenu'
 
 function App() {
 
   const [show, setShow] = useState(false)
-  
+
   // ======================================
   // Verificando estado de autenticação do usuário
 

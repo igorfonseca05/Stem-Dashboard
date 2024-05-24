@@ -11,6 +11,8 @@ import { useFetch } from '../../hooks/useFetch'
 
 import useMenu from '../../hooks/UseCloseMenu'
 
+import { useMenu as menuhook } from '../../hooks/useMenu'
+
 import "./Home.css"
 import { useLocation } from 'react-router-dom'
 
@@ -19,6 +21,10 @@ function Home() {
     const { data } = useFetch("http://localhost:3000/games")
 
     const location = useLocation()
+
+    const {menuClass,isOpen: abertp} = menuhook(location.pathname)
+
+    console.log(menuClass, abertp)
 
     const { handleMenu, isOpen } = useMenu(location.pathname)
      handleMenu()
