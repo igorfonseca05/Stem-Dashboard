@@ -7,7 +7,7 @@ export function useMenu(location) {
     const [isOpen, setIsOpen] = useState(false)
     const [menuClass, setMenuClass] = useState('fechado')
 
-    const [hideMenu, setHideMenu] = useState('fechado')
+    const [hideMenu, setHideMenu] = useState(null)
 
     const menu = document.querySelector('.nav-container')
 
@@ -16,7 +16,7 @@ export function useMenu(location) {
 
         if (isLoginOrSignUpPage) {
             setIsOpen(false)
-            // setMenuClass('fechado')
+            setHideMenu('fechado')
                 
         } else {
             setIsOpen(true)
@@ -27,6 +27,8 @@ export function useMenu(location) {
     // Verificando estado da variavel isOpen e 
     // Selecionando a respectiva classe
     
+    // if(hideMenu) return
+
     useEffect(() => {
         if (isOpen) {
             // console.log(isOpen)
