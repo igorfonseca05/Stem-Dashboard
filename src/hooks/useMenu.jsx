@@ -7,7 +7,7 @@ export function useMenu(location) {
     const [isOpen, setIsOpen] = useState(false)
     const [menuClass, setMenuClass] = useState('fechado')
 
-    const [hideMenu, setHideMenu] = useState(null)
+    const [hideMenu, setHideMenu] = useState(true)
 
     const menu = document.querySelector('.nav-container')
 
@@ -16,13 +16,14 @@ export function useMenu(location) {
 
         if (isLoginOrSignUpPage) {
             setIsOpen(false)
-            // setHideMenu('fechado')
-                
+            // console.log('aqui')
         } else {
             setIsOpen(true)
         }
 
     }, [location])
+
+// :    console.log(hideMenu)
 
     // Verificando estado da variavel isOpen e 
     // Selecionando a respectiva classe
@@ -31,15 +32,13 @@ export function useMenu(location) {
         if (isOpen) {
             // This class add da open Meny transition
             setMenuClass('open')
-    
+        } else if(hideMenu) {
+            setMenuClass('fechado')
         } else {
-            // This class add the transition moviment
-            setMenuClass("fechado")
+            setMenuClass('close')
 
-            // This setTimeout is used to change the state's 
-            // variable after the transition close to be finished
         }
-    }, [isOpen])
+    }, [isOpen, hideMenu])
 
 
     return { menuClass }
