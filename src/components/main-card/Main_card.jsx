@@ -15,7 +15,7 @@ function Main_card() {
     }
 
     const random = Math.round(Math.random() * 31)
-    // console.log(random)
+    console.log(random)
 
     const newGame = random === 0 ? data?.[random] : data?.[random - 1]
     

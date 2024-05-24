@@ -1,7 +1,7 @@
 
 // Recursos da biblioteca
 import { useState, useEffect } from 'react'
-import { BrowserRouter, Routes, Route, useLocation} from 'react-router-dom'
+import { BrowserRouter, Routes, Route, useLocation, Navigate} from 'react-router-dom'
 
 import './App.css'
 import Menu from './components/Menu/Menu'
@@ -72,8 +72,8 @@ function App() {
           <HorizontalMenu />
           <Routes>
             <Route path='/' element={<Home/>} />
-            <Route path='/login' element={<LoginPage {...handleMenu}/>} />
-            <Route path='/signUp' element={<SignUp  {...handleMenu}/>} />
+            <Route path='/login' element={!user ? <LoginPage {...handleMenu}/> : <Navigate to={'/'}/>} />
+            <Route path='/signUp' element={!user ? <SignUp  {...handleMenu}/> : <Navigate to={'/'}/>} />
             <Route path='/aboutUs' element={<AboutUs />} />
             <Route path='/updates' element={<Updates />} />
             <Route path='/profile' element={<Profile />} />
