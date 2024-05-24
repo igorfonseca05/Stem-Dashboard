@@ -4,7 +4,7 @@ export function useMenu(location) {
 
     // console.log(location)
 
-    const [isOpen, setIsOpen] = useState('')
+    const [isOpen, setIsOpen] = useState(false)
     const [menuClass, setMenuClass] = useState('fechado')
 
     const menu = document.querySelector('.nav-container')
