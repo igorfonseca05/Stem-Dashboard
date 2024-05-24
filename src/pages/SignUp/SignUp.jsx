@@ -14,12 +14,22 @@ import Login_SignUp_Menu from '../../components/Menu-Login-SignUp/Login_SignUp_M
 import { useAuthentication } from '../../hooks/useAuthentication'
 import Warnings from '../../components/Warnings/Warnings'
 
+
+import { useMenu as menuhook } from '../../hooks/useMenu'
+
 function SignUp({ handleShowMenu }) {
 
     const navigate = useNavigate()
 
     // Dealing with Menu animation first
     const location = useLocation()
+
+    const { menuClass } = menuhook(location.pathname)
+
+    useEffect(() => {
+        console.log(menuClass)
+    }, [menuClass])
+
 
     const { handleMenu } = useMenu(location.pathname)
     handleMenu()

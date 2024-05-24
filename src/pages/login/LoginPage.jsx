@@ -12,6 +12,7 @@ import Login_SignUp_Menu from "../../components/Menu-Login-SignUp/Login_SignUp_M
 
 import { useAuthentication } from "../../hooks/useAuthentication"
 
+import { useMenu as menuhook } from '../../hooks/useMenu'
 
 function LoginPage({ handleShowMenu }) {
 
@@ -31,6 +32,15 @@ function LoginPage({ handleShowMenu }) {
   const [error, setError] = useState(false)
   // const [success, setSuccess] = useState(false)
   // const [loading, setLoading] = useState(false)
+
+  
+  // ================================
+  const { menuClass } = menuhook(location.pathname)
+
+  useEffect(() => {
+      console.log(menuClass)
+  }, [menuClass])
+  // ================================
 
   const { handleMenu } = useMenu(location.pathname)
 
