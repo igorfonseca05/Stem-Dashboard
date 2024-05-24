@@ -20,14 +20,17 @@ export function useMenu(location) {
 
     }, [location])
 
-
+    
+    
     // Verificando estado da variavel isOpen e 
     // Selecionando a respectiva classe
-
+    
     useEffect(() => {
         if (isOpen) {
+            // console.log(isOpen)
             // This class add da open Meny transition
             setMenuClass('open')
+    
         } else {
             // This class add the transition moviment
             setMenuClass('close')

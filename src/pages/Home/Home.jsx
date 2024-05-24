@@ -25,7 +25,7 @@ function Home() {
 
     useEffect(() => {
         console.log(menuClass)
-    }, [])
+    }, [menuClass])
 
     const { handleMenu, isOpen } = useMenu(location.pathname)
     handleMenu()
