@@ -49,12 +49,13 @@ export function useMenu(location) {
 
     useEffect(() => {
         if (window.innerWidth < 1200) {
-            menu?.setAttribute('class', 'nav-container close')
+            setMenuClass('nav-container close')
             
             setTimeout(() => {
-                menu?.setAttribute('class', 'nav-container fechado')
-
-            }, 200)
+                setMenuClass('nav-container fechado')
+            }, 500)
+        } else {
+            setMenuClass('nav-container open')
         }
     }, [pageResize])
 
