@@ -14,7 +14,7 @@ export function useMenu(location) {
 
     const menu = document.querySelector('.nav-container')
 
-    console.log(menu)
+    // console.log(menu)
 
     useEffect(() => {
         const isLoginOrSignUpPage = location === '/login' || location === '/SignUp'
@@ -48,8 +48,13 @@ export function useMenu(location) {
     }
 
     useEffect(() => {
-        if (window.innerWidth < 1200 ) {
-            console.log('oi')
+        if (window.innerWidth < 1200) {
+            menu?.setAttribute('class', 'nav-container close')
+            
+            setTimeout(() => {
+                menu?.setAttribute('class', 'nav-container fechado')
+
+            }, 200)
         }
     }, [pageResize])
 
