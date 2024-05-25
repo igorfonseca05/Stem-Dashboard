@@ -15,18 +15,40 @@ export function useMenu(location) {
     const menu = document.querySelector('.nav-container')
 
     // console.log(menu)
+    
+    function handleStateResize() {
+        setPageResize(true)
+
+        setTimeout(() => {
+            setPageResize(false)
+        }, 100)
+    }
+
+    // useEffect(() => {
+    //     if (window.innerWidth < 1200) {
+    //         setMenuClass('nav-container close')
+            
+    //         setTimeout(() => {
+    //             setMenuClass('nav-container fechado')
+    //         }, 500)
+    //     } else {
+    //         setMenuClass('nav-container open')
+    //     }
+    // }, [pageResize])
+
+    window.addEventListener('resize', Mydebounce(handleStateResize, 500))
 
     useEffect(() => {
         const isLoginOrSignUpPage = location === '/login' || location === '/SignUp'
 
-        if (isLoginOrSignUpPage) {
+        if (isLoginOrSignUpPage || window.innerWidth < 1200) {
             setIsOpen(false)
             // console.log('aqui')
         } else {
             setIsOpen(true)
         }
 
-    }, [location])
+    }, [location, pageResize])
 
     useEffect(() => {
         if (isOpen) {
@@ -37,29 +59,6 @@ export function useMenu(location) {
             setMenuClass('close')
         }
     }, [isOpen])
-
-
-    function handleStateResize() {
-        setPageResize(true)
-
-        setTimeout(() => {
-            setPageResize(false)
-        }, 100)
-    }
-
-    useEffect(() => {
-        if (window.innerWidth < 1200) {
-            setMenuClass('nav-container close')
-            
-            setTimeout(() => {
-                setMenuClass('nav-container fechado')
-            }, 500)
-        } else {
-            setMenuClass('nav-container open')
-        }
-    }, [pageResize])
-
-    window.addEventListener('resize', Mydebounce(handleStateResize, 500))
 
 
     return {menuClass}
