@@ -12,6 +12,10 @@ export function useMenu(location) {
 
     const [hideMenu, setHideMenu] = useState(true)
 
+    const menu = document.querySelector('.nav-container')
+
+    console.log(menu)
+
     useEffect(() => {
         const isLoginOrSignUpPage = location === '/login' || location === '/SignUp'
 
@@ -44,7 +48,7 @@ export function useMenu(location) {
     }
 
     useEffect(() => {
-        if (window.innerWidth >= 1200) {
+        if (window.innerWidth < 1200 ) {
             console.log('oi')
         }
     }, [pageResize])
