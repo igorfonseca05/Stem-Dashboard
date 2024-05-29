@@ -2,7 +2,7 @@
 // import { app, ref, set } from '../../../firebase/config'
 
 import { useEffect, useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, json, useLocation } from 'react-router-dom'
 
 import { useAuthentication } from '../../hooks/useAuthentication'
 
@@ -52,6 +52,9 @@ function HorizontalMenu() {
         e.currentTarget.style.backgroundColor = colors[counter]
 
         console.log(colors[counter])
+
+        localStorage.setItem('color', `${colors[counter]}`)
+
         // setColor(colors[counter])
         //Salvando preferência do usuário na base de dados
         setTimeout(() => {
@@ -64,6 +67,9 @@ function HorizontalMenu() {
     
    useEffect(() => {
     function getColor(colorData) {
+        if(localStorage.getItem('color')) {
+            setColor(localStorage.getItem('color'))
+        }
         setColor(colorData?.color)
     }
 
