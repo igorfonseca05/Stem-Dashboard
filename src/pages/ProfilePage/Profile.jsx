@@ -34,8 +34,11 @@ function Profile() {
         <section className='adjust-size profile-container'>
             <div className='content-profile'>
                 <div className='user-info'>1</div>
-                <div className='bg-profile'>2</div>
-                <div className='content'>5</div>
+                <figure className='bg-profile'>
+                    <img src="img/call.jpg" alt="" />
+                </figure>
+                <div className='outra'></div>
+                <div className='outra2'></div>
             </div>
         </section>
 
