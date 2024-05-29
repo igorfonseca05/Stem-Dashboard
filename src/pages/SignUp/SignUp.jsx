@@ -27,7 +27,7 @@ function SignUp({ handleShowMenu }) {
     const { menuClass } = menuhook(location.pathname)
 
     useEffect(() => {
-        console.log(menuClass)
+        // console.log(menuClass)
     }, [menuClass])
 
 
