@@ -9,13 +9,23 @@
 
 .content-profile {
     display: grid;
-    grid-template-columns: minmax(300px, 33%) 66%;
+    grid-template-columns: minmax(250px, 33%) 66%;
     grid-template-rows: repeat(2, 300px);
     background-color: rgb(55, 68, 110);
     margin: 0 auto;
     max-width: 95%;
     gap: 10px;   
     /* overflow: hidden; */
+}
+
+@media screen and (max-width: 850px) {
+    .content-profile {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 300px);
+        background-color: rgb(76, 111, 224);
+        /* overflow: hidden; */
+    }
 }
 
 .user-info{
