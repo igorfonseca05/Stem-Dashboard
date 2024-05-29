@@ -10,7 +10,7 @@
 .content-profile {
     display: grid;
     grid-template-columns: minmax(250px, 33%) 66%;
-    grid-template-rows: repeat(2, 280px);
+    grid-auto-rows: 250px;
     background-color: rgb(55, 68, 110);
     margin: 0 auto;
     max-width: 95%;
@@ -20,28 +20,20 @@
 
 @media screen and (max-width: 850px) {
     .content-profile {
-        display: grid;
-        grid-template-columns: 100% ;
-        grid-template-rows: repeat(2, 300px);
-        background-color: rgb(76, 111, 224);
-        /* overflow: hidden; */
+        grid-template-columns: 100%;
     }
 }
 
-.user-info{
+.user-info {
     background-color: aquamarine;
-    border-radius: 40px;
 }
 
-.bg-profile{
-    grid-column: 2 / -1;
-    width: 100%;
-    background-color: rgb(228, 127, 60);
-    border-radius: 40px;
+.bg-profile {
+    background-color: violet;
 }
 
-.content{
+.content {
     width: 100%;
-    grid-column: 1/ -1;
-    background-color: rgb(56, 175, 45);
+    background-color: rgb(127, 255, 155);
+    /* grid-column: 1 / -1; */
 }
