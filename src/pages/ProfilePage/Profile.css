@@ -9,7 +9,7 @@
 
 .content-profile {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: minmax(300px, 33%) 66%;
     grid-template-rows: repeat(2, 300px);
     background-color: rgb(55, 68, 110);
     margin: 0 auto;
