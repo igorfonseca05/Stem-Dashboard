@@ -33,18 +33,8 @@ function Profile() {
     return (
         <section className='adjust-size profile-container'>
             <div className='content-profile'>
-                <div className='user-info'>
-                    <div className='user-info-content'>
-                        <figure>
-                            <img src="https://png.pngtree.com/thumb_back/fh260/background/20230610/pngtree-the-character-wearing-headphones-with-an-ear-piercing-in-his-head-image_2919756.jpg" alt="" />
-                        </figure>
-                        <h3>{user.displayName}</h3>
-                        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ab pariatur beatae expedita deserunt magnam voluptatum?</p>
-                        <p>Conta criada em: {date}</p>
-                    </div>
-                </div>
                 <figure className='bg-profile'>
-                    <img src="img/call.jpg" alt="" />
+                    {/* <img src="img/call.jpg" alt="" /> */}
                 </figure>
                 <div className='outra'></div>
                 <div className='outra2'></div>
