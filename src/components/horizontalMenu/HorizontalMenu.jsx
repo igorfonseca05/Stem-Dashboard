@@ -69,7 +69,9 @@ function HorizontalMenu() {
     function getColor(colorData) {
         if(localStorage.getItem('color')) {
             setColor(localStorage.getItem('color'))
+            return
         }
+        
         setColor(colorData?.color)
     }
 
