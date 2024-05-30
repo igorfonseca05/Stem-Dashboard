@@ -37,29 +37,41 @@
 }
 
 .user-info-content {
+    display: flex;
+    align-items: center;
     overflow: hidden;
     /* background-color: aqua; */
     width: 100%;
-    height: 100%;
-    padding: 5px 10px;
-    border-radius: 40px;
-
+    /* height: 100%; */
+    padding: 20px;
+    /* border-radius: 40px; */
+    position: absolute;
+    z-index: 2;
+    /* top: 30px; */
 }
 
 .user-info-content figure {
-    width:100%;
-    margin: 0px auto;
-    height: 100px;
+    width: 200px;
+    /* margin: 0px auto; */
+    height: 180px;
+    background-color: aquamarine;
     overflow: hidden;
-    border-radius: 32px;
+    border-radius: 50%;
     margin-bottom: 5px;
 }
 
 .user-info-content figure img {
+    /* z-index: 3; */
+    /* border-radius: 50%; */
     width: 150%;
-    height: 200px;
-    transform: translate(-15%, -10%);
+    height: 100%;
+    transform: translate(-16%, 0%);
     /* overflow: hidden; */
+}
+
+.user-info-data{
+    display: flex;
+    flex-direction: column;
 }
 
 .user-info-content h3 {
@@ -87,10 +99,17 @@
     height: 100%;
     border-radius: 40px;
     overflow: hidden;
-    opacity: 0.7;
-    background-position: top;
-    background-size: cover;
-    background-image: url('img/call.jpg');
+    /* opacity: 0.7; */
+    /* backdrop-filter: blur(0); */
+    position: relative;
+}
+
+.bg-profile .bg-image {
+    transform: translate(-15%, -0%);
+    width: 150%;
+    filter: blur(1px);
+    height: 200%;
+    opacity: 0.4;
 }
 
 
