@@ -50,8 +50,7 @@ function Profile() {
                         </figure>
                         <div className='user-info-data'>
                             <h3>{user.displayName}</h3>
-                            <p className=''>"Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-                            <p>Conta criada em: {date}</p>
+                            {/* <p>Conta criada em: {date}</p> */}
                         </div>
                     </div>
                     <div className='gradiente'></div>

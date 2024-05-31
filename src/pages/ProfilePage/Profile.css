@@ -36,7 +36,10 @@
 
 
 .bg-profile {
-    /* background-color: violet; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #26272b;
     min-height: 100%;
     /* border-radius: 40px; */
     /* overflow: hidden; */
@@ -59,7 +62,7 @@
     height: 100%;
     border-radius: 40px;
     /* opacity: 1; */
-    /* display: none; */
+    display: none;
 }
 
 .user-info-content {
@@ -68,9 +71,10 @@
     align-items: center;
     /* overflow: hidden; */
     /* background-color: aqua; */
-    width: 100%;
+    width: 90%;
+    justify-content: center;
     /* height: 100%; */
-    padding: 20px;
+    /* padding: 20px; */
     /* border-radius: 40px; */
     position: absolute;
     z-index: 2;
@@ -98,12 +102,17 @@
 
 .user-info-data {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
+    margin-left: 30px;
+    /* background-color: tomato; */
+    flex-grow: 2;
 }
 
 .user-info-content h3 {
     text-transform: capitalize;
     font-weight: 600;
+    font-size: 50px;
 }
 
 .user-info-content p:nth-child(3) {
