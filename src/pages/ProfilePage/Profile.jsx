@@ -50,10 +50,11 @@ function Profile() {
                         </figure>
                         <div className='user-info-data'>
                             <h3>{user.displayName}</h3>
-                            <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ab pariatur beatae expedita deserunt magnam voluptatum?</p>
+                            <p className=''>"Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                             <p>Conta criada em: {date}</p>
                         </div>
                     </div>
+                    <div className='gradiente'></div>
                     <img className='bg-image' src="img/call.jpg" alt="" />
                 </figure>
                 <div className='outra'></div>
