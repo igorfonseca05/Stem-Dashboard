@@ -2,16 +2,21 @@
 import { useLocation } from 'react-router-dom'
 import { useEffect } from 'react'
 
+
 import './Profile.css'
 
 import { useAuthProvider } from '../../context/AuthContext'
+import { useAuthentication } from '../../hooks/useAuthentication'
 import useMenu from '../../hooks/UseCloseMenu'
 
 function Profile() {
 
     const user = useAuthProvider()
 
+    // console.log(user)
+
     const location = useLocation()
+    const { updateInfos: updateProfile, error, loading, success, onAuthStateChanged } = useAuthentication()
 
     const { handleMenu, isOpen } = useMenu(location.pathname)
     handleMenu()
@@ -37,30 +42,50 @@ function Profile() {
         popup.classList.toggle('open-popup')
         document.body.classList.toggle('hidden')
 
-        if(e.target.tagName === 'A') {
+        if (e.target.tagName === 'A') {
             form.reset()
         }
-        
 
     }
+
+    function updateInfos(e) {
+        e.preventDefault()
+
+        const newProfileImage = e.target.newProfileImage.value
+        const newUserName = e.target.newUserName.value
+
+        updateProfile(newUserName, newProfileImage)
+    }
+
 
     return (
         <section className='adjust-size profile-container'>
             <div className='pop-up-container'>
-                <form className='edit-profile-form'>
+                <form className='edit-profile-form' onSubmit={(e) => updateInfos(e)}>
                     <h2>Enter your data</h2>
-                    <label htmlFor="pic-profile">
-                        <input type="text" placeholder='Enter URL Profile Image' id='pic-profile' required/>
+                    <label htmlFor="newProfileImage">
+                        <input type="text" placeholder='Enter URL Profile Image' id='newProfileImage'/>
                     </label>
-                    <label htmlFor="new-user-name">
-                        <input type="text" placeholder='Enter User Name' id='new-user-name' required/>
+                    <label htmlFor="newUserName">
+                        <input type="text" placeholder='Enter User Name' id='newUserName'/>
                     </label>
                     <label htmlFor="new-background">
                         <input type="file" name="" id="" />
                     </label>
                     <div className='div-buttons'>
-                        <a className='blue-button' onClick={handleProfileUpdateInfos}>Fechar</a>
-                        <button className='blue-button' type='submit'>Salvar</button>
+                        {!loading ? (
+                            <>
+                                <a className='blue-button button-disabled' onClick={handleProfileUpdateInfos} disabled={loading}>Fechar</a>
+                                <button className='blue-button button-disabled' type='submit' disabled={loading}>Salvar</button>
+                            </>
+
+                        ) : (
+                            <>
+                                <a className='blue-button' onClick={handleProfileUpdateInfos}>Fechar</a>
+                                <button className='blue-button' type='submit'>Salvar</button>
+                            </>
+                        )
+                        }
                     </div>
                 </form>
             </div>
@@ -79,20 +104,10 @@ function Profile() {
                 <div>'</div>
             </div>
             <div className='content-profile'>
-                {/* <div className='user-info'>
-                    <div className='user-info-content'>
-                        <figure>
-                            <img src="https://png.pngtree.com/thumb_back/fh260/background/20230610/pngtree-the-character-wearing-headphones-with-an-ear-piercing-in-his-head-image_2919756.jpg" alt="" />
-                        </figure>
-                        <h3>{user.displayName}</h3>
-                        <p>"Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ab pariatur beatae expedita deserunt magnam voluptatum?</p>
-                        <p>Conta criada em: {date}</p>
-                    </div>
-                </div> */}
                 <div className='bg-profile'>
                     <div className='user-info-content'>
                         <figure>
-                            <img src="https://wallpapercave.com/wp/wp8498412.jpg" alt="" />
+                            <img src={user.photoURL} alt="" />
                         </figure>
                         <div className='user-info-data'>
                             <h3>{user.displayName}</h3>

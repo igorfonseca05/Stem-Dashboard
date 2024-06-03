@@ -121,6 +121,10 @@ label input {
     text-decoration: none;
 }
 
+.button-disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 
 
 .bg-profile {
@@ -225,10 +229,14 @@ label input {
 .user-info-content h3 {
     text-transform: capitalize;
     font-weight: 600;
-    font-size: 50px;
+    font-size: 38px;
     /* color: ; */
 }
 
+.user-info-content p {
+    color: #8f9197;
+
+}
 
 .user-info-content button {
     /* max-width: 30%; */

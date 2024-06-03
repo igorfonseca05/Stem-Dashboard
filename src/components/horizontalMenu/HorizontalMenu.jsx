@@ -58,8 +58,8 @@ function HorizontalMenu() {
         // setColor(colors[counter])
         //Salvando preferência do usuário na base de dados
         setTimeout(() => {
-            setData(colors[counter], user?.uid)
-        }, 3000)
+            setData("Color/", colors[counter])
+        }, 100)
     }
 
     creatingBorderOnClick()
@@ -76,7 +76,7 @@ function HorizontalMenu() {
         setColor(colorData?.color)
     }
 
-    getData(getColor, user?.uid)
+    getData(getColor, `Color/`)
 }, [])
     
 
@@ -103,7 +103,7 @@ function HorizontalMenu() {
                             <figure>
                             <div className='online-ball'></div>
                                 {user.photoURL? (<>
-                                    <img src={user.PhotoURL} alt="user personal image" />
+                                    <img src={user.photoURL} alt="user personal image"/>
                                 </>) : (<>
                                     <div style={{backgroundColor: `${color}`}} className='profile-image-letter' onClick={handleChangeColor}>
                                         <h2>{user.displayName?.slice(0,1)}</h2>
