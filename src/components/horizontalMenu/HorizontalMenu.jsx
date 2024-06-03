@@ -100,6 +100,7 @@ function HorizontalMenu() {
                 {user &&
                         <div className='top-menu-user'>
                             <figure>
+                            <div className='online-ball'></div>
                                 {user.photoURL? (<>
                                     <img src={user.PhotoURL} alt="user personal image" />
                                 </>) : (<>

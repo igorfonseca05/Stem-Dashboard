@@ -32,6 +32,20 @@ function Profile() {
 
     return (
         <section className='adjust-size profile-container'>
+            <div className='grid'>
+                <div>'</div>          
+                <div>'</div>          
+                <div>'</div>          
+                <div>'</div>          
+                <div>'</div>          
+                <div>'</div>          
+                <div>'</div>          
+                <div>'</div>          
+                <div>'</div>          
+                <div>'</div>          
+                <div>'</div>          
+                <div>'</div>          
+            </div>
             <div className='content-profile'>
                 {/* <div className='user-info'>
                     <div className='user-info-content'>
@@ -46,7 +60,7 @@ function Profile() {
                 <div className='bg-profile'>
                     <div className='user-info-content'>
                         <figure>
-                            <img src="https://png.pngtree.com/thumb_back/fh260/background/20230610/pngtree-the-character-wearing-headphones-with-an-ear-piercing-in-his-head-image_2919756.jpg" alt="" />
+                            <img src="https://wallpapercave.com/wp/wp6221066.jpg" alt="" />
                         </figure>
                         <div className='user-info-data'>
                             <h3>{user.displayName}</h3>
@@ -54,7 +68,7 @@ function Profile() {
                         </div>
                     </div>
                     <div className='gradiente'></div>
-                    <img className='bg-image' src="img/call.jpg" alt="" />
+                    {/* <img className='bg-image' src="img/call.jpg" alt="" /> */}
                 </div>
                 <div className='outra'></div>
                 <div className='outra2'></div>

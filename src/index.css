@@ -545,6 +545,10 @@ form p a {
   .signUp-form-container {
     margin-right: 0px;
   }
+
+  .user-info-data {
+    padding-left: 0px;
+}
   
 }
 

@@ -1,3 +1,23 @@
+
+.grid {
+    position: absolute;
+    width: 100Vw;
+    height: 100%;
+    /* background-color: violet; */
+    z-index: 10;
+    opacity: 0.4;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    /* margin-left: 200px; */
+    display: none;
+}
+
+.grid div {
+    background-color: rgba(127, 255, 212, 0.068);
+}
+
+
 .profile-container {
     /* background-color: rgb(243, 252, 122); */
     width: 100vw;
@@ -16,15 +36,15 @@
     /* overflow: hidden; */
 }
 
-@media screen and (max-width: 850px) {
-    .content-profile {
-        grid-template-columns: 100%;
+@media screen and (max-width: 650px) {
+    .user-info-content h3 {
+        text-transform: capitalize;
+        font-weight: 600;
+        font-size: 50px;
+        text-align: center;
     }
 
 
-    .bg-profile {
-        order: -1;
-    }
 }
 
 .content-profile>div,
@@ -72,7 +92,7 @@
     flex-wrap: wrap;
     align-items: center;
     /* overflow: hidden; */
-    background-color: aqua;
+    /* background-color: aqua; */
     width: 90%;
     justify-content: center;
     /* height: 100%; */
@@ -84,32 +104,48 @@
 }
 
 .user-info-content figure {
-    width: 15%;
+    width: 150px;
     /* margin: 0px auto; */
     height: 150px;
-    background-color: rgb(127, 255, 127);
+    /* background-color: rgb(127, 255, 127); */
     overflow: hidden;
     border-radius: 50%;
     margin-bottom: 5px;
+    /* border: 2px solid #00FF00; */
+    position: relative;
+}
+
+.user-info-content figure .online-ball{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    background-color: #00FF00;
+    top: 50%;
+    right: 0%;
+    z-index: 2;
+    /* transform: translate(50%); */
+    border-radius: 50%;
 }
 
 .user-info-content figure img {
+    overflow: hidden;
     /* z-index: 3; */
     /* border-radius: 50%; */
     width: 150%;
     height: 100%;
     transform: translate(-16%, 0%);
-    overflow: hidden;
     /* background-color: violet; */
 }
 
 .user-info-data {
     display: flex;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     flex-direction: column;
-    margin-left: 30px;
+    /* margin-left: 30px; */
     /* background-color: tomato; */
     flex-grow: 2;
+    width: 400px;
+    padding-left: 20px;
 }
 
 .user-info-content h3 {

@@ -33,13 +33,6 @@
     transform: translateY(-100%);
 }
 
-
-.top-menu form {
-    /* max-width: 1400px; */
-    /* margin-left: 10px; */
-    /* background-color: #101081; */
-}
-
 .dropdown {
     display: block;
     /* margin-left: 10px; */
@@ -142,22 +135,34 @@
     margin: 0px 0px 0px 20px;
 }
 
+.online-ball{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    background-color:#00FF00;
+    z-index: 2;
+    top: 71%;
+    right: 7%;
+    border-radius: 50%;
+}
+
 .top-menu-user figure {
     height: 38px;
     width: 38px;
     margin: 0px;
+    position: relative;
     border-radius: 50%;
-    overflow: hidden;
+    /* overflow: hidden; */
     
 }
 
 .top-menu-user figure img {
     border-radius: 50%;
     width: 100%;
-
 }
 
 .profile-image-letter{
+    border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
