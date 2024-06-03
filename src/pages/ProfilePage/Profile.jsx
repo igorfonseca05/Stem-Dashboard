@@ -30,8 +30,21 @@ function Profile() {
 
     // console.log(date.toLocaleDateString())
 
+    function handleProfileUpdateInfos() {
+        const popup = document.querySelector('.pop-up-container')
+
+        popup.classList.toggle('open-popup')
+        document.body.classList.toggle('hidden')
+
+    }
+
     return (
         <section className='adjust-size profile-container'>
+            <div className='pop-up-container'>
+            <div className='edit-profile-container'>
+                <button className='blue-button' onClick={handleProfileUpdateInfos}>salvar</button>
+            </div>
+            </div>
             <div className='grid'>
                 <div>'</div>          
                 <div>'</div>          
@@ -60,18 +73,20 @@ function Profile() {
                 <div className='bg-profile'>
                     <div className='user-info-content'>
                         <figure>
-                            <img src="https://wallpapercave.com/wp/wp6221066.jpg" alt="" />
+                            <img src="https://wallpapercave.com/wp/wp8498412.jpg" alt="" />
                         </figure>
                         <div className='user-info-data'>
                             <h3>{user.displayName}</h3>
+                            <p>{user.email}</p>
+                            <button className='blue-button' onClick={handleProfileUpdateInfos}>Edit profile</button>
                             {/* <p>Conta criada em: {date}</p> */}
                         </div>
                     </div>
                     <div className='gradiente'></div>
-                    {/* <img className='bg-image' src="img/call.jpg" alt="" /> */}
+                    <img className='bg-image' src='' alt="" />
                 </div>
-                <div className='outra'></div>
-                <div className='outra2'></div>
+                {/* <div className='outra'></div> */}
+                {/* <div className='outra2'></div> */}
             </div>
         </section>
 

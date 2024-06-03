@@ -7,7 +7,7 @@
     height: 100vh;
     transform: translateX(-110%);
     animation-play-state: paused;
-    z-index: 10;
+    z-index: 6;
     top: 0;
     left: 0;
     /* box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3); */

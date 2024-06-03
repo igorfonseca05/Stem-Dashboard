@@ -417,7 +417,7 @@ form p a {
   }
 
   .user-info-data {
-    text-align: center;
+    padding-left: 20px;
 }
 
 
@@ -551,10 +551,6 @@ form p a {
     margin-right: 0px;
   }
 
-  .user-info-data {
-    text-align: center;
-    /* padding-left: 20px; */
-}
   
 }
 
