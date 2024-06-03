@@ -30,19 +30,25 @@ function Profile() {
 
     // console.log(date.toLocaleDateString())
 
-    function handleProfileUpdateInfos() {
+    function handleProfileUpdateInfos(e) {
         const popup = document.querySelector('.pop-up-container')
+        const form = document.querySelector('.edit-profile-form')
 
         popup.classList.toggle('open-popup')
         document.body.classList.toggle('hidden')
+
+        if(e.target.tagName === 'A') {
+            form.reset()
+        }
+        
 
     }
 
     return (
         <section className='adjust-size profile-container'>
             <div className='pop-up-container'>
-                <form className='edit-profile-container'>
-                    <h1>Enter your data</h1>
+                <form className='edit-profile-form'>
+                    <h2>Enter your data</h2>
                     <label htmlFor="pic-profile">
                         <input type="text" placeholder='Enter URL Profile Image' id='pic-profile' required/>
                     </label>
@@ -50,10 +56,10 @@ function Profile() {
                         <input type="text" placeholder='Enter User Name' id='new-user-name' required/>
                     </label>
                     <label htmlFor="new-background">
-                        <input type="text" placeholder='Enter Background URL' id='new-background' required/>
+                        <input type="file" name="" id="" />
                     </label>
                     <div className='div-buttons'>
-                        <button className='blue-button ' onClick={handleProfileUpdateInfos}>Fechar</button>
+                        <a className='blue-button' onClick={handleProfileUpdateInfos}>Fechar</a>
                         <button className='blue-button' type='submit'>Salvar</button>
                     </div>
                 </form>
