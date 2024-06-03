@@ -13,7 +13,7 @@ export function useRealTimeDataBase() {
 
     const dataBase = getDatabase(app)
 
-    function setData(collection,data, profileImage) {
+    function setData(collection, data, profileImage, backgroundImg) {
         if (collection === 'Color/') {
             set(ref(dataBase, collection + user?.uid), {
                 color: data
@@ -22,16 +22,17 @@ export function useRealTimeDataBase() {
             set(ref(dataBase, collection + user?.uid), {
                 profileName: data,
                 profile_picture: profileImage,
+                background_Img: backgroundImg
             }) 
         }
     }
 
-    function getData(getColor, collection) {
+    function getData(getDataColor, collection) {
         onValue(ref(dataBase, collection + user?.uid), (snapshot) => {
             const data = snapshot.val()
             // console.log(data?.colorTwo)
 
-            getColor(data)
+            getDataColor(data)
 
         })
     }

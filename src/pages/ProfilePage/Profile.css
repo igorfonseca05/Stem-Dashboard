@@ -99,10 +99,13 @@ label {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .edit-profile-container button, label input {
     width: 100%;
+    margin-left: 10px;
+
 }
 
 label input {

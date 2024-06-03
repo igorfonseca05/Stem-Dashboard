@@ -142,7 +142,7 @@ export function useAuthentication() {
                 photoURL: imageProfile
             })
 
-            setData('UserName/', userName)
+            setData('UserName/', userName, imageProfile)
 
             setSuccess('Profile updated')
         } catch (error) {

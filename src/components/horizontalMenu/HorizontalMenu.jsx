@@ -16,6 +16,8 @@ import { useRealTimeDataBase } from '../../hooks/useRealTimeDataBase'
 
 function HorizontalMenu() {
 
+    const [realTimeprofileInfos, setrealTimeProfileInfos] = useState({})
+
     const {signOut, auth} = useAuthentication()
     const user = useAuthProvider()
     const { handleCloseMenu } = useIconMenuClose()
@@ -66,7 +68,8 @@ function HorizontalMenu() {
     
     
    useEffect(() => {
-    function getColor(colorData) {
+    function getDataColor(colorData) {
+        // console.log(colorData)
         if(localStorage.getItem('color')) {
             // console.log(localStorage.getItem('color'))
             setColor(localStorage.getItem('color'))
@@ -76,8 +79,14 @@ function HorizontalMenu() {
         setColor(colorData?.color)
     }
 
-    getData(getColor, `Color/`)
+    getData(getDataColor, `Color/`)
 }, [])
+
+function gettingDataRealTime (infos) {
+    setrealTimeProfileInfos(infos)
+}
+
+useEffect(() => getData(gettingDataRealTime, 'UserName/'), [])
     
 
     return (
@@ -103,7 +112,7 @@ function HorizontalMenu() {
                             <figure>
                             <div className='online-ball'></div>
                                 {user.photoURL? (<>
-                                    <img src={user.photoURL} alt="user personal image"/>
+                                    <img src={realTimeprofileInfos.profile_picture} alt="user personal image"/>
                                 </>) : (<>
                                     <div style={{backgroundColor: `${color}`}} className='profile-image-letter' onClick={handleChangeColor}>
                                         <h2>{user.displayName?.slice(0,1)}</h2>
@@ -112,7 +121,7 @@ function HorizontalMenu() {
                             </figure>
                             <div className="dropdown">
                                 <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {user.displayName}
+                                    {realTimeprofileInfos.profileName}
                                 </button>
                                 <ul className="dropdown-menu">
                                     <li><Link to={'/profile'} className="dropdown-item" href="#">Perfil</Link></li>

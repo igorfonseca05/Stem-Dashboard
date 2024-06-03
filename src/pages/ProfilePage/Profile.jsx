@@ -1,6 +1,6 @@
 
 import { useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 
 import './Profile.css'
@@ -9,32 +9,34 @@ import { useAuthProvider } from '../../context/AuthContext'
 import { useAuthentication } from '../../hooks/useAuthentication'
 import useMenu from '../../hooks/UseCloseMenu'
 
+import { useRealTimeDataBase } from '../../hooks/useRealTimeDataBase'
+
 function Profile() {
 
     const user = useAuthProvider()
 
-    // console.log(user)
+    const { getData } = useRealTimeDataBase()
+
+    const [realTimeprofileInfos, setrealTimeProfileInfos] = useState({})
 
     const location = useLocation()
-    const { updateInfos: updateProfile, error, loading, success, onAuthStateChanged } = useAuthentication()
 
+    const {
+        updateInfos: updateProfile,
+        error,
+        loading,
+        success } = useAuthentication()
+
+
+    // Controlando abertura e fechamento do menu
     const { handleMenu, isOpen } = useMenu(location.pathname)
     handleMenu()
 
-    //  useEffect(() => {
-    //     document.querySelector('.nav-container').style.display = 'block'
-    //     document.querySelector('.top-menu').style.display = 'block'
-    //  }, [location.pathname])
-
-
-    // console.log(user)
-    // console.log(user.reloadUserInfo.createdAt)
-
+    // Obtendo data de criação da conta
     const stringData = parseInt(user.reloadUserInfo.createdAt)
     const date = new Date(stringData).toLocaleDateString()
 
-    // console.log(date.toLocaleDateString())
-
+    // PopUp para atualizar informações pessoais
     function handleProfileUpdateInfos(e) {
         const popup = document.querySelector('.pop-up-container')
         const form = document.querySelector('.edit-profile-form')
@@ -48,15 +50,28 @@ function Profile() {
 
     }
 
+    // Adicionando dados obtidos em tempo Real
+    function gettingDataRealTime(infos) {
+        setrealTimeProfileInfos(infos)
+    }
+
+    // Salvar dados do formulario na base de dados
     function updateInfos(e) {
         e.preventDefault()
 
         const newProfileImage = e.target.newProfileImage.value
         const newUserName = e.target.newUserName.value
+        const backgroundImg = e.target.backgroundImg.value
 
-        updateProfile(newUserName, newProfileImage)
+        updateProfile(newUserName, newProfileImage, backgroundImg)
+
+        getData(gettingDataRealTime, 'UserName/')
     }
 
+    // Obtendo dados ao abrir o perfil
+    useEffect(() => getData(gettingDataRealTime, 'UserName/'), [])
+
+    console.log(realTimeprofileInfos)
 
     return (
         <section className='adjust-size profile-container'>
@@ -64,13 +79,14 @@ function Profile() {
                 <form className='edit-profile-form' onSubmit={(e) => updateInfos(e)}>
                     <h2>Enter your data</h2>
                     <label htmlFor="newProfileImage">
-                        <input type="text" placeholder='Enter URL Profile Image' id='newProfileImage'/>
+                        <input type="text" placeholder='Enter URL Profile Image' id='newProfileImage' />
                     </label>
                     <label htmlFor="newUserName">
-                        <input type="text" placeholder='Enter User Name' id='newUserName'/>
+                        <span class="material-symbols-outlined">person</span>
+                        <input type="text" placeholder='Enter User Name' id='newUserName' />
                     </label>
-                    <label htmlFor="new-background">
-                        <input type="file" name="" id="" />
+                    <label htmlFor="backgroundImg">
+                        <input type="URL" name="" id="backgroundImg" placeholder='Enter URL background image' />
                     </label>
                     <div className='div-buttons'>
                         {!loading ? (
@@ -107,10 +123,16 @@ function Profile() {
                 <div className='bg-profile'>
                     <div className='user-info-content'>
                         <figure>
-                            <img src={user.photoURL} alt="" />
+                            {user.photoURL ? <>
+                                <img src={realTimeprofileInfos?.profile_picture} alt="" />
+                            </> : <>
+                            {/* <span class="material-symbols-outlined">person</span> */}
+                                <span className='material-symbols-outlined'>person</span>
+                            </>
+                            }
                         </figure>
                         <div className='user-info-data'>
-                            <h3>{user.displayName}</h3>
+                            <h3>{realTimeprofileInfos?.profileName}</h3>
                             <p>{user.email.slice('0', `${user.email.indexOf('@') + 1}`)}</p>
                             <button className='blue-button' onClick={handleProfileUpdateInfos}>Edit profile</button>
                             {/* <p>Conta criada em: {date}</p> */}
