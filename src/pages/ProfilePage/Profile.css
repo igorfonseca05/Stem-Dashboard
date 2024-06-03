@@ -37,6 +37,7 @@
 
 .bg-profile {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background-color: #26272b;
@@ -63,6 +64,7 @@
     border-radius: 40px;
     /* opacity: 1; */
     display: none;
+    /* background-color: aqua; */
 }
 
 .user-info-content {
@@ -70,7 +72,7 @@
     flex-wrap: wrap;
     align-items: center;
     /* overflow: hidden; */
-    /* background-color: aqua; */
+    background-color: aqua;
     width: 90%;
     justify-content: center;
     /* height: 100%; */
@@ -85,7 +87,7 @@
     width: 15%;
     /* margin: 0px auto; */
     height: 150px;
-    background-color: aquamarine;
+    background-color: rgb(127, 255, 127);
     overflow: hidden;
     border-radius: 50%;
     margin-bottom: 5px;
@@ -98,6 +100,7 @@
     height: 100%;
     transform: translate(-16%, 0%);
     overflow: hidden;
+    /* background-color: violet; */
 }
 
 .user-info-data {

@@ -43,7 +43,7 @@ function Profile() {
                         <p>Conta criada em: {date}</p>
                     </div>
                 </div> */}
-                <figure className='bg-profile'>
+                <div className='bg-profile'>
                     <div className='user-info-content'>
                         <figure>
                             <img src="https://png.pngtree.com/thumb_back/fh260/background/20230610/pngtree-the-character-wearing-headphones-with-an-ear-piercing-in-his-head-image_2919756.jpg" alt="" />
@@ -55,7 +55,7 @@ function Profile() {
                     </div>
                     <div className='gradiente'></div>
                     <img className='bg-image' src="img/call.jpg" alt="" />
-                </figure>
+                </div>
                 <div className='outra'></div>
                 <div className='outra2'></div>
             </div>
