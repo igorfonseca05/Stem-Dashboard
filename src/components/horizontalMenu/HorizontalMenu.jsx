@@ -45,43 +45,9 @@ function HorizontalMenu() {
         signOut(auth)
     }
     
-    let counter = 0
-    function handleChangeColor(e) {
-        // Custom hook de acesso a base de dados
-        const colors = ['#00A7C3', '#00BC5D', '#F38500', '#FF453A']
-        
-        counter === (colors.length - 1) ? counter = 0 : counter++
-        e.currentTarget.style.backgroundColor = colors[counter]
-
-        console.log(colors[counter])
-
-        localStorage.setItem('color', `${colors[counter]}`)
-
-        // setColor(colors[counter])
-        //Salvando preferência do usuário na base de dados
-        setTimeout(() => {
-            setData("Color/", colors[counter])
-        }, 100)
-    }
-
     creatingBorderOnClick()
     
     
-   useEffect(() => {
-    function getDataColor(colorData) {
-        // console.log(colorData)
-        if(localStorage.getItem('color')) {
-            // console.log(localStorage.getItem('color'))
-            setColor(localStorage.getItem('color'))
-            return
-        }
-        
-        setColor(colorData?.color)
-    }
-
-    getData(getDataColor, `Color/`)
-}, [])
-
 function gettingDataRealTime (infos) {
     setrealTimeProfileInfos(infos)
 }
@@ -114,9 +80,7 @@ useEffect(() => getData(gettingDataRealTime, 'UserName/'), [])
                                 {user.photoURL? (<>
                                     <img src={realTimeprofileInfos.profile_picture} alt="user personal image"/>
                                 </>) : (<>
-                                    <div style={{backgroundColor: `${color}`}} className='profile-image-letter' onClick={handleChangeColor}>
-                                        <h2>{user.displayName?.slice(0,1)}</h2>
-                                    </div>
+                                    <img src="https://i.pinimg.com/474x/31/ec/2c/31ec2ce212492e600b8de27f38846ed7.jpg" alt="" />
                                 </>)}
                             </figure>
                             <div className="dropdown">

@@ -14,17 +14,11 @@ export function useRealTimeDataBase() {
     const dataBase = getDatabase(app)
 
     function setData(collection, data, profileImage, backgroundImg) {
-        if (collection === 'Color/') {
-            set(ref(dataBase, collection + user?.uid), {
-                color: data
-            })
-        } else {
             set(ref(dataBase, collection + user?.uid), {
                 profileName: data,
                 profile_picture: profileImage,
                 background_Img: backgroundImg
             }) 
-        }
     }
 
     function getData(getDataColor, collection) {

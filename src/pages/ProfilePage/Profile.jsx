@@ -71,7 +71,7 @@ function Profile() {
     // Obtendo dados ao abrir o perfil
     useEffect(() => getData(gettingDataRealTime, 'UserName/'), [])
 
-    console.log(realTimeprofileInfos)
+    console.log(realTimeprofileInfos?.background_Img)
 
     return (
         <section className='adjust-size profile-container'>
@@ -82,7 +82,7 @@ function Profile() {
                         <input type="text" placeholder='Enter URL Profile Image' id='newProfileImage' />
                     </label>
                     <label htmlFor="newUserName">
-                        <span class="material-symbols-outlined">person</span>
+                        <span className="material-symbols-outlined">person</span>
                         <input type="text" placeholder='Enter User Name' id='newUserName' />
                     </label>
                     <label htmlFor="backgroundImg">
@@ -120,14 +120,13 @@ function Profile() {
                 <div>'</div>
             </div>
             <div className='content-profile'>
-                <div className='bg-profile'>
+                <div className='profileContainer'>
                     <div className='user-info-content'>
                         <figure>
                             {user.photoURL ? <>
                                 <img src={realTimeprofileInfos?.profile_picture} alt="" />
                             </> : <>
-                            {/* <span class="material-symbols-outlined">person</span> */}
-                                <span className='material-symbols-outlined'>person</span>
+                                <img src="https://i.pinimg.com/474x/31/ec/2c/31ec2ce212492e600b8de27f38846ed7.jpg" alt="" />
                             </>
                             }
                         </figure>
@@ -139,10 +138,27 @@ function Profile() {
                         </div>
                     </div>
                     <div className='gradiente'></div>
-                    <img className='bg-image' src='' alt="" />
+                    {realTimeprofileInfos.background_Img? 
+                    <img className='bg-image' src={realTimeprofileInfos.background_Img} alt="" /> :
+                    <img className='bg-image no-Image' src={"https://www.pngall.com/wp-content/uploads/2/Upload-PNG-Clipart.png"} alt="" /> }
                 </div>
-                {/* <div className='outra'></div> */}
-                {/* <div className='outra2'></div> */}
+                <div className='games-infos'>
+                    <div className='card-game'>
+                        <figure>
+                            <img src="" alt="" />
+                        </figure>
+                        <h4>Mortal kombat</h4>
+                        <h5>Introduction</h5>
+                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui dolorem, unde officia sequi laudantium corrupti commodi temporibus fugit soluta excepturi. Dignissimos saepe, commodi nesciunt perspiciatis omnis explicabo cupiditate a consequuntur!</p>
+                        <hr />
+                        <p className='games-price'></p>
+                    </div>
+                    {/* <div className='card-game'>2</div> */}
+                    {/* <div className='card-game'></div> */}
+                </div>
+                <div className='outra2'>
+                    {/* <div>oi</div> */}
+                </div>
             </div>
         </section>
 

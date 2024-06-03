@@ -31,17 +31,17 @@
     display: grid;
     /* overflow-x: hidden; */
     grid-template-columns: 100%;
-    grid-auto-rows: 250px;
+    grid-template-rows: 250px;
     /* background-color: rgb(55, 68, 110); */
     margin: 0 auto;
     max-width: 95%;
     gap: 8px;
     /* overflow: hidden; */
-    /* height: 288px; */
+    /* height: 250px; */
 }
 
 .content-profile>div,
-.bg-profile,
+.profileContainer,
 .gradiente {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
@@ -130,7 +130,7 @@ label input {
 }
 
 
-.bg-profile {
+.profileContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -142,10 +142,7 @@ label input {
     /* opacity: 0.7; */
     /* backdrop-filter: blur(0); */
     position: relative;
-    /* background-image: url('img/photo-id-23.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover; */
+   
 
 }
 
@@ -156,16 +153,16 @@ label input {
     /* z-index: 2; */
     /* filter: blur(1px); */
     /* background: radial-gradient(circle at center, transparent 0%, #18181a 100%); */
-    background-image: radial-gradient(circle, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.63) 50%, rgb(0, 0, 0) 100%);
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0) 5%, rgba(0, 0, 0, 0.445) 50%, rgba(0, 0, 0, 0.89) 100%);
 }
 
-.bg-profile .bg-image {
+.profileContainer .bg-image {
     /* transform: translate(-15%, -0%); */
     width: 100%;
     height: 200%;
     border-radius: 40px;
     border: none;
-    display: none;
+    /* display: none; */
     overflow: hidden;
     /* opacity: 1; */
     /* filter: blur(1px); */
@@ -173,20 +170,18 @@ label input {
     /* background-color: aqua; */
 }
 
+.no-Image{
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 0px !important;
+}
+
 .user-info-content {
     display: flex;
-    /* flex-wrap: wrap; */
-    /* align-items: center; */
-    /* overflow: hidden; */
-    /* background-color: aqua; */
     width: 90%;
     justify-content: center;
-    /* height: 100%; */
-    /* padding: 20px; */
-    /* border-radius: 40px; */
     position: absolute;
     z-index: 1;
-    /* top: 30px; */
 }
 
 .user-info-content figure {
@@ -205,26 +200,16 @@ label input {
 
 .user-info-content figure img {
     overflow: hidden;
-    /* z-index: 3; */
-    /* border-radius: 50%; */
     width: 100%;
     height: 100%;
-    /* transform: translate(-16%, -10%); */
-    /* background-color: violet; */
 }
 
 .user-info-data {
     display: flex;
     justify-content: center;
-    /* align-items: center; */
-    /* flex-wrap: wrap; */
     flex-direction: column;
-    /* margin-left: 30px; */
-    /* background-color: tomato; */
     flex-grow: 2;
     width: 50%;
-    /* height: auto; */
-    /* overflow: hidden; */
     padding-left: 20px;
     color: white;
 }
@@ -237,21 +222,28 @@ label input {
 }
 
 .user-info-content p {
-    color: #8f9197;
+    color: #e6e7e7;
 
 }
 
 .user-info-content button {
-    /* max-width: 30%; */
     width: 120px;
-    /* margin: 0 auto; */
 }
 
-
-.outra {
-    /* width: 100%; */
+.games-infos {
     background-color: rgba(127, 255, 155, 0.692);
     grid-column: 1 / -1;
+    min-height: 250px;
+    margin: 0px;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    
+}
+
+.games-infos .card-game{
+   width: 350px;
+   background-color: var(--elements);
 }
 
 .outra2 {
