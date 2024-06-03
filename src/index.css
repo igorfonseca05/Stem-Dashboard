@@ -416,6 +416,11 @@ form p a {
     justify-content: center;
   }
 
+  .user-info-data {
+    text-align: center;
+}
+
+
 
 }
 
@@ -547,7 +552,8 @@ form p a {
   }
 
   .user-info-data {
-    padding-left: 0px;
+    text-align: center;
+    /* padding-left: 20px; */
 }
   
 }
@@ -622,23 +628,14 @@ form p a {
     margin-right: 0px;
   }
 
+  .user-info-data {
+    padding-left: 20px;
+}
+
 
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
-  /* .nav-container {
-    transform: translateX(85%);
-    animation: closeMenu 0.1s ease-in-out forwards;
-    animation-play-state: paused;
-    display: none;
-  } */
-
-  /* .open {
-    transform: translateX(85%);
-    animation: openMenu 0.1s ease-in-out forwards;
-    animation-play-state: running;
-  } */
-
   .span-icon {
     display: block;
     cursor: pointer;
@@ -706,6 +703,10 @@ form p a {
 
   .adjust-content {
     width: 80%;
+}
+
+.user-info-data{
+  padding-left: 20px;
 }
 
 }
