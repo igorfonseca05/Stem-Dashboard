@@ -68,6 +68,7 @@ function HorizontalMenu() {
    useEffect(() => {
     function getColor(colorData) {
         if(localStorage.getItem('color')) {
+            // console.log(localStorage.getItem('color'))
             setColor(localStorage.getItem('color'))
             return
         }

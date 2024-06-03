@@ -41,23 +41,36 @@ function Profile() {
     return (
         <section className='adjust-size profile-container'>
             <div className='pop-up-container'>
-            <div className='edit-profile-container'>
-                <button className='blue-button' onClick={handleProfileUpdateInfos}>salvar</button>
-            </div>
+                <form className='edit-profile-container'>
+                    <h1>Enter your data</h1>
+                    <label htmlFor="pic-profile">
+                        <input type="text" placeholder='Enter URL Profile Image' id='pic-profile' required/>
+                    </label>
+                    <label htmlFor="new-user-name">
+                        <input type="text" placeholder='Enter User Name' id='new-user-name' required/>
+                    </label>
+                    <label htmlFor="new-background">
+                        <input type="text" placeholder='Enter Background URL' id='new-background' required/>
+                    </label>
+                    <div className='div-buttons'>
+                        <button className='blue-button ' onClick={handleProfileUpdateInfos}>Fechar</button>
+                        <button className='blue-button' type='submit'>Salvar</button>
+                    </div>
+                </form>
             </div>
             <div className='grid'>
-                <div>'</div>          
-                <div>'</div>          
-                <div>'</div>          
-                <div>'</div>          
-                <div>'</div>          
-                <div>'</div>          
-                <div>'</div>          
-                <div>'</div>          
-                <div>'</div>          
-                <div>'</div>          
-                <div>'</div>          
-                <div>'</div>          
+                <div>'</div>
+                <div>'</div>
+                <div>'</div>
+                <div>'</div>
+                <div>'</div>
+                <div>'</div>
+                <div>'</div>
+                <div>'</div>
+                <div>'</div>
+                <div>'</div>
+                <div>'</div>
+                <div>'</div>
             </div>
             <div className='content-profile'>
                 {/* <div className='user-info'>
@@ -77,7 +90,7 @@ function Profile() {
                         </figure>
                         <div className='user-info-data'>
                             <h3>{user.displayName}</h3>
-                            <p>{user.email}</p>
+                            <p>{user.email.slice('0', `${user.email.indexOf('@') + 1}`)}</p>
                             <button className='blue-button' onClick={handleProfileUpdateInfos}>Edit profile</button>
                             {/* <p>Conta criada em: {date}</p> */}
                         </div>
