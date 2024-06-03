@@ -630,6 +630,7 @@ form p a {
 
   .user-info-data {
     padding-left: 20px;
+    /* text-align: center; */
 }
 
 
@@ -703,10 +704,6 @@ form p a {
 
   .adjust-content {
     width: 80%;
-}
-
-.user-info-data{
-  padding-left: 20px;
 }
 
 }

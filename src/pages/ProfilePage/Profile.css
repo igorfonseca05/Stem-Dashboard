@@ -133,8 +133,8 @@
     /* margin-left: 30px; */
     /* background-color: tomato; */
     flex-grow: 2;
-    min-width: 300px;
-    /* padding-left: 20px; */
+    width: 500px;
+    padding-left: 20px;
 }
 
 .user-info-content h3 {
