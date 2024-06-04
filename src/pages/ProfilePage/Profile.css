@@ -72,7 +72,7 @@
     overflow: hidden;
 }
 
-.edit-profile-form{
+.edit-profile-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,14 +95,17 @@
     background-color: transparent;
 }
 
-label {
+.input-profile {
+    /* width: fit-content; */
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.edit-profile-container button, label input {
+.edit-profile-container button,
+label input {
     width: 100%;
     margin-left: 10px;
 
@@ -112,14 +115,28 @@ label input {
     color: #18181a;
     /* margin: 0 auto; */
     background-color: white;
+    padding-left: 40px;
 }
 
-.div-buttons{
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    /* Ajuste este valor conforme necessário */
+    transform: translateY(-50%);
+    pointer-events: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.459);
+    color: var(--Oficial-body-color);
+}
+
+.div-buttons {
     display: flex;
     width: 100%;
     justify-content: space-around;
 }
-.div-buttons button, .div-buttons a{
+
+.div-buttons button,
+.div-buttons a {
     width: 48%;
     text-decoration: none;
 }
@@ -142,7 +159,7 @@ label input {
     /* opacity: 0.7; */
     /* backdrop-filter: blur(0); */
     position: relative;
-   
+
 
 }
 
@@ -170,7 +187,7 @@ label input {
     /* background-color: aqua; */
 }
 
-.no-Image{
+.no-Image {
     width: 100px !important;
     height: 100px !important;
     border-radius: 0px !important;
@@ -238,12 +255,12 @@ label input {
     display: flex;
     align-items: start;
     justify-content: space-between;
-    
+
 }
 
-.games-infos-profile .card-game-profile{
-   width: 350px;
-   background-color: var(--elements);
+.games-infos-profile .card-game-profile {
+    width: 350px;
+    background-color: var(--elements);
 }
 
 .outra2 {

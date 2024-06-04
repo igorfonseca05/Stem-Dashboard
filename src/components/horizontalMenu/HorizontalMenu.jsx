@@ -39,25 +39,10 @@ function HorizontalMenu() {
 
     // console.log(user)
 
-    // adiciocando borda ao clicar no input
-    const [isFocused, setIsFocused] = useState(false)
-
-    function creatingBorderOnClick() {
-        const label = document.querySelector('[data-js="border-label"]')
-
-        if (isFocused) {
-            label.style.border = '2px solid #e6e6e6'
-            return
-        }
-
-            label ? label.style.border = 'none' : ''
-     }
 
     function handleSignOut() {
         signOut(auth)
     }
-    
-    creatingBorderOnClick()
     
     return (
         <div className='top-menu'>
@@ -66,10 +51,8 @@ function HorizontalMenu() {
                     menu
                 </span>
                         <form className='external-form'>
-                            <label data-js='border-label'
-                                onFocus={(e) => setIsFocused(true)}
-                                onBlur={(e) => setIsFocused(false)}>
-                                <span className="material-symbols-outlined">search</span>
+                            <label className='internal-icon-input' data-js='border-label'>
+                                <span className="material-symbols-outlined internal-icon">search</span>
                                 <input type="text" id='searchInput' placeholder='Search here...' autoComplete='off' />
                             </label>
                         </form>

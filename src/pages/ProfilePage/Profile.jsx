@@ -74,14 +74,14 @@ function Profile() {
             <div className='pop-up-container'>
                 <form className='edit-profile-form' onSubmit={(e) => updateInfos(e)}>
                     <h2>Enter your data</h2>
-                    <label htmlFor="newProfileImage">
+                    <label htmlFor="newProfileImage" className='input-profile'>
                         <input type="text" placeholder='Enter URL Profile Image' id='newProfileImage' />
                     </label>
-                    <label htmlFor="newUserName">
-                        <span className="material-symbols-outlined">person</span>
+                    <label htmlFor="newUserName" className='input-profile'>
+                        <span className="material-symbols-outlined icon">person</span>
                         <input type="text" placeholder='Enter User Name' id='newUserName' />
                     </label>
-                    <label htmlFor="backgroundImg">
+                    <label htmlFor="backgroundImg" className='input-profile'>
                         <input type="URL" name="" id="backgroundImg" placeholder='Enter URL background image' />
                     </label>
                     <div className='div-buttons'>

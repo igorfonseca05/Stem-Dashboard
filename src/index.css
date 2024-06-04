@@ -12,10 +12,12 @@
   font-family: "motivaSans-Bold";
   src: url('src/font/MotivaSansTest-Bold.otf');
 }
+
 @font-face {
   font-family: "motivaSans-medium";
   src: url('src/font/MotivaSansTest-Medium.otf');
 }
+
 @font-face {
   font-family: "motivaSans-thin";
   src: url('src/font/MotivaSansTest-Thin.otf');
@@ -23,7 +25,7 @@
 
 :root {
   /* font-family: Georgia, 'Times New Roman', Times, serif; */
-  font-family: "MotivaSans" , sans-serif;
+  font-family: "MotivaSans", sans-serif;
   overflow-x: hidden;
 
   --size: 225px;
@@ -42,7 +44,7 @@
   --gray: #e6e6e6;
   --light-gray: #8f9197;
 
-  --font-regular: "motivaSans" , sans-serif;
+  --font-regular: "motivaSans", sans-serif;
 }
 
 html,
@@ -53,7 +55,7 @@ body {
   /* overflow: hidden; */
   align-items: start;
   /* transition: all 0.3s ease-in; */
-  font-family: "motivaSans-regular" , sans-serif;
+  font-family: "motivaSans-regular", sans-serif;
 }
 
 * {
@@ -234,13 +236,35 @@ form p a {
 
 @keyframes pisca {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
 
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 
+}
+
+.internal-icon-input {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.internal-icon-input input {
+  padding-left: 40px !important;
+}
+
+.internal-icon-input .internal-icon{
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  /* Ajuste este valor conforme necessário */
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--Oficial-body-color);
 }
 
 
@@ -258,17 +282,18 @@ form p a {
   .form-container {
     width: 100%;
   }
-  
-    
-  .login-section .bg, .bg-signUp{
+
+
+  .login-section .bg,
+  .bg-signUp {
     display: none;
   }
-  
+
   .adjust-content {
     width: 95%;
     grid-template-columns: 100%;
     padding: 0px;
-}
+  }
 
   .adjust-size {
     width: 98vw;
@@ -418,7 +443,7 @@ form p a {
 
   .user-info-data {
     padding-left: 20px;
-}
+  }
 
 
 
@@ -448,15 +473,16 @@ form p a {
     /* padding: 78px 0px; */
     margin: 0 auto;
   }
-  
-  .login-section .bg, .bg-signUp{
+
+  .login-section .bg,
+  .bg-signUp {
     display: none;
   }
-  
+
   .form-container {
     width: 100%;
   }
- 
+
   .adjust-size {
     width: 98vw;
     margin-left: 0px;
@@ -551,7 +577,7 @@ form p a {
     margin-right: 0px;
   }
 
-  
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px) {
@@ -627,7 +653,7 @@ form p a {
   .user-info-data {
     padding-left: 20px;
     /* text-align: center; */
-}
+  }
 
 
 }
@@ -700,6 +726,6 @@ form p a {
 
   .adjust-content {
     width: 80%;
-}
+  }
 
 }
