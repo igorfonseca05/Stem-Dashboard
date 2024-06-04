@@ -11,15 +11,11 @@ import useMenu from '../../hooks/UseCloseMenu'
 
 import { useRealTimeDataBase } from '../../hooks/useRealTimeDataBase'
 
+import { getData as dados } from '../../hooks/useData'
+
 function Profile() {
 
     const user = useAuthProvider()
-
-    const { getData } = useRealTimeDataBase()
-
-    const [realTimeprofileInfos, setrealTimeProfileInfos] = useState({})
-
-    const location = useLocation()
 
     const {
         updateInfos: updateProfile,
@@ -28,7 +24,17 @@ function Profile() {
         success } = useAuthentication()
 
 
+    const { data } = dados('UserName', 'infosProfile')
+
+    const [profileDataUser, setProfileDataUser] = useState({})
+
+    useEffect(() => {
+        setProfileDataUser(data)
+    }, [data])
+
+
     // Controlando abertura e fechamento do menu
+    const location = useLocation()
     const { handleMenu, isOpen } = useMenu(location.pathname)
     handleMenu()
 
@@ -50,11 +56,6 @@ function Profile() {
 
     }
 
-    // Adicionando dados obtidos em tempo Real
-    function gettingDataRealTime(infos) {
-        setrealTimeProfileInfos(infos)
-    }
-
     // Salvar dados do formulario na base de dados
     function updateInfos(e) {
         e.preventDefault()
@@ -64,14 +65,9 @@ function Profile() {
         const backgroundImg = e.target.backgroundImg.value
 
         updateProfile(newUserName, newProfileImage, backgroundImg)
-
-        getData(gettingDataRealTime, 'UserName/')
     }
 
-    // Obtendo dados ao abrir o perfil
-    useEffect(() => getData(gettingDataRealTime, 'UserName/'), [])
-
-    console.log(realTimeprofileInfos?.background_Img)
+    // console.log(profileDataUser)
 
     return (
         <section className='adjust-size profile-container'>
@@ -124,26 +120,26 @@ function Profile() {
                     <div className='user-info-content'>
                         <figure>
                             {user.photoURL ? <>
-                                <img src={realTimeprofileInfos?.profile_picture} alt="" />
+                                <img src={profileDataUser?.imgProfile} alt="" />
                             </> : <>
                                 <img src="https://i.pinimg.com/474x/31/ec/2c/31ec2ce212492e600b8de27f38846ed7.jpg" alt="" />
                             </>
                             }
                         </figure>
                         <div className='user-info-data'>
-                            <h3>{realTimeprofileInfos?.profileName}</h3>
+                            <h3>{profileDataUser?.profileName}</h3>
                             <p>{user.email.slice('0', `${user.email.indexOf('@') + 1}`)}</p>
                             <button className='blue-button' onClick={handleProfileUpdateInfos}>Edit profile</button>
                             {/* <p>Conta criada em: {date}</p> */}
                         </div>
                     </div>
                     <div className='gradiente'></div>
-                    {realTimeprofileInfos.background_Img? 
-                    <img className='bg-image' src={realTimeprofileInfos.background_Img} alt="" /> :
-                    <img className='bg-image no-Image' src={"https://www.pngall.com/wp-content/uploads/2/Upload-PNG-Clipart.png"} alt="" /> }
+                    {profileDataUser?.bgImg ?
+                        <img className='bg-image' src={profileDataUser?.bgImg} alt="" /> :
+                        <img className='bg-image no-Image' src={"https://www.pngall.com/wp-content/uploads/2/Upload-PNG-Clipart.png"} alt="" />}
                 </div>
-                <div className='games-infos'>
-                    <div className='card-game'>
+                <div className='games-infos-profile'>
+                    <div className='card-game-profile'>
                         <figure>
                             <img src="" alt="" />
                         </figure>

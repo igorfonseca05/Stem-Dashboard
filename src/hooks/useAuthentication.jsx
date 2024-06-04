@@ -133,7 +133,7 @@ export function useAuthentication() {
     async function updateInfos(userName, imageProfile, background) {
         checkIfCancelled()
 
-        setLoading(true)
+        setLoading(!loading)
         setError('')
 
         try {
@@ -142,15 +142,16 @@ export function useAuthentication() {
                 photoURL: imageProfile
             })
 
-            setData('UserName/', userName, imageProfile, background)
-
+            setData('UserName','infosProfile', userName, imageProfile, background)
             setSuccess('Profile updated')
+            setLoading(loading)
+
         } catch (error) {
             console.log(error)
             setError(error.message)
         }
 
-        setLoading(false)
+        setLoading(loading)
 
     }
 

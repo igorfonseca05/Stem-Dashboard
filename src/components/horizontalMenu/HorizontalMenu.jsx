@@ -14,22 +14,34 @@ import { useAuthProvider } from '../../context/AuthContext'
 
 import { useRealTimeDataBase } from '../../hooks/useRealTimeDataBase'
 
+import { getData as dados } from '../../hooks/useData'
+
 function HorizontalMenu() {
 
-    const [realTimeprofileInfos, setrealTimeProfileInfos] = useState({})
-
+    // Autenticação
     const {signOut, auth} = useAuthentication()
+
+    // Obtendo usuario
     const user = useAuthProvider()
+
+    // Lidando com dinamica no menu
     const { handleCloseMenu } = useIconMenuClose()
-    const {setData, getData} = useRealTimeDataBase()
+
+    // Obtendo infos do perfil do usuário
+    const {data} = dados('UserName', 'infosProfile')
+
+    const [profileDataUser, setProfileDataUser] = useState({})
+
+    useEffect(() => {
+        setProfileDataUser(data)
+    }, [data])
+
 
     // console.log(user)
-    
+
+    // adiciocando borda ao clicar no input
     const [isFocused, setIsFocused] = useState(false)
 
-    const [color, setColor] = useState("#808080")
-
-    
     function creatingBorderOnClick() {
         const label = document.querySelector('[data-js="border-label"]')
 
@@ -47,14 +59,6 @@ function HorizontalMenu() {
     
     creatingBorderOnClick()
     
-    
-function gettingDataRealTime (infos) {
-    setrealTimeProfileInfos(infos)
-}
-
-useEffect(() => getData(gettingDataRealTime, 'UserName/'), [])
-    
-
     return (
         <div className='top-menu'>
             <div>
@@ -78,14 +82,14 @@ useEffect(() => getData(gettingDataRealTime, 'UserName/'), [])
                             <figure>
                             <div className='online-ball'></div>
                                 {user.photoURL? (<>
-                                    <img src={realTimeprofileInfos.profile_picture} alt="user personal image"/>
+                                    <img src={profileDataUser?.imgProfile} alt="user personal image"/>
                                 </>) : (<>
                                     <img src="https://i.pinimg.com/474x/31/ec/2c/31ec2ce212492e600b8de27f38846ed7.jpg" alt="" />
                                 </>)}
                             </figure>
                             <div className="dropdown">
                                 <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {realTimeprofileInfos.profileName}
+                                    {profileDataUser?.profileName}
                                 </button>
                                 <ul className="dropdown-menu">
                                     <li><Link to={'/profile'} className="dropdown-item" href="#">Perfil</Link></li>
