@@ -12,12 +12,14 @@ import useMenu from '../../hooks/UseCloseMenu'
 import { useRealTimeDataBase } from '../../hooks/useRealTimeDataBase'
 
 import { getData as dados } from '../../hooks/useData'
+import Grid from '../../components/grid/Grid'
+
 
 function Profile() {
 
     const user = useAuthProvider()
     // console.log(user)
-    
+
     const { data } = dados('UserName', 'infosProfile')
 
     const {
@@ -26,9 +28,8 @@ function Profile() {
         loading,
         success } = useAuthentication()
 
-    const [remaining, setRemaining] = useState(80)    
+    const [remaining, setRemaining] = useState(80)
     const [profileDataUser, setProfileDataUser] = useState({})
-
 
     useEffect(() => {
         setProfileDataUser(data)
@@ -62,16 +63,18 @@ function Profile() {
     function updateInfos(e) {
         e.preventDefault()
 
-        const newProfileImage = e.target.newProfileImage.value
-        const newUserName = e.target.newUserName.value
-        const backgroundImg = e.target.backgroundImg.value
-        const phoneNumber = e.target.phoneNumber.value
-        const country = e.target.country.value
-        const bios = e.target.bios.value
+        const event = e.target
+
+        const newProfileImage = event.newProfileImage.value
+        const userName = event.userName.value
+        const backgroundImg = event.backgroundImg.value
+        const phoneNumber = event.phoneNumber.value
+        const country = event.country.value
+        const bios = event.bios.value
 
         const userInfos = {
             newProfileImage,
-            newUserName, 
+            userName,
             backgroundImg,
             phoneNumber,
             country,
@@ -95,6 +98,7 @@ function Profile() {
 
     return (
         <section className='adjust-size profile-container'>
+            <Grid/>
             <div className='pop-up-container'>
                 <form className='edit-profile-form' id='updateInfos-form' onSubmit={(e) => updateInfos(e)}>
                     <span className='material-symbols-outlined close-icon' onClick={handleProfileUpdateInfos} title='Fechar popUp'>close</span>
@@ -112,34 +116,76 @@ function Profile() {
                         </div>
                     </header>
                     <div className='inputs-responsiveis'>
-                        <label htmlFor="newUserName" className='input-profile internal-icon-input'>
+                        <label htmlFor="userName" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">person</span>
-                            <input name='newUserName' className='input-child' type="text" placeholder='Enter User Name' id='newUserName' required autoComplete='off'/>
+                            <input
+                                name='userName'
+                                className='input-child'
+                                type="text"
+                                placeholder='Enter User Name'
+                                id='userName'
+                                required
+                                autoComplete='off'
+                            />
                         </label>
                         <label htmlFor="email" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">email</span>
                             <span className="material-symbols-outlined internal-icon-verified">Verified</span>
-                            <input name='email' className='input-child' type="text" placeholder='Email' id='email' required autoComplete="off"/>
+                            <input
+                                name='email'
+                                className='input-child'
+                                type="text"
+                                placeholder='Email'
+                                id='email'
+                                required
+                                autoComplete="off" />
                         </label>
                     </div>
                     <div className="inputs-responsiveis">
                         <label htmlFor="phoneNumber" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">phone</span>
-                            <input name='phoneNumber' className='input-child' type="text" placeholder='Phone number' id='phoneNumber' required autoComplete='number'/>
+                            <input
+                                name='phoneNumber'
+                                className='input-child'
+                                type="text"
+                                placeholder='Phone number'
+                                id='phoneNumber'
+                                required
+                                autoComplete='' />
                         </label>
                         <label htmlFor="country" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Globe</span>
-                            <input name='country' className='input-child' type="text" placeholder='Your country' id='country' required autoComplete='Country'/>
+                            <input
+                                name='country'
+                                className='input-child'
+                                type="text"
+                                placeholder='Your country'
+                                id='country'
+                                required
+                                autoComplete='' />
                         </label>
                     </div>
                     <div className='inputs-responsiveis'>
                         <label htmlFor="newProfileImage" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Link</span>
-                            <input name='newProfileImage' className='input-child' type="text" placeholder='Profile Image' id='newProfileImage' autoComplete='off'/>
+                            <input
+                                name='newProfileImage'
+                                className='input-child'
+                                type="text"
+                                placeholder='Profile Image'
+                                id='newProfileImage'
+                                autoComplete
+                                ='on' />
                         </label>
                         <label htmlFor="backgroundImg" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Link</span>
-                            <input className='input-child' type="URL" name="backgroundImg" id="backgroundImg" placeholder='Background image' autoComplete='off'/>
+                            <input
+                                className='input-child'
+                                type="URL"
+                                name="backgroundImg"
+                                id="backgroundImg"
+                                placeholder='Background image'
+                                autoComplete='on' />
                         </label>
                     </div>
                     <div className='textArea-container'>
@@ -163,20 +209,6 @@ function Profile() {
                         }
                     </div>
                 </form>
-            </div>
-            <div className='grid'>
-                <div>'</div>
-                <div>'</div>
-                <div>'</div>
-                <div>'</div>
-                <div>'</div>
-                <div>'</div>
-                <div>'</div>
-                <div>'</div>
-                <div>'</div>
-                <div>'</div>
-                <div>'</div>
-                <div>'</div>
             </div>
             <div className='content-profile'>
                 <div className='profileContainer'>

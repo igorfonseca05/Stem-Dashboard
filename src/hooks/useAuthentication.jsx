@@ -132,7 +132,7 @@ export function useAuthentication() {
 
     async function updateInfos(dados) {
 
-        const { newProfileImage, newUserName} = dados
+        const { newProfileImage, userName} = dados
 
         // console.log(dados)
         checkIfCancelled()
@@ -142,7 +142,7 @@ export function useAuthentication() {
 
         try {
             updateProfile(auth.currentUser, {
-                displayName: newUserName,
+                displayName: userName,
                 photoURL: newProfileImage
             })
 

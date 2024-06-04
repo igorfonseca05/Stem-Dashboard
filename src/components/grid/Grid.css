@@ -1,0 +1,18 @@
+.grid {
+    position: absolute;
+    width: 100Vw;
+    height: 100%;
+    /* background-color: violet; */
+    z-index: 10;
+    opacity: 0.4;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 20px;
+    /* margin-left: 200px; */
+    /* display: none; */
+    /* overflow: hidden; */
+}
+
+.grid div {
+    background-color: rgba(253, 253, 253, 0.151);
+}

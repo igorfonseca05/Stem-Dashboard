@@ -19,14 +19,14 @@ export function useRealTimeDataBase() {
 
             const {   
                 newProfileImage,
-                newUserName, 
+                userName, 
                 backgroundImg,
                 phoneNumber,
                 country,
                 bios} = data
 
             set(ref(dataBase, `${collection}/` + user?.uid + `/${document}`), {
-                profileName: newUserName,
+                profileName: userName,
                 imgProfile: newProfileImage,
                 bgImg: backgroundImg,
                 phoneNumber: phoneNumber,
