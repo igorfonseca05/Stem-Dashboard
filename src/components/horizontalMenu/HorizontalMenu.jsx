@@ -54,7 +54,7 @@ function HorizontalMenu() {
                         <form className='external-form'>
                             <label className='internal-icon-input' data-js='border-label'>
                                 <span className="material-symbols-outlined internal-icon">search</span>
-                                <input type="text" id='searchInput' placeholder='Search here...' autoComplete='off' />
+                                <input className='input-child' type="text" id='searchInput' placeholder='Search here...' autoComplete='off' />
                             </label>
                         </form>
                         <div className='shop-notification-icons-container'>

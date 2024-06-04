@@ -74,15 +74,15 @@ function Profile() {
             <div className='pop-up-container'>
                 <form className='edit-profile-form' onSubmit={(e) => updateInfos(e)}>
                     <h2>Enter your data</h2>
-                    <label htmlFor="newProfileImage" className='input-profile'>
-                        <input type="text" placeholder='Enter URL Profile Image' id='newProfileImage' />
+                    <label htmlFor="newProfileImage" className='input-profile internal-icon-input'>
+                        <input className='input-child' type="text" placeholder='Enter URL Profile Image' id='newProfileImage' />
                     </label>
-                    <label htmlFor="newUserName" className='input-profile'>
+                    <label htmlFor="newUserName" className='input-profile internal-icon-input'>
                         <span className="material-symbols-outlined icon">person</span>
-                        <input type="text" placeholder='Enter User Name' id='newUserName' />
+                        <input className='input-child' type="text" placeholder='Enter User Name' id='newUserName' />
                     </label>
-                    <label htmlFor="backgroundImg" className='input-profile'>
-                        <input type="URL" name="" id="backgroundImg" placeholder='Enter URL background image' />
+                    <label htmlFor="backgroundImg" className='input-profile internal-icon-input'>
+                        <input className='input-child' type="URL" name="" id="backgroundImg" placeholder='Enter URL background image' />
                     </label>
                     <div className='div-buttons'>
                         {!loading ? (

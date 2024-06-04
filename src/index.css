@@ -201,20 +201,23 @@ li a {
   background-color: rgba(128, 128, 128, 0.178);
   /* border: none; */
   border: none;
-  color: white;
+  color: var(--light-gray);
   border-radius: 8px;
   font-size: 18px;
   /* padding-left: 5px !important; */
   height: 47px;
-  outline: none;
+  /* outline: none; */
 }
 
 
 .input-child:focus {
   /* border-bottom: none; */
-  outline: none !important;
-  /* transition: border 0.1s linear; */
-  border: 2px solid var(--thirdColor);
+  /* outline: none !important; */
+  outline-color: var(--thirdColor);
+  outline-width: 2px;
+  outline-style: solid;
+  /* transition: border 0.4s ease; */
+  /* border: 2px solid var(--thirdColor); */
   padding: 0px;
   padding-left: 8px;
 }
@@ -260,10 +263,9 @@ form p a {
 
 
 .internal-icon-input input {
-  padding-left: 40px !important;
+  padding-left: 45px !important;
  
 }
-
 
 .internal-icon-input .internal-icon{
   position: absolute;
