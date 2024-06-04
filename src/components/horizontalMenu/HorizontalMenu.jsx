@@ -38,7 +38,7 @@ function HorizontalMenu() {
 
 
     // console.log(user)
-    console.log(profileDataUser)
+    // console.log(profileDataUser)
 
 
     function handleSignOut() {
@@ -73,7 +73,7 @@ function HorizontalMenu() {
                             </figure>
                             <div className="dropdown">
                                 <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {profileDataUser?.profileName}
+                                    {profileDataUser?.profileName ? profileDataUser.profileName : ''}
                                 </button>
                                 <ul className="dropdown-menu">
                                     <li><Link to={'/profile'} className="dropdown-item" href="#">Perfil</Link></li>

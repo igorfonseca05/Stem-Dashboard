@@ -112,7 +112,7 @@
 
 .top-menu-user {
     display: flex;
-    color: #8f9197;
+    color: var(--icon-color);
     height: 58px;
     /* width: 170px; */
     /* background-color: aqua; */

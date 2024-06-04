@@ -17,6 +17,8 @@ function Profile() {
 
     const user = useAuthProvider()
 
+    console.log(user)
+
     const {
         updateInfos: updateProfile,
         error,
@@ -63,6 +65,7 @@ function Profile() {
         const newProfileImage = e.target.newProfileImage.value
         const newUserName = e.target.newUserName.value
         const backgroundImg = e.target.backgroundImg.value
+        const phoneNumber = e.target.backgroundImg.value
 
         updateProfile(newUserName, newProfileImage, backgroundImg)
     }
@@ -73,17 +76,57 @@ function Profile() {
         <section className='adjust-size profile-container'>
             <div className='pop-up-container'>
                 <form className='edit-profile-form' onSubmit={(e) => updateInfos(e)}>
-                    <h2>Enter your data</h2>
-                    <label htmlFor="newProfileImage" className='input-profile internal-icon-input'>
-                        <input className='input-child' type="text" placeholder='Enter URL Profile Image' id='newProfileImage' />
-                    </label>
-                    <label htmlFor="newUserName" className='input-profile internal-icon-input'>
-                        <span className="material-symbols-outlined icon">person</span>
-                        <input className='input-child' type="text" placeholder='Enter User Name' id='newUserName' />
-                    </label>
+                    <header className='form-header'>
+                        <figure className='smallUserFigure'>
+                            {user.photoURL ? (<>
+                                <img src={profileDataUser?.imgProfile} alt="user personal image" />
+                            </>) : (<>
+                                <img src="https://i.pinimg.com/474x/31/ec/2c/31ec2ce212492e600b8de27f38846ed7.jpg" alt="" />
+                            </>)}
+                        </figure>
+                        <div>
+                            <h5>{user.displayName} / Edit profile</h5>
+                            <p>Atualize suas informações pessoais</p>
+                        </div>
+                    </header>
+                    <div className='inputs-responsiveis'>
+                        <label htmlFor="newUserName" className='input-profile internal-icon-input'>
+                            <span className="material-symbols-outlined internal-icon">person</span>
+                            <input className='input-child' type="text" placeholder='Enter User Name' id='newUserName' required />
+                        </label>
+                        <label htmlFor="email" className='input-profile internal-icon-input'>
+                            <span className="material-symbols-outlined internal-icon">email</span>
+                            <span className="material-symbols-outlined internal-icon-verified">Verified</span>
+                            
+                            <input className='input-child' type="text" placeholder='Your email' id='email' required />
+                        </label>
+                    </div>
+                    <div className="inputs-responsiveis">
+                        <label htmlFor="phone-number" className='input-profile internal-icon-input'>
+                            <span className="material-symbols-outlined internal-icon">phone</span>
+                            <input className='input-child' type="text" placeholder='Phone number' id='phone-numbere' required />
+                        </label>
+                        <label htmlFor="country" className='input-profile internal-icon-input'>
+                            <span className="material-symbols-outlined internal-icon">Globe</span>
+                            <input className='input-child' type="text" placeholder='Your country' id='country' required />
+                        </label>
+                    </div>
+                    <div className='inputs-responsiveis'>
+                        <label htmlFor="newProfileImage" className='input-profile internal-icon-input'>
+                            <span className="material-symbols-outlined internal-icon">Link</span>
+                            <input className='input-child' type="text" placeholder='Profile Image' id='newProfileImage' />
+                        </label>
+                        <label htmlFor="backgroundImg" className='input-profile internal-icon-input'>
+                            <span className="material-symbols-outlined internal-icon">Link</span>
+                            <input className='input-child' type="URL" name="" id="backgroundImg" placeholder='Background image' />
+                        </label>
+                    </div>
                     <label htmlFor="backgroundImg" className='input-profile internal-icon-input'>
-                        <input className='input-child' type="URL" name="" id="backgroundImg" placeholder='Enter URL background image' />
-                    </label>
+                        <textarea name="bios" id="bios" placeholder='Escreva sua Bios'></textarea>
+                            {/* <span className="material-symbols-outlined internal-icon">Link</span> */}
+                            {/* <input className='input-child' type="URL" name="" id="backgroundImg" placeholder='Enter URL background image' /> */}
+                        </label>
+
                     <div className='div-buttons'>
                         {!loading ? (
                             <>
