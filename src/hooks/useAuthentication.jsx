@@ -19,7 +19,7 @@ import { useRealTimeDataBase } from './useRealTimeDataBase.jsx'
 
 export function useAuthentication() {
 
-    const {setData} = useRealTimeDataBase()
+    const { setData } = useRealTimeDataBase()
 
     //adding variables which we will work with
     const [error, setError] = useState(null)
@@ -130,7 +130,11 @@ export function useAuthentication() {
 
     }
 
-    async function updateInfos(userName, imageProfile, background) {
+    async function updateInfos(dados) {
+
+        const { newProfileImage, newUserName} = dados
+
+        // console.log(dados)
         checkIfCancelled()
 
         setLoading(!loading)
@@ -138,11 +142,12 @@ export function useAuthentication() {
 
         try {
             updateProfile(auth.currentUser, {
-                displayName: userName,
-                photoURL: imageProfile
+                displayName: newUserName,
+                photoURL: newProfileImage
             })
 
-            setData('UserName','infosProfile', userName, imageProfile, background)
+            setData('UserName', 'infosProfile', dados)
+
             setSuccess('Profile updated')
             setLoading(loading)
 

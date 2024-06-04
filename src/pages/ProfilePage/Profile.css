@@ -157,6 +157,7 @@ label input {
 
 .textArea-container{
     width: 99%;
+    margin: 5px 0px 0px 0px;
 }
 
 .bios{
@@ -169,21 +170,27 @@ label input {
     padding: 10px;
 }
 
-.textArea-container span {
+.textArea-container .infos-text {
     display: block;
     text-align: end;
+}
+
+.textArea-container .infos-text span {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.836);
 }
 
 
 .div-buttons {
     display: flex;
     width: 100%;
-    justify-content: space-around;
+    justify-content: center;
+    margin: 0px;
 }
 
 .div-buttons button,
 .div-buttons a {
-    width: 48%;
+    width: 20%;
     text-decoration: none;
 }
 
@@ -192,6 +199,13 @@ label input {
     cursor: not-allowed;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+    -webkit-text-fill-color: black !important;
+}
 .profileContainer {
     display: flex;
     flex-wrap: wrap;

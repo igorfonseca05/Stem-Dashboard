@@ -15,11 +15,23 @@ export function useRealTimeDataBase() {
 
     const dataBase = getDatabase(app)
 
-    function setData(collection, document, data, profileImage, backgroundImg) {
+    function setData(collection, document, data) {
+
+            const {   
+                newProfileImage,
+                newUserName, 
+                backgroundImg,
+                phoneNumber,
+                country,
+                bios} = data
+
             set(ref(dataBase, `${collection}/` + user?.uid + `/${document}`), {
-                profileName: data,
-                imgProfile: profileImage,
-                bgImg: backgroundImg
+                profileName: newUserName,
+                imgProfile: newProfileImage,
+                bgImg: backgroundImg,
+                phoneNumber: phoneNumber,
+                originCountry: country,
+                description: bios
             }) 
     }
 

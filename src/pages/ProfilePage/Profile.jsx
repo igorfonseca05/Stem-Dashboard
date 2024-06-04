@@ -16,8 +16,9 @@ import { getData as dados } from '../../hooks/useData'
 function Profile() {
 
     const user = useAuthProvider()
-
     // console.log(user)
+    
+    const { data } = dados('UserName', 'infosProfile')
 
     const {
         updateInfos: updateProfile,
@@ -25,10 +26,9 @@ function Profile() {
         loading,
         success } = useAuthentication()
 
-
-    const { data } = dados('UserName', 'infosProfile')
-
+    const [remaining, setRemaining] = useState(80)    
     const [profileDataUser, setProfileDataUser] = useState({})
+
 
     useEffect(() => {
         setProfileDataUser(data)
@@ -65,13 +65,30 @@ function Profile() {
         const newProfileImage = e.target.newProfileImage.value
         const newUserName = e.target.newUserName.value
         const backgroundImg = e.target.backgroundImg.value
-        const phoneNumber = e.target.backgroundImg.value
+        const phoneNumber = e.target.phoneNumber.value
+        const country = e.target.country.value
+        const bios = e.target.bios.value
 
-        updateProfile(newUserName, newProfileImage, backgroundImg)
+        const userInfos = {
+            newProfileImage,
+            newUserName, 
+            backgroundImg,
+            phoneNumber,
+            country,
+            bios
+        }
+
+        // console.log(bios, country, phoneNumber)
+
+        updateProfile(userInfos)
     }
 
     function handleTextArea(e) {
-        console.log(e.currentTarget)
+        const inputSize = e.currentTarget.value.length;
+        const maxLength = e.currentTarget.maxLength
+
+        const remainingCharacters = maxLength - inputSize
+        setRemaining(remainingCharacters)
     }
 
     // console.log(profileDataUser)
@@ -97,37 +114,37 @@ function Profile() {
                     <div className='inputs-responsiveis'>
                         <label htmlFor="newUserName" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">person</span>
-                            <input name='newUserName' className='input-child' type="text" placeholder='Enter User Name' id='newUserName' required />
+                            <input name='newUserName' className='input-child' type="text" placeholder='Enter User Name' id='newUserName' required autoComplete='off'/>
                         </label>
                         <label htmlFor="email" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">email</span>
                             <span className="material-symbols-outlined internal-icon-verified">Verified</span>
-                            <input name='email' className='input-child' type="text" placeholder='Your email' id='email' required />
+                            <input name='email' className='input-child' type="text" placeholder='Email' id='email' required autoComplete="off"/>
                         </label>
                     </div>
                     <div className="inputs-responsiveis">
-                        <label htmlFor="phone-number" className='input-profile internal-icon-input'>
+                        <label htmlFor="phoneNumber" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">phone</span>
-                            <input name='phone-number' className='input-child' type="text" placeholder='Phone number' id='phone-number' required />
+                            <input name='phoneNumber' className='input-child' type="text" placeholder='Phone number' id='phoneNumber' required autoComplete='number'/>
                         </label>
                         <label htmlFor="country" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Globe</span>
-                            <input name='country' className='input-child' type="text" placeholder='Your country' id='country' required />
+                            <input name='country' className='input-child' type="text" placeholder='Your country' id='country' required autoComplete='Country'/>
                         </label>
                     </div>
                     <div className='inputs-responsiveis'>
                         <label htmlFor="newProfileImage" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Link</span>
-                            <input name='newProfileImage' className='input-child' type="text" placeholder='Profile Image' id='newProfileImage' />
+                            <input name='newProfileImage' className='input-child' type="text" placeholder='Profile Image' id='newProfileImage' autoComplete='off'/>
                         </label>
                         <label htmlFor="backgroundImg" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Link</span>
-                            <input className='input-child' type="URL" name="backgroundImg" id="backgroundImg" placeholder='Background image' />
+                            <input className='input-child' type="URL" name="backgroundImg" id="backgroundImg" placeholder='Background image' autoComplete='off'/>
                         </label>
                     </div>
                     <div className='textArea-container'>
                         <textarea name="bios" id="bios" className='bios' placeholder='Escreva sua Bios' maxLength={80} onInput={handleTextArea}></textarea>
-                        <span className='infos-text'>Caracteres-restantes</span>
+                        <span className='infos-text'>Caracteres-restantes: <span>{remaining} / 80</span></span>
                     </div>
 
                     <div className='div-buttons'>
