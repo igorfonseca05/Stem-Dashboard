@@ -57,7 +57,7 @@
     backdrop-filter: blur(2px);
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 2;
-    transition: all ease 0.4s;
+    transition: all ease 0.5s;
 }
 
 .pop-up-container .form-header {
@@ -70,13 +70,13 @@
 .pop-up-container div h5 {
     margin: 0px;
 }
-.pop-up-container .form-header p{
+
+.pop-up-container .form-header p, 
+.infos-text{
     font-size: 12px;
     margin: 0px;
     color: var(--icon-color);
 }
-
-
 
 .close {
     height: 0px;
@@ -98,7 +98,7 @@
     /* min-width: 340px; */
     width: 80%;
     height: 90%;
-    top: 50%;
+    top: 47%;
     position: absolute;
     right: 50%;
     transform: translate(50%, -50%);
@@ -107,11 +107,17 @@
     padding: 40px;
     overflow: hidden;
     border-radius: 20px;
-
 }
 
-.edit-profile-container h1 {
-    background-color: transparent;
+.close-icon{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+.close-icon:hover{
+    color: var(--thirdColor);
 }
 
 .input-profile {
@@ -136,26 +142,38 @@
     flex-grow: 1;
 }
 
-
 .edit-profile-container button,
 label input {
     width: 100%;
     margin-left: 10px;
-
 }
 
-label input {
-    color: #18181a;
-    /* margin: 0 auto; */
-    /* background-color: white; */
-    padding-left: 40px;
-}
 
 .input-profile span {
     padding-right: 4px;
     border-right: 1px solid var(--icon-color);
     color: var(--icon-color) !important;
 }
+
+.textArea-container{
+    width: 99%;
+}
+
+.bios{
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.178);
+    color: var(--icon-color);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.textArea-container span {
+    display: block;
+    text-align: end;
+}
+
 
 .div-buttons {
     display: flex;
@@ -173,7 +191,6 @@ label input {
     opacity: 0.5;
     cursor: not-allowed;
 }
-
 
 .profileContainer {
     display: flex;

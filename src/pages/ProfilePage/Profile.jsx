@@ -17,7 +17,7 @@ function Profile() {
 
     const user = useAuthProvider()
 
-    console.log(user)
+    // console.log(user)
 
     const {
         updateInfos: updateProfile,
@@ -52,9 +52,9 @@ function Profile() {
         popup.classList.toggle('open-popup')
         document.body.classList.toggle('hidden')
 
-        if (e.target.tagName === 'A') {
-            form.reset()
-        }
+        // if (e.target.tagName === 'A') {
+        //     form.reset()
+        // }
 
     }
 
@@ -70,12 +70,17 @@ function Profile() {
         updateProfile(newUserName, newProfileImage, backgroundImg)
     }
 
+    function handleTextArea(e) {
+        console.log(e.currentTarget)
+    }
+
     // console.log(profileDataUser)
 
     return (
         <section className='adjust-size profile-container'>
             <div className='pop-up-container'>
-                <form className='edit-profile-form' onSubmit={(e) => updateInfos(e)}>
+                <form className='edit-profile-form' id='updateInfos-form' onSubmit={(e) => updateInfos(e)}>
+                    <span className='material-symbols-outlined close-icon' onClick={handleProfileUpdateInfos} title='Fechar popUp'>close</span>
                     <header className='form-header'>
                         <figure className='smallUserFigure'>
                             {user.photoURL ? (<>
@@ -92,51 +97,49 @@ function Profile() {
                     <div className='inputs-responsiveis'>
                         <label htmlFor="newUserName" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">person</span>
-                            <input className='input-child' type="text" placeholder='Enter User Name' id='newUserName' required />
+                            <input name='newUserName' className='input-child' type="text" placeholder='Enter User Name' id='newUserName' required />
                         </label>
                         <label htmlFor="email" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">email</span>
                             <span className="material-symbols-outlined internal-icon-verified">Verified</span>
-                            
-                            <input className='input-child' type="text" placeholder='Your email' id='email' required />
+                            <input name='email' className='input-child' type="text" placeholder='Your email' id='email' required />
                         </label>
                     </div>
                     <div className="inputs-responsiveis">
                         <label htmlFor="phone-number" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">phone</span>
-                            <input className='input-child' type="text" placeholder='Phone number' id='phone-numbere' required />
+                            <input name='phone-number' className='input-child' type="text" placeholder='Phone number' id='phone-number' required />
                         </label>
                         <label htmlFor="country" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Globe</span>
-                            <input className='input-child' type="text" placeholder='Your country' id='country' required />
+                            <input name='country' className='input-child' type="text" placeholder='Your country' id='country' required />
                         </label>
                     </div>
                     <div className='inputs-responsiveis'>
                         <label htmlFor="newProfileImage" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Link</span>
-                            <input className='input-child' type="text" placeholder='Profile Image' id='newProfileImage' />
+                            <input name='newProfileImage' className='input-child' type="text" placeholder='Profile Image' id='newProfileImage' />
                         </label>
                         <label htmlFor="backgroundImg" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Link</span>
-                            <input className='input-child' type="URL" name="" id="backgroundImg" placeholder='Background image' />
+                            <input className='input-child' type="URL" name="backgroundImg" id="backgroundImg" placeholder='Background image' />
                         </label>
                     </div>
-                    <label htmlFor="backgroundImg" className='input-profile internal-icon-input'>
-                        <textarea name="bios" id="bios" placeholder='Escreva sua Bios'></textarea>
-                            {/* <span className="material-symbols-outlined internal-icon">Link</span> */}
-                            {/* <input className='input-child' type="URL" name="" id="backgroundImg" placeholder='Enter URL background image' /> */}
-                        </label>
+                    <div className='textArea-container'>
+                        <textarea name="bios" id="bios" className='bios' placeholder='Escreva sua Bios' maxLength={80} onInput={handleTextArea}></textarea>
+                        <span className='infos-text'>Caracteres-restantes</span>
+                    </div>
 
                     <div className='div-buttons'>
                         {!loading ? (
                             <>
-                                <a className='blue-button button-disabled' onClick={handleProfileUpdateInfos} disabled={loading}>Fechar</a>
+                                {/* <a className='blue-button button-disabled' onClick={handleProfileUpdateInfos} disabled={loading}>Fechar</a> */}
                                 <button className='blue-button button-disabled' type='submit' disabled={loading}>Salvar</button>
                             </>
 
                         ) : (
                             <>
-                                <a className='blue-button' onClick={handleProfileUpdateInfos}>Fechar</a>
+                                {/* <a className='blue-button' onClick={handleProfileUpdateInfos}>Fechar</a> */}
                                 <button className='blue-button' type='submit'>Salvar</button>
                             </>
                         )
@@ -196,7 +199,7 @@ function Profile() {
                     {/* <div className='card-game'></div> */}
                 </div>
                 <div className='outra2'>
-                    {/* <div>oi</div> */}
+                    <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta cum magni vel ad, culpa optio et officiis. Quibusdam doloribus, voluptate officiis aliquid, sequi magnam rem laboriosam cum itaque beatae non.</div>
                 </div>
             </div>
         </section>
