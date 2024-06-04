@@ -194,24 +194,26 @@ li a {
 }
 
 
-input {
+.input-child {
   padding: 10px;
   margin: 10px 0px;
   /* border: 1px solid var(--thirdColor); */
   background-color: rgba(128, 128, 128, 0.178);
   /* border: none; */
-  border-bottom: none;
+  border: none;
   color: white;
   border-radius: 8px;
   font-size: 18px;
+  /* padding-left: 5px !important; */
 }
 
+
 input:focus {
-  border-bottom: none;
+  /* border-bottom: none; */
   outline: none;
-  border: 2px solid var(--thirdColor);
+  border: 1px solid var(--thirdColor);
   /* padding: 8.5px 0px; */
-  height: 47px;
+  /* height: 47px; */
 }
 
 .align-button {
@@ -253,9 +255,13 @@ form p a {
   align-items: center;
 }
 
+
 .internal-icon-input input {
   padding-left: 40px !important;
+  transition: border-color 0.3s; /* Transição suave */
+  /* border: none; */
 }
+
 
 .internal-icon-input .internal-icon{
   position: absolute;

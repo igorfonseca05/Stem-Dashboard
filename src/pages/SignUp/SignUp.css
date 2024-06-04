@@ -185,7 +185,7 @@ form {
     font-size: 28px;
 }
 
-h2+a {
+h2 + a {
     display: flex;
     text-decoration: none;
 }
@@ -194,23 +194,24 @@ h2+a {
     color: white;
 }
 
-input {
-    /* padding: 10px; */
-    margin: 15px 0px;
-    border: 1px solid var(--thirdColor);
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #8f9197;
-    /* padding: 24px 0px; */
-    color: white;
+.input-container {
+    display: flex;
+    gap: 5px;
+    /* flex-wrap: wrap; */
 }
 
-input:focus {
-    outline: none;
-    /* border-color: white; */
-    border-bottom: 1px solid white;
-    /* box-shadow: 0 0 4px rgba(41, 112, 253, 0.6); */
+.input-container span {
+    color: var(--light-gray) !important;
+    border-right: 1px solid var(--light-gray);
+    opacity: 0.5;
+    padding-right: 5px;
 }
+
+.input-container .input-child {
+    padding-left: 55px !important;
+}
+
+
 
 .align-button {
     padding: 20px 0px;

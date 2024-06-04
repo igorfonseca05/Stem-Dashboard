@@ -51,7 +51,7 @@ function SignUp({ handleShowMenu }) {
 
     // Temporary variables
     const [error, setError] = useState(false)
-  
+
 
     // Importing the function that is responsable for create user
     const { createUser, error: erro, loading, success } = useAuthentication()
@@ -107,44 +107,60 @@ function SignUp({ handleShowMenu }) {
                     <div className='adjust-content'>
                         <h2>Join our Steam community</h2>
                         <Link to={'/login'}><span className='question'>Existing user? </span><p className='fadeInEffect'>Sign In</p></Link>
-                        <form onSubmit={(e) => handleGetFormData(e)}>
-                            {/* <label htmlFor="username">User Name</label> */}
-                            <input
-                                type="text"
-                                id="username"
-                                name="username"
-                                value={username}
-                                placeholder='User Name'
-                                required
-                                onInput={(e) => setUserName(DOMPurify.sanitize(e.target.value))} />
+                        <form className='signUp-form' onSubmit={(e) => handleGetFormData(e)}>
+                            <label className='input-container internal-icon-input' htmlFor="username">
+                                <span className='material-symbols-outlined internal-icon'>person</span>
+                                <input
+                                    className='input-child'
+                                    type="text"
+                                    id="username"
+                                    name="username"
+                                    value={username}
+                                    placeholder='User Name'
+                                    required
+                                    onInput={(e) => setUserName(DOMPurify.sanitize(e.target.value))} />
 
-                            {/* <label htmlFor="email">E-mail Adress</label> */}
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                value={email}
-                                placeholder='E-mail Adress'
-                                required
-                                onInput={(e) => setEmail(DOMPurify.sanitize(e.target.value))} />
+                            </label>
 
-                            {/* <label htmlFor="password">Password</label> */}
-                            <input
-                                type="password"
-                                id="password"
-                                name="password"
-                                value={password}
-                                placeholder='Password'
-                                required
-                                onInput={(e) => setPassword(DOMPurify.sanitize(e.target.value))} />
-                            <input
-                                type="password"
-                                id="confirm-password"
-                                name="confirm-password"
-                                value={confirmPassword}
-                                placeholder='Confirm password'
-                                required
-                                onInput={(e) => setConfirm(DOMPurify.sanitize(e.target.value))} />
+                            <label className='input-container internal-icon-input' htmlFor="email">
+                                <span className="material-symbols-outlined internal-icon">email</span>
+                                <input
+                                    className='input-child'
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    value={email}
+                                    placeholder='E-mail Adress'
+                                    required
+                                    onInput={(e) => setEmail(DOMPurify.sanitize(e.target.value))} />
+
+                            </label>
+
+                            <label className='input-container internal-icon-input' htmlFor="password">
+                                <span className="material-symbols-outlined internal-icon">password</span>
+                                <input
+                                    className='input-child'
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    value={password}
+                                    placeholder='Password'
+                                    required
+                                    onInput={(e) => setPassword(DOMPurify.sanitize(e.target.value))} />
+                            </label>
+
+                            <label className='input-container internal-icon-input' htmlFor="confirm-password">
+                                <span className="material-symbols-outlined internal-icon">password</span>
+                                <input
+                                    className='input-child'
+                                    type="password"
+                                    id="confirm-password"
+                                    name="confirm-password"
+                                    value={confirmPassword}
+                                    placeholder='Confirm password'
+                                    required
+                                    onInput={(e) => setConfirm(DOMPurify.sanitize(e.target.value))} />
+                            </label>
 
                             <div className='align-button'>
                                 {!loading && <button type="submit" className='blue-button' style={{ opacity: '0.5', cursor: 'not-allowed' }} disabled={loading}>Wait...</button>}
@@ -152,8 +168,8 @@ function SignUp({ handleShowMenu }) {
                             </div>
 
                             <p className='info-policy'>By clicking Sign Up, I confirm that i am 13 years of age or older and agree to the terms of the <a href='#'>Steam Subscriber Agreement</a> and the <a href='#'>Valve Privacy Policy</a></p>
-                                {error && <Warnings warning='error' message={error} />}
-                                {success && <Warnings warning='success' message={success} />}                            
+                            {error && <Warnings warning='error' message={error} />}
+                            {success && <Warnings warning='success' message={success} />}
                         </form>
                     </div>
                 </div>

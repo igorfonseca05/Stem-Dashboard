@@ -81,9 +81,9 @@ function LoginPage({ handleShowMenu }) {
           </div>
           <form onSubmit={handleFormLogin}>
             {/* <label htmlFor="email">E-mail Adress</label> */}
-            <input type="email" id="email" name="email" placeholder='E-mail Adress' required />
+            <input className="input-child" type="email" id="email" name="email" placeholder='E-mail Adress' required />
             {/* <label htmlFor="password">Password</label> */}
-            <input type="password" id="password" name="password" placeholder='Password' required />
+            <input className="input-child" type="password" id="password" name="password" placeholder='Password' required />
             <p className="forget-password"><a href="#">Forget your password?</a></p>
             <div className='align-button'>
               {!loading && <button type="submit" className='blue-button' style={{ opacity: '0.5', cursor: 'not-allowed' }} disabled={loading}>Wait...</button>}
