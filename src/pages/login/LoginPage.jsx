@@ -80,10 +80,15 @@ function LoginPage({ handleShowMenu }) {
             <p>Please, enter your email and password</p>
           </div>
           <form onSubmit={handleFormLogin}>
-            {/* <label htmlFor="email">E-mail Adress</label> */}
+            <label className="input-container internal-icon-input" htmlFor="email">
+              <span className="material-symbols-outlined internal-icon">person</span>
             <input className="input-child" type="email" id="email" name="email" placeholder='E-mail Adress' required />
-            {/* <label htmlFor="password">Password</label> */}
+
+            </label>
+            <label className="input-container internal-icon-input" htmlFor="password">
+              <span className="material-symbols-outlined internal-icon">lock</span>
             <input className="input-child" type="password" id="password" name="password" placeholder='Password' required />
+            </label>
             <p className="forget-password"><a href="#">Forget your password?</a></p>
             <div className='align-button'>
               {!loading && <button type="submit" className='blue-button' style={{ opacity: '0.5', cursor: 'not-allowed' }} disabled={loading}>Wait...</button>}

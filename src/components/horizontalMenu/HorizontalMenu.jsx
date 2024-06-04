@@ -38,6 +38,7 @@ function HorizontalMenu() {
 
 
     // console.log(user)
+    console.log(profileDataUser)
 
 
     function handleSignOut() {

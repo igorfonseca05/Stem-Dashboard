@@ -205,15 +205,18 @@ li a {
   border-radius: 8px;
   font-size: 18px;
   /* padding-left: 5px !important; */
+  height: 47px;
+  outline: none;
 }
 
 
-input:focus {
+.input-child:focus {
   /* border-bottom: none; */
-  outline: none;
-  border: 1px solid var(--thirdColor);
-  /* padding: 8.5px 0px; */
-  /* height: 47px; */
+  outline: none !important;
+  /* transition: border 0.1s linear; */
+  border: 2px solid var(--thirdColor);
+  padding: 0px;
+  padding-left: 8px;
 }
 
 .align-button {
@@ -258,8 +261,7 @@ form p a {
 
 .internal-icon-input input {
   padding-left: 40px !important;
-  transition: border-color 0.3s; /* Transição suave */
-  /* border: none; */
+ 
 }
 
 
