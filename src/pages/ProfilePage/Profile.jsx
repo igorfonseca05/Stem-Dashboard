@@ -13,28 +13,31 @@ import { useRealTimeDataBase } from '../../hooks/useRealTimeDataBase'
 
 import { getData as dados } from '../../hooks/useData'
 import Grid from '../../components/grid/Grid'
+import Button from '../../components/botao/Button'
 
 
 function Profile() {
 
-    const user = useAuthProvider()
-    // console.log(user)
+    const biosMaxLength = document.querySelector('.bios')?.maxLength
 
-    const { data } = dados('UserName', 'infosProfile')
-
-    const {
-        updateInfos: updateProfile,
-        error,
-        loading,
-        success } = useAuthentication()
-
-    const [remaining, setRemaining] = useState(80)
+    const [remaining, setRemaining] = useState(biosMaxLength)
+    const [totalLetter, setTotalLetter] = useState(biosMaxLength)
     const [profileDataUser, setProfileDataUser] = useState({})
+    const [hideGradient, setHideGradient] = useState(false)
+
+    const user = useAuthProvider()
+    const { data } = dados('UserName', 'infosProfile')
+    const { updateInfos: updateProfile, error, loading, success } = useAuthentication()
+
 
     useEffect(() => {
         setProfileDataUser(data)
     }, [data])
 
+    useEffect(() => {
+        setTotalLetter(biosMaxLength)
+        setRemaining(biosMaxLength)
+    }, [biosMaxLength])
 
     // Controlando abertura e fechamento do menu
     const location = useLocation()
@@ -78,7 +81,7 @@ function Profile() {
             backgroundImg,
             phoneNumber,
             country,
-            bios
+            bios,
         }
 
         // console.log(bios, country, phoneNumber)
@@ -94,11 +97,18 @@ function Profile() {
         setRemaining(remainingCharacters)
     }
 
+    function handleChooseBgColor(e) {
+
+        console.log(e.currentTarget.value)
+
+
+    }
+
     // console.log(profileDataUser)
 
     return (
         <section className='adjust-size profile-container'>
-            <Grid/>
+            <Grid />
             <div className='pop-up-container'>
                 <form className='edit-profile-form' id='updateInfos-form' onSubmit={(e) => updateInfos(e)}>
                     <span className='material-symbols-outlined close-icon' onClick={handleProfileUpdateInfos} title='Fechar popUp'>close</span>
@@ -111,7 +121,7 @@ function Profile() {
                             </>)}
                         </figure>
                         <div>
-                            <h5>{user.displayName} / Edit profile</h5>
+                            <h5>{profileDataUser?.profileName} / Edit profile</h5>
                             <p>Atualize suas informações pessoais</p>
                         </div>
                     </header>
@@ -122,7 +132,7 @@ function Profile() {
                                 name='userName'
                                 className='input-child'
                                 type="text"
-                                placeholder='Enter User Name'
+                                placeholder={profileDataUser?.profileName ? profileDataUser?.profileName : 'User name'}
                                 id='userName'
                                 required
                                 autoComplete='off'
@@ -138,7 +148,8 @@ function Profile() {
                                 placeholder='Email'
                                 id='email'
                                 required
-                                autoComplete="off" />
+                                autoComplete="off"
+                            />
                         </label>
                     </div>
                     <div className="inputs-responsiveis">
@@ -150,8 +161,9 @@ function Profile() {
                                 type="text"
                                 placeholder='Phone number'
                                 id='phoneNumber'
-                                required
-                                autoComplete='' />
+                                // required
+                                autoComplete='o'
+                            />
                         </label>
                         <label htmlFor="country" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Globe</span>
@@ -162,7 +174,8 @@ function Profile() {
                                 placeholder='Your country'
                                 id='country'
                                 required
-                                autoComplete='' />
+
+                            />
                         </label>
                     </div>
                     <div className='inputs-responsiveis'>
@@ -174,23 +187,31 @@ function Profile() {
                                 type="text"
                                 placeholder='Profile Image'
                                 id='newProfileImage'
-                                autoComplete
-                                ='on' />
+                                autoComplete='on'
+                            />
                         </label>
                         <label htmlFor="backgroundImg" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Link</span>
+                            <Button
+                                changeGradientState={setHideGradient}
+                                gradientState={hideGradient} />
                             <input
                                 className='input-child'
                                 type="URL"
                                 name="backgroundImg"
                                 id="backgroundImg"
                                 placeholder='Background image'
-                                autoComplete='on' />
+                                autoComplete='on'
+                            />
                         </label>
                     </div>
+                    <div className='input-color'>
+                        <p className='infos-text'>or choose a color</p>
+                        <input type="color" name="" id="" onInput={handleChooseBgColor} />
+                    </div>
                     <div className='textArea-container'>
-                        <textarea name="bios" id="bios" className='bios' placeholder='Escreva sua Bios' maxLength={80} onInput={handleTextArea}></textarea>
-                        <span className='infos-text'>Caracteres-restantes: <span>{remaining} / 80</span></span>
+                        <textarea name="bios" id="bios" className='bios' placeholder='Escreva sua Bios' maxLength={200} onInput={handleTextArea}></textarea>
+                        <span className='infos-text'>Caracteres-restantes: <span>{remaining} / {totalLetter}</span></span>
                     </div>
 
                     <div className='div-buttons'>
@@ -212,26 +233,29 @@ function Profile() {
             </div>
             <div className='content-profile'>
                 <div className='profileContainer'>
+                    <span className="material-symbols-outlined edit-icon" onClick={handleProfileUpdateInfos}>edit</span>
                     <div className='user-info-content'>
-                        <figure>
-                            {user.photoURL ? <>
-                                <img src={profileDataUser?.imgProfile} alt="" />
-                            </> : <>
-                                <img src="https://i.pinimg.com/474x/31/ec/2c/31ec2ce212492e600b8de27f38846ed7.jpg" alt="" />
-                            </>
-                            }
-                        </figure>
-                        <div className='user-info-data'>
-                            <h3>{profileDataUser?.profileName}</h3>
-                            <p>{user.email.slice('0', `${user.email.indexOf('@') + 1}`)}</p>
-                            <button className='blue-button' onClick={handleProfileUpdateInfos}>Edit profile</button>
-                            {/* <p>Conta criada em: {date}</p> */}
+                        <div className='img-and-name-container'>
+                            <figure>
+                                {user.photoURL ? <>
+                                    <img src={profileDataUser?.imgProfile} alt="" />
+                                </> : <>
+                                    <img src="https://i.pinimg.com/474x/31/ec/2c/31ec2ce212492e600b8de27f38846ed7.jpg" alt="" />
+                                </>
+                                }
+                            </figure>
+                            <div className='user-info-data'>
+                                <h3 className='profileName'>{profileDataUser?.profileName}</h3>
+                                <p className='infos-text'>{user.email.slice('0', `${user.email.indexOf('@') + 1}`)}</p>
+                            </div>
                         </div>
+                        <p className='description-bios'>{profileDataUser?.description}</p>
                     </div>
-                    <div className='gradiente'></div>
+                    <div className='gradient' style={{ display: hideGradient ? 'none' : 'block' }}></div>
                     {profileDataUser?.bgImg ?
                         <img className='bg-image' src={profileDataUser?.bgImg} alt="" /> :
-                        <img className='bg-image no-Image' src={"https://www.pngall.com/wp-content/uploads/2/Upload-PNG-Clipart.png"} alt="" />}
+                        <img className='bg-image no-Image' src={"https://www.pngall.com/wp-content/uploads/2/Upload-PNG-Clipart.png"} alt="" />
+                    }
                 </div>
                 <div className='games-infos-profile'>
                     <div className='card-game-profile'>

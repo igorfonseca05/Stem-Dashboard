@@ -285,11 +285,12 @@ form p a {
   right: 15px;
   /* Ajuste este valor conforme necessário */
   transform: translateY(-50%);
-  pointer-events: none;
+  /* pointer-events: none; */
   color: var(--Oficial-body-color);
   border: none;
   /* color: #2cca12 !important; */
 }
+
 
 .smallUserFigure {
   height: 38px;
