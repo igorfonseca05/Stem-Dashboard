@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 
 
 import './Profile.css'
+import './Profile-file2.css'
 
 import { useAuthProvider } from '../../context/AuthContext'
 import { useAuthentication } from '../../hooks/useAuthentication'

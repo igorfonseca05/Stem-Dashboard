@@ -131,14 +131,14 @@ export function useAuthentication() {
     }
 
     async function updateInfos(dados) {
-
-        const { newProfileImage, userName} = dados
-
-        // console.log(dados)
         checkIfCancelled()
 
         setLoading(!loading)
         setError('')
+
+        const { newProfileImage, userName} = dados
+
+        // console.log(dados)
 
         try {
             updateProfile(auth.currentUser, {
