@@ -136,14 +136,15 @@ export function useAuthentication() {
         setLoading(!loading)
         setError('')
 
-        const { newProfileImage, userName} = dados
+        const { imgProfile, userName, phoneNumber} = dados
 
-        // console.log(dados)
+        // console.log(phoneNumber)
 
         try {
             updateProfile(auth.currentUser, {
                 displayName: userName,
-                photoURL: newProfileImage
+                photoURL: imgProfile,
+                phoneNumber: phoneNumber,
             })
 
             setData('UserName', 'infosProfile', dados)

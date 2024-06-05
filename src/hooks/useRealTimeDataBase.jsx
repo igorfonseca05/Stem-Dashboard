@@ -17,21 +17,16 @@ export function useRealTimeDataBase() {
 
     function setData(collection, document, data) {
 
-            const {   
-                newProfileImage,
-                userName, 
-                backgroundImg,
-                phoneNumber,
-                country,
-                bios} = data
+            // const {   
+            //     newProfileImage,
+            //     userName, 
+            //     backgroundImg,
+            //     phoneNumber,
+            //     country,
+            //     bios} = data
 
             set(ref(dataBase, `${collection}/` + user?.uid + `/${document}`), {
-                profileName: userName,
-                imgProfile: newProfileImage,
-                bgImg: backgroundImg,
-                phoneNumber: phoneNumber,
-                originCountry: country,
-                description: bios
+                ...data
             }) 
     }
 
@@ -41,6 +36,7 @@ export function useRealTimeDataBase() {
             // console.log(data?.colorTwo)
 
             callback(data)
+            // setDataToExport(data)
 
         })
     }

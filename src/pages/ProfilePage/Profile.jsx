@@ -21,6 +21,14 @@ function Profile() {
 
     const biosMaxLength = document.querySelector('.bios')?.maxLength
 
+    const [imgProfile, setImgProfile] = useState()
+    const [email, setEmail] = useState()
+    const [userName, setUserName] = useState()
+    const [backgroundImg, setBackgroundImg] = useState()
+    const [phoneNumber, setPhoneNumber] = useState()
+    const [country, setCountry] = useState()
+    const [bios, setBios] = useState()
+
     const [remaining, setRemaining] = useState(biosMaxLength)
     const [totalLetter, setTotalLetter] = useState(biosMaxLength)
     const [profileDataUser, setProfileDataUser] = useState({})
@@ -29,6 +37,9 @@ function Profile() {
     const user = useAuthProvider()
     const { data } = dados('UserName', 'infosProfile')
     const { updateInfos: updateProfile, error, loading, success } = useAuthentication()
+    const { setData } = useRealTimeDataBase()
+
+    // console.log(user)
 
 
     useEffect(() => {
@@ -67,17 +78,9 @@ function Profile() {
     function updateInfos(e) {
         e.preventDefault()
 
-        const event = e.target
-
-        const newProfileImage = event.newProfileImage.value
-        const userName = event.userName.value
-        const backgroundImg = event.backgroundImg.value
-        const phoneNumber = event.phoneNumber.value
-        const country = event.country.value
-        const bios = event.bios.value
-
         const userInfos = {
-            newProfileImage,
+            imgProfile,
+            email,
             userName,
             backgroundImg,
             phoneNumber,
@@ -85,7 +88,7 @@ function Profile() {
             bios,
         }
 
-        // console.log(bios, country, phoneNumber)
+        // console.log({...userInfos})
 
         updateProfile(userInfos)
     }
@@ -96,6 +99,8 @@ function Profile() {
 
         const remainingCharacters = maxLength - inputSize
         setRemaining(remainingCharacters)
+
+        setBios(e.target.value)
     }
 
     function handleChooseBgColor(e) {
@@ -104,6 +109,18 @@ function Profile() {
 
 
     }
+
+    useEffect(() => {
+        setImgProfile(profileDataUser.imgProfile)
+        setEmail(profileDataUser.email)
+        setUserName(profileDataUser.userName)
+        setBackgroundImg(profileDataUser.backgroundImg)
+        setPhoneNumber(profileDataUser.phoneNumber)
+        setCountry(profileDataUser.country)
+        setBios(profileDataUser.bios)
+    }, [profileDataUser])
+
+    // console.log(name)
 
     // console.log(profileDataUser)
 
@@ -115,14 +132,12 @@ function Profile() {
                     <span className='material-symbols-outlined close-icon' onClick={handleProfileUpdateInfos} title='Fechar popUp'>close</span>
                     <header className='form-header'>
                         <figure className='smallUserFigure'>
-                            {user.photoURL ? (<>
-                                <img src={profileDataUser?.imgProfile} alt="user personal image" />
-                            </>) : (<>
-                                <img src="https://i.pinimg.com/474x/31/ec/2c/31ec2ce212492e600b8de27f38846ed7.jpg" alt="" />
-                            </>)}
+                            {profileDataUser?.imgProfile ?
+                                <img src={profileDataUser?.imgProfile} alt="user personal image" /> :
+                                <img src="https://i.pinimg.com/474x/31/ec/2c/31ec2ce212492e600b8de27f38846ed7.jpg" alt="" />}
                         </figure>
                         <div>
-                            <h5>{profileDataUser?.profileName} / Edit profile</h5>
+                            <h5>{profileDataUser?.userName} / Edit profile</h5>
                             <p>Atualize suas informações pessoais</p>
                         </div>
                     </header>
@@ -130,26 +145,28 @@ function Profile() {
                         <label htmlFor="userName" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">person</span>
                             <input
+                                value={userName}
                                 name='userName'
                                 className='input-child'
                                 type="text"
-                                placeholder={profileDataUser?.profileName ? profileDataUser?.profileName : 'User name'}
+                                // placeholder={profileDataUser?.userName ? profileDataUser?.userName : 'User name'}
                                 id='userName'
                                 required
-                                autoComplete='off'
+                                onInput={(e) => setUserName(e.target.value)}
                             />
                         </label>
                         <label htmlFor="email" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">email</span>
                             <span className="material-symbols-outlined internal-icon-verified">Verified</span>
                             <input
+                                value={email}
                                 name='email'
                                 className='input-child'
                                 type="text"
                                 placeholder='Email'
                                 id='email'
                                 required
-                                autoComplete="off"
+                                onInput={(e) => { setEmail(e.target.value) }}
                             />
                         </label>
                     </div>
@@ -157,38 +174,42 @@ function Profile() {
                         <label htmlFor="phoneNumber" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">phone</span>
                             <input
+                                value={phoneNumber}
                                 name='phoneNumber'
                                 className='input-child'
                                 type="text"
                                 placeholder='Phone number'
                                 id='phoneNumber'
-                                // required
-                                autoComplete='o'
+                                required
+                                onInput={(e) => { setPhoneNumber(e.target.value) }}
                             />
                         </label>
                         <label htmlFor="country" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Globe</span>
                             <input
+                                value={country}
                                 name='country'
                                 className='input-child'
                                 type="text"
                                 placeholder='Your country'
                                 id='country'
                                 required
-
+                                onInput={(e) => { setCountry(e.target.value) }}
                             />
                         </label>
                     </div>
                     <div className='inputs-responsiveis'>
-                        <label htmlFor="newProfileImage" className='input-profile internal-icon-input'>
+                        <label htmlFor="imgProfile" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Link</span>
                             <input
-                                name='newProfileImage'
+                                value={imgProfile}
                                 className='input-child'
                                 type="text"
+                                name='imgProfile'
+                                id='imgProfile'
                                 placeholder='Profile Image'
-                                id='newProfileImage'
-                                autoComplete='on'
+                                onInput={(e) => { setImgProfile(e.target.value) }}
+
                             />
                         </label>
                         <label htmlFor="backgroundImg" className='input-profile internal-icon-input'>
@@ -197,12 +218,14 @@ function Profile() {
                                 changeGradientState={setHideGradient}
                                 gradientState={hideGradient} />
                             <input
+                                value={backgroundImg}
                                 className='input-child'
                                 type="URL"
                                 name="backgroundImg"
                                 id="backgroundImg"
-                                placeholder='Background image'
-                                autoComplete='on'
+                                placeholder='Image li'
+                                onInput={(e) => { setBackgroundImg(e.target.value) }}
+
                             />
                         </label>
                     </div>
@@ -212,7 +235,14 @@ function Profile() {
                         <input type="color" name="backgroundColor" id="" onInput={handleChooseBgColor} />
                     </div>
                     <div className='textArea-container'>
-                        <textarea name="bios" id="bios" className='bios' placeholder='Escreva sua Bios' maxLength={200} onInput={handleTextArea}></textarea>
+                        <textarea
+                            value={bios}
+                            name="bios"
+                            id="bios"
+                            className='bios'
+                            placeholder='Escreva sua Bios'
+                            maxLength={200}
+                            onInput={handleTextArea}></textarea>
                         <span className='infos-text'>Caracteres-restantes: <span>{remaining} / {totalLetter}</span></span>
                     </div>
 
@@ -247,15 +277,15 @@ function Profile() {
                                 }
                             </figure>
                             <div className='user-info-data'>
-                                <h3 className='profileName'>{profileDataUser?.profileName}</h3>
+                                <h3 className='profileName'>{profileDataUser?.userName}</h3>
                                 <p className='infos-text'>{user.email.slice('0', `${user.email.indexOf('@') + 1}`)}</p>
                             </div>
                         </div>
-                        <p className='description-bios'>{profileDataUser?.description}</p>
+                        <p className='description-bios'>{profileDataUser?.bios}</p>
                     </div>
                     <div className='gradient' style={{ display: hideGradient ? 'none' : 'block' }}></div>
-                    {profileDataUser?.bgImg ?
-                        <img className='bg-image' src={profileDataUser?.bgImg} alt="" /> :
+                    {profileDataUser?.backgroundImg ?
+                        <img className='bg-image' src={profileDataUser?.backgroundImg} alt="" /> :
                         <img className='bg-image no-Image' src={"https://www.pngall.com/wp-content/uploads/2/Upload-PNG-Clipart.png"} alt="" />
                     }
                 </div>
