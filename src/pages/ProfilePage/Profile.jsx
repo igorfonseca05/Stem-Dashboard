@@ -205,9 +205,10 @@ function Profile() {
                             />
                         </label>
                     </div>
-                    <div className='input-color'>
-                        <p className='infos-text'>or choose a color</p>
-                        <input type="color" name="" id="" onInput={handleChooseBgColor} />
+                    <div className='ColorInput-container'>
+                        <p className='infos-text'>Use background color: </p>
+                        {/* <Button/> */}
+                        <input type="color" name="backgroundColor" id="" onInput={handleChooseBgColor} />
                     </div>
                     <div className='textArea-container'>
                         <textarea name="bios" id="bios" className='bios' placeholder='Escreva sua Bios' maxLength={200} onInput={handleTextArea}></textarea>

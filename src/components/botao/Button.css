@@ -3,7 +3,7 @@
 .toggle-button {
     width: 38px;
     height: 24px;
-    background-color: #ccc; /* Cor quando desligado */
+    background-color: #c4c1c177; /* Cor quando desligado */
     border-radius: 50px;
     position: relative;
     cursor: pointer;
@@ -23,7 +23,7 @@
 }
 
 .toggle-button.on {
-    background-color: #4caf50; /* Cor quando ligado */
+    background-color: var(--thirdColor); /* Cor quando ligado */
 }
 
 .toggle-button.on::after {

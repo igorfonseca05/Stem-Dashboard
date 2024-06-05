@@ -2,7 +2,7 @@ import React from 'react'
 
 import "./Button.css"
 
-function Button({gradientState,changeGradientState}) {
+function Button({gradientState, changeGradientState}) {
 
   function handleGradient(e) {
     e.currentTarget.classList.toggle('on')
@@ -10,7 +10,7 @@ function Button({gradientState,changeGradientState}) {
     changeGradientState(!gradientState)
 
   }
-
+  
   // console.log(gradientState, changeGradientState)
 
   return (

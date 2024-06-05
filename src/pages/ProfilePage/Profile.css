@@ -131,6 +131,7 @@
     flex-grow: 1;
 }
 
+
 .edit-profile-container button,
 label input {
     width: 100%;
@@ -198,7 +199,7 @@ label input {
     outline: none !important;
 }
 
-.input-color{
+.ColorInput-container{
     display: flex;
     align-items: center;
     justify-content: end;
@@ -207,11 +208,12 @@ label input {
     /* background-color: aquamarine; */
 }
 
-.input-color input{
-    width: 50px;
-    height: 20px;
+.ColorInput-container input{
+    width: 38px;
+    height: 24px;
     outline: none;
     border: none;
+    /* border-radius: 50px; */
     margin-left: 10px;
     overflow: hidden;
     border-radius: 10%;
