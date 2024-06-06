@@ -1,6 +1,6 @@
 import { app } from '../../firebase/config.js'
 
-import { getDatabase, onValue, ref, set } from "firebase/database";
+import { getDatabase, onValue, ref, set, update } from "firebase/database";
 
 import { useAuthentication } from './useAuthentication.jsx';
 import { useEffect, useState } from 'react';
@@ -17,21 +17,21 @@ export function useRealTimeDataBase() {
 
     function setData(collection, document, data) {
 
-            // const {   
-            //     newProfileImage,
-            //     userName, 
-            //     backgroundImg,
-            //     phoneNumber,
-            //     country,
-            //     bios} = data
+        // const {   
+        //     newProfileImage,
+        //     userName, 
+        //     backgroundImg,
+        //     phoneNumber,
+        //     country,
+        //     bios} = data
 
-            set(ref(dataBase, `${collection}/` + user?.uid + `/${document}`), {
-                ...data
-            }) 
+        set(ref(dataBase, `${collection}/` + user?.uid + `/${document}`), {
+            ...data
+        })
     }
 
-    function getData(callback ,collection, document = '') {
-        onValue(ref(dataBase, `${collection}/` + user?.uid + `/${document}` ), (snapshot) => {
+    function getData(callback, collection, document = '') {
+        onValue(ref(dataBase, `${collection}/` + user?.uid + `/${document}`), (snapshot) => {
             const data = snapshot.val()
             // console.log(data?.colorTwo)
 
@@ -41,6 +41,11 @@ export function useRealTimeDataBase() {
         })
     }
 
-    return { setData, getData}
+    function updateData(collection, document, newData) {
+        console.log(newData)
+        update(ref(dataBase, `${collection}/` + user?.uid + `/${document}`), newData)
+    }
+
+    return { setData, getData, updateData }
 
 }

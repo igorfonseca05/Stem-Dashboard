@@ -39,7 +39,7 @@ function Profile() {
     const user = useAuthProvider()
     const { data } = dados('UserName', 'infosProfile')
     const { updateInfos: updateProfile, error, loading, success } = useAuthentication()
-    const { setData } = useRealTimeDataBase()
+    const { updateData } = useRealTimeDataBase()
 
     // console.log(user)
 
@@ -52,6 +52,16 @@ function Profile() {
         setTotalLetter(biosMaxLength)
         setRemaining(biosMaxLength)
     }, [biosMaxLength])
+
+    useEffect(() => {
+        const update = {
+            color,
+            hideGradient,
+            hidebackground
+        }
+        updateData('UserName', "infosProfile", update)
+    }, [color, hideGradient, hidebackground])
+
 
     // Controlando abertura e fechamento do menu
     const location = useLocation()
@@ -129,12 +139,15 @@ function Profile() {
             setPhoneNumber(profileDataUser.phoneNumber)
             setCountry(profileDataUser.country)
             setBios(profileDataUser.bios)
+
+            // setUserInfos(userInfos)
+            // setColor(profileDataUser)
         }
     }, [profileDataUser])
 
     // console.log(name)
-console.log(color)
-    // console.log(profileDataUser)
+// console.log(color)
+    // console.log(profileDataUser.color)
 
     return (
         <section className='adjust-size profile-container'>
@@ -294,7 +307,7 @@ console.log(color)
                         {hidebackground ?
                                 <>
                                     <div className='ColorInput-container'>
-                                        <p className='infos-text'>Use background color: </p>
+                                        <p className='infos-text'>Choose a color:</p>
                                         {/* <Button/> */}
                                         <input
                                             data-js='form-input'
@@ -324,7 +337,7 @@ console.log(color)
                         <p className='description-bios'>{profileDataUser?.bios}</p>
                     </div>
                     <div className='gradient' style={{ display: hideGradient ? 'none' : 'block' }}></div>
-                    {hidebackground ?
+                    {profileDataUser?.hidebackground ?
                         <div className='bg-image' value={''} style={{ backgroundColor: color }}></div> :
                         <img className='bg-image' src={profileDataUser?.backgroundImg} alt="" />
                         // <img className='bg-image no-Image' src={"https://www.pngall.com/wp-content/uploads/2/Upload-PNG-Clipart.png"} alt="" />
