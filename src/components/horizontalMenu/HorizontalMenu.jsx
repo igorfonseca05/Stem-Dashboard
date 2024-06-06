@@ -36,6 +36,7 @@ function HorizontalMenu() {
         setProfileDataUser(data)
     }, [data])
 
+    
 
     // console.log(user)
     // console.log(profileDataUser)

@@ -120,6 +120,8 @@ function Profile() {
         }
         // console.log({...userInfos})
 
+
+
         updateProfile(userInfos)
     }
 
@@ -293,13 +295,15 @@ function Profile() {
                             <p className='infos-text'>Remover gradiente</p>
                             <Button
                                 changeState={setHideGradient}
-                                state={hideGradient} />
+                                state={hideGradient}
+                                num={1} />
                         </div>
                         <div className='editConfigItems'>
                             <p className='infos-text'>Remove background</p>
                             <Button
                                 changeState={setHideBackground}
-                                state={hidebackground} />
+                                state={hidebackground}
+                                num={2} />
                         </div>
                         {hidebackground ?
                             <>
