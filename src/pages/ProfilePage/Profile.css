@@ -63,12 +63,10 @@
     color: var(--icon-color);
 }
 
-.close {
-    height: 0px;
-}
-
 .open-popup {
-    display: block;
+    opacity: 1;
+    visibility: visible;
+    /* display: block; */
     /* animation: remove 0.5s ease 0.2s; */
     height: 86%;
 

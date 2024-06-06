@@ -70,16 +70,18 @@ function Profile() {
 
         if (e.target.classList.contains("edit-icon")) {
             popup.style.display = 'block'
-            // popup.classList.toggle('open-popup')
-            // popup.classList.toggle('open-popup')
+            requestAnimationFrame(() => popup.classList.add('open-popup'))
         }
 
         if (e.target.classList.contains("close-icon")) {
-            popup.style.display = 'none'
+            popup.classList.remove('open-popup')
+
+            popup.addEventListener('transitionend', () => {
+                popup.style.display = 'none'
+            }, {once: true})
         }
 
         // popup.classList.toggle('open-popup')
-        popup.classList.toggle('open-popup')
         document.body.classList.toggle('hidden')
 
     }
