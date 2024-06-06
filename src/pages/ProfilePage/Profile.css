@@ -41,7 +41,7 @@
     /* filter: blur(1px); */
     backdrop-filter: blur(2px);
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
+    z-index: 5;
     transition: all ease 0.5s;
 }
 
@@ -82,7 +82,7 @@
     align-items: center;
     justify-content: space-between;
     /* min-width: 340px; */
-    width: 80%;
+    width: 95%;
     height: 90%;
     top: 47%;
     position: absolute;
@@ -90,7 +90,7 @@
     transform: translate(50%, -50%);
     background-color: var(--Side-menu);
     z-index: 3;
-    padding: 40px;
+    padding: 5%;
     overflow: hidden;
     border-radius: 20px;
 }
@@ -124,7 +124,7 @@
 }
 
 .inputs-responsiveis label {
-    min-width: 300px;
+    min-width: 200px;
     /* max-width: 300px; */
     width: 40%;
     /* gap: 10px !important; */

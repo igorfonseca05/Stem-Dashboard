@@ -15,19 +15,23 @@ import { useRealTimeDataBase } from '../../hooks/useRealTimeDataBase'
 import { getData as dados } from '../../hooks/useData'
 import Grid from '../../components/grid/Grid'
 import Button from '../../components/botao/Button'
+import { child } from 'firebase/database'
 
 
 function Profile() {
 
     const biosMaxLength = document.querySelector('.bios')?.maxLength
 
-    const [imgProfile, setImgProfile] = useState('')
-    const [email, setEmail] = useState('')
-    const [userName, setUserName] = useState('')
-    const [backgroundImg, setBackgroundImg] = useState('')
-    const [phoneNumber, setPhoneNumber] = useState('')
-    const [country, setCountry] = useState('')
-    const [bios, setBios] = useState('')
+    const [userInfos, setUserInfos] = useState('')
+
+    const [imgProfile, setImgProfile] = useState(userInfos.imgProfile)
+    const [email, setEmail] = useState(userInfos.email)
+    const [userName, setUserName] = useState(userInfos.userName)
+    const [backgroundImg, setBackgroundImg] = useState(userInfos.backgroundImg)
+    const [phoneNumber, setPhoneNumber] = useState(userInfos.phoneNumber)
+    const [country, setCountry] = useState(userInfos.country)
+    const [bios, setBios] = useState(userInfos.bios)
+
 
     const [remaining, setRemaining] = useState(biosMaxLength)
     const [totalLetter, setTotalLetter] = useState(biosMaxLength)
@@ -53,19 +57,15 @@ function Profile() {
         setRemaining(biosMaxLength)
     }, [biosMaxLength])
 
-    function handleButtonStates () {
+    useEffect(() => {
+        const update = {
+            color,
+            hideGradient,
+            hidebackground
+        }
 
-        useEffect(() => {
-            const update = {
-                color,
-                hideGradient,
-                hidebackground
-            }
-            updateData('UserName', "infosProfile", update)
-        }, [color, hideGradient, hidebackground])
-    }
-
-
+        updateData('UserName', "infosProfile", update)
+    }, [color, hideGradient, hidebackground])
 
     // Controlando abertura e fechamento do menu
     const location = useLocation()
@@ -78,31 +78,33 @@ function Profile() {
 
 
     // PopUp para atualizar informações pessoais
+    function handleOpenMenuOptions (e) {
+        const dropdown = document.querySelector('.editConfigContainer')
+        const editProfileButton = document.querySelector('.edit-profile')
+        dropdown.classList.toggle('drop-down-edit-config')
+        
+        editProfileButton.addEventListener('click', (e) => {
+            dropdown.classList.toggle('drop-down-edit-config')
+        }, {once: true})
+    }
+    
     function handleProfileUpdateInfos(e) {
         const popup = document.querySelector('.pop-up-container')
-        const dropdown = document.querySelector('.editConfigContainer')
-        const inputsForm = document.querySelectorAll("[data-js='form-input']")
 
-        dropdown.classList.toggle('drop-down-edit-config')
+        if (e.target.classList.contains("edit-profile")) {
+            popup.style.display = 'block'
+            requestAnimationFrame(() => popup.classList.add('open-popup'))
+        }
 
+        if (e.target.classList.contains("close-icon")) {
+            popup.classList.remove('open-popup')
 
-        // console.log(inputsForm)
+            popup.addEventListener('transitionend', () => {
+                popup.style.display = 'none'
+            }, {once: true})
+        }
 
-        // if (e.target.classList.contains("edit-icon")) {
-        //     popup.style.display = 'block'
-        //     requestAnimationFrame(() => popup.classList.add('open-popup'))
-        // }
-
-        // if (e.target.classList.contains("close-icon")) {
-        //     popup.classList.remove('open-popup')
-
-        //     popup.addEventListener('transitionend', () => {
-        //         popup.style.display = 'none'
-        //     }, {once: true})
-        // }
-
-        // document.body.classList.toggle('hidden')
-
+        document.body.classList.toggle('hidden')
     }
 
     // Salvar dados do formulario na base de dados
@@ -136,24 +138,15 @@ function Profile() {
 
     useEffect(() => {
         if (profileDataUser) {
-            setImgProfile(profileDataUser.imgProfile)
-            setEmail(profileDataUser.email)
-            setUserName(profileDataUser.userName)
-            setBackgroundImg(profileDataUser.backgroundImg)
-            setPhoneNumber(profileDataUser.phoneNumber)
-            setCountry(profileDataUser.country)
-            setBios(profileDataUser.bios)
-
-            // setUserInfos(userInfos)
-            // setColor(profileDataUser)
+            setUserInfos(profileDataUser)
         }
     }, [profileDataUser])
 
-    // console.log(name)
-// console.log(color)
-    // console.log(profileDataUser.color)
+    // console.log(userInfos.color)
+    // console.log(color)
+    // console.log(profileDataUser)
 
-    console.log(hideGradient, hidebackground)
+    // console.log(hideGradient, hidebackground)
 
     return (
         <section className='adjust-size profile-container'>
@@ -296,7 +289,7 @@ function Profile() {
             </div>
             <div className='content-profile'>
                 <div className='profileContainer'>
-                    <span className="material-symbols-outlined edit-icon" onClick={handleProfileUpdateInfos}>edit</span>
+                    <span className="material-symbols-outlined edit-icon" onClick={handleOpenMenuOptions}>edit</span>
                     <div className='editConfigContainer'>
                         <div className='editConfigItems'>
                             <p className='infos-text'>Remover gradiente</p>
@@ -311,19 +304,22 @@ function Profile() {
                                 state={hidebackground} />
                         </div>
                         {hidebackground ?
-                                <>
-                                    <div className='ColorInput-container'>
-                                        <p className='infos-text'>Choose a color:</p>
-                                        {/* <Button/> */}
-                                        <input
-                                            data-js='form-input'
-                                            type="color"
-                                            name="backgroundColor"
-                                            id=""
-                                            onChange={(e) => setColor(e.target.value) }
-                                        />
-                                    </div>
-                                </> : <></>}
+                            <>
+                                <div className='ColorInput-container editConfigItems'>
+                                    <p className='infos-text'>Choose a color:</p>
+                                    {/* <Button/> */}
+                                    <input
+                                        data-js='form-input'
+                                        type="color"
+                                        name="backgroundColor"
+                                        id=""
+                                        onChange={(e) => setColor(e.target.value)}
+                                    />
+                                </div>
+                            </> : <></>}
+                            <button 
+                            className='blue-button edit-profile' 
+                            onClick={handleProfileUpdateInfos}>Edit profile</button>
                     </div>
                     <div className='user-info-content'>
                         <div className='img-and-name-container'>

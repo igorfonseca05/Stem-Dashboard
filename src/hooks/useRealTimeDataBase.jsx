@@ -42,7 +42,7 @@ export function useRealTimeDataBase() {
     }
 
     function updateData(collection, document, newData) {
-        console.log(newData)
+        // console.log(newData)
         update(ref(dataBase, `${collection}/` + user?.uid + `/${document}`), newData)
     }
 

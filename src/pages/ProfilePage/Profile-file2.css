@@ -6,7 +6,10 @@
     align-items: center;
     /* background-color: #1b40d6; */
     min-height: 100%;
-    /* border-radius: 40px; */
+    /* background-image: url("https://wallpapercave.com/wp/wp9549819.jpg"); */
+    /* background-position: center; */
+    /* background-size: cover; */
+    /* border-radius: 40px !important; */
     overflow: hidden;
     /* opacity: 0.7; */
     /* backdrop-filter: blur(0); */
@@ -16,6 +19,7 @@
 .gradient {
     position: absolute;
     width: 100%;
+    border-radius: 20px;
     height: 100%;
     /* z-index: 2; */
     /* filter: blur(1px); */
@@ -75,34 +79,41 @@
 .editConfigContainer{
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: space-evenly;
     position: absolute;
     right: 15px;
-    top: 50px;
+    top: 45px;
     z-index: 2;
-    width: 150px;
-    /* padding: 10px; */
-    height: 0%;
+    width: auto;
+    height: 0px;
     overflow: hidden;
-    background-color: rgb(113, 94, 133);
+    border-radius: 15px;
+    background-color: var(--elements);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
     /* transition: height 0.4s; */
 }
 
 .drop-down-edit-config {
-    height: 190px;
+    height: auto;
     /* background-color: #1b40d6; */
     /* overflow: hidden; */
 }
 
+.edit-profile{
+    margin: 10px auto !important;
+    width: 80% !important;
+}
+
 .editConfigItems{
+    padding: 10px;
     display: flex;
     align-items: center;
-    height: 40px;
+    /* height: 40px; */
 }
 
 .editConfigItems p{
     flex-grow: 2;
-    background-color: #1b40d6;
+    /* background-color: #1b40d6; */
     margin-right: 10px;
 }
 
