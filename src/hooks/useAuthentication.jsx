@@ -124,11 +124,16 @@ export function useAuthentication() {
 
             console.log(res)
         } catch (error) {
-            // console.log(error)
             setError(error.message)
         }
 
     }
+
+    function handleSignOut() {
+        checkIfCancelled()
+        signOut(auth)
+    }
+
 
     async function updateInfos(dados) {
         checkIfCancelled()
@@ -176,6 +181,7 @@ export function useAuthentication() {
         SignInUser,
         loginWithGoogle,
         updateInfos,
-        onAuthStateChanged
+        onAuthStateChanged,
+        handleSignOut
     }
 }

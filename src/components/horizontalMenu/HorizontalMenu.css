@@ -36,6 +36,7 @@
 .dropdown {
     display: block;
     /* margin-left: 10px; */
+    z-index: 5;
     border: none !important;
 }
 

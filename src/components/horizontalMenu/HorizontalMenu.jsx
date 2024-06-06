@@ -19,7 +19,7 @@ import { getData as dados } from '../../hooks/useData'
 function HorizontalMenu() {
 
     // Autenticação
-    const {signOut, auth} = useAuthentication()
+    const {signOut, auth, handleSignOut} = useAuthentication()
 
     // Obtendo usuario
     const user = useAuthProvider()
@@ -40,11 +40,6 @@ function HorizontalMenu() {
     // console.log(user)
     // console.log(profileDataUser)
 
-
-    function handleSignOut() {
-        signOut(auth)
-    }
-    
     return (
         <div className='top-menu'>
             <div>
@@ -79,7 +74,7 @@ function HorizontalMenu() {
                                     <li><Link to={'/profile'} className="dropdown-item" href="#">Perfil</Link></li>
                                     <li><Link to={''} className="dropdown-item" href="#">Lançamentos</Link></li>
                                     <li><Link to={''} className="dropdown-item" href="#">Configurações</Link></li>
-                                    <li><Link to={''} className="dropdown-item" href="#" onClick={() => handleSignOut()}>Sair</Link></li>
+                                    <li><Link to={''} className="dropdown-item" href="#" onClick={handleSignOut}>Sair</Link></li>
                                     <li className='li-form-container'>
                                         <form className='internal-form'>
                                             <label>

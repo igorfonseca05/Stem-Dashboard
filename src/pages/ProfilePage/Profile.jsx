@@ -22,15 +22,13 @@ function Profile() {
 
     const biosMaxLength = document.querySelector('.bios')?.maxLength
 
-    const [userInfos, setUserInfos] = useState('')
-
-    const [imgProfile, setImgProfile] = useState(userInfos.imgProfile)
-    const [email, setEmail] = useState(userInfos.email)
-    const [userName, setUserName] = useState(userInfos.userName)
-    const [backgroundImg, setBackgroundImg] = useState(userInfos.backgroundImg)
-    const [phoneNumber, setPhoneNumber] = useState(userInfos.phoneNumber)
-    const [country, setCountry] = useState(userInfos.country)
-    const [bios, setBios] = useState(userInfos.bios)
+    const [imgProfile, setImgProfile] = useState('')
+    const [email, setEmail] = useState('')
+    const [userName, setUserName] = useState('')
+    const [backgroundImg, setBackgroundImg] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('')
+    const [country, setCountry] = useState('')
+    const [bios, setBios] = useState('')
 
 
     const [remaining, setRemaining] = useState(biosMaxLength)
@@ -78,16 +76,16 @@ function Profile() {
 
 
     // PopUp para atualizar informações pessoais
-    function handleOpenMenuOptions (e) {
+    function handleOpenMenuOptions(e) {
         const dropdown = document.querySelector('.editConfigContainer')
         const editProfileButton = document.querySelector('.edit-profile')
         dropdown.classList.toggle('drop-down-edit-config')
-        
+
         editProfileButton.addEventListener('click', (e) => {
             dropdown.classList.toggle('drop-down-edit-config')
-        }, {once: true})
+        }, { once: true })
     }
-    
+
     function handleProfileUpdateInfos(e) {
         const popup = document.querySelector('.pop-up-container')
 
@@ -101,7 +99,7 @@ function Profile() {
 
             popup.addEventListener('transitionend', () => {
                 popup.style.display = 'none'
-            }, {once: true})
+            }, { once: true })
         }
 
         document.body.classList.toggle('hidden')
@@ -120,7 +118,6 @@ function Profile() {
             country,
             bios,
         }
-
         // console.log({...userInfos})
 
         updateProfile(userInfos)
@@ -138,15 +135,15 @@ function Profile() {
 
     useEffect(() => {
         if (profileDataUser) {
-            setUserInfos(profileDataUser)
+            setImgProfile(profileDataUser.imgProfile)
+            setEmail(profileDataUser.email)
+            setUserName(profileDataUser.userName)
+            setBackgroundImg(profileDataUser.backgroundImg)
+            setPhoneNumber(profileDataUser.phoneNumber)
+            setCountry(profileDataUser.country)
+            setBios(profileDataUser.bios)
         }
     }, [profileDataUser])
-
-    // console.log(userInfos.color)
-    // console.log(color)
-    // console.log(profileDataUser)
-
-    // console.log(hideGradient, hidebackground)
 
     return (
         <section className='adjust-size profile-container'>
@@ -170,8 +167,9 @@ function Profile() {
                             <span className="material-symbols-outlined internal-icon">person</span>
                             <input
                                 data-js='form-input'
-                                value={userName}
+                                value={userName? userName : ''}
                                 name='userName'
+                                placeholder='User name'
                                 className='input-child'
                                 type="text"
                                 // placeholder={profileDataUser?.userName ? profileDataUser?.userName : 'User name'}
@@ -185,7 +183,7 @@ function Profile() {
                             <span className="material-symbols-outlined internal-icon-verified">Verified</span>
                             <input
                                 data-js='form-input'
-                                value={email}
+                                value={email? email : ''}
                                 name='email'
                                 className='input-child'
                                 type="text"
@@ -201,7 +199,7 @@ function Profile() {
                             <span className="material-symbols-outlined internal-icon">phone</span>
                             <input
                                 data-js='form-input'
-                                value={phoneNumber}
+                                value={phoneNumber? phoneNumber : ''}
                                 name='phoneNumber'
                                 className='input-child'
                                 type="text"
@@ -215,7 +213,7 @@ function Profile() {
                             <span className="material-symbols-outlined internal-icon">Globe</span>
                             <input
                                 data-js='form-input'
-                                value={country}
+                                value={country? country : ''}
                                 name='country'
                                 className='input-child'
                                 type="text"
@@ -231,7 +229,7 @@ function Profile() {
                             <span className="material-symbols-outlined internal-icon">Link</span>
                             <input
                                 data-js='form-input'
-                                value={imgProfile}
+                                value={imgProfile? imgProfile : ''}
                                 className='input-child'
                                 type="text"
                                 name='imgProfile'
@@ -247,7 +245,7 @@ function Profile() {
                                 gradientState={hideGradient} /> */}
                             <input
                                 data-js='form-input'
-                                value={backgroundImg}
+                                value={backgroundImg? backgroundImg : ''}
                                 className='input-child'
                                 type="URL"
                                 name="backgroundImg"
@@ -260,7 +258,7 @@ function Profile() {
                     <div className='textArea-container'>
                         <textarea
                             data-js='form-input'
-                            value={bios}
+                            value={bios? bios : ''}
                             name="bios"
                             id="bios"
                             className='bios'
@@ -317,8 +315,8 @@ function Profile() {
                                     />
                                 </div>
                             </> : <></>}
-                            <button 
-                            className='blue-button edit-profile' 
+                        <button
+                            className='blue-button edit-profile'
                             onClick={handleProfileUpdateInfos}>Edit profile</button>
                     </div>
                     <div className='user-info-content'>
