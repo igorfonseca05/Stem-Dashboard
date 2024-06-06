@@ -33,6 +33,8 @@ function Profile() {
     const [totalLetter, setTotalLetter] = useState(biosMaxLength)
     const [profileDataUser, setProfileDataUser] = useState({})
     const [hideGradient, setHideGradient] = useState(false)
+    const [hidebackground, setHideBackground] = useState(false)
+    const [color, setColor] = useState('#26272b')
 
     const user = useAuthProvider()
     const { data } = dados('UserName', 'infosProfile')
@@ -64,25 +66,28 @@ function Profile() {
     // PopUp para atualizar informações pessoais
     function handleProfileUpdateInfos(e) {
         const popup = document.querySelector('.pop-up-container')
+        const dropdown = document.querySelector('.editConfigContainer')
         const inputsForm = document.querySelectorAll("[data-js='form-input']")
+
+        dropdown.classList.toggle('drop-down-edit-config')
+
 
         // console.log(inputsForm)
 
-        if (e.target.classList.contains("edit-icon")) {
-            popup.style.display = 'block'
-            requestAnimationFrame(() => popup.classList.add('open-popup'))
-        }
+        // if (e.target.classList.contains("edit-icon")) {
+        //     popup.style.display = 'block'
+        //     requestAnimationFrame(() => popup.classList.add('open-popup'))
+        // }
 
-        if (e.target.classList.contains("close-icon")) {
-            popup.classList.remove('open-popup')
+        // if (e.target.classList.contains("close-icon")) {
+        //     popup.classList.remove('open-popup')
 
-            popup.addEventListener('transitionend', () => {
-                popup.style.display = 'none'
-            }, {once: true})
-        }
+        //     popup.addEventListener('transitionend', () => {
+        //         popup.style.display = 'none'
+        //     }, {once: true})
+        // }
 
-        // popup.classList.toggle('open-popup')
-        document.body.classList.toggle('hidden')
+        // document.body.classList.toggle('hidden')
 
     }
 
@@ -115,13 +120,6 @@ function Profile() {
         setBios(e.target.value)
     }
 
-    function handleChooseBgColor(e) {
-
-        console.log(e.currentTarget.value)
-
-
-    }
-
     useEffect(() => {
         if (profileDataUser) {
             setImgProfile(profileDataUser.imgProfile)
@@ -135,7 +133,7 @@ function Profile() {
     }, [profileDataUser])
 
     // console.log(name)
-
+console.log(color)
     // console.log(profileDataUser)
 
     return (
@@ -232,9 +230,9 @@ function Profile() {
                         </label>
                         <label htmlFor="backgroundImg" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Link</span>
-                            <Button
+                            {/* <Button
                                 changeGradientState={setHideGradient}
-                                gradientState={hideGradient} />
+                                gradientState={hideGradient} /> */}
                             <input
                                 data-js='form-input'
                                 value={backgroundImg}
@@ -246,17 +244,6 @@ function Profile() {
                                 onInput={(e) => { setBackgroundImg(e.target.value) }}
                             />
                         </label>
-                    </div>
-                    <div className='ColorInput-container'>
-                        <p className='infos-text'>Use background color: </p>
-                        {/* <Button/> */}
-                        <input
-                            data-js='form-input'
-                            type="color"
-                            name="backgroundColor"
-                            id=""
-                            onInput={handleChooseBgColor}
-                        />
                     </div>
                     <div className='textArea-container'>
                         <textarea
@@ -291,6 +278,34 @@ function Profile() {
             <div className='content-profile'>
                 <div className='profileContainer'>
                     <span className="material-symbols-outlined edit-icon" onClick={handleProfileUpdateInfos}>edit</span>
+                    <div className='editConfigContainer'>
+                        <div className='editConfigItems'>
+                            <p className='infos-text'>Remover gradiente</p>
+                            <Button
+                                changeGradientState={setHideGradient}
+                                gradientState={hideGradient} />
+                        </div>
+                        <div className='editConfigItems'>
+                            <p className='infos-text'>Remove background</p>
+                            <Button
+                                changeGradientState={setHideBackground}
+                                gradientState={hidebackground} />
+                        </div>
+                        {hidebackground ?
+                                <>
+                                    <div className='ColorInput-container'>
+                                        <p className='infos-text'>Use background color: </p>
+                                        {/* <Button/> */}
+                                        <input
+                                            data-js='form-input'
+                                            type="color"
+                                            name="backgroundColor"
+                                            id=""
+                                            onChange={(e) => setColor(e.target.value) }
+                                        />
+                                    </div>
+                                </> : <></>}
+                    </div>
                     <div className='user-info-content'>
                         <div className='img-and-name-container'>
                             <figure>
@@ -309,9 +324,10 @@ function Profile() {
                         <p className='description-bios'>{profileDataUser?.bios}</p>
                     </div>
                     <div className='gradient' style={{ display: hideGradient ? 'none' : 'block' }}></div>
-                    {profileDataUser?.backgroundImg ?
-                        <img className='bg-image' src={profileDataUser?.backgroundImg} alt="" /> :
-                        <img className='bg-image no-Image' src={"https://www.pngall.com/wp-content/uploads/2/Upload-PNG-Clipart.png"} alt="" />
+                    {hidebackground ?
+                        <div className='bg-image' value={''} style={{ backgroundColor: color }}></div> :
+                        <img className='bg-image' src={profileDataUser?.backgroundImg} alt="" />
+                        // <img className='bg-image no-Image' src={"https://www.pngall.com/wp-content/uploads/2/Upload-PNG-Clipart.png"} alt="" />
                     }
                 </div>
                 <div className='games-infos-profile'>
