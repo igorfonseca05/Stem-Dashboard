@@ -1,4 +1,3 @@
-
 :root {
     --profile-Img-size: 100px
 }
@@ -26,7 +25,7 @@
     /* height: 250px; */
 }
 
-.content-profile > div,
+.content-profile>div,
 .profileContainer,
 .gradiente {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
@@ -57,8 +56,8 @@
     margin: 0px;
 }
 
-.pop-up-container .form-header p, 
-.infos-text{
+.pop-up-container .form-header p,
+.infos-text {
     font-size: 12px;
     margin: 0px;
     color: var(--icon-color);
@@ -69,7 +68,19 @@
 }
 
 .open-popup {
+    display: block;
+    /* animation: remove 0.5s ease 0.2s; */
     height: 86%;
+
+}
+
+.block {
+    display: block;
+}
+
+@keyframes remove {
+    to {
+    }
 }
 
 .hidden {
@@ -95,15 +106,15 @@
     border-radius: 20px;
 }
 
-.close-icon{
+.close-icon {
     position: absolute;
     top: 15px;
     right: 15px;
     cursor: pointer;
 }
 
-.close-icon:hover, 
-.edit-icon:hover{
+.close-icon:hover,
+.edit-icon:hover {
     color: var(--thirdColor);
 }
 
@@ -116,14 +127,14 @@
     align-items: center;
 }
 
-.inputs-responsiveis{
+.inputs-responsiveis {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-.inputs-responsiveis label{
+.inputs-responsiveis label {
     min-width: 300px;
     /* max-width: 300px; */
     width: 40%;
@@ -145,12 +156,12 @@ label input {
     color: var(--icon-color) !important;
 }
 
-.textArea-container{
+.textArea-container {
     width: 99%;
     margin: 5px 0px 0px 0px;
 }
 
-.bios{
+.bios {
     width: 100%;
     background-color: rgba(128, 128, 128, 0.178);
     color: var(--icon-color);
@@ -199,7 +210,7 @@ label input {
     outline: none !important;
 }
 
-.ColorInput-container{
+.ColorInput-container {
     display: flex;
     align-items: center;
     justify-content: end;
@@ -208,7 +219,7 @@ label input {
     /* background-color: aquamarine; */
 }
 
-.ColorInput-container input{
+.ColorInput-container input {
     width: 38px;
     height: 24px;
     outline: none;
@@ -280,12 +291,12 @@ label input {
     /* background-color: rgba(255, 236, 127, 0.295); */
 }
 
-.img-and-name-container{
+.img-and-name-container {
     display: flex;
     align-items: center;
 }
 
-.edit-icon{
+.edit-icon {
     position: absolute;
     z-index: 3;
     right: 15px;

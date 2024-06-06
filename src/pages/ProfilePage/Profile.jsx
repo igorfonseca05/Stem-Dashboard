@@ -68,23 +68,19 @@ function Profile() {
 
         // console.log(inputsForm)
 
-        if (e.target.classList.contains("close-icon")) {
-            // const inputsData = [...form.children]
-            const inputs = [...inputsForm]
-            const dados = [...Object.values(profileDataUser)]
-            
-            inputs.map((i,item) => (
-                inputs === dados[i] ? 
-                (console.log(item, dados[i])) : ('')
-            ))
+        if (e.target.classList.contains("edit-icon")) {
+            popup.style.display = 'block'
+            // popup.classList.toggle('open-popup')
+            // popup.classList.toggle('open-popup')
         }
 
+        if (e.target.classList.contains("close-icon")) {
+            popup.style.display = 'none'
+        }
+
+        // popup.classList.toggle('open-popup')
         popup.classList.toggle('open-popup')
         document.body.classList.toggle('hidden')
-
-        // setTimeout(() => {
-        //     popup.style.display = 'none'
-        // }, 500)
 
     }
 
@@ -153,7 +149,7 @@ function Profile() {
                                 <img src="https://i.pinimg.com/474x/31/ec/2c/31ec2ce212492e600b8de27f38846ed7.jpg" alt="" />}
                         </figure>
                         <div>
-                            <h5>{userName} / Edit profile</h5>
+                            <h5>{profileDataUser?.userName} / Edit profile</h5>
                             <p>Atualize suas informações pessoais</p>
                         </div>
                     </header>
@@ -304,7 +300,7 @@ function Profile() {
                                 }
                             </figure>
                             <div className='user-info-data'>
-                                <h3 className='profileName'>{userName}</h3>
+                                <h3 className='profileName'>{profileDataUser?.userName}</h3>
                                 <p className='infos-text'>{user.email.slice('0', `${user.email.indexOf('@') + 1}`)}</p>
                             </div>
                         </div>
