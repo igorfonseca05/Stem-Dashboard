@@ -53,14 +53,18 @@ function Profile() {
         setRemaining(biosMaxLength)
     }, [biosMaxLength])
 
-    useEffect(() => {
-        const update = {
-            color,
-            hideGradient,
-            hidebackground
-        }
-        updateData('UserName', "infosProfile", update)
-    }, [color, hideGradient, hidebackground])
+    function handleButtonStates () {
+
+        useEffect(() => {
+            const update = {
+                color,
+                hideGradient,
+                hidebackground
+            }
+            updateData('UserName', "infosProfile", update)
+        }, [color, hideGradient, hidebackground])
+    }
+
 
 
     // Controlando abertura e fechamento do menu
@@ -148,6 +152,8 @@ function Profile() {
     // console.log(name)
 // console.log(color)
     // console.log(profileDataUser.color)
+
+    console.log(hideGradient, hidebackground)
 
     return (
         <section className='adjust-size profile-container'>
@@ -295,14 +301,14 @@ function Profile() {
                         <div className='editConfigItems'>
                             <p className='infos-text'>Remover gradiente</p>
                             <Button
-                                changeGradientState={setHideGradient}
-                                gradientState={hideGradient} />
+                                changeState={setHideGradient}
+                                state={hideGradient} />
                         </div>
                         <div className='editConfigItems'>
                             <p className='infos-text'>Remove background</p>
                             <Button
-                                changeGradientState={setHideBackground}
-                                gradientState={hidebackground} />
+                                changeState={setHideBackground}
+                                state={hidebackground} />
                         </div>
                         {hidebackground ?
                                 <>

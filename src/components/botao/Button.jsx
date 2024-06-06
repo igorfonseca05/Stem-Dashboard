@@ -2,12 +2,12 @@ import React from 'react'
 
 import "./Button.css"
 
-function Button({gradientState, changeGradientState}) {
+function Button({state, changeState}) {
 
   function handleGradient(e) {
     e.currentTarget.classList.toggle('on')
 
-    changeGradientState(!gradientState)
+    changeState(!state)
 
   }
   
