@@ -3,6 +3,8 @@ import React from 'react'
 import "./MiniCards.css"
 
 function MiniCards({game, tag, url}) {
+
+  // console.log(url)
   return (
 
     <div className='miniCards'>

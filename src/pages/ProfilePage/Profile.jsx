@@ -21,13 +21,13 @@ function Profile() {
 
     const biosMaxLength = document.querySelector('.bios')?.maxLength
 
-    const [imgProfile, setImgProfile] = useState()
-    const [email, setEmail] = useState()
-    const [userName, setUserName] = useState()
-    const [backgroundImg, setBackgroundImg] = useState()
-    const [phoneNumber, setPhoneNumber] = useState()
-    const [country, setCountry] = useState()
-    const [bios, setBios] = useState()
+    const [imgProfile, setImgProfile] = useState('')
+    const [email, setEmail] = useState('')
+    const [userName, setUserName] = useState('')
+    const [backgroundImg, setBackgroundImg] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('')
+    const [country, setCountry] = useState('')
+    const [bios, setBios] = useState('')
 
     const [remaining, setRemaining] = useState(biosMaxLength)
     const [totalLetter, setTotalLetter] = useState(biosMaxLength)
@@ -60,17 +60,31 @@ function Profile() {
     const stringData = parseInt(user.reloadUserInfo.createdAt)
     const date = new Date(stringData).toLocaleDateString()
 
+
     // PopUp para atualizar informações pessoais
     function handleProfileUpdateInfos(e) {
         const popup = document.querySelector('.pop-up-container')
-        const form = document.querySelector('.edit-profile-form')
+        const inputsForm = document.querySelectorAll("[data-js='form-input']")
+
+        // console.log(inputsForm)
+
+        if (e.target.classList.contains("close-icon")) {
+            // const inputsData = [...form.children]
+            const inputs = [...inputsForm]
+            const dados = [...Object.values(profileDataUser)]
+            
+            inputs.map((i,item) => (
+                inputs === dados[i] ? 
+                (console.log(item, dados[i])) : ('')
+            ))
+        }
 
         popup.classList.toggle('open-popup')
         document.body.classList.toggle('hidden')
 
-        // if (e.target.tagName === 'A') {
-        //     form.reset()
-        // }
+        // setTimeout(() => {
+        //     popup.style.display = 'none'
+        // }, 500)
 
     }
 
@@ -111,13 +125,15 @@ function Profile() {
     }
 
     useEffect(() => {
-        setImgProfile(profileDataUser.imgProfile)
-        setEmail(profileDataUser.email)
-        setUserName(profileDataUser.userName)
-        setBackgroundImg(profileDataUser.backgroundImg)
-        setPhoneNumber(profileDataUser.phoneNumber)
-        setCountry(profileDataUser.country)
-        setBios(profileDataUser.bios)
+        if (profileDataUser) {
+            setImgProfile(profileDataUser.imgProfile)
+            setEmail(profileDataUser.email)
+            setUserName(profileDataUser.userName)
+            setBackgroundImg(profileDataUser.backgroundImg)
+            setPhoneNumber(profileDataUser.phoneNumber)
+            setCountry(profileDataUser.country)
+            setBios(profileDataUser.bios)
+        }
     }, [profileDataUser])
 
     // console.log(name)
@@ -137,7 +153,7 @@ function Profile() {
                                 <img src="https://i.pinimg.com/474x/31/ec/2c/31ec2ce212492e600b8de27f38846ed7.jpg" alt="" />}
                         </figure>
                         <div>
-                            <h5>{profileDataUser?.userName} / Edit profile</h5>
+                            <h5>{userName} / Edit profile</h5>
                             <p>Atualize suas informações pessoais</p>
                         </div>
                     </header>
@@ -145,6 +161,7 @@ function Profile() {
                         <label htmlFor="userName" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">person</span>
                             <input
+                                data-js='form-input'
                                 value={userName}
                                 name='userName'
                                 className='input-child'
@@ -159,6 +176,7 @@ function Profile() {
                             <span className="material-symbols-outlined internal-icon">email</span>
                             <span className="material-symbols-outlined internal-icon-verified">Verified</span>
                             <input
+                                data-js='form-input'
                                 value={email}
                                 name='email'
                                 className='input-child'
@@ -174,6 +192,7 @@ function Profile() {
                         <label htmlFor="phoneNumber" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">phone</span>
                             <input
+                                data-js='form-input'
                                 value={phoneNumber}
                                 name='phoneNumber'
                                 className='input-child'
@@ -187,6 +206,7 @@ function Profile() {
                         <label htmlFor="country" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Globe</span>
                             <input
+                                data-js='form-input'
                                 value={country}
                                 name='country'
                                 className='input-child'
@@ -202,6 +222,7 @@ function Profile() {
                         <label htmlFor="imgProfile" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Link</span>
                             <input
+                                data-js='form-input'
                                 value={imgProfile}
                                 className='input-child'
                                 type="text"
@@ -209,7 +230,6 @@ function Profile() {
                                 id='imgProfile'
                                 placeholder='Profile Image'
                                 onInput={(e) => { setImgProfile(e.target.value) }}
-
                             />
                         </label>
                         <label htmlFor="backgroundImg" className='input-profile internal-icon-input'>
@@ -218,6 +238,7 @@ function Profile() {
                                 changeGradientState={setHideGradient}
                                 gradientState={hideGradient} />
                             <input
+                                data-js='form-input'
                                 value={backgroundImg}
                                 className='input-child'
                                 type="URL"
@@ -225,17 +246,23 @@ function Profile() {
                                 id="backgroundImg"
                                 placeholder='Image li'
                                 onInput={(e) => { setBackgroundImg(e.target.value) }}
-
                             />
                         </label>
                     </div>
                     <div className='ColorInput-container'>
                         <p className='infos-text'>Use background color: </p>
                         {/* <Button/> */}
-                        <input type="color" name="backgroundColor" id="" onInput={handleChooseBgColor} />
+                        <input
+                            data-js='form-input'
+                            type="color"
+                            name="backgroundColor"
+                            id=""
+                            onInput={handleChooseBgColor}
+                        />
                     </div>
                     <div className='textArea-container'>
                         <textarea
+                            data-js='form-input'
                             value={bios}
                             name="bios"
                             id="bios"
@@ -277,7 +304,7 @@ function Profile() {
                                 }
                             </figure>
                             <div className='user-info-data'>
-                                <h3 className='profileName'>{profileDataUser?.userName}</h3>
+                                <h3 className='profileName'>{userName}</h3>
                                 <p className='infos-text'>{user.email.slice('0', `${user.email.indexOf('@') + 1}`)}</p>
                             </div>
                         </div>
