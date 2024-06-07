@@ -20,6 +20,10 @@ import { child } from 'firebase/database'
 
 function Profile() {
 
+    const user = useAuthProvider()
+    const { data } = dados('UserName', 'infosProfile')
+    const { data: preferences } = dados('UserName', 'preferences')
+
     const biosMaxLength = document.querySelector('.bios')?.maxLength
 
     const [imgProfile, setImgProfile] = useState('')
@@ -34,35 +38,55 @@ function Profile() {
     const [remaining, setRemaining] = useState(biosMaxLength)
     const [totalLetter, setTotalLetter] = useState(biosMaxLength)
     const [profileDataUser, setProfileDataUser] = useState({})
+
+    // console.log(profileDataUser)
+
+    // Preferences
+    const [userPreferences, setPreferences] = useState({})
     const [hideGradient, setHideGradient] = useState(false)
     const [hidebackground, setHideBackground] = useState(false)
     const [color, setColor] = useState('#26272b')
 
-    const user = useAuthProvider()
-    const { data } = dados('UserName', 'infosProfile')
+
     const { updateInfos: updateProfile, error, loading, success } = useAuthentication()
     const { updateData } = useRealTimeDataBase()
 
-    // console.log(user)
+    console.log(userPreferences.hidebackground)
 
 
     useEffect(() => {
-        setProfileDataUser(data)
-    }, [data])
+        if (data || preferences) {
+            setProfileDataUser(data)
+            setPreferences(preferences)
+        }
+    }, [data, preferences])
+
 
     useEffect(() => {
         setTotalLetter(biosMaxLength)
         setRemaining(biosMaxLength)
     }, [biosMaxLength])
 
+
     useEffect(() => {
-        const update = {
-            color,
-            hideGradient,
-            hidebackground
+        if (!preferences) return
+        setHideGradient(preferences?.hideGradient)
+        setHideBackground(preferences?.hidebackground)
+        setColor(preferences?.color)
+    }, [preferences])
+
+    // console.log(hideGradient)
+
+    useEffect(() => {
+        if (color && hideGradient && hideGradient) {
+            const update = {
+                color,
+                hideGradient,
+                hidebackground
+            }
+            updateData('UserName', "preferences", update)
         }
 
-        updateData('UserName', "infosProfile", update)
     }, [color, hideGradient, hidebackground])
 
     // Controlando abertura e fechamento do menu
@@ -169,7 +193,7 @@ function Profile() {
                             <span className="material-symbols-outlined internal-icon">person</span>
                             <input
                                 data-js='form-input'
-                                value={userName? userName : ''}
+                                value={userName ? userName : ''}
                                 name='userName'
                                 placeholder='User name'
                                 className='input-child'
@@ -185,7 +209,7 @@ function Profile() {
                             <span className="material-symbols-outlined internal-icon-verified">Verified</span>
                             <input
                                 data-js='form-input'
-                                value={email? email : ''}
+                                value={email ? email : ''}
                                 name='email'
                                 className='input-child'
                                 type="text"
@@ -201,7 +225,7 @@ function Profile() {
                             <span className="material-symbols-outlined internal-icon">phone</span>
                             <input
                                 data-js='form-input'
-                                value={phoneNumber? phoneNumber : ''}
+                                value={phoneNumber ? phoneNumber : ''}
                                 name='phoneNumber'
                                 className='input-child'
                                 type="text"
@@ -215,7 +239,7 @@ function Profile() {
                             <span className="material-symbols-outlined internal-icon">Globe</span>
                             <input
                                 data-js='form-input'
-                                value={country? country : ''}
+                                value={country ? country : ''}
                                 name='country'
                                 className='input-child'
                                 type="text"
@@ -231,7 +255,7 @@ function Profile() {
                             <span className="material-symbols-outlined internal-icon">Link</span>
                             <input
                                 data-js='form-input'
-                                value={imgProfile? imgProfile : ''}
+                                value={imgProfile ? imgProfile : ''}
                                 className='input-child'
                                 type="text"
                                 name='imgProfile'
@@ -247,7 +271,7 @@ function Profile() {
                                 gradientState={hideGradient} /> */}
                             <input
                                 data-js='form-input'
-                                value={backgroundImg? backgroundImg : ''}
+                                value={backgroundImg ? backgroundImg : ''}
                                 className='input-child'
                                 type="URL"
                                 name="backgroundImg"
@@ -260,7 +284,7 @@ function Profile() {
                     <div className='textArea-container'>
                         <textarea
                             data-js='form-input'
-                            value={bios? bios : ''}
+                            value={bios ? bios : ''}
                             name="bios"
                             id="bios"
                             className='bios'
@@ -311,6 +335,7 @@ function Profile() {
                                     <p className='infos-text'>Choose a color:</p>
                                     {/* <Button/> */}
                                     <input
+                                        value={preferences.color? preferences.color : "#000"}
                                         data-js='form-input'
                                         type="color"
                                         name="backgroundColor"
@@ -341,8 +366,8 @@ function Profile() {
                         <p className='description-bios'>{profileDataUser?.bios}</p>
                     </div>
                     <div className='gradient' style={{ display: hideGradient ? 'none' : 'block' }}></div>
-                    {profileDataUser?.hidebackground ?
-                        <div className='bg-image' value={''} style={{ backgroundColor: color }}></div> :
+                    {userPreferences?.hidebackground ?
+                        <div className='bg-image' style={{ backgroundColor: color }}></div> :
                         <img className='bg-image' src={profileDataUser?.backgroundImg} alt="" />
                         // <img className='bg-image no-Image' src={"https://www.pngall.com/wp-content/uploads/2/Upload-PNG-Clipart.png"} alt="" />
                     }

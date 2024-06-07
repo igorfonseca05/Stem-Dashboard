@@ -17,15 +17,15 @@ function Button({state, changeState, num}) {
   
   function handleGradient(e) {
 
-    if(e.target.classList.contains(num)) {
-      localStorage.setItem('classe', e.target.classList[2])
+    // if(e.target.classList.contains(num)) {
+    //   localStorage.setItem('classe', e.target.classList[2])
 
-    }
+    // }
     
     // console.log(e.currentTarget.classList[2])
     e.currentTarget.classList.toggle(buttonClass)
-    localStorage.setItem('class', 'on')
-    // changeState(!state)
+    // localStorage.setItem('class', 'on')
+    changeState(!state)
     
     // if(e.currentTarget.classList.contains('on')) {
     //   localStorage.setItem('class', 'block')
@@ -49,7 +49,7 @@ function Button({state, changeState, num}) {
       return (
     <div 
     title='Remove gradient'
-    className={`toggle-button internal-icon-verified ${num}`} 
+    className={`toggle-button internal-icon-verified`} 
     id="toggleButton"
     onClick={(e) => handleGradient(e)}></div>
   )
