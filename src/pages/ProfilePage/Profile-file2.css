@@ -73,7 +73,7 @@
     right: 15px;
     top: 15px;
     cursor: pointer;
-    color: var(--icon-color);
+    color: var(--elements);
 }
 
 
@@ -96,7 +96,7 @@
 
 .radios-buttom{
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     /* align-items: start; */
 }
 
@@ -104,10 +104,18 @@
     display: flex;
     width: 100%;
     /* background-color: aquamarine; */
+    padding: 2px;
 }
 
-.label-radios-button input {
+.label-radios-button span {
     width: 100%;
+    text-align: end;
+    margin-right: 5px;
+}
+
+.label-radios-button input{
+    width: 16px;
+    margin: 0px;
 }
 
 .drop-down-edit-config {

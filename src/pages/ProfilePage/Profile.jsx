@@ -46,7 +46,11 @@ function Profile() {
     const [hideGradient, setHideGradient] = useState(false)
     const [hidebackground, setHideBackground] = useState(false)
     const [color, setColor] = useState('#26272b')
+    const [bgPosition, setBgPosition] = useState('top')
 
+    const [hideEditIcon, setHideEditIcon] = useState(true)
+
+    // console.log(bgPosition)
 
     const { updateInfos: updateProfile, error, loading, success } = useAuthentication()
     const { updateData } = useRealTimeDataBase()
@@ -73,21 +77,23 @@ function Profile() {
         setHideGradient(userPreferences?.hideGradient)
         setHideBackground(userPreferences?.hidebackground)
         setColor(userPreferences?.color)
+        setBgPosition(userPreferences?.bgPosition)
     }, [userPreferences])
 
-    // console.log(hideGradient)
+    // console.log(userPreferences)
 
     useEffect(() => {
         if (color && hideGradient && hideGradient) {
             const update = {
                 color,
                 hideGradient,
-                hidebackground
+                hidebackground,
+                bgPosition
             }
             updateData('UserName', "preferences", update)
         }
 
-    }, [color, hideGradient, hidebackground])
+    }, [color, hideGradient, hidebackground, bgPosition])
 
     // Controlando abertura e fechamento do menu
     const location = useLocation()
@@ -178,8 +184,9 @@ function Profile() {
             return
         }
         backgroud.style.backgroundImage = `url("${profileDataUser.backgroundImg}")`
+        backgroud.style.backgroundPosition = bgPosition
 
-    }, [userPreferences.hidebackground])
+    }, [userPreferences.hidebackground, bgPosition])
 
 
 
@@ -312,7 +319,6 @@ function Profile() {
                                 {/* <a className='blue-button button-disabled' onClick={handleProfileUpdateInfos} disabled={loading}>Fechar</a> */}
                                 <button className='blue-button button-disabled' type='submit' disabled={loading}>Salvar</button>
                             </>
-
                         ) : (
                             <>
                                 {/* <a className='blue-button' onClick={handleProfileUpdateInfos}>Fechar</a> */}
@@ -324,8 +330,12 @@ function Profile() {
                 </form>
             </div>
             <div className='content-profile'>
+
                 <div className='profileContainer'>
-                    <span className="material-symbols-outlined edit-icon" onClick={handleOpenMenuOptions}>edit</span>
+                    <span 
+                    className="material-symbols-outlined edit-icon" 
+                    onClick={handleOpenMenuOptions}>edit</span>
+
                     <div className='editConfigContainer'>
                         <div className='editConfigItems'>
                             <p className='infos-text'>Remover gradiente</p>
@@ -346,15 +356,32 @@ function Profile() {
                                 <div className='editConfigItems radios-buttom'>
                                     <label htmlFor='top' className='label-radios-button'>
                                         <span className='infos-text'>Top</span>
-                                        <input type="radio" name="bg-position" id="top" />
+                                        <input
+                                            value={'top'}
+                                            type="radio"
+                                            name="bg-position"
+                                            id="top"
+                                            onInput={(e) => setBgPosition(e.currentTarget.value)} />
                                     </label>
                                     <label htmlFor="" className='label-radios-button'>
                                         <span className='infos-text'>Center</span>
-                                        <input type="radio" name="bg-position" id="center" />
+                                        <input
+                                            value={"center"}
+                                            type="radio"
+                                            name="bg-position"
+                                            id="center"
+                                            onInput={(e) => setBgPosition(e.currentTarget.value)} 
+                                            />
                                     </label>
                                     <label htmlFor="" className='label-radios-button'>
                                         <span className='infos-text'>Bottom</span>
-                                        <input type="radio" name="bg-position" id="bottom" />
+                                        <input
+                                            value={"bottom"}
+                                            type="radio"
+                                            name="bg-position"
+                                            id="bottom"
+                                            onInput={(e) => setBgPosition(e.currentTarget.value)} 
+                                            />
                                     </label>
                                 </div>
                             </> :
@@ -362,7 +389,7 @@ function Profile() {
                                 <div className='ColorInput-container editConfigItems'>
                                     <p className='infos-text'>Choose a color:</p>
                                     <input
-                                        value={preferences.color ? preferences.color : "#000"}
+                                        value={userPreferences.color ? userPreferences.color : "#000"}
                                         data-js='form-input'
                                         type="color"
                                         name="backgroundColor"

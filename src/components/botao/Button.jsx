@@ -17,6 +17,8 @@ function Button({ state, changeState, num }) {
 
   function handleGradient(e) {
     e.currentTarget.classList.toggle(buttonClass)
+
+    localStorage.setItem('buttonStatte', 'on')
     changeState(!state)
 
   }
