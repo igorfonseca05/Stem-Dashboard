@@ -6,11 +6,12 @@
     align-items: center;
     /* background-color: #1b40d6; */
     min-height: 100%;
-    /* background-image: url("https://wallpapercave.com/wp/wp9549819.jpg"); */
-    /* background-position: center; */
-    /* background-size: cover; */
+    /* background-image: url(); */
+    /* background-position: bottom; */
+    background-position-y: top;
+    background-size: cover;
     /* border-radius: 40px !important; */
-    overflow: hidden;
+    /* overflow: hidden; */
     /* opacity: 0.7; */
     /* backdrop-filter: blur(0); */
     position: relative;
@@ -93,6 +94,22 @@
     /* transition: height 0.4s; */
 }
 
+.radios-buttom{
+    display: flex;
+    flex-direction: column;
+    /* align-items: start; */
+}
+
+.label-radios-button {
+    display: flex;
+    width: 100%;
+    /* background-color: aquamarine; */
+}
+
+.label-radios-button input {
+    width: 100%;
+}
+
 .drop-down-edit-config {
     height: auto;
     /* background-color: #1b40d6; */
@@ -102,6 +119,7 @@
 .edit-profile{
     margin: 10px auto !important;
     width: 80% !important;
+    /* max-height: 30px !important; */
 }
 
 .editConfigItems{

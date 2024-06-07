@@ -51,7 +51,7 @@ function Profile() {
     const { updateInfos: updateProfile, error, loading, success } = useAuthentication()
     const { updateData } = useRealTimeDataBase()
 
-    console.log(userPreferences.hidebackground)
+    // console.log(userPrefe rences.hidebackground)
 
 
     useEffect(() => {
@@ -69,11 +69,11 @@ function Profile() {
 
 
     useEffect(() => {
-        if (!preferences) return
-        setHideGradient(preferences?.hideGradient)
-        setHideBackground(preferences?.hidebackground)
-        setColor(preferences?.color)
-    }, [preferences])
+        if (!userPreferences) return
+        setHideGradient(userPreferences?.hideGradient)
+        setHideBackground(userPreferences?.hidebackground)
+        setColor(userPreferences?.color)
+    }, [userPreferences])
 
     // console.log(hideGradient)
 
@@ -142,9 +142,6 @@ function Profile() {
             country,
             bios,
         }
-        // console.log({...userInfos})
-
-
 
         updateProfile(userInfos)
     }
@@ -170,6 +167,21 @@ function Profile() {
             setBios(profileDataUser.bios)
         }
     }, [profileDataUser])
+
+
+    useEffect(() => {
+        const backgroud = document.querySelector('.profileContainer')
+
+        if (userPreferences.hidebackground) {
+            backgroud.style.backgroundImage = `none`
+            backgroud.style.backgroundColor = userPreferences.color
+            return
+        }
+        backgroud.style.backgroundImage = `url("${profileDataUser.backgroundImg}")`
+
+    }, [userPreferences.hidebackground])
+
+
 
     return (
         <section className='adjust-size profile-container'>
@@ -329,13 +341,28 @@ function Profile() {
                                 state={hidebackground}
                                 num={2} />
                         </div>
-                        {hidebackground ?
+                        {!hidebackground ?
+                            <>
+                                <div className='editConfigItems radios-buttom'>
+                                    <label htmlFor='top' className='label-radios-button'>
+                                        <span className='infos-text'>Top</span>
+                                        <input type="radio" name="bg-position" id="top" />
+                                    </label>
+                                    <label htmlFor="" className='label-radios-button'>
+                                        <span className='infos-text'>Center</span>
+                                        <input type="radio" name="bg-position" id="center" />
+                                    </label>
+                                    <label htmlFor="" className='label-radios-button'>
+                                        <span className='infos-text'>Bottom</span>
+                                        <input type="radio" name="bg-position" id="bottom" />
+                                    </label>
+                                </div>
+                            </> :
                             <>
                                 <div className='ColorInput-container editConfigItems'>
                                     <p className='infos-text'>Choose a color:</p>
-                                    {/* <Button/> */}
                                     <input
-                                        value={preferences.color? preferences.color : "#000"}
+                                        value={preferences.color ? preferences.color : "#000"}
                                         data-js='form-input'
                                         type="color"
                                         name="backgroundColor"
@@ -343,7 +370,8 @@ function Profile() {
                                         onChange={(e) => setColor(e.target.value)}
                                     />
                                 </div>
-                            </> : <></>}
+                            </>
+                        }
                         <button
                             className='blue-button edit-profile'
                             onClick={handleProfileUpdateInfos}>Edit profile</button>
@@ -366,11 +394,11 @@ function Profile() {
                         <p className='description-bios'>{profileDataUser?.bios}</p>
                     </div>
                     <div className='gradient' style={{ display: hideGradient ? 'none' : 'block' }}></div>
-                    {userPreferences?.hidebackground ?
-                        <div className='bg-image' style={{ backgroundColor: color }}></div> :
-                        <img className='bg-image' src={profileDataUser?.backgroundImg} alt="" />
+                    {/* {userPreferences?.hidebackground ?
+                        // <div className='bg-image' style={{ backgroundColor: color }}></div> :
+                        // <img className='bg-image' src={profileDataUser?.backgroundImg} alt="" />
                         // <img className='bg-image no-Image' src={"https://www.pngall.com/wp-content/uploads/2/Upload-PNG-Clipart.png"} alt="" />
-                    }
+                    } */}
                 </div>
                 <div className='games-infos-profile'>
                     <div className='card-game-profile'>
