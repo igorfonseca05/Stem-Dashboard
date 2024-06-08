@@ -21,6 +21,7 @@ import { child } from 'firebase/database'
 function Profile() {
 
     const user = useAuthProvider()
+    const nome = 1
     const { data } = dados('UserName', 'infosProfile')
     const { data: preferences } = dados('UserName', 'preferences')
 
