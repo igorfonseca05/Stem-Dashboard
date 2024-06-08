@@ -14,7 +14,7 @@ import { useRealTimeDataBase } from '../../hooks/useRealTimeDataBase'
 
 import { getData as dados } from '../../hooks/useData'
 import Grid from '../../components/grid/Grid'
-import Button from '../../components/botao/button'
+import Button from '../../components/botao/Button'
 import { child } from 'firebase/database'
 
 
@@ -73,6 +73,12 @@ function Profile() {
 
 
     useEffect(() => {
+        
+    }, [])
+
+
+
+    useEffect(() => {
         if (!userPreferences) return
         setHideGradient(userPreferences?.hideGradient)
         setHideBackground(userPreferences?.hidebackground)
@@ -80,7 +86,7 @@ function Profile() {
         setBgPosition(userPreferences?.bgPosition)
     }, [userPreferences])
 
-    // console.log(userPreferences)
+    console.log(remaining)
 
     useEffect(() => {
         if (color && hideGradient && hideGradient) {
@@ -152,15 +158,19 @@ function Profile() {
         updateProfile(userInfos)
     }
 
-    function handleTextArea(e) {
-        const inputSize = e.currentTarget.value.length;
-        const maxLength = e.currentTarget.maxLength
+    function handleTextArea() {
+        const inputSize = document.querySelector('.bios').value.length;
+        const maxLength = document.querySelector('.bios').maxLength
 
         const remainingCharacters = maxLength - inputSize
         setRemaining(remainingCharacters)
 
-        setBios(e.target.value)
+        setBios(inputSize.value)
     }
+
+    useEffect(() => {
+        handleTextArea()
+    }, [])
 
     useEffect(() => {
         if (profileDataUser) {
@@ -186,9 +196,9 @@ function Profile() {
         backgroud.style.backgroundImage = `url("${profileDataUser.backgroundImg}")`
         backgroud.style.backgroundPosition = bgPosition
 
-    }, [userPreferences.hidebackground, bgPosition])
+    }, [userPreferences.hidebackground, bgPosition, userPreferences.color])
 
-
+    // console.log(userPreferences)
 
     return (
         <section className='adjust-size profile-container'>
