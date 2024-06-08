@@ -1,32 +1,34 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import "./Button.css"
 
-function Button({ state, changeState, num }) {
+import { getData } from '../../hooks/useData'
 
+function Button({ state, changeState, data,num }) {
+
+  
   const [buttonClass, setButtonClass] = useState('on')
   const [button, setButton] = useState('')
-
-
-  function salveOption(e) {
-    if (e.target.classList.contains('on')) {
-    } else {
-      localStorage.removeItem('class')
-    }
-  }
-
+  
   function handleGradient(e) {
+  
     e.currentTarget.classList.toggle(buttonClass)
 
-    localStorage.setItem('buttonStatte', 'on')
+    // localStorage.setItem('buttonStatte', 'on')
     changeState(!state)
 
+  }
+
+  function VerifyButtonState() {
+    if(data.handleGradient) {
+      // const buttonOne = document.querySelector('')
+    }
   }
 
   return (
     <div
       title='Remove gradient'
-      className={`toggle-button internal-icon-verified`}
+      className={`toggle-button internal-icon-verified ${num}`}
       id="toggleButton"
       onClick={(e) => handleGradient(e)}></div>
   )

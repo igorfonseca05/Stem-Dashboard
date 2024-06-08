@@ -14,7 +14,7 @@ import { useRealTimeDataBase } from '../../hooks/useRealTimeDataBase'
 
 import { getData as dados } from '../../hooks/useData'
 import Grid from '../../components/grid/Grid'
-import Button from '../../components/botao/Button'
+import Button from '../../components/botao/button'
 import { child } from 'firebase/database'
 
 
@@ -342,6 +342,7 @@ function Profile() {
                             <Button
                                 changeState={setHideGradient}
                                 state={hideGradient}
+                                data = {userPreferences}
                                 num={1} />
                         </div>
                         <div className='editConfigItems'>
@@ -349,6 +350,7 @@ function Profile() {
                             <Button
                                 changeState={setHideBackground}
                                 state={hidebackground}
+                                data = {userPreferences}
                                 num={2} />
                         </div>
                         {!hidebackground ?
