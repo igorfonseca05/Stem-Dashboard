@@ -164,6 +164,10 @@
     height: 100%;
 }
 
+.profile-img-input{
+    position: absolute;
+}
+
 .user-info-data {
     display: flex;
     justify-content: center;
@@ -190,7 +194,7 @@
     margin: 0px;
     padding: 10px;
     font-size: 14px;
-    color: white !important;
+    color: rgb(146, 146, 146) !important;
 }
 
 .user-info-content p {

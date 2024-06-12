@@ -20,6 +20,8 @@ import { child } from 'firebase/database'
 
 function Profile() {
 
+    const standardBiosMessage = 'Compartilhe um pouco sobre você com a nossa comunidade!'
+
     const user = useAuthProvider()
     const { data } = dados('UserName', 'infosProfile')
     const { data: preferences } = dados('UserName', 'preferences')
@@ -86,7 +88,7 @@ function Profile() {
         setBgPosition(userPreferences?.bgPosition)
     }, [userPreferences])
 
-    console.log(remaining)
+    // console.log(remaining)
 
     useEffect(() => {
         if (color && hideGradient && hideGradient) {
@@ -213,7 +215,7 @@ function Profile() {
                                 <img src="https://i.pinimg.com/474x/31/ec/2c/31ec2ce212492e600b8de27f38846ed7.jpg" alt="" />}
                         </figure>
                         <div>
-                            <h5>{profileDataUser?.userName} / Edit profile</h5>
+                            <h5 style={{textTransform:'capitalize'}}>{profileDataUser?.userName ? profileDataUser?.userName : user.displayName} / Edit profile</h5>
                             <p>Atualize suas informações pessoais</p>
                         </div>
                     </header>
@@ -292,6 +294,7 @@ function Profile() {
                                 placeholder='Profile Image'
                                 onInput={(e) => { setImgProfile(e.target.value) }}
                             />
+
                         </label>
                         <label htmlFor="backgroundImg" className='input-profile internal-icon-input'>
                             <span className="material-symbols-outlined internal-icon">Link</span>
@@ -426,18 +429,13 @@ function Profile() {
                                 }
                             </figure>
                             <div className='user-info-data'>
-                                <h3 className='profileName'>{profileDataUser?.userName}</h3>
+                                <h3 className='profileName'>{profileDataUser?.userName ? profileDataUser?.userName : user.displayName}</h3>
                                 <p className='infos-text'>{user.email.slice('0', `${user.email.indexOf('@') + 1}`)}</p>
                             </div>
                         </div>
-                        <p className='description-bios'>{profileDataUser?.bios}</p>
+                        <p className='description-bios'>{profileDataUser?.bios? profileDataUser?.bios : standardBiosMessage}</p>
                     </div>
                     <div className='gradient' style={{ display: hideGradient ? 'none' : 'block' }}></div>
-                    {/* {userPreferences?.hidebackground ?
-                        // <div className='bg-image' style={{ backgroundColor: color }}></div> :
-                        // <img className='bg-image' src={profileDataUser?.backgroundImg} alt="" />
-                        // <img className='bg-image no-Image' src={"https://www.pngall.com/wp-content/uploads/2/Upload-PNG-Clipart.png"} alt="" />
-                    } */}
                 </div>
                 <div className='games-infos-profile'>
                     <div className='card-game-profile'>

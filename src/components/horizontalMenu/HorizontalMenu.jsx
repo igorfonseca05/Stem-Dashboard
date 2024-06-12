@@ -61,15 +61,15 @@ function HorizontalMenu() {
                         <div className='top-menu-user'>
                             <figure>
                             <div className='online-ball'></div>
-                                {user.photoURL? (<>
-                                    <img src={profileDataUser?.imgProfile} alt="user personal image"/>
-                                </>) : (<>
+                                {user.photoURL? 
+                                    <img src={profileDataUser?.imgProfile} alt="Profile image"/>
+                                : 
                                     <img src="https://i.pinimg.com/474x/31/ec/2c/31ec2ce212492e600b8de27f38846ed7.jpg" alt="" />
-                                </>)}
+                                }
                             </figure>
                             <div className="dropdown">
                                 <button className="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    {profileDataUser?.userName ? profileDataUser.userName : ''}
+                                    {profileDataUser?.userName ? profileDataUser?.userName : user.displayName}
                                 </button>
                                 <ul className="dropdown-menu">
                                     <li><Link to={'/profile'} className="dropdown-item" href="#">Perfil</Link></li>
