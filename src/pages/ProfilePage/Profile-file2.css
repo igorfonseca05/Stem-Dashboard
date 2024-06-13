@@ -15,6 +15,7 @@
     /* opacity: 0.7; */
     /* backdrop-filter: blur(0); */
     position: relative;
+    grid-column: 1 / -1;
 }
 
 .gradient {
@@ -225,8 +226,8 @@
 }
 
 .outra2 {
-    display: none;
+    /* display: none; */
     /* width: 100%; */
     background-color: rgb(189, 63, 228);
-    grid-column: 1 / -1;
+    grid-column: 1 / -2;
 }

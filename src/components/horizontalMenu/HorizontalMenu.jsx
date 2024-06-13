@@ -19,7 +19,7 @@ import { getData as dados } from '../../hooks/useData'
 function HorizontalMenu() {
 
     // Autenticação
-    const {signOut, auth, handleSignOut} = useAuthentication()
+    const {handleSignOut} = useAuthentication()
 
     // Obtendo usuario
     const user = useAuthProvider()

@@ -198,7 +198,7 @@ function Profile() {
         backgroud.style.backgroundImage = `url("${profileDataUser.backgroundImg}")`
         backgroud.style.backgroundPosition = bgPosition
 
-    }, [userPreferences.hidebackground, bgPosition, userPreferences.color])
+    }, [userPreferences.hidebackground, bgPosition, userPreferences.color, profileDataUser.backgroundImg])
 
     // console.log(userPreferences)
 
@@ -437,21 +437,10 @@ function Profile() {
                     </div>
                     <div className='gradient' style={{ display: hideGradient ? 'none' : 'block' }}></div>
                 </div>
-                <div className='games-infos-profile'>
-                    <div className='card-game-profile'>
-                        <figure>
-                            <img src="" alt="" />
-                        </figure>
-                        <h4>Mortal kombat</h4>
-                        <h5>Introduction</h5>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui dolorem, unde officia sequi laudantium corrupti commodi temporibus fugit soluta excepturi. Dignissimos saepe, commodi nesciunt perspiciatis omnis explicabo cupiditate a consequuntur!</p>
-                        <hr />
-                        <p className='games-price'></p>
-                    </div>
-                    {/* <div className='card-game'>2</div> */}
-                    {/* <div className='card-game'></div> */}
-                </div>
                 <div className='outra2'>
+                    <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta cum magni vel ad, culpa optio et officiis. Quibusdam doloribus, voluptate officiis aliquid, sequi magnam rem laboriosam cum itaque beatae non.</div>
+                </div>
+                <div className='outra3'>
                     <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dicta cum magni vel ad, culpa optio et officiis. Quibusdam doloribus, voluptate officiis aliquid, sequi magnam rem laboriosam cum itaque beatae non.</div>
                 </div>
             </div>
